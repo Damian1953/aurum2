@@ -709,3 +709,11 @@ Ersetzt den Eintrag «D3 Zeitbudget — OFFEN» (append-only, dieser Eintrag ist
 
 (1) Die eingefrorene Nachpruefung `tools/xs21/check_run_v1.py` endet mit `gesamt_ok: false` (`01_forschung/09_lane_c/xs21_pit_v1.0/run/xs21_check.json`). Ursachen, beide erklaert und kein Fehler im Lauf: (a) das Pruefskript wendet die Umsetzungsfestlegung U5a (Kerzen mit count = 0 gelten als nicht vorhanden) nicht an, daher 30 (U1) bzw. 8 (U2) gemeldete Auswahl-Abweichungen; mit U5a 0 Abweichungen; (b) die Kostendifferenz stammt aus der K2-Reibung bei 17 (U1) bzw. 2 (U2) Delisting-Ausstiegen. Erklaerung: `tools/xs21/check_run_v1_erklaerung.py`, `run/xs21_check_erklaerung.json`. Das Pruefskript bleibt unveraendert.
 (2) Abweichung A6 des Berichts: Die Survivorship-Zerlegung je Block (§5.3) fehlte im Lauf-Code und wurde nach dem Lauf deskriptiv aus den Trades nachgetragen (`tools/xs21/nachtrag_survivorship_bloecke_v1.py`, `run/xs21_nachtrag_survivorship_bloecke.json`). Gesamtsummen gleich wie im Lauf, kein Einfluss auf das Urteil.
+
+## 2026-10-01 15:55 — Paper-Trading-Umfang, XS21-Schattenrechnung, D1 (Vorschlag)
+
+Grundlage: Review Claude zu XS21 PiT v1.0 (`01_forschung/09_lane_c/xs21_pit_v1.0/xs21_pit_v1.0_review_claude_v1.md`, von Damian am 01.10.2026 15:35 uebermittelt) und Auftrag Damian ueber den Haupt-Agenten.
+(1) Paper-Trading = W2, W6 und Turtle 55/20, Spot long auf Kraken, Kosten K1. Vor dem Start ist eine Vorregistrierung (Freeze) Pflicht.
+(2) XS21 wird nicht in den Papierhandel aufgenommen (Perps mit Short-Bein noetig, D4 offen, Gate B6 ohne Schwellen).
+(3) U2 darf hoechstens als reine Schattenrechnung mitlaufen: oeffentliche Binance-Daten, keine Orders, auf Trade-Basis gerechnet, ohne Entscheidgewicht vor 12 Monaten.
+(4) D1 (Ort des Runners): Vorschlag, der Paper-Runner laeuft auf der Agent-Box, ohne Keys und ohne Orders. NOCH NICHT von Damian bestaetigt; Bestaetigung ausstehend.

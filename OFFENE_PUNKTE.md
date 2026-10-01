@@ -87,9 +87,15 @@ Sie nennt `mlib.py` noch als v0.1 (`cfe1f7aa…`), die Datei ist v1.0 (`6b7e7ba8
 - **Lauf erledigt** (01.10.2026, 14:35 Zürich): Netto-K1 der Primärzellen −8.47 R < 0. A7 greift: Lane A vollständig geschlossen. Bericht `01_forschung/11_delayed_trend/dt_pnl_v1.0/dt_pnl_v1.0_bericht.md`.
 - **Befund Kontrolldesign DT2:** Ersatzniveau-Kontrollen kommen fast nie zum Einstieg (`retest_failed`), deshalb ist ΔR für DT2 nicht messbar. Nur relevant bei einer allfälligen neuen Vorregistrierung mit Forward-Daten (A7).
 - **Vermerke Nachprüfung (ENTSCHEIDE 15:45):** `xs21_check.json` hat `gesamt_ok: false`, erklärt durch das fehlende U5a im Prüfskript und die K2-Delisting-Reibung (17/2 Ausstiege). Die Survivorship-Zerlegung je Block (A6) ist nach dem Lauf nachgetragen.
-- **Review Claude zum XS21-Lauf:** noch nicht abgelegt, weil der Text auf der Box nicht vorliegt. Ablageort, sobald geliefert: `01_forschung/09_lane_c/xs21_pit_v1.0/xs21_pit_v1.0_review_claude_v1.md`.
+- **Review Claude zum XS21-Lauf — ERLEDIGT (01.10.2026):** wörtlich abgelegt in `01_forschung/09_lane_c/xs21_pit_v1.0/xs21_pit_v1.0_review_claude_v1.md`. Folgerungen in ENTSCHEIDE 15:55: XS21 nicht im Paper, U2 höchstens als Schattenrechnung (öffentliche Binance-Daten, keine Orders, Trade-Basis, kein Entscheidgewicht vor 12 Monaten).
 
 ## OP-11 Ideen-Scan v1 (neu, 01.10.2026)
 
 - `01_forschung/12_ideen_scan/ideen_scan_v1.md` (Kopie `/workspace/aurum2/ideen/ideen_scan_v1.md`): Shortlist neuer Ansätze, explorative Checks nur bis 2023, nicht vorregistriert.
 - Vorregistrierungs-ENTWURF Funding-Carry v0.1 (nicht eingefroren). Entscheid Damian nötig, ob er weiterverfolgt wird; Steuerfrage D4 (Funding-Erträge, Derivate) vor jedem Live-Einsatz klären.
+
+## OP-12 Paper-Trading (neu, 01.10.2026)
+
+- Umfang festgelegt (ENTSCHEIDE 15:55): W2, W6, Turtle 55/20, Spot long Kraken, K1; Vorregistrierung vor dem Start Pflicht. XS21 nicht im Paper; U2 höchstens als Schattenrechnung.
+- **D1 offen, Bestätigung durch Damian nötig:** Vorschlag, der Runner läuft auf der Agent-Box, ohne Keys und ohne Orders.
+- Review höchstens 4 Monate nach dem Paper-Start (D3).
