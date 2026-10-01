@@ -101,3 +101,13 @@ Sie nennt `mlib.py` noch als v0.1 (`cfe1f7aa…`), die Datei ist v1.0 (`6b7e7ba8
 - **PAPER v1.0 eingefroren** (Tag `paper-v1.0-freeze`), Start mit Signalbar 2026-10-02 UTC; Runner `paper/`, cron 06:50 und Wochenbericht montags 07:10. Review spätestens 2027-02-02.
 - XS21-U2-Schattenrechnung: nicht umgesetzt (nicht günstig), optional später mit eigener Vorregistrierung.
 - Review höchstens 4 Monate nach dem Paper-Start (D3).
+
+## OP-11 CARRY_PREREG v0.9 (neu, 01.10.2026) — VERWORFEN (Damian 22:16)
+
+- **Erledigt durch Entscheid Damian 01.10.2026, 22:16:** Carry verworfen, Entwurf nur dokumentiert (ENTSCHEIDE 22:16, inkl. Deklaration der Vorbelastung). Die folgenden Punkte bleiben nur als Befund stehen.
+
+- `01_forschung/13_carry/carry_prereg_v0.9.md`: zur Review durch Claude (Fragen §13), danach Freigabe Damian. Nicht eingefroren, kein Lauf, keine Lauf-Daten beschafft.
+- **Korrektur der Ausgangslage (§0.1):** 2024+ ist für Carry nicht unberührt. Stufe 2 D-CC hat Binance-Carry 2020-01 bis 2026-09-14 bereits gerechnet (2024 +12 %, 2025 +3 %, 2026 +2 %), Kraken-Niveaus 2025/26 sind bekannt (+2.69 % / +3.05 %), und B5 erklärt 2024+ für D-CC als verbraucht. Lauf R ist deshalb nur «Discovery/Robustheit mit Vorbelastung»; konfirmatorisch ist nur das Forward-Fenster.
+- **Datenbefund:** Kraken-Funding-Endpunkt rollend ab 2025-10-01; Collector hält ab 2025-09-17; Original-Dateien ab 2025-09-10 fehlen (OP-4). Kraken-Charts (Mark, Index) ab 2022-03-22 öffentlich, Basis der Rekonstruktion K-rek mit Treue-Gate.
+- **Konflikt mit ENTSCHEIDE** 2026-09-15 («Funding ist Kostenposition») und F1 («D-CC nur Forward-Datensammlung»): formelle Wiederaufnahme durch Damian nötig (Frage 15).
+- Collector v1.2 (stündlich Mark und Index PF_XBTUSD/PF_ETHUSD) wäre für einen Paper-Betrieb nötig; nicht umgesetzt.

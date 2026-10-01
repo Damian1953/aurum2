@@ -4,6 +4,7 @@ Forschungsentscheide stehen weiterhin ausschliesslich in `00_doku/ENTSCHEIDE.md`
 
 ## 2026-10-01
 
+- CARRY_PREREG v0.9 `01_forschung/13_carry/carry_prereg_v0.9.md`: VERWORFEN (Damian 22:16), nicht eingefroren, nicht gelaufen; ENTSCHEIDE 22:16 mit Deklaration der Vorbelastung; OP-11.
 - Paper-Runner v1.0 (`paper/`), PAPER_PREREG_v1.0 eingefroren (Tag `paper-v1.0-freeze`), cron via `collector/ensure_scheduler.sh`, Wochenbericht; D1 entschieden.
 - Ideen-Scan v1 (`01_forschung/12_ideen_scan/`, explorativ, nicht vorregistriert) und Carry-Vorregistrierungs-Entwurf v0.1; D3 entschieden; XS21-Vermerke zur Nachpruefung (ENTSCHEIDE 15:45).
 - DT P&L v1.0: einziger Lauf, Pruefung, Bericht, A7-Eintrag (Lane A geschlossen); `00_doku/dt_pnl_run_2026-10-01_expected_shas.txt`, Tag `dt-pnl-v1.0-run`.
