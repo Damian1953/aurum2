@@ -1,0 +1,26 @@
+{
+ "BTC": {
+  "days": 349,
+  "sign_agreement": 0.845,
+  "corr": 0.795,
+  "cc_state_agreement": 0.59,
+  "mean_f7_kraken": 0.031,
+  "mean_f7_binance": 0.033
+ },
+ "ETH": {
+  "days": 349,
+  "sign_agreement": 0.883,
+  "corr": 0.794,
+  "cc_state_agreement": 0.997,
+  "mean_f7_kraken": 0.028,
+  "mean_f7_binance": 0.024
+ },
+ "SOL": {
+  "days": 349,
+  "sign_agreement": 0.788,
+  "corr": 0.833,
+  "cc_state_agreement": 0.831,
+  "mean_f7_kraken": -0.004,
+  "mean_f7_binance": -0.02
+ }
+}

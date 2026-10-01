@@ -1,0 +1,24 @@
+{
+ "coin": "XRP",
+ "spec": "rebound_micro_spec_v1.0.md",
+ "inputs": {
+  "spot1h": "2e169dbdf38fa79700a79b30231cdb9413674d85851f4b203f2464612c6f69ed",
+  "spot4h": "6fda0931ded268ac1af750a75aef7f08ed5c345d1b0e61ae2f26d282a7fbf453",
+  "mlib": "6b7e7ba888e17cac80705097dd36be93a3ee6204b6ea00bd6be6f0b042bfe938",
+  "rlib": "f1ffdbb81cad3115b7a975a435185b463c9d752bd86ee9f7b47ece3c4819b13c",
+  "simulate": "fef60859063dd8bc77505346bdc8c5b373e7e635e978feb4994f13160887ab8e"
+ },
+ "regression_vs_count_v0_1": "IDENTICAL",
+ "n_candidates": 156,
+ "n_events_full": 148,
+ "n_baseline_rows": 296,
+ "n_controls_rows": 44,
+ "n_ctrl_pool": 700,
+ "n_ctrl_candidates_M1": 118,
+ "seconds": 259,
+ "outputs": {
+  "trades": "b36d1c8be483d37061c8d1903825977508e73d5b43590c67c9bb248708e84231",
+  "baseline": "4957af3213cea596c878a3006316ea35fab7bb4ca1f0bb2fb33ee1594f517c7e",
+  "controls": "856a9be9b5c0dcc45dde97b961ef098cc95167b81c6d42dd9348f807f9045fb0"
+ }
+}

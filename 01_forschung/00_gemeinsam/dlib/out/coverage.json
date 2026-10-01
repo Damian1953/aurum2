@@ -1,0 +1,607 @@
+{
+ "BTC": [
+  {
+   "feature": "taker_imbalance",
+   "n_valid": 19890,
+   "share": 1.0,
+   "first_valid": "2017-08-17 04:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "volume_zscore",
+   "n_valid": 19830,
+   "share": 0.997,
+   "first_valid": "2017-08-27 04:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "trade_count_zscore",
+   "n_valid": 19830,
+   "share": 0.997,
+   "first_valid": "2017-08-27 04:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "taker_buy_zscore",
+   "n_valid": 19830,
+   "share": 0.997,
+   "first_valid": "2017-08-27 04:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "ti_delta6",
+   "n_valid": 19884,
+   "share": 1.0,
+   "first_valid": "2017-08-18 04:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "price_progress_per_taker_volume",
+   "n_valid": 19830,
+   "share": 0.997,
+   "first_valid": "2017-08-27 04:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "price_progress_per_volume",
+   "n_valid": 19830,
+   "share": 0.997,
+   "first_valid": "2017-08-27 04:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "perp_close",
+   "n_valid": 14705,
+   "share": 0.739,
+   "first_valid": "2020-01-01 00:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "spot_perp_basis",
+   "n_valid": 14705,
+   "share": 0.739,
+   "first_valid": "2020-01-01 00:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "taker_imbalance_perp",
+   "n_valid": 14705,
+   "share": 0.739,
+   "first_valid": "2020-01-01 00:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "basis_zscore",
+   "n_valid": 14525,
+   "share": 0.73,
+   "first_valid": "2020-01-31 00:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "funding_last",
+   "n_valid": 14705,
+   "share": 0.739,
+   "first_valid": "2020-01-01 00:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "funding_zscore",
+   "n_valid": 14166,
+   "share": 0.712,
+   "first_valid": "2020-03-31 00:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "funding_7d_ann",
+   "n_valid": 14665,
+   "share": 0.737,
+   "first_valid": "2020-01-07 16:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "open_interest",
+   "n_valid": 12499,
+   "share": 0.628,
+   "first_valid": "2021-01-01 00:00:00+00:00",
+   "last_valid": "2026-09-15 00:00:00+00:00"
+  },
+  {
+   "feature": "delta_open_interest",
+   "n_valid": 12469,
+   "share": 0.627,
+   "first_valid": "2021-01-06 00:00:00+00:00",
+   "last_valid": "2026-09-15 00:00:00+00:00"
+  },
+  {
+   "feature": "delta_oi_zscore",
+   "n_valid": 12109,
+   "share": 0.609,
+   "first_valid": "2021-03-07 00:00:00+00:00",
+   "last_valid": "2026-09-15 00:00:00+00:00"
+  }
+ ],
+ "XRP": [
+  {
+   "feature": "taker_imbalance",
+   "n_valid": 18337,
+   "share": 1.0,
+   "first_valid": "2018-05-04 08:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "volume_zscore",
+   "n_valid": 18277,
+   "share": 0.997,
+   "first_valid": "2018-05-14 08:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "trade_count_zscore",
+   "n_valid": 18277,
+   "share": 0.997,
+   "first_valid": "2018-05-14 08:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "taker_buy_zscore",
+   "n_valid": 18277,
+   "share": 0.997,
+   "first_valid": "2018-05-14 08:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "ti_delta6",
+   "n_valid": 18331,
+   "share": 1.0,
+   "first_valid": "2018-05-05 08:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "price_progress_per_taker_volume",
+   "n_valid": 18277,
+   "share": 0.997,
+   "first_valid": "2018-05-14 08:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "price_progress_per_volume",
+   "n_valid": 18277,
+   "share": 0.997,
+   "first_valid": "2018-05-14 08:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "perp_close",
+   "n_valid": 14643,
+   "share": 0.799,
+   "first_valid": "2020-01-06 08:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "spot_perp_basis",
+   "n_valid": 14643,
+   "share": 0.799,
+   "first_valid": "2020-01-06 08:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "taker_imbalance_perp",
+   "n_valid": 14643,
+   "share": 0.799,
+   "first_valid": "2020-01-06 08:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "basis_zscore",
+   "n_valid": 14103,
+   "share": 0.769,
+   "first_valid": "2020-02-05 08:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "funding_last",
+   "n_valid": 14673,
+   "share": 0.8,
+   "first_valid": "2020-01-06 08:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "funding_zscore",
+   "n_valid": 14134,
+   "share": 0.771,
+   "first_valid": "2020-04-05 08:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "funding_7d_ann",
+   "n_valid": 14633,
+   "share": 0.798,
+   "first_valid": "2020-01-13 00:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "open_interest",
+   "n_valid": 10495,
+   "share": 0.572,
+   "first_valid": "2021-12-01 00:00:00+00:00",
+   "last_valid": "2026-09-15 00:00:00+00:00"
+  },
+  {
+   "feature": "delta_open_interest",
+   "n_valid": 10465,
+   "share": 0.571,
+   "first_valid": "2021-12-06 00:00:00+00:00",
+   "last_valid": "2026-09-15 00:00:00+00:00"
+  },
+  {
+   "feature": "delta_oi_zscore",
+   "n_valid": 10105,
+   "share": 0.551,
+   "first_valid": "2022-02-04 00:00:00+00:00",
+   "last_valid": "2026-09-15 00:00:00+00:00"
+  }
+ ],
+ "DOT": [
+  {
+   "feature": "taker_imbalance",
+   "n_valid": 13321,
+   "share": 1.0,
+   "first_valid": "2020-08-18 20:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "volume_zscore",
+   "n_valid": 13261,
+   "share": 0.995,
+   "first_valid": "2020-08-28 20:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "trade_count_zscore",
+   "n_valid": 13261,
+   "share": 0.995,
+   "first_valid": "2020-08-28 20:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "taker_buy_zscore",
+   "n_valid": 13261,
+   "share": 0.995,
+   "first_valid": "2020-08-28 20:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "ti_delta6",
+   "n_valid": 13315,
+   "share": 1.0,
+   "first_valid": "2020-08-19 20:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "price_progress_per_taker_volume",
+   "n_valid": 13261,
+   "share": 0.995,
+   "first_valid": "2020-08-28 20:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "price_progress_per_volume",
+   "n_valid": 13261,
+   "share": 0.995,
+   "first_valid": "2020-08-28 20:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "perp_close",
+   "n_valid": 13301,
+   "share": 0.998,
+   "first_valid": "2020-08-22 04:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "spot_perp_basis",
+   "n_valid": 13301,
+   "share": 0.998,
+   "first_valid": "2020-08-22 04:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "taker_imbalance_perp",
+   "n_valid": 13301,
+   "share": 0.998,
+   "first_valid": "2020-08-22 04:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "basis_zscore",
+   "n_valid": 13121,
+   "share": 0.985,
+   "first_valid": "2020-09-21 04:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "funding_last",
+   "n_valid": 13312,
+   "share": 0.999,
+   "first_valid": "2020-08-20 08:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "funding_zscore",
+   "n_valid": 12772,
+   "share": 0.959,
+   "first_valid": "2020-11-18 08:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "funding_7d_ann",
+   "n_valid": 13272,
+   "share": 0.996,
+   "first_valid": "2020-08-27 00:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "open_interest",
+   "n_valid": 10495,
+   "share": 0.788,
+   "first_valid": "2021-12-01 00:00:00+00:00",
+   "last_valid": "2026-09-15 00:00:00+00:00"
+  },
+  {
+   "feature": "delta_open_interest",
+   "n_valid": 10465,
+   "share": 0.786,
+   "first_valid": "2021-12-06 00:00:00+00:00",
+   "last_valid": "2026-09-15 00:00:00+00:00"
+  },
+  {
+   "feature": "delta_oi_zscore",
+   "n_valid": 10105,
+   "share": 0.759,
+   "first_valid": "2022-02-04 00:00:00+00:00",
+   "last_valid": "2026-09-15 00:00:00+00:00"
+  }
+ ],
+ "ETH": [
+  {
+   "feature": "taker_imbalance",
+   "n_valid": 19890,
+   "share": 1.0,
+   "first_valid": "2017-08-17 04:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "volume_zscore",
+   "n_valid": 19830,
+   "share": 0.997,
+   "first_valid": "2017-08-27 04:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "trade_count_zscore",
+   "n_valid": 19830,
+   "share": 0.997,
+   "first_valid": "2017-08-27 04:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "taker_buy_zscore",
+   "n_valid": 19830,
+   "share": 0.997,
+   "first_valid": "2017-08-27 04:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "ti_delta6",
+   "n_valid": 19884,
+   "share": 1.0,
+   "first_valid": "2017-08-18 04:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "price_progress_per_taker_volume",
+   "n_valid": 19830,
+   "share": 0.997,
+   "first_valid": "2017-08-27 04:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "price_progress_per_volume",
+   "n_valid": 19830,
+   "share": 0.997,
+   "first_valid": "2017-08-27 04:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "perp_close",
+   "n_valid": 14705,
+   "share": 0.739,
+   "first_valid": "2020-01-01 00:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "spot_perp_basis",
+   "n_valid": 14705,
+   "share": 0.739,
+   "first_valid": "2020-01-01 00:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "taker_imbalance_perp",
+   "n_valid": 14705,
+   "share": 0.739,
+   "first_valid": "2020-01-01 00:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "basis_zscore",
+   "n_valid": 14525,
+   "share": 0.73,
+   "first_valid": "2020-01-31 00:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "funding_last",
+   "n_valid": 14705,
+   "share": 0.739,
+   "first_valid": "2020-01-01 00:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "funding_zscore",
+   "n_valid": 14166,
+   "share": 0.712,
+   "first_valid": "2020-03-31 00:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "funding_7d_ann",
+   "n_valid": 14665,
+   "share": 0.737,
+   "first_valid": "2020-01-07 16:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "open_interest",
+   "n_valid": 10495,
+   "share": 0.528,
+   "first_valid": "2021-12-01 00:00:00+00:00",
+   "last_valid": "2026-09-15 00:00:00+00:00"
+  },
+  {
+   "feature": "delta_open_interest",
+   "n_valid": 10465,
+   "share": 0.526,
+   "first_valid": "2021-12-06 00:00:00+00:00",
+   "last_valid": "2026-09-15 00:00:00+00:00"
+  },
+  {
+   "feature": "delta_oi_zscore",
+   "n_valid": 10105,
+   "share": 0.508,
+   "first_valid": "2022-02-04 00:00:00+00:00",
+   "last_valid": "2026-09-15 00:00:00+00:00"
+  }
+ ],
+ "SOL": [
+  {
+   "feature": "taker_imbalance",
+   "n_valid": 13367,
+   "share": 1.0,
+   "first_valid": "2020-08-11 04:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "volume_zscore",
+   "n_valid": 13307,
+   "share": 0.996,
+   "first_valid": "2020-08-21 04:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "trade_count_zscore",
+   "n_valid": 13307,
+   "share": 0.996,
+   "first_valid": "2020-08-21 04:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "taker_buy_zscore",
+   "n_valid": 13307,
+   "share": 0.996,
+   "first_valid": "2020-08-21 04:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "ti_delta6",
+   "n_valid": 13361,
+   "share": 1.0,
+   "first_valid": "2020-08-12 04:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "price_progress_per_taker_volume",
+   "n_valid": 13307,
+   "share": 0.996,
+   "first_valid": "2020-08-21 04:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "price_progress_per_volume",
+   "n_valid": 13307,
+   "share": 0.996,
+   "first_valid": "2020-08-21 04:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "perp_close",
+   "n_valid": 13133,
+   "share": 0.982,
+   "first_valid": "2020-09-14 04:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "spot_perp_basis",
+   "n_valid": 13133,
+   "share": 0.982,
+   "first_valid": "2020-09-14 04:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "taker_imbalance_perp",
+   "n_valid": 13133,
+   "share": 0.982,
+   "first_valid": "2020-09-14 04:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "basis_zscore",
+   "n_valid": 12593,
+   "share": 0.942,
+   "first_valid": "2020-10-14 04:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "funding_last",
+   "n_valid": 13166,
+   "share": 0.985,
+   "first_valid": "2020-09-13 16:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "funding_zscore",
+   "n_valid": 12626,
+   "share": 0.945,
+   "first_valid": "2020-12-12 16:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "funding_7d_ann",
+   "n_valid": 13126,
+   "share": 0.982,
+   "first_valid": "2020-09-20 08:00:00+00:00",
+   "last_valid": "2026-09-16 20:00:00+00:00"
+  },
+  {
+   "feature": "open_interest",
+   "n_valid": 10495,
+   "share": 0.785,
+   "first_valid": "2021-12-01 00:00:00+00:00",
+   "last_valid": "2026-09-15 00:00:00+00:00"
+  },
+  {
+   "feature": "delta_open_interest",
+   "n_valid": 10465,
+   "share": 0.783,
+   "first_valid": "2021-12-06 00:00:00+00:00",
+   "last_valid": "2026-09-15 00:00:00+00:00"
+  },
+  {
+   "feature": "delta_oi_zscore",
+   "n_valid": 10105,
+   "share": 0.756,
+   "first_valid": "2022-02-04 00:00:00+00:00",
+   "last_valid": "2026-09-15 00:00:00+00:00"
+  }
+ ]
+}

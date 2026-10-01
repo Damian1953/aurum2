@@ -1,0 +1,83 @@
+{
+ "BTC": {
+  "cost_R_K0_median": 0.29,
+  "pbe_q0_K0_median": 0.48,
+  "pbe_q1_K0_median": 0.301,
+  "rr_q0_K0_median": 0.901,
+  "rr_q0_K0_share_pos": 0.897,
+  "cost_R_K1_median": 0.897,
+  "pbe_q0_K1_median": 0.643,
+  "pbe_q1_K1_median": 0.355,
+  "rr_q0_K1_median": 0.288,
+  "rr_q0_K1_share_pos": 0.644,
+  "cost_R_K2_median": 1.966,
+  "pbe_q0_K2_median": 0.716,
+  "pbe_q1_K2_median": 0.464,
+  "rr_q0_K2_median": -0.155,
+  "rr_q0_K2_share_pos": 0.368,
+  "cells": {
+   "M1xQ0": 84,
+   "M1xQ1": 80,
+   "M2xQ0": 3,
+   "M2xQ1": 3,
+   "M3xQ0": 0,
+   "M3xQ1": 1
+  },
+  "R_pct_of_price_median": 1.104,
+  "atr4_pct_median": 1.974
+ },
+ "XRP": {
+  "cost_R_K0_median": 0.282,
+  "pbe_q0_K0_median": 0.458,
+  "pbe_q1_K0_median": 0.296,
+  "rr_q0_K0_median": 1.036,
+  "rr_q0_K0_share_pos": 0.843,
+  "cost_R_K1_median": 0.873,
+  "pbe_q0_K1_median": 0.589,
+  "pbe_q1_K1_median": 0.312,
+  "rr_q0_K1_median": 0.343,
+  "rr_q0_K1_share_pos": 0.743,
+  "cost_R_K2_median": 1.914,
+  "pbe_q0_K2_median": 0.738,
+  "pbe_q1_K2_median": 0.369,
+  "rr_q0_K2_median": -0.032,
+  "rr_q0_K2_share_pos": 0.486,
+  "cells": {
+   "M1xQ0": 64,
+   "M1xQ1": 69,
+   "M2xQ0": 4,
+   "M2xQ1": 4,
+   "M3xQ0": 2,
+   "M3xQ1": 6
+  },
+  "R_pct_of_price_median": 1.134,
+  "atr4_pct_median": 2.546
+ },
+ "DOT": {
+  "cost_R_K0_median": 0.219,
+  "pbe_q0_K0_median": 0.445,
+  "pbe_q1_K0_median": 0.298,
+  "rr_q0_K0_median": 1.202,
+  "rr_q0_K0_share_pos": 0.955,
+  "cost_R_K1_median": 0.677,
+  "pbe_q0_K1_median": 0.594,
+  "pbe_q1_K1_median": 0.357,
+  "rr_q0_K1_median": 0.489,
+  "rr_q0_K1_share_pos": 0.864,
+  "cost_R_K2_median": 1.484,
+  "pbe_q0_K2_median": 0.561,
+  "pbe_q1_K2_median": 0.412,
+  "rr_q0_K2_median": 0.116,
+  "rr_q0_K2_share_pos": 0.568,
+  "cells": {
+   "M1xQ0": 37,
+   "M1xQ1": 42,
+   "M2xQ0": 3,
+   "M2xQ1": 2,
+   "M3xQ0": 4,
+   "M3xQ1": 3
+  },
+  "R_pct_of_price_median": 1.463,
+  "atr4_pct_median": 2.757
+ }
+}

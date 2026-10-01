@@ -1,0 +1,137 @@
+{
+ "BTC": {
+  "K0": {
+   "n": 98,
+   "cost_R_med": 0.29,
+   "cost_R_p25": 0.215,
+   "cost_R_p75": 0.481,
+   "rr_q0_med": 0.908,
+   "pbe_q0_med": 0.476,
+   "n_q0": 84,
+   "n_q0_rrpos": 75,
+   "rr_q1_med": 2.173,
+   "pbe_q1_med": 0.297,
+   "n_q1": 80
+  },
+  "K1": {
+   "n": 98,
+   "cost_R_med": 0.897,
+   "cost_R_p25": 0.665,
+   "cost_R_p75": 1.489,
+   "rr_q0_med": 0.288,
+   "pbe_q0_med": 0.643,
+   "n_q0": 84,
+   "n_q0_rrpos": 54,
+   "rr_q1_med": 1.068,
+   "pbe_q1_med": 0.347,
+   "n_q1": 80
+  },
+  "K2": {
+   "n": 98,
+   "cost_R_med": 1.966,
+   "cost_R_p25": 1.459,
+   "cost_R_p75": 3.263,
+   "rr_q0_med": -0.163,
+   "pbe_q0_med": 0.714,
+   "n_q0": 84,
+   "n_q0_rrpos": 31,
+   "rr_q1_med": 0.401,
+   "pbe_q1_med": 0.477,
+   "n_q1": 80
+  },
+  "pooled_all_mech_K1": {
+   "n": 102,
+   "cost_R_med": 0.897
+  }
+ },
+ "XRP": {
+  "K0": {
+   "n": 79,
+   "cost_R_med": 0.284,
+   "cost_R_p25": 0.192,
+   "cost_R_p75": 0.398,
+   "rr_q0_med": 1.087,
+   "pbe_q0_med": 0.436,
+   "n_q0": 64,
+   "n_q0_rrpos": 55,
+   "rr_q1_med": 1.869,
+   "pbe_q1_med": 0.301,
+   "n_q1": 69
+  },
+  "K1": {
+   "n": 79,
+   "cost_R_med": 0.88,
+   "cost_R_p25": 0.595,
+   "cost_R_p75": 1.232,
+   "rr_q0_med": 0.348,
+   "pbe_q0_med": 0.577,
+   "n_q0": 64,
+   "n_q0_rrpos": 49,
+   "rr_q1_med": 1.093,
+   "pbe_q1_med": 0.278,
+   "n_q1": 69
+  },
+  "K2": {
+   "n": 79,
+   "cost_R_med": 1.928,
+   "cost_R_p25": 1.304,
+   "cost_R_p75": 2.701,
+   "rr_q0_med": -0.007,
+   "pbe_q0_med": 0.724,
+   "n_q0": 64,
+   "n_q0_rrpos": 32,
+   "rr_q1_med": 0.529,
+   "pbe_q1_med": 0.336,
+   "n_q1": 69
+  },
+  "pooled_all_mech_K1": {
+   "n": 90,
+   "cost_R_med": 0.873
+  }
+ },
+ "DOT": {
+  "K0": {
+   "n": 46,
+   "cost_R_med": 0.253,
+   "cost_R_p25": 0.115,
+   "cost_R_p75": 0.362,
+   "rr_q0_med": 1.239,
+   "pbe_q0_med": 0.444,
+   "n_q0": 37,
+   "n_q0_rrpos": 35,
+   "rr_q1_med": 2.365,
+   "pbe_q1_med": 0.266,
+   "n_q1": 42
+  },
+  "K1": {
+   "n": 46,
+   "cost_R_med": 0.784,
+   "cost_R_p25": 0.355,
+   "cost_R_p75": 1.121,
+   "rr_q0_med": 0.489,
+   "pbe_q0_med": 0.594,
+   "n_q0": 37,
+   "n_q0_rrpos": 32,
+   "rr_q1_med": 1.54,
+   "pbe_q1_med": 0.318,
+   "n_q1": 42
+  },
+  "K2": {
+   "n": 46,
+   "cost_R_med": 1.718,
+   "cost_R_p25": 0.777,
+   "cost_R_p75": 2.456,
+   "rr_q0_med": 0.139,
+   "pbe_q0_med": 0.578,
+   "n_q0": 37,
+   "n_q0_rrpos": 22,
+   "rr_q1_med": 0.755,
+   "pbe_q1_med": 0.391,
+   "n_q1": 42
+  },
+  "pooled_all_mech_K1": {
+   "n": 55,
+   "cost_R_med": 0.677
+  }
+ }
+}

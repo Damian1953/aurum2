@@ -1,0 +1,16 @@
+t,retest,retest_hold,retest_bars,hl,hl_bars,hl_before_nh,bo,bo_bars,new_high,nh_bars,invalid,inv_bars,retest_then_nh,hl_then_nh,bo_then_nh
+383,True,True,1,True,8.0,True,True,29.0,True,29.0,False,,True,True,True
+559,True,True,36,True,7.0,False,True,23.0,True,1.0,False,,False,False,False
+1503,True,True,1,True,11.0,True,True,21.0,True,112.0,False,,True,True,True
+1800,True,True,2,True,11.0,True,False,,False,,True,33.0,False,False,False
+2451,True,True,1,True,10.0,True,True,36.0,True,74.0,False,,True,True,True
+2854,True,True,1,True,5.0,True,False,,False,,True,48.0,False,False,False
+3185,True,True,1,True,17.0,True,True,26.0,False,,False,,False,False,False
+3404,True,True,1,True,29.0,True,True,46.0,True,78.0,False,,True,True,True
+3636,True,True,1,True,15.0,True,True,20.0,False,,True,8.0,False,False,False
+3654,True,True,1,True,12.0,True,False,,False,,True,40.0,False,False,False
+3743,True,False,5,False,,False,False,,False,,True,5.0,False,False,False
+4787,True,True,13,True,5.0,True,True,20.0,True,20.0,False,,True,True,True
+5160,True,False,1,True,43.0,True,True,49.0,True,109.0,True,8.0,False,True,True
+5883,True,False,2,True,20.0,True,False,,False,,True,2.0,False,False,False
+5938,True,True,1,False,,False,False,,False,,True,6.0,False,False,False

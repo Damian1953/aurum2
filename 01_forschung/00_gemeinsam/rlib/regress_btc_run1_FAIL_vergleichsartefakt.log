@@ -1,0 +1,207 @@
+Kandidaten 388 s
+ok   Kandidaten Y1/Y3: Zeilenzahl 13816 vs 13816
+ok   Kandidaten Y1/Y3: t exakt 
+ok   Kandidaten Y1/Y3: ctx exakt 
+ok   Kandidaten Y1/Y3: y1 exakt 
+ok   Kandidaten Y1/Y3: y3 exakt 
+ok   Kandidaten Y1/Y3: fb_any exakt 
+ok   Kandidaten Y1/Y3: y3_any exakt 
+FAIL Kandidaten Y1/Y3: y1_levels exakt 
+ok   Kandidaten Y1/Y3: lv_swing NaN-Muster 
+ok   Kandidaten Y1/Y3: lv_swing |diff|<=tol max|diff|=0.000e+00
+ok   Kandidaten Y1/Y3: lv_nbar NaN-Muster 
+ok   Kandidaten Y1/Y3: lv_nbar |diff|<=tol max|diff|=0.000e+00
+ok   Kandidaten Y1/Y3: lv_zone NaN-Muster 
+ok   Kandidaten Y1/Y3: lv_zone |diff|<=tol max|diff|=7.276e-12
+ok   Kandidaten Y1 Anzahl 96 vs 96
+ok   Kandidaten Y3 Anzahl 29 vs 29
+ok   Kandidaten Y2: Zeilenzahl 425 vs 425
+ok   Kandidaten Y2: t exakt 
+ok   Kandidaten Y2: s1 exakt 
+ok   Kandidaten Y2: s2 exakt 
+ok   Kandidaten Y2: h1 exakt 
+ok   Kandidaten Y2: ctx exakt 
+ok   Kandidaten Y2: triple exakt 
+ok   Kandidaten Y2: gyaku exakt 
+ok   Kandidaten Y2: dup exakt 
+ok   Kandidaten Y2: y2 exakt 
+ok   Kandidaten Y2: neck NaN-Muster 
+ok   Kandidaten Y2: neck |diff|<=tol max|diff|=0.000e+00
+ok   Y1 K0: n und mean r_net (3 Dez.) wie eval_stufeA.json 16/-0.094 vs 16/-0.094
+ok   Y1 K1: n und mean r_net (3 Dez.) wie eval_stufeA.json 16/-0.229 vs 16/-0.229
+ok   Y1 K2: n und mean r_net (3 Dez.) wie eval_stufeA.json 16/-0.457 vs 16/-0.457
+ok   Trades Y1 K1: Zeilenzahl 16 vs 16
+ok   Trades Y1 K1: t exakt 
+ok   Trades Y1 K1: e exakt 
+ok   Trades Y1 K1: x exakt 
+ok   Trades Y1 K1: bars exakt 
+ok   Trades Y1 K1: reason exakt 
+ok   Trades Y1 K1: entry NaN-Muster 
+ok   Trades Y1 K1: entry |diff|<=tol max|diff|=7.276e-12
+ok   Trades Y1 K1: stop0 NaN-Muster 
+ok   Trades Y1 K1: stop0 |diff|<=tol max|diff|=7.276e-12
+ok   Trades Y1 K1: R NaN-Muster 
+ok   Trades Y1 K1: R |diff|<=tol max|diff|=2.274e-13
+ok   Trades Y1 K1: exit NaN-Muster 
+ok   Trades Y1 K1: exit |diff|<=tol max|diff|=7.276e-12
+ok   Trades Y1 K1: r_net NaN-Muster 
+ok   Trades Y1 K1: r_net |diff|<=tol max|diff|=1.110e-16
+ok   Trades Y1 K1: r_gross NaN-Muster 
+ok   Trades Y1 K1: r_gross |diff|<=tol max|diff|=2.220e-16
+ok   Trades Y1 K1: mfe_r NaN-Muster 
+ok   Trades Y1 K1: mfe_r |diff|<=tol max|diff|=9.021e-17
+ok   Trades Y1 K1: mae_r NaN-Muster 
+ok   Trades Y1 K1: mae_r |diff|<=tol max|diff|=1.110e-16
+ok   Trades Y1 K1: stop_dist_atr NaN-Muster 
+ok   Trades Y1 K1: stop_dist_atr |diff|<=tol max|diff|=4.441e-16
+ok   Kontrollen Y1 alle Zeilen: Zeilenzahl 37 vs 37
+ok   Kontrollen Y1 alle Zeilen: sig_t exakt 
+ok   Kontrollen Y1 alle Zeilen: ctrl_t exakt 
+ok   Kontrollen Y1 alle Zeilen: status exakt 
+ok   Kontrollen Y1 gehandelt: Zeilenzahl 9 vs 9
+ok   Kontrollen Y1 gehandelt: e exakt 
+ok   Kontrollen Y1 gehandelt: x exakt 
+ok   Kontrollen Y1 gehandelt: bars exakt 
+ok   Kontrollen Y1 gehandelt: t exakt 
+ok   Kontrollen Y1 gehandelt: reason exakt 
+ok   Kontrollen Y1 gehandelt: entry NaN-Muster 
+ok   Kontrollen Y1 gehandelt: entry |diff|<=tol max|diff|=7.276e-12
+ok   Kontrollen Y1 gehandelt: stop0 NaN-Muster 
+ok   Kontrollen Y1 gehandelt: stop0 |diff|<=tol max|diff|=3.638e-12
+ok   Kontrollen Y1 gehandelt: R NaN-Muster 
+ok   Kontrollen Y1 gehandelt: R |diff|<=tol max|diff|=0.000e+00
+ok   Kontrollen Y1 gehandelt: exit NaN-Muster 
+ok   Kontrollen Y1 gehandelt: exit |diff|<=tol max|diff|=7.276e-12
+ok   Kontrollen Y1 gehandelt: r_net NaN-Muster 
+ok   Kontrollen Y1 gehandelt: r_net |diff|<=tol max|diff|=1.110e-16
+ok   Kontrollen Y1 gehandelt: r_gross NaN-Muster 
+ok   Kontrollen Y1 gehandelt: r_gross |diff|<=tol max|diff|=1.110e-16
+ok   Kontrollen Y1 gehandelt: mfe_r NaN-Muster 
+ok   Kontrollen Y1 gehandelt: mfe_r |diff|<=tol max|diff|=3.469e-17
+ok   Kontrollen Y1 gehandelt: mae_r NaN-Muster 
+ok   Kontrollen Y1 gehandelt: mae_r |diff|<=tol max|diff|=8.327e-17
+ok   Paare Y1: Zeilenzahl 8 vs 8
+ok   Paare Y1: t exakt 
+ok   Paare Y1: n_ctrl exakt 
+ok   Paare Y1: d_r NaN-Muster 
+ok   Paare Y1: d_r |diff|<=tol max|diff|=2.220e-16
+ok   Y1: Kontrollen matched/traded wie eval_stufeA.json 16/9 vs 16/9
+ok   Y2 K0: n und mean r_net (3 Dez.) wie eval_stufeA.json 14/-0.219 vs 14/-0.219
+ok   Y2 K1: n und mean r_net (3 Dez.) wie eval_stufeA.json 14/-0.297 vs 14/-0.297
+ok   Y2 K2: n und mean r_net (3 Dez.) wie eval_stufeA.json 14/-0.43 vs 14/-0.43
+ok   Trades Y2 K1: Zeilenzahl 14 vs 14
+ok   Trades Y2 K1: t exakt 
+ok   Trades Y2 K1: e exakt 
+ok   Trades Y2 K1: x exakt 
+ok   Trades Y2 K1: bars exakt 
+ok   Trades Y2 K1: reason exakt 
+ok   Trades Y2 K1: entry NaN-Muster 
+ok   Trades Y2 K1: entry |diff|<=tol max|diff|=3.638e-12
+ok   Trades Y2 K1: stop0 NaN-Muster 
+ok   Trades Y2 K1: stop0 |diff|<=tol max|diff|=3.638e-12
+ok   Trades Y2 K1: R NaN-Muster 
+ok   Trades Y2 K1: R |diff|<=tol max|diff|=4.547e-13
+ok   Trades Y2 K1: exit NaN-Muster 
+ok   Trades Y2 K1: exit |diff|<=tol max|diff|=3.638e-12
+ok   Trades Y2 K1: r_net NaN-Muster 
+ok   Trades Y2 K1: r_net |diff|<=tol max|diff|=5.551e-17
+ok   Trades Y2 K1: r_gross NaN-Muster 
+ok   Trades Y2 K1: r_gross |diff|<=tol max|diff|=7.459e-17
+ok   Trades Y2 K1: mfe_r NaN-Muster 
+ok   Trades Y2 K1: mfe_r |diff|<=tol max|diff|=2.220e-16
+ok   Trades Y2 K1: mae_r NaN-Muster 
+ok   Trades Y2 K1: mae_r |diff|<=tol max|diff|=8.327e-17
+ok   Trades Y2 K1: stop_dist_atr NaN-Muster 
+ok   Trades Y2 K1: stop_dist_atr |diff|<=tol max|diff|=0.000e+00
+ok   Kontrollen Y2 alle Zeilen: Zeilenzahl 32 vs 32
+ok   Kontrollen Y2 alle Zeilen: sig_t exakt 
+ok   Kontrollen Y2 alle Zeilen: ctrl_t exakt 
+ok   Kontrollen Y2 alle Zeilen: status exakt 
+ok   Kontrollen Y2 gehandelt: Zeilenzahl 7 vs 7
+ok   Kontrollen Y2 gehandelt: e exakt 
+ok   Kontrollen Y2 gehandelt: x exakt 
+ok   Kontrollen Y2 gehandelt: bars exakt 
+ok   Kontrollen Y2 gehandelt: t exakt 
+ok   Kontrollen Y2 gehandelt: reason exakt 
+ok   Kontrollen Y2 gehandelt: entry NaN-Muster 
+ok   Kontrollen Y2 gehandelt: entry |diff|<=tol max|diff|=0.000e+00
+ok   Kontrollen Y2 gehandelt: stop0 NaN-Muster 
+ok   Kontrollen Y2 gehandelt: stop0 |diff|<=tol max|diff|=0.000e+00
+ok   Kontrollen Y2 gehandelt: R NaN-Muster 
+ok   Kontrollen Y2 gehandelt: R |diff|<=tol max|diff|=4.547e-13
+ok   Kontrollen Y2 gehandelt: exit NaN-Muster 
+ok   Kontrollen Y2 gehandelt: exit |diff|<=tol max|diff|=0.000e+00
+ok   Kontrollen Y2 gehandelt: r_net NaN-Muster 
+ok   Kontrollen Y2 gehandelt: r_net |diff|<=tol max|diff|=0.000e+00
+ok   Kontrollen Y2 gehandelt: r_gross NaN-Muster 
+ok   Kontrollen Y2 gehandelt: r_gross |diff|<=tol max|diff|=2.220e-16
+ok   Kontrollen Y2 gehandelt: mfe_r NaN-Muster 
+ok   Kontrollen Y2 gehandelt: mfe_r |diff|<=tol max|diff|=8.327e-17
+ok   Kontrollen Y2 gehandelt: mae_r NaN-Muster 
+ok   Kontrollen Y2 gehandelt: mae_r |diff|<=tol max|diff|=5.551e-17
+ok   Paare Y2: Zeilenzahl 6 vs 6
+ok   Paare Y2: t exakt 
+ok   Paare Y2: n_ctrl exakt 
+ok   Paare Y2: d_r NaN-Muster 
+ok   Paare Y2: d_r |diff|<=tol max|diff|=5.551e-17
+ok   Y2: Kontrollen matched/traded wie eval_stufeA.json 14/7 vs 14/7
+ok   Y3 K0: n und mean r_net (3 Dez.) wie eval_stufeA.json 6/-0.212 vs 6/-0.212
+ok   Y3 K1: n und mean r_net (3 Dez.) wie eval_stufeA.json 6/-0.291 vs 6/-0.291
+ok   Y3 K2: n und mean r_net (3 Dez.) wie eval_stufeA.json 6/-0.428 vs 6/-0.428
+ok   Trades Y3 K1: Zeilenzahl 6 vs 6
+ok   Trades Y3 K1: t exakt 
+ok   Trades Y3 K1: e exakt 
+ok   Trades Y3 K1: x exakt 
+ok   Trades Y3 K1: bars exakt 
+ok   Trades Y3 K1: reason exakt 
+ok   Trades Y3 K1: entry NaN-Muster 
+ok   Trades Y3 K1: entry |diff|<=tol max|diff|=3.638e-12
+ok   Trades Y3 K1: stop0 NaN-Muster 
+ok   Trades Y3 K1: stop0 |diff|<=tol max|diff|=3.638e-12
+ok   Trades Y3 K1: R NaN-Muster 
+ok   Trades Y3 K1: R |diff|<=tol max|diff|=0.000e+00
+ok   Trades Y3 K1: exit NaN-Muster 
+ok   Trades Y3 K1: exit |diff|<=tol max|diff|=7.276e-12
+ok   Trades Y3 K1: r_net NaN-Muster 
+ok   Trades Y3 K1: r_net |diff|<=tol max|diff|=1.110e-16
+ok   Trades Y3 K1: r_gross NaN-Muster 
+ok   Trades Y3 K1: r_gross |diff|<=tol max|diff|=0.000e+00
+ok   Trades Y3 K1: mfe_r NaN-Muster 
+ok   Trades Y3 K1: mfe_r |diff|<=tol max|diff|=5.551e-17
+ok   Trades Y3 K1: mae_r NaN-Muster 
+ok   Trades Y3 K1: mae_r |diff|<=tol max|diff|=0.000e+00
+ok   Trades Y3 K1: stop_dist_atr NaN-Muster 
+ok   Trades Y3 K1: stop_dist_atr |diff|<=tol max|diff|=4.441e-16
+ok   Kontrollen Y3 alle Zeilen: Zeilenzahl 6 vs 6
+ok   Kontrollen Y3 alle Zeilen: sig_t exakt 
+ok   Kontrollen Y3 alle Zeilen: ctrl_t exakt 
+ok   Kontrollen Y3 alle Zeilen: status exakt 
+ok   Kontrollen Y3 gehandelt: Zeilenzahl 1 vs 1
+ok   Kontrollen Y3 gehandelt: e exakt 
+ok   Kontrollen Y3 gehandelt: x exakt 
+ok   Kontrollen Y3 gehandelt: bars exakt 
+ok   Kontrollen Y3 gehandelt: t exakt 
+ok   Kontrollen Y3 gehandelt: reason exakt 
+ok   Kontrollen Y3 gehandelt: entry NaN-Muster 
+ok   Kontrollen Y3 gehandelt: entry |diff|<=tol max|diff|=0.000e+00
+ok   Kontrollen Y3 gehandelt: stop0 NaN-Muster 
+ok   Kontrollen Y3 gehandelt: stop0 |diff|<=tol max|diff|=3.638e-12
+ok   Kontrollen Y3 gehandelt: R NaN-Muster 
+ok   Kontrollen Y3 gehandelt: R |diff|<=tol max|diff|=0.000e+00
+ok   Kontrollen Y3 gehandelt: exit NaN-Muster 
+ok   Kontrollen Y3 gehandelt: exit |diff|<=tol max|diff|=3.638e-12
+ok   Kontrollen Y3 gehandelt: r_net NaN-Muster 
+ok   Kontrollen Y3 gehandelt: r_net |diff|<=tol max|diff|=0.000e+00
+ok   Kontrollen Y3 gehandelt: r_gross NaN-Muster 
+ok   Kontrollen Y3 gehandelt: r_gross |diff|<=tol max|diff|=1.110e-16
+ok   Kontrollen Y3 gehandelt: mfe_r NaN-Muster 
+ok   Kontrollen Y3 gehandelt: mfe_r |diff|<=tol max|diff|=0.000e+00
+ok   Kontrollen Y3 gehandelt: mae_r NaN-Muster 
+ok   Kontrollen Y3 gehandelt: mae_r |diff|<=tol max|diff|=0.000e+00
+ok   Paare Y3: Zeilenzahl 1 vs 1
+ok   Paare Y3: t exakt 
+ok   Paare Y3: n_ctrl exakt 
+ok   Paare Y3: d_r NaN-Muster 
+ok   Paare Y3: d_r |diff|<=tol max|diff|=0.000e+00
+ok   Y3: Kontrollen matched/traded wie eval_stufeA.json 6/1 vs 6/1
+REGRESSION FAIL {'Y1': {'signals': 16, 'controls_traded': 9, 'pairs': 8}, 'Y2': {'signals': 14, 'controls_traded': 7, 'pairs': 6}, 'Y3': {'signals': 6, 'controls_traded': 1, 'pairs': 1}} 388 s

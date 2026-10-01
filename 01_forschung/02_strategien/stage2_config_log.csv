@@ -1,0 +1,986 @@
+variant,config,side,coin,params,n_trades,active_from
+W0,base,L,BTC,"{""N"": 0, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""cross"", ""sma_n"": 200}",31,2018-03-04
+W0,base,L,ETH,"{""N"": 0, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""cross"", ""sma_n"": 200}",26,2018-03-04
+W0,base,L,SOL,"{""N"": 0, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""cross"", ""sma_n"": 200}",20,2021-02-26
+W0,base,L,XRP,"{""N"": 0, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""cross"", ""sma_n"": 200}",47,2018-11-19
+W0,base,L,ADA,"{""N"": 0, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""cross"", ""sma_n"": 200}",34,2018-11-02
+W0,base,L,AVAX,"{""N"": 0, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""cross"", ""sma_n"": 200}",28,2021-04-09
+W0,base,L,LINK,"{""N"": 0, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""cross"", ""sma_n"": 200}",44,2019-08-03
+W0,base,L,DOT,"{""N"": 0, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""cross"", ""sma_n"": 200}",40,2021-03-05
+W0,base,L,BNB,"{""N"": 0, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""cross"", ""sma_n"": 200}",53,2018-05-24
+W0,base,L,LTC,"{""N"": 0, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""cross"", ""sma_n"": 200}",43,2018-06-30
+W1,base,L,BTC,"{""N"": 20, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",29,2018-03-04
+W1,base,L,ETH,"{""N"": 20, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",24,2018-03-04
+W1,base,L,SOL,"{""N"": 20, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",17,2021-02-26
+W1,base,L,XRP,"{""N"": 20, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",29,2018-11-19
+W1,base,L,ADA,"{""N"": 20, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",22,2018-11-02
+W1,base,L,AVAX,"{""N"": 20, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",13,2021-04-09
+W1,base,L,LINK,"{""N"": 20, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",26,2019-08-03
+W1,base,L,DOT,"{""N"": 20, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",17,2021-03-05
+W1,base,L,BNB,"{""N"": 20, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",32,2018-05-24
+W1,base,L,LTC,"{""N"": 20, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",34,2018-06-30
+W2,base,L,BTC,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",19,2018-03-04
+W2,base,L,ETH,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",18,2018-03-04
+W2,base,L,SOL,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",12,2021-02-26
+W2,base,L,XRP,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",17,2018-11-19
+W2,base,L,ADA,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",14,2018-11-02
+W2,base,L,AVAX,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",8,2021-04-09
+W2,base,L,LINK,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",21,2019-08-03
+W2,base,L,DOT,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",12,2021-03-05
+W2,base,L,BNB,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",23,2018-05-24
+W2,base,L,LTC,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",27,2018-06-30
+W2,base,S,BTC,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",16,2018-03-04
+W2,base,S,ETH,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",18,2018-03-04
+W2,base,S,SOL,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",12,2021-02-26
+W2,base,S,XRP,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",17,2018-11-19
+W2,base,S,ADA,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",23,2018-11-02
+W2,base,S,AVAX,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",17,2021-04-09
+W2,base,S,LINK,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",19,2019-08-03
+W2,base,S,DOT,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",18,2021-03-05
+W2,base,S,BNB,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",15,2018-05-24
+W2,base,S,LTC,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",19,2018-06-30
+W2,N40,L,BTC,"{""N"": 40, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",23,2018-03-04
+W2,N40,L,ETH,"{""N"": 40, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",20,2018-03-04
+W2,N40,L,SOL,"{""N"": 40, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",13,2021-02-26
+W2,N40,L,XRP,"{""N"": 40, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",21,2018-11-19
+W2,N40,L,ADA,"{""N"": 40, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",17,2018-11-02
+W2,N40,L,AVAX,"{""N"": 40, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",10,2021-04-09
+W2,N40,L,LINK,"{""N"": 40, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",23,2019-08-03
+W2,N40,L,DOT,"{""N"": 40, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",15,2021-03-05
+W2,N40,L,BNB,"{""N"": 40, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",25,2018-05-24
+W2,N40,L,LTC,"{""N"": 40, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",29,2018-06-30
+W2,N40,S,BTC,"{""N"": 40, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",19,2018-03-04
+W2,N40,S,ETH,"{""N"": 40, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",20,2018-03-04
+W2,N40,S,SOL,"{""N"": 40, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",13,2021-02-26
+W2,N40,S,XRP,"{""N"": 40, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",20,2018-11-19
+W2,N40,S,ADA,"{""N"": 40, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",24,2018-11-02
+W2,N40,S,AVAX,"{""N"": 40, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",18,2021-04-09
+W2,N40,S,LINK,"{""N"": 40, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",22,2019-08-03
+W2,N40,S,DOT,"{""N"": 40, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",19,2021-03-05
+W2,N40,S,BNB,"{""N"": 40, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",19,2018-05-24
+W2,N40,S,LTC,"{""N"": 40, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",24,2018-06-30
+W2,N80,L,BTC,"{""N"": 80, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",18,2018-03-04
+W2,N80,L,ETH,"{""N"": 80, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",14,2018-03-04
+W2,N80,L,SOL,"{""N"": 80, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",10,2021-02-26
+W2,N80,L,XRP,"{""N"": 80, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",15,2018-11-19
+W2,N80,L,ADA,"{""N"": 80, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",11,2018-11-02
+W2,N80,L,AVAX,"{""N"": 80, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",8,2021-04-09
+W2,N80,L,LINK,"{""N"": 80, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",16,2019-08-03
+W2,N80,L,DOT,"{""N"": 80, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",10,2021-03-05
+W2,N80,L,BNB,"{""N"": 80, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",20,2018-05-24
+W2,N80,L,LTC,"{""N"": 80, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",24,2018-06-30
+W2,N80,S,BTC,"{""N"": 80, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",13,2018-03-04
+W2,N80,S,ETH,"{""N"": 80, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",16,2018-03-04
+W2,N80,S,SOL,"{""N"": 80, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",8,2021-02-26
+W2,N80,S,XRP,"{""N"": 80, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",12,2018-11-19
+W2,N80,S,ADA,"{""N"": 80, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",18,2018-11-02
+W2,N80,S,AVAX,"{""N"": 80, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",13,2021-04-09
+W2,N80,S,LINK,"{""N"": 80, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",13,2019-08-03
+W2,N80,S,DOT,"{""N"": 80, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",15,2021-03-05
+W2,N80,S,BNB,"{""N"": 80, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",13,2018-05-24
+W2,N80,S,LTC,"{""N"": 80, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",17,2018-06-30
+W2,k2.5,L,BTC,"{""N"": 55, ""k"": 2.5, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",24,2018-03-04
+W2,k2.5,L,ETH,"{""N"": 55, ""k"": 2.5, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",24,2018-03-04
+W2,k2.5,L,SOL,"{""N"": 55, ""k"": 2.5, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",14,2021-02-26
+W2,k2.5,L,XRP,"{""N"": 55, ""k"": 2.5, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",18,2018-11-19
+W2,k2.5,L,ADA,"{""N"": 55, ""k"": 2.5, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",15,2018-11-02
+W2,k2.5,L,AVAX,"{""N"": 55, ""k"": 2.5, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",8,2021-04-09
+W2,k2.5,L,LINK,"{""N"": 55, ""k"": 2.5, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",25,2019-08-03
+W2,k2.5,L,DOT,"{""N"": 55, ""k"": 2.5, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",13,2021-03-05
+W2,k2.5,L,BNB,"{""N"": 55, ""k"": 2.5, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",25,2018-05-24
+W2,k2.5,L,LTC,"{""N"": 55, ""k"": 2.5, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",27,2018-06-30
+W2,k2.5,S,BTC,"{""N"": 55, ""k"": 2.5, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",16,2018-03-04
+W2,k2.5,S,ETH,"{""N"": 55, ""k"": 2.5, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",19,2018-03-04
+W2,k2.5,S,SOL,"{""N"": 55, ""k"": 2.5, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",13,2021-02-26
+W2,k2.5,S,XRP,"{""N"": 55, ""k"": 2.5, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",18,2018-11-19
+W2,k2.5,S,ADA,"{""N"": 55, ""k"": 2.5, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",25,2018-11-02
+W2,k2.5,S,AVAX,"{""N"": 55, ""k"": 2.5, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",18,2021-04-09
+W2,k2.5,S,LINK,"{""N"": 55, ""k"": 2.5, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",19,2019-08-03
+W2,k2.5,S,DOT,"{""N"": 55, ""k"": 2.5, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",20,2021-03-05
+W2,k2.5,S,BNB,"{""N"": 55, ""k"": 2.5, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",16,2018-05-24
+W2,k2.5,S,LTC,"{""N"": 55, ""k"": 2.5, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",21,2018-06-30
+W2,k3.5,L,BTC,"{""N"": 55, ""k"": 3.5, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",19,2018-03-04
+W2,k3.5,L,ETH,"{""N"": 55, ""k"": 3.5, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",17,2018-03-04
+W2,k3.5,L,SOL,"{""N"": 55, ""k"": 3.5, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",11,2021-02-26
+W2,k3.5,L,XRP,"{""N"": 55, ""k"": 3.5, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",16,2018-11-19
+W2,k3.5,L,ADA,"{""N"": 55, ""k"": 3.5, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",14,2018-11-02
+W2,k3.5,L,AVAX,"{""N"": 55, ""k"": 3.5, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",8,2021-04-09
+W2,k3.5,L,LINK,"{""N"": 55, ""k"": 3.5, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",20,2019-08-03
+W2,k3.5,L,DOT,"{""N"": 55, ""k"": 3.5, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",12,2021-03-05
+W2,k3.5,L,BNB,"{""N"": 55, ""k"": 3.5, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",21,2018-05-24
+W2,k3.5,L,LTC,"{""N"": 55, ""k"": 3.5, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",24,2018-06-30
+W2,k3.5,S,BTC,"{""N"": 55, ""k"": 3.5, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",16,2018-03-04
+W2,k3.5,S,ETH,"{""N"": 55, ""k"": 3.5, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",18,2018-03-04
+W2,k3.5,S,SOL,"{""N"": 55, ""k"": 3.5, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",12,2021-02-26
+W2,k3.5,S,XRP,"{""N"": 55, ""k"": 3.5, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",17,2018-11-19
+W2,k3.5,S,ADA,"{""N"": 55, ""k"": 3.5, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",22,2018-11-02
+W2,k3.5,S,AVAX,"{""N"": 55, ""k"": 3.5, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",17,2021-04-09
+W2,k3.5,S,LINK,"{""N"": 55, ""k"": 3.5, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",18,2019-08-03
+W2,k3.5,S,DOT,"{""N"": 55, ""k"": 3.5, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",17,2021-03-05
+W2,k3.5,S,BNB,"{""N"": 55, ""k"": 3.5, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",14,2018-05-24
+W2,k3.5,S,LTC,"{""N"": 55, ""k"": 3.5, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",18,2018-06-30
+W2,sma150,L,BTC,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 150}",22,2018-01-13
+W2,sma150,L,ETH,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 150}",20,2018-01-13
+W2,sma150,L,SOL,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 150}",14,2021-01-07
+W2,sma150,L,XRP,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 150}",19,2018-09-30
+W2,sma150,L,ADA,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 150}",13,2018-09-13
+W2,sma150,L,AVAX,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 150}",9,2021-02-18
+W2,sma150,L,LINK,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 150}",23,2019-06-14
+W2,sma150,L,DOT,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 150}",12,2021-01-14
+W2,sma150,L,BNB,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 150}",26,2018-04-04
+W2,sma150,L,LTC,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 150}",28,2018-05-11
+W2,sma150,S,BTC,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 150}",19,2018-01-13
+W2,sma150,S,ETH,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 150}",18,2018-01-13
+W2,sma150,S,SOL,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 150}",12,2021-01-07
+W2,sma150,S,XRP,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 150}",17,2018-09-30
+W2,sma150,S,ADA,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 150}",21,2018-09-13
+W2,sma150,S,AVAX,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 150}",18,2021-02-18
+W2,sma150,S,LINK,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 150}",19,2019-06-14
+W2,sma150,S,DOT,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 150}",17,2021-01-14
+W2,sma150,S,BNB,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 150}",17,2018-04-04
+W2,sma150,S,LTC,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 150}",21,2018-05-11
+W2,sma250,L,BTC,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 250}",18,2018-04-23
+W2,sma250,L,ETH,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 250}",20,2018-04-23
+W2,sma250,L,SOL,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 250}",13,2021-04-17
+W2,sma250,L,XRP,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 250}",17,2019-01-08
+W2,sma250,L,ADA,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 250}",12,2018-12-22
+W2,sma250,L,AVAX,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 250}",9,2021-05-29
+W2,sma250,L,LINK,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 250}",24,2019-09-22
+W2,sma250,L,DOT,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 250}",11,2021-04-24
+W2,sma250,L,BNB,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 250}",21,2018-07-13
+W2,sma250,L,LTC,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 250}",23,2018-08-19
+W2,sma250,S,BTC,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 250}",14,2018-04-23
+W2,sma250,S,ETH,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 250}",16,2018-04-23
+W2,sma250,S,SOL,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 250}",13,2021-04-17
+W2,sma250,S,XRP,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 250}",16,2019-01-08
+W2,sma250,S,ADA,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 250}",21,2018-12-22
+W2,sma250,S,AVAX,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 250}",15,2021-05-29
+W2,sma250,S,LINK,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 250}",18,2019-09-22
+W2,sma250,S,DOT,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 250}",18,2021-04-24
+W2,sma250,S,BNB,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 250}",15,2018-07-13
+W2,sma250,S,LTC,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 250}",18,2018-08-19
+W3,base,L,BTC,"{""N"": 100, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",16,2018-03-04
+W3,base,L,ETH,"{""N"": 100, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",14,2018-03-04
+W3,base,L,SOL,"{""N"": 100, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",9,2021-02-26
+W3,base,L,XRP,"{""N"": 100, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",13,2018-11-19
+W3,base,L,ADA,"{""N"": 100, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",11,2018-11-02
+W3,base,L,AVAX,"{""N"": 100, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",8,2021-04-09
+W3,base,L,LINK,"{""N"": 100, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",15,2019-08-03
+W3,base,L,DOT,"{""N"": 100, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",9,2021-03-05
+W3,base,L,BNB,"{""N"": 100, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",19,2018-05-24
+W3,base,L,LTC,"{""N"": 100, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",21,2018-06-30
+W4,base,L,BTC,"{""N"": 252, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",12,2018-04-26
+W4,base,L,ETH,"{""N"": 252, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",11,2018-04-26
+W4,base,L,SOL,"{""N"": 252, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",6,2021-04-20
+W4,base,L,XRP,"{""N"": 252, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",6,2019-01-11
+W4,base,L,ADA,"{""N"": 252, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",7,2018-12-25
+W4,base,L,AVAX,"{""N"": 252, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",4,2021-06-01
+W4,base,L,LINK,"{""N"": 252, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",7,2019-09-25
+W4,base,L,DOT,"{""N"": 252, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",4,2021-04-27
+W4,base,L,BNB,"{""N"": 252, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",12,2018-07-16
+W4,base,L,LTC,"{""N"": 252, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",10,2018-08-22
+W4,base,S,BTC,"{""N"": 252, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",5,2018-04-26
+W4,base,S,ETH,"{""N"": 252, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",8,2018-04-26
+W4,base,S,SOL,"{""N"": 252, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",5,2021-04-20
+W4,base,S,XRP,"{""N"": 252, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",7,2019-01-11
+W4,base,S,ADA,"{""N"": 252, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",8,2018-12-25
+W4,base,S,AVAX,"{""N"": 252, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",6,2021-06-01
+W4,base,S,LINK,"{""N"": 252, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",3,2019-09-25
+W4,base,S,DOT,"{""N"": 252, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",7,2021-04-27
+W4,base,S,BNB,"{""N"": 252, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",5,2018-07-16
+W4,base,S,LTC,"{""N"": 252, ""k"": 3.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",7,2018-08-22
+W5,base,L,BTC,"{""N"": 55, ""k"": 4.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",17,2018-03-04
+W5,base,L,ETH,"{""N"": 55, ""k"": 4.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",16,2018-03-04
+W5,base,L,SOL,"{""N"": 55, ""k"": 4.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",11,2021-02-26
+W5,base,L,XRP,"{""N"": 55, ""k"": 4.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",16,2018-11-19
+W5,base,L,ADA,"{""N"": 55, ""k"": 4.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",13,2018-11-02
+W5,base,L,AVAX,"{""N"": 55, ""k"": 4.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",6,2021-04-09
+W5,base,L,LINK,"{""N"": 55, ""k"": 4.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",17,2019-08-03
+W5,base,L,DOT,"{""N"": 55, ""k"": 4.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",12,2021-03-05
+W5,base,L,BNB,"{""N"": 55, ""k"": 4.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",19,2018-05-24
+W5,base,L,LTC,"{""N"": 55, ""k"": 4.0, ""gate"": true, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",21,2018-06-30
+W6,base,L,BTC,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": true, ""mode"": ""breakout"", ""sma_n"": 200}",19,2018-03-04
+W6,base,L,ETH,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": true, ""mode"": ""breakout"", ""sma_n"": 200}",18,2018-03-04
+W6,base,L,SOL,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": true, ""mode"": ""breakout"", ""sma_n"": 200}",12,2021-02-26
+W6,base,L,XRP,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": true, ""mode"": ""breakout"", ""sma_n"": 200}",17,2018-11-19
+W6,base,L,ADA,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": true, ""mode"": ""breakout"", ""sma_n"": 200}",14,2018-11-02
+W6,base,L,AVAX,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": true, ""mode"": ""breakout"", ""sma_n"": 200}",8,2021-04-09
+W6,base,L,LINK,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": true, ""mode"": ""breakout"", ""sma_n"": 200}",21,2019-08-03
+W6,base,L,DOT,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": true, ""mode"": ""breakout"", ""sma_n"": 200}",12,2021-03-05
+W6,base,L,BNB,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": true, ""mode"": ""breakout"", ""sma_n"": 200}",23,2018-05-24
+W6,base,L,LTC,"{""N"": 55, ""k"": 3.0, ""gate"": true, ""pyramid"": true, ""mode"": ""breakout"", ""sma_n"": 200}",27,2018-06-30
+W7,base,L,BTC,"{""N"": 252, ""k"": 3.0, ""gate"": true, ""pyramid"": true, ""mode"": ""breakout"", ""sma_n"": 200}",12,2018-04-26
+W7,base,L,ETH,"{""N"": 252, ""k"": 3.0, ""gate"": true, ""pyramid"": true, ""mode"": ""breakout"", ""sma_n"": 200}",11,2018-04-26
+W7,base,L,SOL,"{""N"": 252, ""k"": 3.0, ""gate"": true, ""pyramid"": true, ""mode"": ""breakout"", ""sma_n"": 200}",6,2021-04-20
+W7,base,L,XRP,"{""N"": 252, ""k"": 3.0, ""gate"": true, ""pyramid"": true, ""mode"": ""breakout"", ""sma_n"": 200}",6,2019-01-11
+W7,base,L,ADA,"{""N"": 252, ""k"": 3.0, ""gate"": true, ""pyramid"": true, ""mode"": ""breakout"", ""sma_n"": 200}",7,2018-12-25
+W7,base,L,AVAX,"{""N"": 252, ""k"": 3.0, ""gate"": true, ""pyramid"": true, ""mode"": ""breakout"", ""sma_n"": 200}",4,2021-06-01
+W7,base,L,LINK,"{""N"": 252, ""k"": 3.0, ""gate"": true, ""pyramid"": true, ""mode"": ""breakout"", ""sma_n"": 200}",7,2019-09-25
+W7,base,L,DOT,"{""N"": 252, ""k"": 3.0, ""gate"": true, ""pyramid"": true, ""mode"": ""breakout"", ""sma_n"": 200}",4,2021-04-27
+W7,base,L,BNB,"{""N"": 252, ""k"": 3.0, ""gate"": true, ""pyramid"": true, ""mode"": ""breakout"", ""sma_n"": 200}",12,2018-07-16
+W7,base,L,LTC,"{""N"": 252, ""k"": 3.0, ""gate"": true, ""pyramid"": true, ""mode"": ""breakout"", ""sma_n"": 200}",10,2018-08-22
+W8,base,L,BTC,"{""N"": 55, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",22,2018-03-04
+W8,base,L,ETH,"{""N"": 55, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",21,2018-03-04
+W8,base,L,SOL,"{""N"": 55, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",15,2021-02-26
+W8,base,L,XRP,"{""N"": 55, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",18,2018-11-19
+W8,base,L,ADA,"{""N"": 55, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",15,2018-11-02
+W8,base,L,AVAX,"{""N"": 55, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",11,2021-04-09
+W8,base,L,LINK,"{""N"": 55, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",24,2019-08-03
+W8,base,L,DOT,"{""N"": 55, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",11,2021-03-05
+W8,base,L,BNB,"{""N"": 55, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",25,2018-05-24
+W8,base,L,LTC,"{""N"": 55, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",28,2018-06-30
+W8,base,S,BTC,"{""N"": 55, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",18,2018-03-04
+W8,base,S,ETH,"{""N"": 55, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",17,2018-03-04
+W8,base,S,SOL,"{""N"": 55, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",11,2021-02-26
+W8,base,S,XRP,"{""N"": 55, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",16,2018-11-19
+W8,base,S,ADA,"{""N"": 55, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",21,2018-11-02
+W8,base,S,AVAX,"{""N"": 55, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",16,2021-04-09
+W8,base,S,LINK,"{""N"": 55, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",18,2019-08-03
+W8,base,S,DOT,"{""N"": 55, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",16,2021-03-05
+W8,base,S,BNB,"{""N"": 55, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",17,2018-05-24
+W8,base,S,LTC,"{""N"": 55, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",20,2018-06-30
+W8,N40,L,BTC,"{""N"": 40, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",27,2018-03-04
+W8,N40,L,ETH,"{""N"": 40, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",26,2018-03-04
+W8,N40,L,SOL,"{""N"": 40, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",18,2021-02-26
+W8,N40,L,XRP,"{""N"": 40, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",26,2018-11-19
+W8,N40,L,ADA,"{""N"": 40, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",22,2018-11-02
+W8,N40,L,AVAX,"{""N"": 40, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",16,2021-04-09
+W8,N40,L,LINK,"{""N"": 40, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",26,2019-08-03
+W8,N40,L,DOT,"{""N"": 40, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",17,2021-03-05
+W8,N40,L,BNB,"{""N"": 40, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",29,2018-05-24
+W8,N40,L,LTC,"{""N"": 40, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",34,2018-06-30
+W8,N40,S,BTC,"{""N"": 40, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",24,2018-03-04
+W8,N40,S,ETH,"{""N"": 40, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",23,2018-03-04
+W8,N40,S,SOL,"{""N"": 40, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",14,2021-02-26
+W8,N40,S,XRP,"{""N"": 40, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",20,2018-11-19
+W8,N40,S,ADA,"{""N"": 40, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",24,2018-11-02
+W8,N40,S,AVAX,"{""N"": 40, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",18,2021-04-09
+W8,N40,S,LINK,"{""N"": 40, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",22,2019-08-03
+W8,N40,S,DOT,"{""N"": 40, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",18,2021-03-05
+W8,N40,S,BNB,"{""N"": 40, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",21,2018-05-24
+W8,N40,S,LTC,"{""N"": 40, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",26,2018-06-30
+W8,N80,L,BTC,"{""N"": 80, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",18,2018-03-04
+W8,N80,L,ETH,"{""N"": 80, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",14,2018-03-04
+W8,N80,L,SOL,"{""N"": 80, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",10,2021-02-26
+W8,N80,L,XRP,"{""N"": 80, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",16,2018-11-19
+W8,N80,L,ADA,"{""N"": 80, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",11,2018-11-02
+W8,N80,L,AVAX,"{""N"": 80, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",8,2021-04-09
+W8,N80,L,LINK,"{""N"": 80, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",17,2019-08-03
+W8,N80,L,DOT,"{""N"": 80, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",8,2021-03-05
+W8,N80,L,BNB,"{""N"": 80, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",21,2018-05-24
+W8,N80,L,LTC,"{""N"": 80, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",24,2018-06-30
+W8,N80,S,BTC,"{""N"": 80, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",15,2018-03-04
+W8,N80,S,ETH,"{""N"": 80, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",15,2018-03-04
+W8,N80,S,SOL,"{""N"": 80, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",8,2021-02-26
+W8,N80,S,XRP,"{""N"": 80, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",12,2018-11-19
+W8,N80,S,ADA,"{""N"": 80, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",16,2018-11-02
+W8,N80,S,AVAX,"{""N"": 80, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",12,2021-04-09
+W8,N80,S,LINK,"{""N"": 80, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",12,2019-08-03
+W8,N80,S,DOT,"{""N"": 80, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",13,2021-03-05
+W8,N80,S,BNB,"{""N"": 80, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",13,2018-05-24
+W8,N80,S,LTC,"{""N"": 80, ""k"": 3.0, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",17,2018-06-30
+W8,k2.5,L,BTC,"{""N"": 55, ""k"": 2.5, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",27,2018-03-04
+W8,k2.5,L,ETH,"{""N"": 55, ""k"": 2.5, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",27,2018-03-04
+W8,k2.5,L,SOL,"{""N"": 55, ""k"": 2.5, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",17,2021-02-26
+W8,k2.5,L,XRP,"{""N"": 55, ""k"": 2.5, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",19,2018-11-19
+W8,k2.5,L,ADA,"{""N"": 55, ""k"": 2.5, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",16,2018-11-02
+W8,k2.5,L,AVAX,"{""N"": 55, ""k"": 2.5, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",11,2021-04-09
+W8,k2.5,L,LINK,"{""N"": 55, ""k"": 2.5, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",28,2019-08-03
+W8,k2.5,L,DOT,"{""N"": 55, ""k"": 2.5, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",13,2021-03-05
+W8,k2.5,L,BNB,"{""N"": 55, ""k"": 2.5, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",27,2018-05-24
+W8,k2.5,L,LTC,"{""N"": 55, ""k"": 2.5, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",29,2018-06-30
+W8,k2.5,S,BTC,"{""N"": 55, ""k"": 2.5, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",19,2018-03-04
+W8,k2.5,S,ETH,"{""N"": 55, ""k"": 2.5, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",18,2018-03-04
+W8,k2.5,S,SOL,"{""N"": 55, ""k"": 2.5, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",13,2021-02-26
+W8,k2.5,S,XRP,"{""N"": 55, ""k"": 2.5, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",17,2018-11-19
+W8,k2.5,S,ADA,"{""N"": 55, ""k"": 2.5, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",24,2018-11-02
+W8,k2.5,S,AVAX,"{""N"": 55, ""k"": 2.5, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",17,2021-04-09
+W8,k2.5,S,LINK,"{""N"": 55, ""k"": 2.5, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",19,2019-08-03
+W8,k2.5,S,DOT,"{""N"": 55, ""k"": 2.5, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",19,2021-03-05
+W8,k2.5,S,BNB,"{""N"": 55, ""k"": 2.5, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",20,2018-05-24
+W8,k2.5,S,LTC,"{""N"": 55, ""k"": 2.5, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",22,2018-06-30
+W8,k3.5,L,BTC,"{""N"": 55, ""k"": 3.5, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",21,2018-03-04
+W8,k3.5,L,ETH,"{""N"": 55, ""k"": 3.5, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",20,2018-03-04
+W8,k3.5,L,SOL,"{""N"": 55, ""k"": 3.5, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",14,2021-02-26
+W8,k3.5,L,XRP,"{""N"": 55, ""k"": 3.5, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",17,2018-11-19
+W8,k3.5,L,ADA,"{""N"": 55, ""k"": 3.5, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",13,2018-11-02
+W8,k3.5,L,AVAX,"{""N"": 55, ""k"": 3.5, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",11,2021-04-09
+W8,k3.5,L,LINK,"{""N"": 55, ""k"": 3.5, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",23,2019-08-03
+W8,k3.5,L,DOT,"{""N"": 55, ""k"": 3.5, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",8,2021-03-05
+W8,k3.5,L,BNB,"{""N"": 55, ""k"": 3.5, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",22,2018-05-24
+W8,k3.5,L,LTC,"{""N"": 55, ""k"": 3.5, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",22,2018-06-30
+W8,k3.5,S,BTC,"{""N"": 55, ""k"": 3.5, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",18,2018-03-04
+W8,k3.5,S,ETH,"{""N"": 55, ""k"": 3.5, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",17,2018-03-04
+W8,k3.5,S,SOL,"{""N"": 55, ""k"": 3.5, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",11,2021-02-26
+W8,k3.5,S,XRP,"{""N"": 55, ""k"": 3.5, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",15,2018-11-19
+W8,k3.5,S,ADA,"{""N"": 55, ""k"": 3.5, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",20,2018-11-02
+W8,k3.5,S,AVAX,"{""N"": 55, ""k"": 3.5, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",16,2021-04-09
+W8,k3.5,S,LINK,"{""N"": 55, ""k"": 3.5, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",16,2019-08-03
+W8,k3.5,S,DOT,"{""N"": 55, ""k"": 3.5, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",14,2021-03-05
+W8,k3.5,S,BNB,"{""N"": 55, ""k"": 3.5, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",15,2018-05-24
+W8,k3.5,S,LTC,"{""N"": 55, ""k"": 3.5, ""gate"": false, ""pyramid"": false, ""mode"": ""breakout"", ""sma_n"": 200}",18,2018-06-30
+MR,base,L,BTC,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",63,2017-09-05
+MR,base,L,ETH,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",64,2017-09-05
+MR,base,L,SOL,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",43,2020-08-30
+MR,base,L,XRP,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",67,2018-05-23
+MR,base,L,ADA,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",65,2018-05-06
+MR,base,L,AVAX,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",38,2020-10-11
+MR,base,L,LINK,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",46,2019-02-04
+MR,base,L,DOT,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",43,2020-09-06
+MR,base,L,BNB,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",65,2017-11-25
+MR,base,L,LTC,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",63,2018-01-01
+MR,base,S,BTC,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",96,2017-09-05
+MR,base,S,ETH,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",87,2017-09-05
+MR,base,S,SOL,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",59,2020-08-30
+MR,base,S,XRP,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",77,2018-05-23
+MR,base,S,ADA,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",79,2018-05-06
+MR,base,S,AVAX,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",56,2020-10-11
+MR,base,S,LINK,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",83,2019-02-04
+MR,base,S,DOT,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",50,2020-09-06
+MR,base,S,BNB,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",92,2017-11-25
+MR,base,S,LTC,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",79,2018-01-01
+MR,z1.5,L,BTC,"{""z_thr"": 1.5, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",98,2017-09-05
+MR,z1.5,L,ETH,"{""z_thr"": 1.5, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",102,2017-09-05
+MR,z1.5,L,SOL,"{""z_thr"": 1.5, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",66,2020-08-30
+MR,z1.5,L,XRP,"{""z_thr"": 1.5, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",103,2018-05-23
+MR,z1.5,L,ADA,"{""z_thr"": 1.5, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",104,2018-05-06
+MR,z1.5,L,AVAX,"{""z_thr"": 1.5, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",68,2020-10-11
+MR,z1.5,L,LINK,"{""z_thr"": 1.5, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",80,2019-02-04
+MR,z1.5,L,DOT,"{""z_thr"": 1.5, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",71,2020-09-06
+MR,z1.5,L,BNB,"{""z_thr"": 1.5, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",97,2017-11-25
+MR,z1.5,L,LTC,"{""z_thr"": 1.5, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",100,2018-01-01
+MR,z1.5,S,BTC,"{""z_thr"": 1.5, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",131,2017-09-05
+MR,z1.5,S,ETH,"{""z_thr"": 1.5, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",129,2017-09-05
+MR,z1.5,S,SOL,"{""z_thr"": 1.5, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",86,2020-08-30
+MR,z1.5,S,XRP,"{""z_thr"": 1.5, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",95,2018-05-23
+MR,z1.5,S,ADA,"{""z_thr"": 1.5, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",105,2018-05-06
+MR,z1.5,S,AVAX,"{""z_thr"": 1.5, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",75,2020-10-11
+MR,z1.5,S,LINK,"{""z_thr"": 1.5, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",116,2019-02-04
+MR,z1.5,S,DOT,"{""z_thr"": 1.5, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",73,2020-09-06
+MR,z1.5,S,BNB,"{""z_thr"": 1.5, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",131,2017-11-25
+MR,z1.5,S,LTC,"{""z_thr"": 1.5, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",109,2018-01-01
+MR,z2.5,L,BTC,"{""z_thr"": 2.5, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",31,2017-09-05
+MR,z2.5,L,ETH,"{""z_thr"": 2.5, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",32,2017-09-05
+MR,z2.5,L,SOL,"{""z_thr"": 2.5, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",20,2020-08-30
+MR,z2.5,L,XRP,"{""z_thr"": 2.5, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",34,2018-05-23
+MR,z2.5,L,ADA,"{""z_thr"": 2.5, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",28,2018-05-06
+MR,z2.5,L,AVAX,"{""z_thr"": 2.5, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",15,2020-10-11
+MR,z2.5,L,LINK,"{""z_thr"": 2.5, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",18,2019-02-04
+MR,z2.5,L,DOT,"{""z_thr"": 2.5, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",21,2020-09-06
+MR,z2.5,L,BNB,"{""z_thr"": 2.5, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",27,2017-11-25
+MR,z2.5,L,LTC,"{""z_thr"": 2.5, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",38,2018-01-01
+MR,z2.5,S,BTC,"{""z_thr"": 2.5, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",44,2017-09-05
+MR,z2.5,S,ETH,"{""z_thr"": 2.5, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",48,2017-09-05
+MR,z2.5,S,SOL,"{""z_thr"": 2.5, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",32,2020-08-30
+MR,z2.5,S,XRP,"{""z_thr"": 2.5, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",49,2018-05-23
+MR,z2.5,S,ADA,"{""z_thr"": 2.5, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",46,2018-05-06
+MR,z2.5,S,AVAX,"{""z_thr"": 2.5, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",30,2020-10-11
+MR,z2.5,S,LINK,"{""z_thr"": 2.5, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",44,2019-02-04
+MR,z2.5,S,DOT,"{""z_thr"": 2.5, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",27,2020-09-06
+MR,z2.5,S,BNB,"{""z_thr"": 2.5, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",47,2017-11-25
+MR,z2.5,S,LTC,"{""z_thr"": 2.5, ""n"": 20, ""hold_max"": 10, ""k"": 3.0}",46,2018-01-01
+MR,n10,L,BTC,"{""z_thr"": 2.0, ""n"": 10, ""hold_max"": 10, ""k"": 3.0}",81,2017-08-31
+MR,n10,L,ETH,"{""z_thr"": 2.0, ""n"": 10, ""hold_max"": 10, ""k"": 3.0}",78,2017-08-31
+MR,n10,L,SOL,"{""z_thr"": 2.0, ""n"": 10, ""hold_max"": 10, ""k"": 3.0}",41,2020-08-25
+MR,n10,L,XRP,"{""z_thr"": 2.0, ""n"": 10, ""hold_max"": 10, ""k"": 3.0}",81,2018-05-18
+MR,n10,L,ADA,"{""z_thr"": 2.0, ""n"": 10, ""hold_max"": 10, ""k"": 3.0}",71,2018-05-01
+MR,n10,L,AVAX,"{""z_thr"": 2.0, ""n"": 10, ""hold_max"": 10, ""k"": 3.0}",43,2020-10-06
+MR,n10,L,LINK,"{""z_thr"": 2.0, ""n"": 10, ""hold_max"": 10, ""k"": 3.0}",56,2019-01-30
+MR,n10,L,DOT,"{""z_thr"": 2.0, ""n"": 10, ""hold_max"": 10, ""k"": 3.0}",45,2020-09-01
+MR,n10,L,BNB,"{""z_thr"": 2.0, ""n"": 10, ""hold_max"": 10, ""k"": 3.0}",71,2017-11-20
+MR,n10,L,LTC,"{""z_thr"": 2.0, ""n"": 10, ""hold_max"": 10, ""k"": 3.0}",78,2017-12-27
+MR,n10,S,BTC,"{""z_thr"": 2.0, ""n"": 10, ""hold_max"": 10, ""k"": 3.0}",93,2017-08-31
+MR,n10,S,ETH,"{""z_thr"": 2.0, ""n"": 10, ""hold_max"": 10, ""k"": 3.0}",99,2017-08-31
+MR,n10,S,SOL,"{""z_thr"": 2.0, ""n"": 10, ""hold_max"": 10, ""k"": 3.0}",61,2020-08-25
+MR,n10,S,XRP,"{""z_thr"": 2.0, ""n"": 10, ""hold_max"": 10, ""k"": 3.0}",88,2018-05-18
+MR,n10,S,ADA,"{""z_thr"": 2.0, ""n"": 10, ""hold_max"": 10, ""k"": 3.0}",85,2018-05-01
+MR,n10,S,AVAX,"{""z_thr"": 2.0, ""n"": 10, ""hold_max"": 10, ""k"": 3.0}",53,2020-10-06
+MR,n10,S,LINK,"{""z_thr"": 2.0, ""n"": 10, ""hold_max"": 10, ""k"": 3.0}",78,2019-01-30
+MR,n10,S,DOT,"{""z_thr"": 2.0, ""n"": 10, ""hold_max"": 10, ""k"": 3.0}",49,2020-09-01
+MR,n10,S,BNB,"{""z_thr"": 2.0, ""n"": 10, ""hold_max"": 10, ""k"": 3.0}",94,2017-11-20
+MR,n10,S,LTC,"{""z_thr"": 2.0, ""n"": 10, ""hold_max"": 10, ""k"": 3.0}",89,2017-12-27
+MR,n30,L,BTC,"{""z_thr"": 2.0, ""n"": 30, ""hold_max"": 10, ""k"": 3.0}",56,2017-09-15
+MR,n30,L,ETH,"{""z_thr"": 2.0, ""n"": 30, ""hold_max"": 10, ""k"": 3.0}",51,2017-09-15
+MR,n30,L,SOL,"{""z_thr"": 2.0, ""n"": 30, ""hold_max"": 10, ""k"": 3.0}",33,2020-09-09
+MR,n30,L,XRP,"{""z_thr"": 2.0, ""n"": 30, ""hold_max"": 10, ""k"": 3.0}",44,2018-06-02
+MR,n30,L,ADA,"{""z_thr"": 2.0, ""n"": 30, ""hold_max"": 10, ""k"": 3.0}",49,2018-05-16
+MR,n30,L,AVAX,"{""z_thr"": 2.0, ""n"": 30, ""hold_max"": 10, ""k"": 3.0}",31,2020-10-21
+MR,n30,L,LINK,"{""z_thr"": 2.0, ""n"": 30, ""hold_max"": 10, ""k"": 3.0}",36,2019-02-14
+MR,n30,L,DOT,"{""z_thr"": 2.0, ""n"": 30, ""hold_max"": 10, ""k"": 3.0}",34,2020-09-16
+MR,n30,L,BNB,"{""z_thr"": 2.0, ""n"": 30, ""hold_max"": 10, ""k"": 3.0}",47,2017-12-05
+MR,n30,L,LTC,"{""z_thr"": 2.0, ""n"": 30, ""hold_max"": 10, ""k"": 3.0}",55,2018-01-11
+MR,n30,S,BTC,"{""z_thr"": 2.0, ""n"": 30, ""hold_max"": 10, ""k"": 3.0}",83,2017-09-15
+MR,n30,S,ETH,"{""z_thr"": 2.0, ""n"": 30, ""hold_max"": 10, ""k"": 3.0}",73,2017-09-15
+MR,n30,S,SOL,"{""z_thr"": 2.0, ""n"": 30, ""hold_max"": 10, ""k"": 3.0}",57,2020-09-09
+MR,n30,S,XRP,"{""z_thr"": 2.0, ""n"": 30, ""hold_max"": 10, ""k"": 3.0}",67,2018-06-02
+MR,n30,S,ADA,"{""z_thr"": 2.0, ""n"": 30, ""hold_max"": 10, ""k"": 3.0}",68,2018-05-16
+MR,n30,S,AVAX,"{""z_thr"": 2.0, ""n"": 30, ""hold_max"": 10, ""k"": 3.0}",46,2020-10-21
+MR,n30,S,LINK,"{""z_thr"": 2.0, ""n"": 30, ""hold_max"": 10, ""k"": 3.0}",76,2019-02-14
+MR,n30,S,DOT,"{""z_thr"": 2.0, ""n"": 30, ""hold_max"": 10, ""k"": 3.0}",44,2020-09-16
+MR,n30,S,BNB,"{""z_thr"": 2.0, ""n"": 30, ""hold_max"": 10, ""k"": 3.0}",83,2017-12-05
+MR,n30,S,LTC,"{""z_thr"": 2.0, ""n"": 30, ""hold_max"": 10, ""k"": 3.0}",69,2018-01-11
+MR,hold5,L,BTC,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 5, ""k"": 3.0}",65,2017-09-05
+MR,hold5,L,ETH,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 5, ""k"": 3.0}",68,2017-09-05
+MR,hold5,L,SOL,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 5, ""k"": 3.0}",44,2020-08-30
+MR,hold5,L,XRP,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 5, ""k"": 3.0}",69,2018-05-23
+MR,hold5,L,ADA,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 5, ""k"": 3.0}",69,2018-05-06
+MR,hold5,L,AVAX,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 5, ""k"": 3.0}",42,2020-10-11
+MR,hold5,L,LINK,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 5, ""k"": 3.0}",46,2019-02-04
+MR,hold5,L,DOT,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 5, ""k"": 3.0}",46,2020-09-06
+MR,hold5,L,BNB,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 5, ""k"": 3.0}",66,2017-11-25
+MR,hold5,L,LTC,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 5, ""k"": 3.0}",68,2018-01-01
+MR,hold5,S,BTC,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 5, ""k"": 3.0}",99,2017-09-05
+MR,hold5,S,ETH,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 5, ""k"": 3.0}",94,2017-09-05
+MR,hold5,S,SOL,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 5, ""k"": 3.0}",63,2020-08-30
+MR,hold5,S,XRP,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 5, ""k"": 3.0}",80,2018-05-23
+MR,hold5,S,ADA,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 5, ""k"": 3.0}",82,2018-05-06
+MR,hold5,S,AVAX,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 5, ""k"": 3.0}",62,2020-10-11
+MR,hold5,S,LINK,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 5, ""k"": 3.0}",86,2019-02-04
+MR,hold5,S,DOT,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 5, ""k"": 3.0}",53,2020-09-06
+MR,hold5,S,BNB,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 5, ""k"": 3.0}",99,2017-11-25
+MR,hold5,S,LTC,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 5, ""k"": 3.0}",83,2018-01-01
+MR,hold20,L,BTC,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 20, ""k"": 3.0}",58,2017-09-05
+MR,hold20,L,ETH,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 20, ""k"": 3.0}",63,2017-09-05
+MR,hold20,L,SOL,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 20, ""k"": 3.0}",39,2020-08-30
+MR,hold20,L,XRP,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 20, ""k"": 3.0}",62,2018-05-23
+MR,hold20,L,ADA,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 20, ""k"": 3.0}",59,2018-05-06
+MR,hold20,L,AVAX,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 20, ""k"": 3.0}",37,2020-10-11
+MR,hold20,L,LINK,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 20, ""k"": 3.0}",43,2019-02-04
+MR,hold20,L,DOT,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 20, ""k"": 3.0}",40,2020-09-06
+MR,hold20,L,BNB,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 20, ""k"": 3.0}",63,2017-11-25
+MR,hold20,L,LTC,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 20, ""k"": 3.0}",56,2018-01-01
+MR,hold20,S,BTC,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 20, ""k"": 3.0}",90,2017-09-05
+MR,hold20,S,ETH,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 20, ""k"": 3.0}",83,2017-09-05
+MR,hold20,S,SOL,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 20, ""k"": 3.0}",56,2020-08-30
+MR,hold20,S,XRP,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 20, ""k"": 3.0}",73,2018-05-23
+MR,hold20,S,ADA,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 20, ""k"": 3.0}",77,2018-05-06
+MR,hold20,S,AVAX,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 20, ""k"": 3.0}",55,2020-10-11
+MR,hold20,S,LINK,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 20, ""k"": 3.0}",79,2019-02-04
+MR,hold20,S,DOT,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 20, ""k"": 3.0}",48,2020-09-06
+MR,hold20,S,BNB,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 20, ""k"": 3.0}",87,2017-11-25
+MR,hold20,S,LTC,"{""z_thr"": 2.0, ""n"": 20, ""hold_max"": 20, ""k"": 3.0}",76,2018-01-01
+TS21,base,L,BTC,"{""L"": 21, ""H"": 7}",57,2017-09-07
+TS21,base,L,ETH,"{""L"": 21, ""H"": 7}",58,2017-09-07
+TS21,base,L,SOL,"{""L"": 21, ""H"": 7}",42,2020-09-01
+TS21,base,L,XRP,"{""L"": 21, ""H"": 7}",59,2018-05-25
+TS21,base,L,ADA,"{""L"": 21, ""H"": 7}",63,2018-05-08
+TS21,base,L,AVAX,"{""L"": 21, ""H"": 7}",43,2020-10-13
+TS21,base,L,LINK,"{""L"": 21, ""H"": 7}",50,2019-02-06
+TS21,base,L,DOT,"{""L"": 21, ""H"": 7}",42,2020-09-08
+TS21,base,L,BNB,"{""L"": 21, ""H"": 7}",61,2017-11-27
+TS21,base,L,LTC,"{""L"": 21, ""H"": 7}",61,2018-01-03
+TS21,base,S,BTC,"{""L"": 21, ""H"": 7}",57,2017-09-07
+TS21,base,S,ETH,"{""L"": 21, ""H"": 7}",58,2017-09-07
+TS21,base,S,SOL,"{""L"": 21, ""H"": 7}",42,2020-09-01
+TS21,base,S,XRP,"{""L"": 21, ""H"": 7}",59,2018-05-25
+TS21,base,S,ADA,"{""L"": 21, ""H"": 7}",63,2018-05-08
+TS21,base,S,AVAX,"{""L"": 21, ""H"": 7}",44,2020-10-13
+TS21,base,S,LINK,"{""L"": 21, ""H"": 7}",50,2019-02-06
+TS21,base,S,DOT,"{""L"": 21, ""H"": 7}",43,2020-09-08
+TS21,base,S,BNB,"{""L"": 21, ""H"": 7}",61,2017-11-27
+TS21,base,S,LTC,"{""L"": 21, ""H"": 7}",62,2018-01-03
+TS21,L16,L,BTC,"{""L"": 16, ""H"": 7}",75,2017-09-02
+TS21,L16,L,ETH,"{""L"": 16, ""H"": 7}",68,2017-09-02
+TS21,L16,L,SOL,"{""L"": 16, ""H"": 7}",44,2020-08-27
+TS21,L16,L,XRP,"{""L"": 16, ""H"": 7}",71,2018-05-20
+TS21,L16,L,ADA,"{""L"": 16, ""H"": 7}",63,2018-05-03
+TS21,L16,L,AVAX,"{""L"": 16, ""H"": 7}",40,2020-10-08
+TS21,L16,L,LINK,"{""L"": 16, ""H"": 7}",60,2019-02-01
+TS21,L16,L,DOT,"{""L"": 16, ""H"": 7}",49,2020-09-03
+TS21,L16,L,BNB,"{""L"": 16, ""H"": 7}",66,2017-11-22
+TS21,L16,L,LTC,"{""L"": 16, ""H"": 7}",65,2017-12-29
+TS21,L16,S,BTC,"{""L"": 16, ""H"": 7}",74,2017-09-02
+TS21,L16,S,ETH,"{""L"": 16, ""H"": 7}",68,2017-09-02
+TS21,L16,S,SOL,"{""L"": 16, ""H"": 7}",44,2020-08-27
+TS21,L16,S,XRP,"{""L"": 16, ""H"": 7}",72,2018-05-20
+TS21,L16,S,ADA,"{""L"": 16, ""H"": 7}",62,2018-05-03
+TS21,L16,S,AVAX,"{""L"": 16, ""H"": 7}",41,2020-10-08
+TS21,L16,S,LINK,"{""L"": 16, ""H"": 7}",60,2019-02-01
+TS21,L16,S,DOT,"{""L"": 16, ""H"": 7}",49,2020-09-03
+TS21,L16,S,BNB,"{""L"": 16, ""H"": 7}",66,2017-11-22
+TS21,L16,S,LTC,"{""L"": 16, ""H"": 7}",66,2017-12-29
+TS21,L26,L,BTC,"{""L"": 26, ""H"": 7}",50,2017-09-12
+TS21,L26,L,ETH,"{""L"": 26, ""H"": 7}",50,2017-09-12
+TS21,L26,L,SOL,"{""L"": 26, ""H"": 7}",34,2020-09-06
+TS21,L26,L,XRP,"{""L"": 26, ""H"": 7}",57,2018-05-30
+TS21,L26,L,ADA,"{""L"": 26, ""H"": 7}",48,2018-05-13
+TS21,L26,L,AVAX,"{""L"": 26, ""H"": 7}",38,2020-10-18
+TS21,L26,L,LINK,"{""L"": 26, ""H"": 7}",45,2019-02-11
+TS21,L26,L,DOT,"{""L"": 26, ""H"": 7}",38,2020-09-13
+TS21,L26,L,BNB,"{""L"": 26, ""H"": 7}",50,2017-12-02
+TS21,L26,L,LTC,"{""L"": 26, ""H"": 7}",50,2018-01-08
+TS21,L26,S,BTC,"{""L"": 26, ""H"": 7}",51,2017-09-12
+TS21,L26,S,ETH,"{""L"": 26, ""H"": 7}",51,2017-09-12
+TS21,L26,S,SOL,"{""L"": 26, ""H"": 7}",34,2020-09-06
+TS21,L26,S,XRP,"{""L"": 26, ""H"": 7}",58,2018-05-30
+TS21,L26,S,ADA,"{""L"": 26, ""H"": 7}",48,2018-05-13
+TS21,L26,S,AVAX,"{""L"": 26, ""H"": 7}",39,2020-10-18
+TS21,L26,S,LINK,"{""L"": 26, ""H"": 7}",46,2019-02-11
+TS21,L26,S,DOT,"{""L"": 26, ""H"": 7}",38,2020-09-13
+TS21,L26,S,BNB,"{""L"": 26, ""H"": 7}",50,2017-12-02
+TS21,L26,S,LTC,"{""L"": 26, ""H"": 7}",51,2018-01-08
+TS21,H5,L,BTC,"{""L"": 21, ""H"": 5}",79,2017-09-07
+TS21,H5,L,ETH,"{""L"": 21, ""H"": 5}",71,2017-09-07
+TS21,H5,L,SOL,"{""L"": 21, ""H"": 5}",48,2020-09-01
+TS21,H5,L,XRP,"{""L"": 21, ""H"": 5}",71,2018-05-25
+TS21,H5,L,ADA,"{""L"": 21, ""H"": 5}",68,2018-05-08
+TS21,H5,L,AVAX,"{""L"": 21, ""H"": 5}",46,2020-10-13
+TS21,H5,L,LINK,"{""L"": 21, ""H"": 5}",60,2019-02-06
+TS21,H5,L,DOT,"{""L"": 21, ""H"": 5}",44,2020-09-08
+TS21,H5,L,BNB,"{""L"": 21, ""H"": 5}",67,2017-11-27
+TS21,H5,L,LTC,"{""L"": 21, ""H"": 5}",65,2018-01-03
+TS21,H5,S,BTC,"{""L"": 21, ""H"": 5}",79,2017-09-07
+TS21,H5,S,ETH,"{""L"": 21, ""H"": 5}",71,2017-09-07
+TS21,H5,S,SOL,"{""L"": 21, ""H"": 5}",48,2020-09-01
+TS21,H5,S,XRP,"{""L"": 21, ""H"": 5}",72,2018-05-25
+TS21,H5,S,ADA,"{""L"": 21, ""H"": 5}",68,2018-05-08
+TS21,H5,S,AVAX,"{""L"": 21, ""H"": 5}",46,2020-10-13
+TS21,H5,S,LINK,"{""L"": 21, ""H"": 5}",60,2019-02-06
+TS21,H5,S,DOT,"{""L"": 21, ""H"": 5}",44,2020-09-08
+TS21,H5,S,BNB,"{""L"": 21, ""H"": 5}",67,2017-11-27
+TS21,H5,S,LTC,"{""L"": 21, ""H"": 5}",66,2018-01-03
+TS21,H10,L,BTC,"{""L"": 21, ""H"": 10}",58,2017-09-07
+TS21,H10,L,ETH,"{""L"": 21, ""H"": 10}",48,2017-09-07
+TS21,H10,L,SOL,"{""L"": 21, ""H"": 10}",31,2020-09-01
+TS21,H10,L,XRP,"{""L"": 21, ""H"": 10}",53,2018-05-25
+TS21,H10,L,ADA,"{""L"": 21, ""H"": 10}",56,2018-05-08
+TS21,H10,L,AVAX,"{""L"": 21, ""H"": 10}",38,2020-10-13
+TS21,H10,L,LINK,"{""L"": 21, ""H"": 10}",38,2019-02-06
+TS21,H10,L,DOT,"{""L"": 21, ""H"": 10}",33,2020-09-08
+TS21,H10,L,BNB,"{""L"": 21, ""H"": 10}",48,2017-11-27
+TS21,H10,L,LTC,"{""L"": 21, ""H"": 10}",51,2018-01-03
+TS21,H10,S,BTC,"{""L"": 21, ""H"": 10}",58,2017-09-07
+TS21,H10,S,ETH,"{""L"": 21, ""H"": 10}",48,2017-09-07
+TS21,H10,S,SOL,"{""L"": 21, ""H"": 10}",31,2020-09-01
+TS21,H10,S,XRP,"{""L"": 21, ""H"": 10}",54,2018-05-25
+TS21,H10,S,ADA,"{""L"": 21, ""H"": 10}",55,2018-05-08
+TS21,H10,S,AVAX,"{""L"": 21, ""H"": 10}",38,2020-10-13
+TS21,H10,S,LINK,"{""L"": 21, ""H"": 10}",39,2019-02-06
+TS21,H10,S,DOT,"{""L"": 21, ""H"": 10}",33,2020-09-08
+TS21,H10,S,BNB,"{""L"": 21, ""H"": 10}",48,2017-11-27
+TS21,H10,S,LTC,"{""L"": 21, ""H"": 10}",52,2018-01-03
+TS63,base,L,BTC,"{""L"": 63, ""H"": 7}",32,2017-10-19
+TS63,base,L,ETH,"{""L"": 63, ""H"": 7}",25,2017-10-19
+TS63,base,L,SOL,"{""L"": 63, ""H"": 7}",28,2020-10-13
+TS63,base,L,XRP,"{""L"": 63, ""H"": 7}",36,2018-07-06
+TS63,base,L,ADA,"{""L"": 63, ""H"": 7}",25,2018-06-19
+TS63,base,L,AVAX,"{""L"": 63, ""H"": 7}",15,2020-11-24
+TS63,base,L,LINK,"{""L"": 63, ""H"": 7}",33,2019-03-20
+TS63,base,L,DOT,"{""L"": 63, ""H"": 7}",21,2020-10-20
+TS63,base,L,BNB,"{""L"": 63, ""H"": 7}",32,2018-01-08
+TS63,base,L,LTC,"{""L"": 63, ""H"": 7}",29,2018-02-14
+TS63,base,S,BTC,"{""L"": 63, ""H"": 7}",32,2017-10-19
+TS63,base,S,ETH,"{""L"": 63, ""H"": 7}",25,2017-10-19
+TS63,base,S,SOL,"{""L"": 63, ""H"": 7}",29,2020-10-13
+TS63,base,S,XRP,"{""L"": 63, ""H"": 7}",37,2018-07-06
+TS63,base,S,ADA,"{""L"": 63, ""H"": 7}",26,2018-06-19
+TS63,base,S,AVAX,"{""L"": 63, ""H"": 7}",16,2020-11-24
+TS63,base,S,LINK,"{""L"": 63, ""H"": 7}",34,2019-03-20
+TS63,base,S,DOT,"{""L"": 63, ""H"": 7}",21,2020-10-20
+TS63,base,S,BNB,"{""L"": 63, ""H"": 7}",32,2018-01-08
+TS63,base,S,LTC,"{""L"": 63, ""H"": 7}",30,2018-02-14
+TS63,L47,L,BTC,"{""L"": 47, ""H"": 7}",39,2017-10-03
+TS63,L47,L,ETH,"{""L"": 47, ""H"": 7}",30,2017-10-03
+TS63,L47,L,SOL,"{""L"": 47, ""H"": 7}",27,2020-09-27
+TS63,L47,L,XRP,"{""L"": 47, ""H"": 7}",40,2018-06-20
+TS63,L47,L,ADA,"{""L"": 47, ""H"": 7}",30,2018-06-03
+TS63,L47,L,AVAX,"{""L"": 47, ""H"": 7}",23,2020-11-08
+TS63,L47,L,LINK,"{""L"": 47, ""H"": 7}",34,2019-03-04
+TS63,L47,L,DOT,"{""L"": 47, ""H"": 7}",31,2020-10-04
+TS63,L47,L,BNB,"{""L"": 47, ""H"": 7}",41,2017-12-23
+TS63,L47,L,LTC,"{""L"": 47, ""H"": 7}",35,2018-01-29
+TS63,L47,S,BTC,"{""L"": 47, ""H"": 7}",39,2017-10-03
+TS63,L47,S,ETH,"{""L"": 47, ""H"": 7}",31,2017-10-03
+TS63,L47,S,SOL,"{""L"": 47, ""H"": 7}",28,2020-09-27
+TS63,L47,S,XRP,"{""L"": 47, ""H"": 7}",41,2018-06-20
+TS63,L47,S,ADA,"{""L"": 47, ""H"": 7}",31,2018-06-03
+TS63,L47,S,AVAX,"{""L"": 47, ""H"": 7}",24,2020-11-08
+TS63,L47,S,LINK,"{""L"": 47, ""H"": 7}",35,2019-03-04
+TS63,L47,S,DOT,"{""L"": 47, ""H"": 7}",31,2020-10-04
+TS63,L47,S,BNB,"{""L"": 47, ""H"": 7}",41,2017-12-23
+TS63,L47,S,LTC,"{""L"": 47, ""H"": 7}",36,2018-01-29
+TS63,L79,L,BTC,"{""L"": 79, ""H"": 7}",26,2017-11-04
+TS63,L79,L,ETH,"{""L"": 79, ""H"": 7}",24,2017-11-04
+TS63,L79,L,SOL,"{""L"": 79, ""H"": 7}",15,2020-10-29
+TS63,L79,L,XRP,"{""L"": 79, ""H"": 7}",32,2018-07-22
+TS63,L79,L,ADA,"{""L"": 79, ""H"": 7}",17,2018-07-05
+TS63,L79,L,AVAX,"{""L"": 79, ""H"": 7}",16,2020-12-10
+TS63,L79,L,LINK,"{""L"": 79, ""H"": 7}",28,2019-04-05
+TS63,L79,L,DOT,"{""L"": 79, ""H"": 7}",14,2020-11-05
+TS63,L79,L,BNB,"{""L"": 79, ""H"": 7}",26,2018-01-24
+TS63,L79,L,LTC,"{""L"": 79, ""H"": 7}",22,2018-03-02
+TS63,L79,S,BTC,"{""L"": 79, ""H"": 7}",26,2017-11-04
+TS63,L79,S,ETH,"{""L"": 79, ""H"": 7}",25,2017-11-04
+TS63,L79,S,SOL,"{""L"": 79, ""H"": 7}",16,2020-10-29
+TS63,L79,S,XRP,"{""L"": 79, ""H"": 7}",33,2018-07-22
+TS63,L79,S,ADA,"{""L"": 79, ""H"": 7}",18,2018-07-05
+TS63,L79,S,AVAX,"{""L"": 79, ""H"": 7}",17,2020-12-10
+TS63,L79,S,LINK,"{""L"": 79, ""H"": 7}",28,2019-04-05
+TS63,L79,S,DOT,"{""L"": 79, ""H"": 7}",14,2020-11-05
+TS63,L79,S,BNB,"{""L"": 79, ""H"": 7}",26,2018-01-24
+TS63,L79,S,LTC,"{""L"": 79, ""H"": 7}",23,2018-03-02
+TS63,H5,L,BTC,"{""L"": 63, ""H"": 5}",38,2017-10-19
+TS63,H5,L,ETH,"{""L"": 63, ""H"": 5}",30,2017-10-19
+TS63,H5,L,SOL,"{""L"": 63, ""H"": 5}",31,2020-10-13
+TS63,H5,L,XRP,"{""L"": 63, ""H"": 5}",42,2018-07-06
+TS63,H5,L,ADA,"{""L"": 63, ""H"": 5}",32,2018-06-19
+TS63,H5,L,AVAX,"{""L"": 63, ""H"": 5}",17,2020-11-24
+TS63,H5,L,LINK,"{""L"": 63, ""H"": 5}",38,2019-03-20
+TS63,H5,L,DOT,"{""L"": 63, ""H"": 5}",22,2020-10-20
+TS63,H5,L,BNB,"{""L"": 63, ""H"": 5}",37,2018-01-08
+TS63,H5,L,LTC,"{""L"": 63, ""H"": 5}",36,2018-02-14
+TS63,H5,S,BTC,"{""L"": 63, ""H"": 5}",38,2017-10-19
+TS63,H5,S,ETH,"{""L"": 63, ""H"": 5}",30,2017-10-19
+TS63,H5,S,SOL,"{""L"": 63, ""H"": 5}",32,2020-10-13
+TS63,H5,S,XRP,"{""L"": 63, ""H"": 5}",43,2018-07-06
+TS63,H5,S,ADA,"{""L"": 63, ""H"": 5}",33,2018-06-19
+TS63,H5,S,AVAX,"{""L"": 63, ""H"": 5}",19,2020-11-24
+TS63,H5,S,LINK,"{""L"": 63, ""H"": 5}",39,2019-03-20
+TS63,H5,S,DOT,"{""L"": 63, ""H"": 5}",22,2020-10-20
+TS63,H5,S,BNB,"{""L"": 63, ""H"": 5}",37,2018-01-08
+TS63,H5,S,LTC,"{""L"": 63, ""H"": 5}",37,2018-02-14
+TS63,H10,L,BTC,"{""L"": 63, ""H"": 10}",27,2017-10-19
+TS63,H10,L,ETH,"{""L"": 63, ""H"": 10}",24,2017-10-19
+TS63,H10,L,SOL,"{""L"": 63, ""H"": 10}",19,2020-10-13
+TS63,H10,L,XRP,"{""L"": 63, ""H"": 10}",31,2018-07-06
+TS63,H10,L,ADA,"{""L"": 63, ""H"": 10}",26,2018-06-19
+TS63,H10,L,AVAX,"{""L"": 63, ""H"": 10}",16,2020-11-24
+TS63,H10,L,LINK,"{""L"": 63, ""H"": 10}",23,2019-03-20
+TS63,H10,L,DOT,"{""L"": 63, ""H"": 10}",17,2020-10-20
+TS63,H10,L,BNB,"{""L"": 63, ""H"": 10}",28,2018-01-08
+TS63,H10,L,LTC,"{""L"": 63, ""H"": 10}",22,2018-02-14
+TS63,H10,S,BTC,"{""L"": 63, ""H"": 10}",27,2017-10-19
+TS63,H10,S,ETH,"{""L"": 63, ""H"": 10}",24,2017-10-19
+TS63,H10,S,SOL,"{""L"": 63, ""H"": 10}",20,2020-10-13
+TS63,H10,S,XRP,"{""L"": 63, ""H"": 10}",32,2018-07-06
+TS63,H10,S,ADA,"{""L"": 63, ""H"": 10}",27,2018-06-19
+TS63,H10,S,AVAX,"{""L"": 63, ""H"": 10}",17,2020-11-24
+TS63,H10,S,LINK,"{""L"": 63, ""H"": 10}",24,2019-03-20
+TS63,H10,S,DOT,"{""L"": 63, ""H"": 10}",17,2020-10-20
+TS63,H10,S,BNB,"{""L"": 63, ""H"": 10}",28,2018-01-08
+TS63,H10,S,LTC,"{""L"": 63, ""H"": 10}",23,2018-02-14
+TS126,base,L,BTC,"{""L"": 126, ""H"": 7}",19,2017-12-21
+TS126,base,L,ETH,"{""L"": 126, ""H"": 7}",16,2017-12-21
+TS126,base,L,SOL,"{""L"": 126, ""H"": 7}",9,2020-12-15
+TS126,base,L,XRP,"{""L"": 126, ""H"": 7}",25,2018-09-07
+TS126,base,L,ADA,"{""L"": 126, ""H"": 7}",13,2018-08-21
+TS126,base,L,AVAX,"{""L"": 126, ""H"": 7}",10,2021-01-26
+TS126,base,L,LINK,"{""L"": 126, ""H"": 7}",22,2019-05-22
+TS126,base,L,DOT,"{""L"": 126, ""H"": 7}",12,2020-12-22
+TS126,base,L,BNB,"{""L"": 126, ""H"": 7}",24,2018-03-12
+TS126,base,L,LTC,"{""L"": 126, ""H"": 7}",15,2018-04-18
+TS126,base,S,BTC,"{""L"": 126, ""H"": 7}",18,2017-12-21
+TS126,base,S,ETH,"{""L"": 126, ""H"": 7}",16,2017-12-21
+TS126,base,S,SOL,"{""L"": 126, ""H"": 7}",10,2020-12-15
+TS126,base,S,XRP,"{""L"": 126, ""H"": 7}",25,2018-09-07
+TS126,base,S,ADA,"{""L"": 126, ""H"": 7}",13,2018-08-21
+TS126,base,S,AVAX,"{""L"": 126, ""H"": 7}",9,2021-01-26
+TS126,base,S,LINK,"{""L"": 126, ""H"": 7}",22,2019-05-22
+TS126,base,S,DOT,"{""L"": 126, ""H"": 7}",11,2020-12-22
+TS126,base,S,BNB,"{""L"": 126, ""H"": 7}",24,2018-03-12
+TS126,base,S,LTC,"{""L"": 126, ""H"": 7}",15,2018-04-18
+TS126,L95,L,BTC,"{""L"": 95, ""H"": 7}",22,2017-11-20
+TS126,L95,L,ETH,"{""L"": 95, ""H"": 7}",16,2017-11-20
+TS126,L95,L,SOL,"{""L"": 95, ""H"": 7}",17,2020-11-14
+TS126,L95,L,XRP,"{""L"": 95, ""H"": 7}",32,2018-08-07
+TS126,L95,L,ADA,"{""L"": 95, ""H"": 7}",16,2018-07-21
+TS126,L95,L,AVAX,"{""L"": 95, ""H"": 7}",15,2020-12-26
+TS126,L95,L,LINK,"{""L"": 95, ""H"": 7}",26,2019-04-21
+TS126,L95,L,DOT,"{""L"": 95, ""H"": 7}",15,2020-11-21
+TS126,L95,L,BNB,"{""L"": 95, ""H"": 7}",27,2018-02-09
+TS126,L95,L,LTC,"{""L"": 95, ""H"": 7}",21,2018-03-18
+TS126,L95,S,BTC,"{""L"": 95, ""H"": 7}",22,2017-11-20
+TS126,L95,S,ETH,"{""L"": 95, ""H"": 7}",16,2017-11-20
+TS126,L95,S,SOL,"{""L"": 95, ""H"": 7}",18,2020-11-14
+TS126,L95,S,XRP,"{""L"": 95, ""H"": 7}",33,2018-08-07
+TS126,L95,S,ADA,"{""L"": 95, ""H"": 7}",17,2018-07-21
+TS126,L95,S,AVAX,"{""L"": 95, ""H"": 7}",16,2020-12-26
+TS126,L95,S,LINK,"{""L"": 95, ""H"": 7}",26,2019-04-21
+TS126,L95,S,DOT,"{""L"": 95, ""H"": 7}",15,2020-11-21
+TS126,L95,S,BNB,"{""L"": 95, ""H"": 7}",27,2018-02-09
+TS126,L95,S,LTC,"{""L"": 95, ""H"": 7}",22,2018-03-18
+TS126,L158,L,BTC,"{""L"": 158, ""H"": 7}",14,2018-01-22
+TS126,L158,L,ETH,"{""L"": 158, ""H"": 7}",12,2018-01-22
+TS126,L158,L,SOL,"{""L"": 158, ""H"": 7}",8,2021-01-16
+TS126,L158,L,XRP,"{""L"": 158, ""H"": 7}",22,2018-10-09
+TS126,L158,L,ADA,"{""L"": 158, ""H"": 7}",9,2018-09-22
+TS126,L158,L,AVAX,"{""L"": 158, ""H"": 7}",10,2021-02-27
+TS126,L158,L,LINK,"{""L"": 158, ""H"": 7}",26,2019-06-23
+TS126,L158,L,DOT,"{""L"": 158, ""H"": 7}",10,2021-01-23
+TS126,L158,L,BNB,"{""L"": 158, ""H"": 7}",25,2018-04-13
+TS126,L158,L,LTC,"{""L"": 158, ""H"": 7}",21,2018-05-20
+TS126,L158,S,BTC,"{""L"": 158, ""H"": 7}",14,2018-01-22
+TS126,L158,S,ETH,"{""L"": 158, ""H"": 7}",12,2018-01-22
+TS126,L158,S,SOL,"{""L"": 158, ""H"": 7}",8,2021-01-16
+TS126,L158,S,XRP,"{""L"": 158, ""H"": 7}",23,2018-10-09
+TS126,L158,S,ADA,"{""L"": 158, ""H"": 7}",9,2018-09-22
+TS126,L158,S,AVAX,"{""L"": 158, ""H"": 7}",9,2021-02-27
+TS126,L158,S,LINK,"{""L"": 158, ""H"": 7}",26,2019-06-23
+TS126,L158,S,DOT,"{""L"": 158, ""H"": 7}",9,2021-01-23
+TS126,L158,S,BNB,"{""L"": 158, ""H"": 7}",25,2018-04-13
+TS126,L158,S,LTC,"{""L"": 158, ""H"": 7}",21,2018-05-20
+TS126,H5,L,BTC,"{""L"": 126, ""H"": 5}",22,2017-12-21
+TS126,H5,L,ETH,"{""L"": 126, ""H"": 5}",17,2017-12-21
+TS126,H5,L,SOL,"{""L"": 126, ""H"": 5}",10,2020-12-15
+TS126,H5,L,XRP,"{""L"": 126, ""H"": 5}",31,2018-09-07
+TS126,H5,L,ADA,"{""L"": 126, ""H"": 5}",12,2018-08-21
+TS126,H5,L,AVAX,"{""L"": 126, ""H"": 5}",13,2021-01-26
+TS126,H5,L,LINK,"{""L"": 126, ""H"": 5}",25,2019-05-22
+TS126,H5,L,DOT,"{""L"": 126, ""H"": 5}",15,2020-12-22
+TS126,H5,L,BNB,"{""L"": 126, ""H"": 5}",29,2018-03-12
+TS126,H5,L,LTC,"{""L"": 126, ""H"": 5}",15,2018-04-18
+TS126,H5,S,BTC,"{""L"": 126, ""H"": 5}",21,2017-12-21
+TS126,H5,S,ETH,"{""L"": 126, ""H"": 5}",17,2017-12-21
+TS126,H5,S,SOL,"{""L"": 126, ""H"": 5}",11,2020-12-15
+TS126,H5,S,XRP,"{""L"": 126, ""H"": 5}",31,2018-09-07
+TS126,H5,S,ADA,"{""L"": 126, ""H"": 5}",12,2018-08-21
+TS126,H5,S,AVAX,"{""L"": 126, ""H"": 5}",12,2021-01-26
+TS126,H5,S,LINK,"{""L"": 126, ""H"": 5}",25,2019-05-22
+TS126,H5,S,DOT,"{""L"": 126, ""H"": 5}",14,2020-12-22
+TS126,H5,S,BNB,"{""L"": 126, ""H"": 5}",29,2018-03-12
+TS126,H5,S,LTC,"{""L"": 126, ""H"": 5}",15,2018-04-18
+TS126,H10,L,BTC,"{""L"": 126, ""H"": 10}",14,2017-12-21
+TS126,H10,L,ETH,"{""L"": 126, ""H"": 10}",12,2017-12-21
+TS126,H10,L,SOL,"{""L"": 126, ""H"": 10}",9,2020-12-15
+TS126,H10,L,XRP,"{""L"": 126, ""H"": 10}",22,2018-09-07
+TS126,H10,L,ADA,"{""L"": 126, ""H"": 10}",10,2018-08-21
+TS126,H10,L,AVAX,"{""L"": 126, ""H"": 10}",11,2021-01-26
+TS126,H10,L,LINK,"{""L"": 126, ""H"": 10}",15,2019-05-22
+TS126,H10,L,DOT,"{""L"": 126, ""H"": 10}",11,2020-12-22
+TS126,H10,L,BNB,"{""L"": 126, ""H"": 10}",21,2018-03-12
+TS126,H10,L,LTC,"{""L"": 126, ""H"": 10}",11,2018-04-18
+TS126,H10,S,BTC,"{""L"": 126, ""H"": 10}",14,2017-12-21
+TS126,H10,S,ETH,"{""L"": 126, ""H"": 10}",12,2017-12-21
+TS126,H10,S,SOL,"{""L"": 126, ""H"": 10}",10,2020-12-15
+TS126,H10,S,XRP,"{""L"": 126, ""H"": 10}",23,2018-09-07
+TS126,H10,S,ADA,"{""L"": 126, ""H"": 10}",10,2018-08-21
+TS126,H10,S,AVAX,"{""L"": 126, ""H"": 10}",10,2021-01-26
+TS126,H10,S,LINK,"{""L"": 126, ""H"": 10}",15,2019-05-22
+TS126,H10,S,DOT,"{""L"": 126, ""H"": 10}",10,2020-12-22
+TS126,H10,S,BNB,"{""L"": 126, ""H"": 10}",21,2018-03-12
+TS126,H10,S,LTC,"{""L"": 126, ""H"": 10}",11,2018-04-18
+FC,base,L,BTC,"{""scale"": 0.3, ""window"": ""7"", ""H"": 7}",32,2020-01-01
+FC,base,L,ETH,"{""scale"": 0.3, ""window"": ""7"", ""H"": 7}",31,2020-01-01
+FC,base,L,SOL,"{""scale"": 0.3, ""window"": ""7"", ""H"": 7}",77,2020-09-13
+FC,base,L,XRP,"{""scale"": 0.3, ""window"": ""7"", ""H"": 7}",61,2020-01-06
+FC,base,L,ADA,"{""scale"": 0.3, ""window"": ""7"", ""H"": 7}",62,2020-01-19
+FC,base,L,AVAX,"{""scale"": 0.3, ""window"": ""7"", ""H"": 7}",89,2020-09-22
+FC,base,L,LINK,"{""scale"": 0.3, ""window"": ""7"", ""H"": 7}",28,2020-01-17
+FC,base,L,DOT,"{""scale"": 0.3, ""window"": ""7"", ""H"": 7}",112,2020-08-20
+FC,base,L,BNB,"{""scale"": 0.3, ""window"": ""7"", ""H"": 7}",161,2020-02-10
+FC,base,L,LTC,"{""scale"": 0.3, ""window"": ""7"", ""H"": 7}",28,2020-01-09
+FC,base,S,BTC,"{""scale"": 0.3, ""window"": ""7"", ""H"": 7}",291,2020-01-01
+FC,base,S,ETH,"{""scale"": 0.3, ""window"": ""7"", ""H"": 7}",278,2020-01-01
+FC,base,S,SOL,"{""scale"": 0.3, ""window"": ""7"", ""H"": 7}",208,2020-09-13
+FC,base,S,XRP,"{""scale"": 0.3, ""window"": ""7"", ""H"": 7}",249,2020-01-06
+FC,base,S,ADA,"{""scale"": 0.3, ""window"": ""7"", ""H"": 7}",245,2020-01-19
+FC,base,S,AVAX,"{""scale"": 0.3, ""window"": ""7"", ""H"": 7}",197,2020-09-22
+FC,base,S,LINK,"{""scale"": 0.3, ""window"": ""7"", ""H"": 7}",277,2020-01-17
+FC,base,S,DOT,"{""scale"": 0.3, ""window"": ""7"", ""H"": 7}",180,2020-08-20
+FC,base,S,BNB,"{""scale"": 0.3, ""window"": ""7"", ""H"": 7}",141,2020-02-10
+FC,base,S,LTC,"{""scale"": 0.3, ""window"": ""7"", ""H"": 7}",282,2020-01-09
+FC,s0.20,L,BTC,"{""scale"": 0.2, ""window"": ""7"", ""H"": 7}",32,2020-01-01
+FC,s0.20,L,ETH,"{""scale"": 0.2, ""window"": ""7"", ""H"": 7}",30,2020-01-01
+FC,s0.20,L,SOL,"{""scale"": 0.2, ""window"": ""7"", ""H"": 7}",77,2020-09-13
+FC,s0.20,L,XRP,"{""scale"": 0.2, ""window"": ""7"", ""H"": 7}",61,2020-01-06
+FC,s0.20,L,ADA,"{""scale"": 0.2, ""window"": ""7"", ""H"": 7}",62,2020-01-19
+FC,s0.20,L,AVAX,"{""scale"": 0.2, ""window"": ""7"", ""H"": 7}",87,2020-09-22
+FC,s0.20,L,LINK,"{""scale"": 0.2, ""window"": ""7"", ""H"": 7}",28,2020-01-17
+FC,s0.20,L,DOT,"{""scale"": 0.2, ""window"": ""7"", ""H"": 7}",105,2020-08-20
+FC,s0.20,L,BNB,"{""scale"": 0.2, ""window"": ""7"", ""H"": 7}",148,2020-02-10
+FC,s0.20,L,LTC,"{""scale"": 0.2, ""window"": ""7"", ""H"": 7}",28,2020-01-09
+FC,s0.20,S,BTC,"{""scale"": 0.2, ""window"": ""7"", ""H"": 7}",271,2020-01-01
+FC,s0.20,S,ETH,"{""scale"": 0.2, ""window"": ""7"", ""H"": 7}",264,2020-01-01
+FC,s0.20,S,SOL,"{""scale"": 0.2, ""window"": ""7"", ""H"": 7}",196,2020-09-13
+FC,s0.20,S,XRP,"{""scale"": 0.2, ""window"": ""7"", ""H"": 7}",237,2020-01-06
+FC,s0.20,S,ADA,"{""scale"": 0.2, ""window"": ""7"", ""H"": 7}",234,2020-01-19
+FC,s0.20,S,AVAX,"{""scale"": 0.2, ""window"": ""7"", ""H"": 7}",189,2020-09-22
+FC,s0.20,S,LINK,"{""scale"": 0.2, ""window"": ""7"", ""H"": 7}",262,2020-01-17
+FC,s0.20,S,DOT,"{""scale"": 0.2, ""window"": ""7"", ""H"": 7}",166,2020-08-20
+FC,s0.20,S,BNB,"{""scale"": 0.2, ""window"": ""7"", ""H"": 7}",130,2020-02-10
+FC,s0.20,S,LTC,"{""scale"": 0.2, ""window"": ""7"", ""H"": 7}",261,2020-01-09
+FC,s0.40,L,BTC,"{""scale"": 0.4, ""window"": ""7"", ""H"": 7}",32,2020-01-01
+FC,s0.40,L,ETH,"{""scale"": 0.4, ""window"": ""7"", ""H"": 7}",31,2020-01-01
+FC,s0.40,L,SOL,"{""scale"": 0.4, ""window"": ""7"", ""H"": 7}",79,2020-09-13
+FC,s0.40,L,XRP,"{""scale"": 0.4, ""window"": ""7"", ""H"": 7}",61,2020-01-06
+FC,s0.40,L,ADA,"{""scale"": 0.4, ""window"": ""7"", ""H"": 7}",62,2020-01-19
+FC,s0.40,L,AVAX,"{""scale"": 0.4, ""window"": ""7"", ""H"": 7}",91,2020-09-22
+FC,s0.40,L,LINK,"{""scale"": 0.4, ""window"": ""7"", ""H"": 7}",28,2020-01-17
+FC,s0.40,L,DOT,"{""scale"": 0.4, ""window"": ""7"", ""H"": 7}",112,2020-08-20
+FC,s0.40,L,BNB,"{""scale"": 0.4, ""window"": ""7"", ""H"": 7}",166,2020-02-10
+FC,s0.40,L,LTC,"{""scale"": 0.4, ""window"": ""7"", ""H"": 7}",28,2020-01-09
+FC,s0.40,S,BTC,"{""scale"": 0.4, ""window"": ""7"", ""H"": 7}",298,2020-01-01
+FC,s0.40,S,ETH,"{""scale"": 0.4, ""window"": ""7"", ""H"": 7}",284,2020-01-01
+FC,s0.40,S,SOL,"{""scale"": 0.4, ""window"": ""7"", ""H"": 7}",210,2020-09-13
+FC,s0.40,S,XRP,"{""scale"": 0.4, ""window"": ""7"", ""H"": 7}",262,2020-01-06
+FC,s0.40,S,ADA,"{""scale"": 0.4, ""window"": ""7"", ""H"": 7}",258,2020-01-19
+FC,s0.40,S,AVAX,"{""scale"": 0.4, ""window"": ""7"", ""H"": 7}",201,2020-09-22
+FC,s0.40,S,LINK,"{""scale"": 0.4, ""window"": ""7"", ""H"": 7}",288,2020-01-17
+FC,s0.40,S,DOT,"{""scale"": 0.4, ""window"": ""7"", ""H"": 7}",184,2020-08-20
+FC,s0.40,S,BNB,"{""scale"": 0.4, ""window"": ""7"", ""H"": 7}",144,2020-02-10
+FC,s0.40,S,LTC,"{""scale"": 0.4, ""window"": ""7"", ""H"": 7}",288,2020-01-09
+FC,w3,L,BTC,"{""scale"": 0.3, ""window"": ""3"", ""H"": 7}",37,2020-01-01
+FC,w3,L,ETH,"{""scale"": 0.3, ""window"": ""3"", ""H"": 7}",34,2020-01-01
+FC,w3,L,SOL,"{""scale"": 0.3, ""window"": ""3"", ""H"": 7}",86,2020-09-13
+FC,w3,L,XRP,"{""scale"": 0.3, ""window"": ""3"", ""H"": 7}",62,2020-01-06
+FC,w3,L,ADA,"{""scale"": 0.3, ""window"": ""3"", ""H"": 7}",61,2020-01-19
+FC,w3,L,AVAX,"{""scale"": 0.3, ""window"": ""3"", ""H"": 7}",94,2020-09-22
+FC,w3,L,LINK,"{""scale"": 0.3, ""window"": ""3"", ""H"": 7}",31,2020-01-17
+FC,w3,L,DOT,"{""scale"": 0.3, ""window"": ""3"", ""H"": 7}",109,2020-08-20
+FC,w3,L,BNB,"{""scale"": 0.3, ""window"": ""3"", ""H"": 7}",131,2020-02-10
+FC,w3,L,LTC,"{""scale"": 0.3, ""window"": ""3"", ""H"": 7}",32,2020-01-09
+FC,w3,S,BTC,"{""scale"": 0.3, ""window"": ""3"", ""H"": 7}",271,2020-01-01
+FC,w3,S,ETH,"{""scale"": 0.3, ""window"": ""3"", ""H"": 7}",269,2020-01-01
+FC,w3,S,SOL,"{""scale"": 0.3, ""window"": ""3"", ""H"": 7}",191,2020-09-13
+FC,w3,S,XRP,"{""scale"": 0.3, ""window"": ""3"", ""H"": 7}",233,2020-01-06
+FC,w3,S,ADA,"{""scale"": 0.3, ""window"": ""3"", ""H"": 7}",239,2020-01-19
+FC,w3,S,AVAX,"{""scale"": 0.3, ""window"": ""3"", ""H"": 7}",192,2020-09-22
+FC,w3,S,LINK,"{""scale"": 0.3, ""window"": ""3"", ""H"": 7}",261,2020-01-17
+FC,w3,S,DOT,"{""scale"": 0.3, ""window"": ""3"", ""H"": 7}",182,2020-08-20
+FC,w3,S,BNB,"{""scale"": 0.3, ""window"": ""3"", ""H"": 7}",130,2020-02-10
+FC,w3,S,LTC,"{""scale"": 0.3, ""window"": ""3"", ""H"": 7}",273,2020-01-09
+FC,w14,L,BTC,"{""scale"": 0.3, ""window"": ""14"", ""H"": 7}",33,2020-01-01
+FC,w14,L,ETH,"{""scale"": 0.3, ""window"": ""14"", ""H"": 7}",29,2020-01-01
+FC,w14,L,SOL,"{""scale"": 0.3, ""window"": ""14"", ""H"": 7}",77,2020-09-13
+FC,w14,L,XRP,"{""scale"": 0.3, ""window"": ""14"", ""H"": 7}",67,2020-01-06
+FC,w14,L,ADA,"{""scale"": 0.3, ""window"": ""14"", ""H"": 7}",61,2020-01-19
+FC,w14,L,AVAX,"{""scale"": 0.3, ""window"": ""14"", ""H"": 7}",96,2020-09-22
+FC,w14,L,LINK,"{""scale"": 0.3, ""window"": ""14"", ""H"": 7}",23,2020-01-17
+FC,w14,L,DOT,"{""scale"": 0.3, ""window"": ""14"", ""H"": 7}",110,2020-08-20
+FC,w14,L,BNB,"{""scale"": 0.3, ""window"": ""14"", ""H"": 7}",165,2020-02-10
+FC,w14,L,LTC,"{""scale"": 0.3, ""window"": ""14"", ""H"": 7}",19,2020-01-09
+FC,w14,S,BTC,"{""scale"": 0.3, ""window"": ""14"", ""H"": 7}",282,2020-01-01
+FC,w14,S,ETH,"{""scale"": 0.3, ""window"": ""14"", ""H"": 7}",279,2020-01-01
+FC,w14,S,SOL,"{""scale"": 0.3, ""window"": ""14"", ""H"": 7}",198,2020-09-13
+FC,w14,S,XRP,"{""scale"": 0.3, ""window"": ""14"", ""H"": 7}",235,2020-01-06
+FC,w14,S,ADA,"{""scale"": 0.3, ""window"": ""14"", ""H"": 7}",246,2020-01-19
+FC,w14,S,AVAX,"{""scale"": 0.3, ""window"": ""14"", ""H"": 7}",185,2020-09-22
+FC,w14,S,LINK,"{""scale"": 0.3, ""window"": ""14"", ""H"": 7}",284,2020-01-17
+FC,w14,S,DOT,"{""scale"": 0.3, ""window"": ""14"", ""H"": 7}",173,2020-08-20
+FC,w14,S,BNB,"{""scale"": 0.3, ""window"": ""14"", ""H"": 7}",131,2020-02-10
+FC,w14,S,LTC,"{""scale"": 0.3, ""window"": ""14"", ""H"": 7}",290,2020-01-09
+OI,base,L,BTC,"{""W"": 7, ""H"": 7}",69,2021-01-01
+OI,base,L,ETH,"{""W"": 7, ""H"": 7}",55,2021-12-01
+OI,base,L,SOL,"{""W"": 7, ""H"": 7}",49,2021-12-01
+OI,base,L,XRP,"{""W"": 7, ""H"": 7}",59,2021-12-01
+OI,base,L,ADA,"{""W"": 7, ""H"": 7}",59,2021-12-01
+OI,base,L,AVAX,"{""W"": 7, ""H"": 7}",52,2021-12-01
+OI,base,L,LINK,"{""W"": 7, ""H"": 7}",56,2021-12-01
+OI,base,L,DOT,"{""W"": 7, ""H"": 7}",42,2021-12-01
+OI,base,L,BNB,"{""W"": 7, ""H"": 7}",52,2021-12-01
+OI,base,L,LTC,"{""W"": 7, ""H"": 7}",54,2021-12-01
+OI,base,S,BTC,"{""W"": 7, ""H"": 7}",57,2021-01-01
+OI,base,S,ETH,"{""W"": 7, ""H"": 7}",45,2021-12-01
+OI,base,S,SOL,"{""W"": 7, ""H"": 7}",47,2021-12-01
+OI,base,S,XRP,"{""W"": 7, ""H"": 7}",39,2021-12-01
+OI,base,S,ADA,"{""W"": 7, ""H"": 7}",53,2021-12-01
+OI,base,S,AVAX,"{""W"": 7, ""H"": 7}",42,2021-12-01
+OI,base,S,LINK,"{""W"": 7, ""H"": 7}",38,2021-12-01
+OI,base,S,DOT,"{""W"": 7, ""H"": 7}",57,2021-12-01
+OI,base,S,BNB,"{""W"": 7, ""H"": 7}",41,2021-12-01
+OI,base,S,LTC,"{""W"": 7, ""H"": 7}",40,2021-12-01
+OI,W5,L,BTC,"{""W"": 5, ""H"": 7}",71,2021-01-01
+OI,W5,L,ETH,"{""W"": 5, ""H"": 7}",52,2021-12-01
+OI,W5,L,SOL,"{""W"": 5, ""H"": 7}",50,2021-12-01
+OI,W5,L,XRP,"{""W"": 5, ""H"": 7}",60,2021-12-01
+OI,W5,L,ADA,"{""W"": 5, ""H"": 7}",48,2021-12-01
+OI,W5,L,AVAX,"{""W"": 5, ""H"": 7}",44,2021-12-01
+OI,W5,L,LINK,"{""W"": 5, ""H"": 7}",47,2021-12-01
+OI,W5,L,DOT,"{""W"": 5, ""H"": 7}",37,2021-12-01
+OI,W5,L,BNB,"{""W"": 5, ""H"": 7}",40,2021-12-01
+OI,W5,L,LTC,"{""W"": 5, ""H"": 7}",61,2021-12-01
+OI,W5,S,BTC,"{""W"": 5, ""H"": 7}",51,2021-01-01
+OI,W5,S,ETH,"{""W"": 5, ""H"": 7}",43,2021-12-01
+OI,W5,S,SOL,"{""W"": 5, ""H"": 7}",52,2021-12-01
+OI,W5,S,XRP,"{""W"": 5, ""H"": 7}",40,2021-12-01
+OI,W5,S,ADA,"{""W"": 5, ""H"": 7}",60,2021-12-01
+OI,W5,S,AVAX,"{""W"": 5, ""H"": 7}",50,2021-12-01
+OI,W5,S,LINK,"{""W"": 5, ""H"": 7}",42,2021-12-01
+OI,W5,S,DOT,"{""W"": 5, ""H"": 7}",54,2021-12-01
+OI,W5,S,BNB,"{""W"": 5, ""H"": 7}",38,2021-12-01
+OI,W5,S,LTC,"{""W"": 5, ""H"": 7}",38,2021-12-01
+OI,W14,L,BTC,"{""W"": 14, ""H"": 7}",54,2021-01-01
+OI,W14,L,ETH,"{""W"": 14, ""H"": 7}",38,2021-12-01
+OI,W14,L,SOL,"{""W"": 14, ""H"": 7}",37,2021-12-01
+OI,W14,L,XRP,"{""W"": 14, ""H"": 7}",39,2021-12-01
+OI,W14,L,ADA,"{""W"": 14, ""H"": 7}",40,2021-12-01
+OI,W14,L,AVAX,"{""W"": 14, ""H"": 7}",41,2021-12-01
+OI,W14,L,LINK,"{""W"": 14, ""H"": 7}",39,2021-12-01
+OI,W14,L,DOT,"{""W"": 14, ""H"": 7}",28,2021-12-01
+OI,W14,L,BNB,"{""W"": 14, ""H"": 7}",40,2021-12-01
+OI,W14,L,LTC,"{""W"": 14, ""H"": 7}",38,2021-12-01
+OI,W14,S,BTC,"{""W"": 14, ""H"": 7}",42,2021-01-01
+OI,W14,S,ETH,"{""W"": 14, ""H"": 7}",35,2021-12-01
+OI,W14,S,SOL,"{""W"": 14, ""H"": 7}",30,2021-12-01
+OI,W14,S,XRP,"{""W"": 14, ""H"": 7}",34,2021-12-01
+OI,W14,S,ADA,"{""W"": 14, ""H"": 7}",31,2021-12-01
+OI,W14,S,AVAX,"{""W"": 14, ""H"": 7}",40,2021-12-01
+OI,W14,S,LINK,"{""W"": 14, ""H"": 7}",29,2021-12-01
+OI,W14,S,DOT,"{""W"": 14, ""H"": 7}",42,2021-12-01
+OI,W14,S,BNB,"{""W"": 14, ""H"": 7}",27,2021-12-01
+OI,W14,S,LTC,"{""W"": 14, ""H"": 7}",30,2021-12-01
+XS21,base,L,ALL,"{""L"": 21, ""top"": 3, ""H"": 7}",398,2017-09-07
+XS21,base,S,ALL,"{""L"": 21, ""top"": 3, ""H"": 7}",412,2017-09-07
+XS21,base,LS,ALL,"{""L"": 21, ""top"": 3, ""H"": 7}",810,2017-09-07
+XS21,L42,L,ALL,"{""L"": 42, ""top"": 3, ""H"": 7}",270,2017-09-28
+XS21,L42,S,ALL,"{""L"": 42, ""top"": 3, ""H"": 7}",323,2017-09-28
+XS21,L42,LS,ALL,"{""L"": 42, ""top"": 3, ""H"": 7}",593,2017-09-28
+XS21,L63,L,ALL,"{""L"": 63, ""top"": 3, ""H"": 7}",229,2017-10-19
+XS21,L63,S,ALL,"{""L"": 63, ""top"": 3, ""H"": 7}",264,2017-10-19
+XS21,L63,LS,ALL,"{""L"": 63, ""top"": 3, ""H"": 7}",493,2017-10-19
+XS21,top2,L,ALL,"{""L"": 21, ""top"": 2, ""H"": 7}",303,2017-09-07
+XS21,top2,S,ALL,"{""L"": 21, ""top"": 2, ""H"": 7}",349,2017-09-07
+XS21,top2,LS,ALL,"{""L"": 21, ""top"": 2, ""H"": 7}",652,2017-09-07
+XS21,top4,L,ALL,"{""L"": 21, ""top"": 4, ""H"": 7}",464,2017-09-07
+XS21,top4,S,ALL,"{""L"": 21, ""top"": 4, ""H"": 7}",485,2017-09-07
+XS21,top4,LS,ALL,"{""L"": 21, ""top"": 4, ""H"": 7}",949,2017-09-07
+CC,base,N,BTC,"{""thr"": 0.1, ""window"": ""7""}",11,2020-01-01
+CC,base,N,ETH,"{""thr"": 0.1, ""window"": ""7""}",9,2020-01-01
+CC,base,N,SOL,"{""thr"": 0.1, ""window"": ""7""}",16,2020-09-13
+CC,base,N,XRP,"{""thr"": 0.1, ""window"": ""7""}",13,2020-01-06
+CC,base,N,ADA,"{""thr"": 0.1, ""window"": ""7""}",13,2020-01-19
+CC,base,N,AVAX,"{""thr"": 0.1, ""window"": ""7""}",17,2020-09-22
+CC,base,N,LINK,"{""thr"": 0.1, ""window"": ""7""}",14,2020-01-17
+CC,base,N,DOT,"{""thr"": 0.1, ""window"": ""7""}",12,2020-08-20
+CC,base,N,BNB,"{""thr"": 0.1, ""window"": ""7""}",17,2020-02-10
+CC,base,N,LTC,"{""thr"": 0.1, ""window"": ""7""}",11,2020-01-09
+CC,thr0.05,N,BTC,"{""thr"": 0.05, ""window"": ""7""}",17,2020-01-01
+CC,thr0.05,N,ETH,"{""thr"": 0.05, ""window"": ""7""}",19,2020-01-01
+CC,thr0.05,N,SOL,"{""thr"": 0.05, ""window"": ""7""}",28,2020-09-13
+CC,thr0.05,N,XRP,"{""thr"": 0.05, ""window"": ""7""}",17,2020-01-06
+CC,thr0.05,N,ADA,"{""thr"": 0.05, ""window"": ""7""}",25,2020-01-19
+CC,thr0.05,N,AVAX,"{""thr"": 0.05, ""window"": ""7""}",31,2020-09-22
+CC,thr0.05,N,LINK,"{""thr"": 0.05, ""window"": ""7""}",20,2020-01-17
+CC,thr0.05,N,DOT,"{""thr"": 0.05, ""window"": ""7""}",27,2020-08-20
+CC,thr0.05,N,BNB,"{""thr"": 0.05, ""window"": ""7""}",25,2020-02-10
+CC,thr0.05,N,LTC,"{""thr"": 0.05, ""window"": ""7""}",19,2020-01-09
+CC,thr0.15,N,BTC,"{""thr"": 0.15, ""window"": ""7""}",6,2020-01-01
+CC,thr0.15,N,ETH,"{""thr"": 0.15, ""window"": ""7""}",6,2020-01-01
+CC,thr0.15,N,SOL,"{""thr"": 0.15, ""window"": ""7""}",7,2020-09-13
+CC,thr0.15,N,XRP,"{""thr"": 0.15, ""window"": ""7""}",6,2020-01-06
+CC,thr0.15,N,ADA,"{""thr"": 0.15, ""window"": ""7""}",6,2020-01-19
+CC,thr0.15,N,AVAX,"{""thr"": 0.15, ""window"": ""7""}",11,2020-09-22
+CC,thr0.15,N,LINK,"{""thr"": 0.15, ""window"": ""7""}",8,2020-01-17
+CC,thr0.15,N,DOT,"{""thr"": 0.15, ""window"": ""7""}",6,2020-08-20
+CC,thr0.15,N,BNB,"{""thr"": 0.15, ""window"": ""7""}",12,2020-02-10
+CC,thr0.15,N,LTC,"{""thr"": 0.15, ""window"": ""7""}",5,2020-01-09
+CC,w3,N,BTC,"{""thr"": 0.1, ""window"": ""3""}",21,2020-01-01
+CC,w3,N,ETH,"{""thr"": 0.1, ""window"": ""3""}",15,2020-01-01
+CC,w3,N,SOL,"{""thr"": 0.1, ""window"": ""3""}",34,2020-09-13
+CC,w3,N,XRP,"{""thr"": 0.1, ""window"": ""3""}",20,2020-01-06
+CC,w3,N,ADA,"{""thr"": 0.1, ""window"": ""3""}",27,2020-01-19
+CC,w3,N,AVAX,"{""thr"": 0.1, ""window"": ""3""}",29,2020-09-22
+CC,w3,N,LINK,"{""thr"": 0.1, ""window"": ""3""}",28,2020-01-17
+CC,w3,N,DOT,"{""thr"": 0.1, ""window"": ""3""}",23,2020-08-20
+CC,w3,N,BNB,"{""thr"": 0.1, ""window"": ""3""}",32,2020-02-10
+CC,w3,N,LTC,"{""thr"": 0.1, ""window"": ""3""}",20,2020-01-09
+CC,w14,N,BTC,"{""thr"": 0.1, ""window"": ""14""}",6,2020-01-01
+CC,w14,N,ETH,"{""thr"": 0.1, ""window"": ""14""}",5,2020-01-01
+CC,w14,N,SOL,"{""thr"": 0.1, ""window"": ""14""}",10,2020-09-13
+CC,w14,N,XRP,"{""thr"": 0.1, ""window"": ""14""}",8,2020-01-06
+CC,w14,N,ADA,"{""thr"": 0.1, ""window"": ""14""}",8,2020-01-19
+CC,w14,N,AVAX,"{""thr"": 0.1, ""window"": ""14""}",9,2020-09-22
+CC,w14,N,LINK,"{""thr"": 0.1, ""window"": ""14""}",8,2020-01-17
+CC,w14,N,DOT,"{""thr"": 0.1, ""window"": ""14""}",6,2020-08-20
+CC,w14,N,BNB,"{""thr"": 0.1, ""window"": ""14""}",10,2020-02-10
+CC,w14,N,LTC,"{""thr"": 0.1, ""window"": ""14""}",7,2020-01-09

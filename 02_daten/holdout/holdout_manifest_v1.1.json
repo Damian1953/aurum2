@@ -1,0 +1,233 @@
+{
+ "cut_last_discovery_bar": "2023-12-31T20:00:00Z",
+ "holdout_first_bar": "2024-01-01T00:00:00Z",
+ "files": {
+  "BTCUSDT_spot4h": {
+   "source_sha256": "f8d0e58dd88c583138e079772f78bb7401f3b33f3e18d1870ec7476617d715b3",
+   "discovery": {
+    "path": "discovery/BTCUSDT_spot4h_discovery.csv",
+    "rows": 13950,
+    "last": "2023-12-31 20:00:00+00:00",
+    "sha256": "2d394fd1cbc344d5e012e12b40bc5835fef0fbe72f0678c2abf417babd96a7e6"
+   },
+   "validation": {
+    "path": "validation/BTCUSDT_spot4h_validation.csv",
+    "rows": 5940,
+    "first": "2024-01-01 00:00:00+00:00",
+    "sha256": "6346be296533e18ad2323ddd92c749da1dab95fbfc40b1f75e3be2028eaa7c5d"
+   }
+  },
+  "BTCUSDT_perp4h": {
+   "source_sha256": "0a6d5cbe189c179cb8c533d39d44e5f54c6d239a27d85a0d8809c7e23d8b511f",
+   "discovery": {
+    "path": "discovery/BTCUSDT_perp4h_discovery.csv",
+    "rows": 8766,
+    "last": "2023-12-31 20:00:00+00:00",
+    "sha256": "d45be78b06e74fa9a7ba4a7098407bdfbe32be577be52e3c9e61308fc4c07f3d"
+   },
+   "validation": {
+    "path": "validation/BTCUSDT_perp4h_validation.csv",
+    "rows": 5940,
+    "first": "2024-01-01 00:00:00+00:00",
+    "sha256": "6acd34d5fbaade9c3a395ea1d62f398c771d6a1dd4f8195bd15adadc312471b7"
+   }
+  },
+  "BTCUSDT_flow4h": {
+   "source_sha256": "b10486a3a08b338545cf2396c8a1262b61568205dedef87925802740f0ba47cf",
+   "discovery": {
+    "path": "discovery/BTCUSDT_flow4h_discovery.csv",
+    "rows": 13950,
+    "last": "2023-12-31 20:00:00+00:00",
+    "sha256": "b44ce51c2fc19e40ccbda6f36ce8cdf28400f898d43df0ae9f488449354eadba"
+   },
+   "validation": {
+    "path": "validation/BTCUSDT_flow4h_validation.csv",
+    "rows": 5940,
+    "first": "2024-01-01 00:00:00+00:00",
+    "sha256": "85bc8f20a4a47c91a7886db96cde60d411c192e65144ff454c84ce348a79f395"
+   }
+  },
+  "XRPUSDT_spot4h": {
+   "source_sha256": "b1408b911f4267ffa9c28f01d9d420c08cccf715cbe3b6812d9bd935eb6838f9",
+   "discovery": {
+    "path": "discovery/XRPUSDT_spot4h_discovery.csv",
+    "rows": 12397,
+    "last": "2023-12-31 20:00:00+00:00",
+    "sha256": "6fda0931ded268ac1af750a75aef7f08ed5c345d1b0e61ae2f26d282a7fbf453"
+   },
+   "validation": {
+    "path": "validation/XRPUSDT_spot4h_validation.csv",
+    "rows": 5940,
+    "first": "2024-01-01 00:00:00+00:00",
+    "sha256": "5d706c5494bbc43816019e6911c0bd3654e0ef3a6a9b2ab9db3261fd5d333521"
+   }
+  },
+  "XRPUSDT_perp4h": {
+   "source_sha256": "453526473899669c6e587893abe06ce0adfa29c6deb642ed13e441697847582b",
+   "discovery": {
+    "path": "discovery/XRPUSDT_perp4h_discovery.csv",
+    "rows": 8704,
+    "last": "2023-12-31 20:00:00+00:00",
+    "sha256": "47ec6f49bfd8a7e8833a467bcbfaf16856924cfd4ab490a82a54eb56d6aab4a0"
+   },
+   "validation": {
+    "path": "validation/XRPUSDT_perp4h_validation.csv",
+    "rows": 5940,
+    "first": "2024-01-01 00:00:00+00:00",
+    "sha256": "580f33cb33506f5e50724eab9744414b5b10e28efc3393eba3b56cd4d3c0920a"
+   }
+  },
+  "XRPUSDT_flow4h": {
+   "source_sha256": "59d971b0c0981ff81606ac1c1afd1112fc35306246cc580b0dc9985ea20c9e5c",
+   "discovery": {
+    "path": "discovery/XRPUSDT_flow4h_discovery.csv",
+    "rows": 12397,
+    "last": "2023-12-31 20:00:00+00:00",
+    "sha256": "425b430b506c23d7e9601b4c292e3a8a1a1b1ed8bd136587ed70f4d7814ec3f8"
+   },
+   "validation": {
+    "path": "validation/XRPUSDT_flow4h_validation.csv",
+    "rows": 5940,
+    "first": "2024-01-01 00:00:00+00:00",
+    "sha256": "150b8baaa1c4acb1b78f86ce5914f60adf2ef4355388003f73db44f70764917c"
+   }
+  },
+  "DOTUSDT_spot4h": {
+   "source_sha256": "4ac4eac484111e511912d42dd10cc9f38f05b9803e5d58538aedd6c0571dadf0",
+   "discovery": {
+    "path": "discovery/DOTUSDT_spot4h_discovery.csv",
+    "rows": 7381,
+    "last": "2023-12-31 20:00:00+00:00",
+    "sha256": "426b5ae7e4d4e57b47eb190ae65cc9bafc0c511a53ad7536703ecdf2b53b98ac"
+   },
+   "validation": {
+    "path": "validation/DOTUSDT_spot4h_validation.csv",
+    "rows": 5940,
+    "first": "2024-01-01 00:00:00+00:00",
+    "sha256": "db237261c2d540fbe54c6c54a75fba6271546eef15cabe615147fec99d604c79"
+   }
+  },
+  "DOTUSDT_perp4h": {
+   "source_sha256": "9c7dc6a35965a565a56041779d9d3ff968443a6de170e17273efbad5496d7020",
+   "discovery": {
+    "path": "discovery/DOTUSDT_perp4h_discovery.csv",
+    "rows": 7361,
+    "last": "2023-12-31 20:00:00+00:00",
+    "sha256": "bbf05423b1b10b2bb0ca8fa3927bd9d0fe482c3bea5932a20e0d31708c96fa2c"
+   },
+   "validation": {
+    "path": "validation/DOTUSDT_perp4h_validation.csv",
+    "rows": 5940,
+    "first": "2024-01-01 00:00:00+00:00",
+    "sha256": "3d36c8bff6f0669e70eb9003b8f35a5135ad4f5824fc9e3fa2886331b842e70b"
+   }
+  },
+  "DOTUSDT_flow4h": {
+   "source_sha256": "df43343fc069e9dbe40961d98b138c56dc6fba10f14c78fb9611f7cd0378f372",
+   "discovery": {
+    "path": "discovery/DOTUSDT_flow4h_discovery.csv",
+    "rows": 7381,
+    "last": "2023-12-31 20:00:00+00:00",
+    "sha256": "c20fdabfee16c5fc5f8227f8a8129f59626046e1308dda6139a38702ca6a1681"
+   },
+   "validation": {
+    "path": "validation/DOTUSDT_flow4h_validation.csv",
+    "rows": 5940,
+    "first": "2024-01-01 00:00:00+00:00",
+    "sha256": "aabc43c20d53ff9661203f48b5f3a7ee7d08ce66f490b21254265f3b1f4206cf"
+   }
+  },
+  "ETHUSDT_spot4h": {
+   "source_sha256": "26f34d7b763d704cfe8fce1ead0a4332ac558694ca918b9986e12f930234ca0b",
+   "discovery": {
+    "path": "discovery/ETHUSDT_spot4h_discovery.csv",
+    "rows": 13950,
+    "last": "2023-12-31 20:00:00+00:00",
+    "sha256": "6614a3f3cb71f315ff74d9c3decce54634ccaed28c6882231e16f9832cd718ab"
+   },
+   "validation": {
+    "path": "validation/ETHUSDT_spot4h_validation.csv",
+    "rows": 5940,
+    "first": "2024-01-01 00:00:00+00:00",
+    "sha256": "9d34fb9f375242d2680d0dec9c1fb9acfe4d2b8645b758c1e1f2266582f7401a"
+   }
+  },
+  "ETHUSDT_perp4h": {
+   "source_sha256": "63e8a7b5452a5066f463b9013a7bed89ba66a8c8d80d6e2deb355c8561f6dbd9",
+   "discovery": {
+    "path": "discovery/ETHUSDT_perp4h_discovery.csv",
+    "rows": 8766,
+    "last": "2023-12-31 20:00:00+00:00",
+    "sha256": "ab0e9050309ffccedff968f878cff87c706004b14a983b34e537ca9c5003751d"
+   },
+   "validation": {
+    "path": "validation/ETHUSDT_perp4h_validation.csv",
+    "rows": 5940,
+    "first": "2024-01-01 00:00:00+00:00",
+    "sha256": "48805b53538ebb519386f06b75f68696e198b936c5e02964ddf6147076f00155"
+   }
+  },
+  "ETHUSDT_flow4h": {
+   "source_sha256": "9459be9cea0a5b2129a26c11e7f28449a81886d5e7d039a26ce6be3f5e9787df",
+   "discovery": {
+    "path": "discovery/ETHUSDT_flow4h_discovery.csv",
+    "rows": 13950,
+    "last": "2023-12-31 20:00:00+00:00",
+    "sha256": "e52814ce80237fa19110c10d7c0d80de04f2843222328d7e5ab72f29e8de6783"
+   },
+   "validation": {
+    "path": "validation/ETHUSDT_flow4h_validation.csv",
+    "rows": 5940,
+    "first": "2024-01-01 00:00:00+00:00",
+    "sha256": "93509346a72dfaf7cfa9fd8b39e33a7cc319c53722c8eadc6c937a8935ab7ccc"
+   }
+  },
+  "SOLUSDT_spot4h": {
+   "source_sha256": "865b27bee63ba3ae1d0b160cccc7b70403f018b807d976a7a01fea6882883652",
+   "discovery": {
+    "path": "discovery/SOLUSDT_spot4h_discovery.csv",
+    "rows": 7427,
+    "last": "2023-12-31 20:00:00+00:00",
+    "sha256": "9225dcf34319d17bac9bfbd41ce2fbf6b9de81826267ee6271081a79ad36bc6a"
+   },
+   "validation": {
+    "path": "validation/SOLUSDT_spot4h_validation.csv",
+    "rows": 5940,
+    "first": "2024-01-01 00:00:00+00:00",
+    "sha256": "ce9eb670dbdfabf5db574fb6e23f8880203f53bd078c9e0e8d5de6ea2d9e136b"
+   }
+  },
+  "SOLUSDT_perp4h": {
+   "source_sha256": "a44b4c499577fd3d23c2525d95b07e68c91459967df579ec647d9478d81aa76f",
+   "discovery": {
+    "path": "discovery/SOLUSDT_perp4h_discovery.csv",
+    "rows": 7193,
+    "last": "2023-12-31 20:00:00+00:00",
+    "sha256": "9606041a89ffadf74151ada06e4eb0e28cf3d6272c6a564503fd83fdc272bbd4"
+   },
+   "validation": {
+    "path": "validation/SOLUSDT_perp4h_validation.csv",
+    "rows": 5940,
+    "first": "2024-01-01 00:00:00+00:00",
+    "sha256": "7fed8bd94a3118796a3a65dbb7ea098268f67433a9032429c589446d31e169ca"
+   }
+  },
+  "SOLUSDT_flow4h": {
+   "source_sha256": "692bcd7939468f4e5855da95e69b0cd62a33fc2f2da5b0b08e3ea6d26eff3ee4",
+   "discovery": {
+    "path": "discovery/SOLUSDT_flow4h_discovery.csv",
+    "rows": 7427,
+    "last": "2023-12-31 20:00:00+00:00",
+    "sha256": "171d8756cd94c1edfaebe9c33b8254a9b87f7a406d71ef07ea296992b51ccff5"
+   },
+   "validation": {
+    "path": "validation/SOLUSDT_flow4h_validation.csv",
+    "rows": 5940,
+    "first": "2024-01-01 00:00:00+00:00",
+    "sha256": "7d9f5230edd2b80a1bae8dcd7146bd7bbb0a094b80213d80d27706e37952dfbd"
+   }
+  }
+ },
+ "version": "1.1",
+ "note_v1_1": "Flow-Dateien neu erzeugt mit dlib v0.2 (delta_oi_zscore), Spot- und Perp-Dateien unveraendert; 17.09.2026"
+}

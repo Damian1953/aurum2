@@ -1,0 +1,1080 @@
+{
+ "tol_float": 1e-09,
+ "checks": [
+  {
+   "name": "Kandidaten Y1/Y3: Zeilenzahl",
+   "ok": true,
+   "detail": "13816 vs 13816"
+  },
+  {
+   "name": "Kandidaten Y1/Y3: t exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kandidaten Y1/Y3: ctx exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kandidaten Y1/Y3: y1 exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kandidaten Y1/Y3: y3 exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kandidaten Y1/Y3: fb_any exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kandidaten Y1/Y3: y3_any exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kandidaten Y1/Y3: y1_levels exakt (NaN und leer normalisiert)",
+   "ok": true,
+   "detail": "abweichende Zeilen 0"
+  },
+  {
+   "name": "Kandidaten Y1/Y3: lv_swing NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kandidaten Y1/Y3: lv_swing |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=0.000e+00"
+  },
+  {
+   "name": "Kandidaten Y1/Y3: lv_nbar NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kandidaten Y1/Y3: lv_nbar |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=0.000e+00"
+  },
+  {
+   "name": "Kandidaten Y1/Y3: lv_zone NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kandidaten Y1/Y3: lv_zone |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=7.276e-12"
+  },
+  {
+   "name": "Kandidaten Y1 Anzahl",
+   "ok": true,
+   "detail": "96 vs 96"
+  },
+  {
+   "name": "Kandidaten Y3 Anzahl",
+   "ok": true,
+   "detail": "29 vs 29"
+  },
+  {
+   "name": "Kandidaten Y2: Zeilenzahl",
+   "ok": true,
+   "detail": "425 vs 425"
+  },
+  {
+   "name": "Kandidaten Y2: t exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kandidaten Y2: s1 exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kandidaten Y2: s2 exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kandidaten Y2: h1 exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kandidaten Y2: ctx exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kandidaten Y2: triple exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kandidaten Y2: gyaku exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kandidaten Y2: dup exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kandidaten Y2: y2 exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kandidaten Y2: neck NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kandidaten Y2: neck |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=0.000e+00"
+  },
+  {
+   "name": "Y1 K0: n und mean r_net (3 Dez.) wie eval_stufeA.json",
+   "ok": true,
+   "detail": "16/-0.094 vs 16/-0.094"
+  },
+  {
+   "name": "Y1 K1: n und mean r_net (3 Dez.) wie eval_stufeA.json",
+   "ok": true,
+   "detail": "16/-0.229 vs 16/-0.229"
+  },
+  {
+   "name": "Y1 K2: n und mean r_net (3 Dez.) wie eval_stufeA.json",
+   "ok": true,
+   "detail": "16/-0.457 vs 16/-0.457"
+  },
+  {
+   "name": "Trades Y1 K1: Zeilenzahl",
+   "ok": true,
+   "detail": "16 vs 16"
+  },
+  {
+   "name": "Trades Y1 K1: t exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Trades Y1 K1: e exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Trades Y1 K1: x exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Trades Y1 K1: bars exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Trades Y1 K1: reason exakt (NaN und leer normalisiert)",
+   "ok": true,
+   "detail": "abweichende Zeilen 0"
+  },
+  {
+   "name": "Trades Y1 K1: entry NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Trades Y1 K1: entry |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=7.276e-12"
+  },
+  {
+   "name": "Trades Y1 K1: stop0 NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Trades Y1 K1: stop0 |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=7.276e-12"
+  },
+  {
+   "name": "Trades Y1 K1: R NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Trades Y1 K1: R |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=2.274e-13"
+  },
+  {
+   "name": "Trades Y1 K1: exit NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Trades Y1 K1: exit |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=7.276e-12"
+  },
+  {
+   "name": "Trades Y1 K1: r_net NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Trades Y1 K1: r_net |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=1.110e-16"
+  },
+  {
+   "name": "Trades Y1 K1: r_gross NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Trades Y1 K1: r_gross |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=2.220e-16"
+  },
+  {
+   "name": "Trades Y1 K1: mfe_r NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Trades Y1 K1: mfe_r |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=9.021e-17"
+  },
+  {
+   "name": "Trades Y1 K1: mae_r NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Trades Y1 K1: mae_r |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=1.110e-16"
+  },
+  {
+   "name": "Trades Y1 K1: stop_dist_atr NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Trades Y1 K1: stop_dist_atr |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=4.441e-16"
+  },
+  {
+   "name": "Kontrollen Y1 alle Zeilen: Zeilenzahl",
+   "ok": true,
+   "detail": "37 vs 37"
+  },
+  {
+   "name": "Kontrollen Y1 alle Zeilen: sig_t exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y1 alle Zeilen: ctrl_t exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y1 alle Zeilen: status exakt (NaN und leer normalisiert)",
+   "ok": true,
+   "detail": "abweichende Zeilen 0"
+  },
+  {
+   "name": "Kontrollen Y1 gehandelt: Zeilenzahl",
+   "ok": true,
+   "detail": "9 vs 9"
+  },
+  {
+   "name": "Kontrollen Y1 gehandelt: e exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y1 gehandelt: x exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y1 gehandelt: bars exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y1 gehandelt: t exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y1 gehandelt: reason exakt (NaN und leer normalisiert)",
+   "ok": true,
+   "detail": "abweichende Zeilen 0"
+  },
+  {
+   "name": "Kontrollen Y1 gehandelt: entry NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y1 gehandelt: entry |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=7.276e-12"
+  },
+  {
+   "name": "Kontrollen Y1 gehandelt: stop0 NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y1 gehandelt: stop0 |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=3.638e-12"
+  },
+  {
+   "name": "Kontrollen Y1 gehandelt: R NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y1 gehandelt: R |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=0.000e+00"
+  },
+  {
+   "name": "Kontrollen Y1 gehandelt: exit NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y1 gehandelt: exit |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=7.276e-12"
+  },
+  {
+   "name": "Kontrollen Y1 gehandelt: r_net NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y1 gehandelt: r_net |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=1.110e-16"
+  },
+  {
+   "name": "Kontrollen Y1 gehandelt: r_gross NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y1 gehandelt: r_gross |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=1.110e-16"
+  },
+  {
+   "name": "Kontrollen Y1 gehandelt: mfe_r NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y1 gehandelt: mfe_r |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=3.469e-17"
+  },
+  {
+   "name": "Kontrollen Y1 gehandelt: mae_r NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y1 gehandelt: mae_r |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=8.327e-17"
+  },
+  {
+   "name": "Paare Y1: Zeilenzahl",
+   "ok": true,
+   "detail": "8 vs 8"
+  },
+  {
+   "name": "Paare Y1: t exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Paare Y1: n_ctrl exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Paare Y1: d_r NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Paare Y1: d_r |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=2.220e-16"
+  },
+  {
+   "name": "Y1: Kontrollen matched/traded wie eval_stufeA.json",
+   "ok": true,
+   "detail": "16/9 vs 16/9"
+  },
+  {
+   "name": "Y2 K0: n und mean r_net (3 Dez.) wie eval_stufeA.json",
+   "ok": true,
+   "detail": "14/-0.219 vs 14/-0.219"
+  },
+  {
+   "name": "Y2 K1: n und mean r_net (3 Dez.) wie eval_stufeA.json",
+   "ok": true,
+   "detail": "14/-0.297 vs 14/-0.297"
+  },
+  {
+   "name": "Y2 K2: n und mean r_net (3 Dez.) wie eval_stufeA.json",
+   "ok": true,
+   "detail": "14/-0.43 vs 14/-0.43"
+  },
+  {
+   "name": "Trades Y2 K1: Zeilenzahl",
+   "ok": true,
+   "detail": "14 vs 14"
+  },
+  {
+   "name": "Trades Y2 K1: t exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Trades Y2 K1: e exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Trades Y2 K1: x exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Trades Y2 K1: bars exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Trades Y2 K1: reason exakt (NaN und leer normalisiert)",
+   "ok": true,
+   "detail": "abweichende Zeilen 0"
+  },
+  {
+   "name": "Trades Y2 K1: entry NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Trades Y2 K1: entry |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=3.638e-12"
+  },
+  {
+   "name": "Trades Y2 K1: stop0 NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Trades Y2 K1: stop0 |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=3.638e-12"
+  },
+  {
+   "name": "Trades Y2 K1: R NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Trades Y2 K1: R |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=4.547e-13"
+  },
+  {
+   "name": "Trades Y2 K1: exit NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Trades Y2 K1: exit |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=3.638e-12"
+  },
+  {
+   "name": "Trades Y2 K1: r_net NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Trades Y2 K1: r_net |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=5.551e-17"
+  },
+  {
+   "name": "Trades Y2 K1: r_gross NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Trades Y2 K1: r_gross |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=7.459e-17"
+  },
+  {
+   "name": "Trades Y2 K1: mfe_r NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Trades Y2 K1: mfe_r |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=2.220e-16"
+  },
+  {
+   "name": "Trades Y2 K1: mae_r NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Trades Y2 K1: mae_r |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=8.327e-17"
+  },
+  {
+   "name": "Trades Y2 K1: stop_dist_atr NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Trades Y2 K1: stop_dist_atr |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=0.000e+00"
+  },
+  {
+   "name": "Kontrollen Y2 alle Zeilen: Zeilenzahl",
+   "ok": true,
+   "detail": "32 vs 32"
+  },
+  {
+   "name": "Kontrollen Y2 alle Zeilen: sig_t exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y2 alle Zeilen: ctrl_t exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y2 alle Zeilen: status exakt (NaN und leer normalisiert)",
+   "ok": true,
+   "detail": "abweichende Zeilen 0"
+  },
+  {
+   "name": "Kontrollen Y2 gehandelt: Zeilenzahl",
+   "ok": true,
+   "detail": "7 vs 7"
+  },
+  {
+   "name": "Kontrollen Y2 gehandelt: e exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y2 gehandelt: x exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y2 gehandelt: bars exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y2 gehandelt: t exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y2 gehandelt: reason exakt (NaN und leer normalisiert)",
+   "ok": true,
+   "detail": "abweichende Zeilen 0"
+  },
+  {
+   "name": "Kontrollen Y2 gehandelt: entry NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y2 gehandelt: entry |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=0.000e+00"
+  },
+  {
+   "name": "Kontrollen Y2 gehandelt: stop0 NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y2 gehandelt: stop0 |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=0.000e+00"
+  },
+  {
+   "name": "Kontrollen Y2 gehandelt: R NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y2 gehandelt: R |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=4.547e-13"
+  },
+  {
+   "name": "Kontrollen Y2 gehandelt: exit NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y2 gehandelt: exit |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=0.000e+00"
+  },
+  {
+   "name": "Kontrollen Y2 gehandelt: r_net NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y2 gehandelt: r_net |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=0.000e+00"
+  },
+  {
+   "name": "Kontrollen Y2 gehandelt: r_gross NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y2 gehandelt: r_gross |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=2.220e-16"
+  },
+  {
+   "name": "Kontrollen Y2 gehandelt: mfe_r NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y2 gehandelt: mfe_r |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=8.327e-17"
+  },
+  {
+   "name": "Kontrollen Y2 gehandelt: mae_r NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y2 gehandelt: mae_r |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=5.551e-17"
+  },
+  {
+   "name": "Paare Y2: Zeilenzahl",
+   "ok": true,
+   "detail": "6 vs 6"
+  },
+  {
+   "name": "Paare Y2: t exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Paare Y2: n_ctrl exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Paare Y2: d_r NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Paare Y2: d_r |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=5.551e-17"
+  },
+  {
+   "name": "Y2: Kontrollen matched/traded wie eval_stufeA.json",
+   "ok": true,
+   "detail": "14/7 vs 14/7"
+  },
+  {
+   "name": "Y3 K0: n und mean r_net (3 Dez.) wie eval_stufeA.json",
+   "ok": true,
+   "detail": "6/-0.212 vs 6/-0.212"
+  },
+  {
+   "name": "Y3 K1: n und mean r_net (3 Dez.) wie eval_stufeA.json",
+   "ok": true,
+   "detail": "6/-0.291 vs 6/-0.291"
+  },
+  {
+   "name": "Y3 K2: n und mean r_net (3 Dez.) wie eval_stufeA.json",
+   "ok": true,
+   "detail": "6/-0.428 vs 6/-0.428"
+  },
+  {
+   "name": "Trades Y3 K1: Zeilenzahl",
+   "ok": true,
+   "detail": "6 vs 6"
+  },
+  {
+   "name": "Trades Y3 K1: t exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Trades Y3 K1: e exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Trades Y3 K1: x exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Trades Y3 K1: bars exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Trades Y3 K1: reason exakt (NaN und leer normalisiert)",
+   "ok": true,
+   "detail": "abweichende Zeilen 0"
+  },
+  {
+   "name": "Trades Y3 K1: entry NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Trades Y3 K1: entry |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=3.638e-12"
+  },
+  {
+   "name": "Trades Y3 K1: stop0 NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Trades Y3 K1: stop0 |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=3.638e-12"
+  },
+  {
+   "name": "Trades Y3 K1: R NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Trades Y3 K1: R |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=0.000e+00"
+  },
+  {
+   "name": "Trades Y3 K1: exit NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Trades Y3 K1: exit |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=7.276e-12"
+  },
+  {
+   "name": "Trades Y3 K1: r_net NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Trades Y3 K1: r_net |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=1.110e-16"
+  },
+  {
+   "name": "Trades Y3 K1: r_gross NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Trades Y3 K1: r_gross |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=0.000e+00"
+  },
+  {
+   "name": "Trades Y3 K1: mfe_r NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Trades Y3 K1: mfe_r |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=5.551e-17"
+  },
+  {
+   "name": "Trades Y3 K1: mae_r NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Trades Y3 K1: mae_r |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=0.000e+00"
+  },
+  {
+   "name": "Trades Y3 K1: stop_dist_atr NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Trades Y3 K1: stop_dist_atr |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=4.441e-16"
+  },
+  {
+   "name": "Kontrollen Y3 alle Zeilen: Zeilenzahl",
+   "ok": true,
+   "detail": "6 vs 6"
+  },
+  {
+   "name": "Kontrollen Y3 alle Zeilen: sig_t exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y3 alle Zeilen: ctrl_t exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y3 alle Zeilen: status exakt (NaN und leer normalisiert)",
+   "ok": true,
+   "detail": "abweichende Zeilen 0"
+  },
+  {
+   "name": "Kontrollen Y3 gehandelt: Zeilenzahl",
+   "ok": true,
+   "detail": "1 vs 1"
+  },
+  {
+   "name": "Kontrollen Y3 gehandelt: e exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y3 gehandelt: x exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y3 gehandelt: bars exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y3 gehandelt: t exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y3 gehandelt: reason exakt (NaN und leer normalisiert)",
+   "ok": true,
+   "detail": "abweichende Zeilen 0"
+  },
+  {
+   "name": "Kontrollen Y3 gehandelt: entry NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y3 gehandelt: entry |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=0.000e+00"
+  },
+  {
+   "name": "Kontrollen Y3 gehandelt: stop0 NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y3 gehandelt: stop0 |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=3.638e-12"
+  },
+  {
+   "name": "Kontrollen Y3 gehandelt: R NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y3 gehandelt: R |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=0.000e+00"
+  },
+  {
+   "name": "Kontrollen Y3 gehandelt: exit NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y3 gehandelt: exit |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=3.638e-12"
+  },
+  {
+   "name": "Kontrollen Y3 gehandelt: r_net NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y3 gehandelt: r_net |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=0.000e+00"
+  },
+  {
+   "name": "Kontrollen Y3 gehandelt: r_gross NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y3 gehandelt: r_gross |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=1.110e-16"
+  },
+  {
+   "name": "Kontrollen Y3 gehandelt: mfe_r NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y3 gehandelt: mfe_r |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=0.000e+00"
+  },
+  {
+   "name": "Kontrollen Y3 gehandelt: mae_r NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Kontrollen Y3 gehandelt: mae_r |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=0.000e+00"
+  },
+  {
+   "name": "Paare Y3: Zeilenzahl",
+   "ok": true,
+   "detail": "1 vs 1"
+  },
+  {
+   "name": "Paare Y3: t exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Paare Y3: n_ctrl exakt",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Paare Y3: d_r NaN-Muster",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "Paare Y3: d_r |diff|<=tol",
+   "ok": true,
+   "detail": "max|diff|=0.000e+00"
+  },
+  {
+   "name": "Y3: Kontrollen matched/traded wie eval_stufeA.json",
+   "ok": true,
+   "detail": "6/1 vs 6/1"
+  }
+ ],
+ "fail": false,
+ "sha_inputs": {
+  "discovery_csv": "2d394fd1cbc344d5e012e12b40bc5835fef0fbe72f0678c2abf417babd96a7e6",
+  "ylib_py": "7f0230c938bc31bada5e360e518640d50f9160b11c1cb2ec13c3699df141df24",
+  "rlib_py": "f1ffdbb81cad3115b7a975a435185b463c9d752bd86ee9f7b47ece3c4819b13c",
+  "ref_candidates_y1_y3": "c3bce1b984211014d9cdb4aa24c47c195b611f5285c6f56c829ea55f5b9d9f47",
+  "ref_candidates_y2": "e6c2726a866d7b08df2f5e74c7b15a007ad718a05ce4e64f27257fa15f70e4b2",
+  "ref_eval": "cd0135fe4f70a9a1bca7044c7c2622fe2f7ad342b2fe8e75d40b77c0a43ca25b",
+  "ref_trades_Y1": "b75ac230b7ac1575be96667e1ceb209ee2a155ee7238174c6847328ccbeccb40",
+  "ref_trades_Y2": "322260aec02f09fde49e1ac4258e7da9142c0c0556de8b62c9605804eda8a01f",
+  "ref_trades_Y3": "159e8b2a59edcbfa3795a8570acc4e323155a75aed168edff04d8ff10b0181c9",
+  "ref_controls_Y1": "f395d485f48719ab2851d40836cd040ea4534596c890b256480bbe1f8c1117de",
+  "ref_controls_Y2": "ab8db079088ec7b49dee9de8d410a27101f05993bc31d7b3a884e1ca2b605b91",
+  "ref_controls_Y3": "ad56597925cbce7d312ec187cca88c7bab7f757752658ea661083babd316deed",
+  "ref_pairs_Y1": "7db18f40c7b61aa5e77f1f06016ba889ee0615e2aab27ef2483952a89defe108",
+  "ref_pairs_Y2": "e6ca4368add83cef5708d83e38728dbf53b929ba046d2406effb3a70a34f7c56",
+  "ref_pairs_Y3": "cfcc412e5b7f694bd5fed5aded68722696a9e304da845b622073a3a53f7ea0ad"
+ },
+ "summary": {
+  "Y1": {
+   "signals": 16,
+   "controls_traded": 9,
+   "pairs": 8
+  },
+  "Y2": {
+   "signals": 14,
+   "controls_traded": 7,
+   "pairs": 6
+  },
+  "Y3": {
+   "signals": 6,
+   "controls_traded": 1,
+   "pairs": 1
+  }
+ },
+ "seconds": 387,
+ "verdict": "REGRESSION PASS",
+ "sha_outputs": {
+  "candidates_y1_y3_rlib.csv": "917fe58e2dd844a1e2021852ba67c333bb28278bfd3c5a1211ee53efab702889",
+  "candidates_y2_rlib.csv": "e6c2726a866d7b08df2f5e74c7b15a007ad718a05ce4e64f27257fa15f70e4b2",
+  "controls_Y1_K1_rlib.csv": "f395d485f48719ab2851d40836cd040ea4534596c890b256480bbe1f8c1117de",
+  "controls_Y2_K1_rlib.csv": "ab8db079088ec7b49dee9de8d410a27101f05993bc31d7b3a884e1ca2b605b91",
+  "controls_Y3_K1_rlib.csv": "ad56597925cbce7d312ec187cca88c7bab7f757752658ea661083babd316deed",
+  "pairs_Y1_rlib.csv": "9827996ad79e6956391fbe5027dabf2e0c3c6df2ef733e1a26f91c3255af6e24",
+  "pairs_Y2_rlib.csv": "db8d75a12614555cbc0b0a852c86ca4c65126f2cc777359b55a1afc945a1d966",
+  "pairs_Y3_rlib.csv": "856698475c65af4994d803ea937279efe2c3b6c1ca970c947ed0793495efa0f5",
+  "trades_Y1_K1_rlib.csv": "d78adf1e4159142b6618b69f3b45b4b617fd8944347c3aec81b03b1f004cf7b3",
+  "trades_Y2_K1_rlib.csv": "f0a5605908ed75f172e04f815634df9f4eb572668f22f1a3259253876c3ee9da",
+  "trades_Y3_K1_rlib.csv": "80aabc32278c7b6a3577d4e10f02e7183792d32541538a3d18b9cd7f181ca649"
+ }
+}

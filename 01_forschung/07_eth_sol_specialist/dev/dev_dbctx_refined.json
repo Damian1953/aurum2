@@ -1,0 +1,83 @@
+{
+ "BTC": {
+  "n": 14,
+  "nh": 0.5,
+  "inv60": 0.36,
+  "c1": {
+   "rate": 0.93,
+   "n": 13,
+   "bars_med": 3.0,
+   "nh_given": 0.54,
+   "nh_after": 0.54
+  },
+  "c2": {
+   "rate": 0.71,
+   "n": 10,
+   "bars_med": 21.5,
+   "nh_given": 0.5,
+   "nh_after": 0.5
+  },
+  "c3": {
+   "rate": 0.5,
+   "n": 7,
+   "bars_med": 35.0,
+   "nh_given": 0.29,
+   "nh_after": 0.29
+  },
+  "c1_fail_first": 0.14
+ },
+ "XRP": {
+  "n": 17,
+  "nh": 0.71,
+  "inv60": 0.35,
+  "c1": {
+   "rate": 0.94,
+   "n": 16,
+   "bars_med": 3.5,
+   "nh_given": 0.69,
+   "nh_after": 0.69
+  },
+  "c2": {
+   "rate": 0.59,
+   "n": 10,
+   "bars_med": 26.5,
+   "nh_given": 0.8,
+   "nh_after": 0.5
+  },
+  "c3": {
+   "rate": 0.29,
+   "n": 5,
+   "bars_med": 39.0,
+   "nh_given": 0.8,
+   "nh_after": 0.6
+  },
+  "c1_fail_first": 0.18
+ },
+ "DOT": {
+  "n": 15,
+  "nh": 0.47,
+  "inv60": 0.53,
+  "c1": {
+   "rate": 0.87,
+   "n": 13,
+   "bars_med": 3.0,
+   "nh_given": 0.54,
+   "nh_after": 0.46
+  },
+  "c2": {
+   "rate": 0.47,
+   "n": 7,
+   "bars_med": 13.0,
+   "nh_given": 0.86,
+   "nh_after": 0.71
+  },
+  "c3": {
+   "rate": 0.47,
+   "n": 7,
+   "bars_med": 26.0,
+   "nh_given": 0.86,
+   "nh_after": 0.71
+  },
+  "c1_fail_first": 0.2
+ }
+}

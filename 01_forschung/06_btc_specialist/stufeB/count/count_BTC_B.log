@@ -1,0 +1,301 @@
+{
+ "bars": {
+  "total": 13950,
+  "first": "2017-08-17 04:00:00+00:00",
+  "last": "2023-12-31 20:00:00+00:00",
+  "warmup": 134,
+  "evaluable": 13816,
+  "first_evaluable": "2017-09-08 16:00:00+00:00",
+  "grid_gaps": 9,
+  "missing_bars": 17,
+  "blocks": {
+   "P1": 7380,
+   "P2": 6570
+  }
+ },
+ "context_coverage": {
+  "k1_pct12_share": 0.352,
+  "k1_atr6_share_diag": 0.434,
+  "k1_and_k2": 2539,
+  "k1_episodes": 169
+ },
+ "context_bars": {
+  "total": 1842,
+  "by_block": {
+   "P1": 948,
+   "P2": 894
+  }
+ },
+ "candidates": {
+  "Y1": {
+   "total": 96,
+   "by_block": {
+    "P1": 53,
+    "P2": 43
+   },
+   "levels": {
+    "nbar": 28,
+    "zone": 27,
+    "swing": 14,
+    "swing|nbar": 11,
+    "swing|zone": 9,
+    "nbar|zone": 5,
+    "swing|nbar|zone": 2
+   },
+   "gap_in_window": 8,
+   "fb_without_ctx": 306
+  },
+  "Y2": {
+   "total": 14,
+   "by_block": {
+    "P1": 8,
+    "P2": 6
+   },
+   "pairs_all": 425,
+   "ctx_false": 377,
+   "dup": 249,
+   "triple": 9
+  },
+  "Y3": {
+   "total": 29,
+   "by_block": {
+    "P1": 15,
+    "P2": 14
+   },
+   "gap_in_window": 3,
+   "y3_without_ctx": 61
+  }
+ },
+ "overlap": {
+  "f1_and_f3": 23,
+  "f1_and_f2": 0,
+  "f2_and_f3": 0,
+  "union": 116
+ },
+ "entries": {
+  "Y1_T0": {
+   "status": {
+    "traded": 95,
+    "no_trigger": 0,
+    "stop_too_wide": 1,
+    "entry_below_stop": 0,
+    "cut": 0
+   },
+   "entries_by_block": {
+    "P1": 53,
+    "P2": 42
+   },
+   "stop_dist_atr": {
+    "median": 1.38,
+    "min": 1.01,
+    "max": 2.72
+   },
+   "trigger_rate": 0.99
+  },
+  "Y1_TA": {
+   "status": {
+    "traded": 18,
+    "no_trigger": 73,
+    "stop_too_wide": 5,
+    "entry_below_stop": 0,
+    "cut": 0
+   },
+   "entries_by_block": {
+    "P1": 11,
+    "P2": 7
+   },
+   "stop_dist_atr": {
+    "median": 1.89,
+    "min": 1.31,
+    "max": 2.91
+   },
+   "trigger_rate": 0.188
+  },
+  "Y1_TB": {
+   "status": {
+    "traded": 72,
+    "no_trigger": 16,
+    "stop_too_wide": 8,
+    "entry_below_stop": 0,
+    "cut": 0
+   },
+   "entries_by_block": {
+    "P1": 43,
+    "P2": 29
+   },
+   "stop_dist_atr": {
+    "median": 1.55,
+    "min": 0.7,
+    "max": 2.91
+   },
+   "trigger_rate": 0.75
+  },
+  "Y2_NECK": {
+   "status": {
+    "traded": 14,
+    "no_trigger": 0,
+    "stop_too_wide": 0,
+    "entry_below_stop": 0,
+    "cut": 0
+   },
+   "entries_by_block": {
+    "P1": 8,
+    "P2": 6
+   },
+   "stop_dist_atr": {
+    "median": 4.75,
+    "min": 3.11,
+    "max": 7.31
+   },
+   "trigger_rate": 1.0
+  },
+  "Y3_T0": {
+   "status": {
+    "traded": 27,
+    "no_trigger": 0,
+    "stop_too_wide": 2,
+    "entry_below_stop": 0,
+    "cut": 0
+   },
+   "entries_by_block": {
+    "P1": 14,
+    "P2": 13
+   },
+   "stop_dist_atr": {
+    "median": 1.99,
+    "min": 1.53,
+    "max": 2.72
+   },
+   "trigger_rate": 0.931
+  },
+  "Y3_TA": {
+   "status": {
+    "traded": 6,
+    "no_trigger": 19,
+    "stop_too_wide": 4,
+    "entry_below_stop": 0,
+    "cut": 0
+   },
+   "entries_by_block": {
+    "P1": 3,
+    "P2": 3
+   },
+   "stop_dist_atr": {
+    "median": 2.66,
+    "min": 2.31,
+    "max": 2.91
+   },
+   "trigger_rate": 0.207
+  },
+  "Y3_TB": {
+   "status": {
+    "traded": 17,
+    "no_trigger": 6,
+    "stop_too_wide": 6,
+    "entry_below_stop": 0,
+    "cut": 0
+   },
+   "entries_by_block": {
+    "P1": 10,
+    "P2": 7
+   },
+   "stop_dist_atr": {
+    "median": 2.31,
+    "min": 1.74,
+    "max": 2.91
+   },
+   "trigger_rate": 0.586
+  }
+ },
+ "increment_subsets": "nicht berechnet: RTC-1 und RTC-2 sind abgeschlossen (ENTSCHEIDE 18.09.2026)",
+ "control_pool": {
+  "size": 1666,
+  "by_block": {
+   "P1": 851,
+   "P2": 815
+  }
+ },
+ "matching_upper_bound_no_position_exclusion": {
+  "Y1": {
+   "candidates": 96,
+   "with_ge1_control": 89,
+   "with_3_controls": 69,
+   "coverage": {
+    "0": 7,
+    "1": 14,
+    "2": 6,
+    "3": 69
+   },
+   "mean_ctrl": 2.43,
+   "unique_controls": 197,
+   "controls_reused": 28,
+   "matched_by_block": {
+    "P1": 47,
+    "P2": 42
+   },
+   "median_pool_in_window": 12.0,
+   "matched_by_year": {
+    "2017": 2,
+    "2018": 30,
+    "2019": 13,
+    "2020": 2,
+    "2021": 23,
+    "2022": 15,
+    "2023": 4
+   }
+  },
+  "Y2": {
+   "candidates": 14,
+   "with_ge1_control": 13,
+   "with_3_controls": 8,
+   "coverage": {
+    "0": 1,
+    "1": 2,
+    "2": 3,
+    "3": 8
+   },
+   "mean_ctrl": 2.29,
+   "unique_controls": 30,
+   "controls_reused": 2,
+   "matched_by_block": {
+    "P1": 8,
+    "P2": 5
+   },
+   "median_pool_in_window": 9.0,
+   "matched_by_year": {
+    "2018": 4,
+    "2019": 1,
+    "2020": 3,
+    "2021": 3,
+    "2022": 1,
+    "2023": 1
+   }
+  },
+  "Y3": {
+   "candidates": 29,
+   "with_ge1_control": 22,
+   "with_3_controls": 14,
+   "coverage": {
+    "0": 7,
+    "1": 8,
+    "3": 14
+   },
+   "mean_ctrl": 1.72,
+   "unique_controls": 49,
+   "controls_reused": 1,
+   "matched_by_block": {
+    "P1": 11,
+    "P2": 11
+   },
+   "median_pool_in_window": 5.0,
+   "matched_by_year": {
+    "2017": 1,
+    "2018": 6,
+    "2019": 3,
+    "2020": 1,
+    "2021": 6,
+    "2022": 5
+   }
+  }
+ }
+}

@@ -1,0 +1,32 @@
+{
+ "version": 1,
+ "frozen_at": null,
+ "status": "KEIN KANDIDAT TAUGLICH",
+ "preregistration_sha256": "e7b28d3396ad125781f26ee56a1b59111b77ef9cb7a80ddec2fc56a1ac9c2dbb",
+ "run_at": "2026-09-15T19:25:02.607433+00:00",
+ "verdicts": {
+  "R1": "VERWORFEN",
+  "R2": "VERWORFEN",
+  "R3": "VERWORFEN",
+  "R4": "VERWORFEN",
+  "R5": "VERWORFEN"
+ },
+ "F1": "VERWORFEN (vorlaeufig)",
+ "tauglich": [],
+ "note": "Stufe 3 entfaellt. Stufe 2 laeuft ohne Regimefilter. Jede neue Regimedefinition braucht eine neue Vorregistrierung (Version 2).",
+ "inputs": {
+  "binance/ADAUSDT_1d.csv": "06f3191a5a949b5c08429930ead3f6a3da1a261671c24ec3314b5fd8e475a1bf",
+  "binance/AVAXUSDT_1d.csv": "ce68bf05113bc03d9436b2407a3fea835c92356f51c017030cf883b11846a23e",
+  "binance/BNBUSDT_1d.csv": "4db851a5149c8267d26cc9f01542440549191223321a1f9270c1780828421b44",
+  "binance/BTCUSDT_1d.csv": "964a3787b127e463252d721979c454b740d9b47dc02392bf147fb12a8d200358",
+  "binance/DOTUSDT_1d.csv": "d1ae15e2e827ca16b4870165d3aadc8714026e477c8a998fbb23adaadbc1c7cb",
+  "binance/ETHUSDT_1d.csv": "4c2c974e9f68ad78042f503917b95dcd4d850f7bb748ee0b190995688690a6c6",
+  "binance/LINKUSDT_1d.csv": "b31a46cee10d57eee0d5a5ce35cdf66d4fedfff090eec7f4a3cc5d0dcb6847e1",
+  "binance/LTCUSDT_1d.csv": "fee07a0c616295da02e152b2947272887711c0dab6f30f27d8dc4ab441f1ac96",
+  "binance/SOLUSDT_1d.csv": "c32152b4ae41b8ead5477740b7a40d035404e94116349d0f88df50f783173cb8",
+  "binance/XRPUSDT_1d.csv": "110f8353f87a4b560ab9fc97c3a0b3edd763648b4f6f6d36aeaf5eda5b8a5703",
+  "kraken/ETH_USD_1d.csv": "ed67f305b4f19d9cd0945ce04675350db9890a4406d29e2824abba86f64d4506",
+  "kraken/SOL_USD_1d.csv": "d9424fc3a924ee6934ae608262b7342f085b5d884a7125790c4623607bda6c33",
+  "kraken/XBT_USD_1d.csv": "b1261bb8f9c063631ab27402ed9c79b5a1b4c4c958c41c928158dbc607658e13"
+ }
+}

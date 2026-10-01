@@ -1,0 +1,18 @@
+{
+ "spec": {
+  "lookback": 120,
+  "width_px": 800,
+  "height_px": 500,
+  "dpi": 100,
+  "up": "#2b8a3e",
+  "down": "#c92a2a",
+  "wick": "#333333",
+  "vol": "#9aa5b1",
+  "bg": "#ffffff"
+ },
+ "prompt": "You see a standardized candlestick chart of an unnamed asset on a fixed intraday timeframe. The last candle on the right is the most recent completed candle. Prices are shown in percent relative to the last close. No future information is shown.\nAssess the chart and answer only with a JSON object with these five fields, each a number between 0 and 1:\n{\"bottom_reversal_confidence\": ..., \"trend_continuation_confidence\": ..., \"distribution_peak_confidence\": ..., \"failed_breakdown_or_breakout_confidence\": ..., \"pattern_confidence\": ...}\nDo not name the asset, do not give price targets, do not recommend a trade.",
+ "prompt_sha256": "2401e3122e12c533b2b9f016bbde392ed37e243517049826e24ba68a35558b8d",
+ "render_code_sha256": "83e53f7465f6f438a0042e77289c06504e7efe38081a9df0717be524871ee1c7",
+ "model": "offen, vor dem Test festzulegen",
+ "temperature": 0
+}

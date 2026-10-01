@@ -1,0 +1,180 @@
+{
+ "lookahead": {
+  "BTC": {
+   "level_diffs": 0,
+   "atr_maxdiff": 0.0,
+   "sma_maxdiff": 0.0,
+   "pivot_diffs": 0
+  },
+  "ETH": {
+   "level_diffs": 0,
+   "atr_maxdiff": 0.0,
+   "sma_maxdiff": 0.0,
+   "pivot_diffs": 0
+  }
+ },
+ "replication": {
+  "entry_hits": 13,
+  "exit_hits": 14,
+  "px_hits": "10",
+  "rows": [
+   {
+    "obs_entry": "2015-06-30",
+    "sim": "2015-06-30",
+    "dE": 0,
+    "dX": 0,
+    "legs_obs": 2,
+    "legs_sim": 2,
+    "px_dev": -5.081,
+    "reason": "SL"
+   },
+   {
+    "obs_entry": "2015-10-16",
+    "sim": "2015-10-16",
+    "dE": 0,
+    "dX": 0,
+    "legs_obs": 6,
+    "legs_sim": 4,
+    "px_dev": -3.126,
+    "reason": "SL"
+   },
+   {
+    "obs_entry": "2016-04-20",
+    "sim": "2016-04-20",
+    "dE": 0,
+    "dX": 0,
+    "legs_obs": 9,
+    "legs_sim": 6,
+    "px_dev": 1.64,
+    "reason": "TP"
+   },
+   {
+    "obs_entry": "2017-02-24",
+    "sim": "2017-02-24",
+    "dE": 0,
+    "dX": 0,
+    "legs_obs": 1,
+    "legs_sim": 1,
+    "px_dev": -0.042,
+    "reason": "SL"
+   },
+   {
+    "obs_entry": "2017-04-26",
+    "sim": "2017-04-25",
+    "dE": -1,
+    "dX": 0,
+    "legs_obs": 1,
+    "legs_sim": 1,
+    "px_dev": -0.601,
+    "reason": "TP"
+   },
+   {
+    "obs_entry": "2017-08-01",
+    "sim": "2017-08-01",
+    "dE": 0,
+    "dX": 0,
+    "legs_obs": 3,
+    "legs_sim": 3,
+    "px_dev": 0.017,
+    "reason": "TP"
+   },
+   {
+    "obs_entry": "2019-04-02",
+    "sim": "-"
+   },
+   {
+    "obs_entry": "2020-01-30",
+    "sim": "2020-01-30",
+    "dE": 0,
+    "dX": 0,
+    "legs_obs": 2,
+    "legs_sim": 2,
+    "px_dev": 0.003,
+    "reason": "SL"
+   },
+   {
+    "obs_entry": "2020-04-30",
+    "sim": "2020-04-30",
+    "dE": 0,
+    "dX": 0,
+    "legs_obs": 4,
+    "legs_sim": 4,
+    "px_dev": -0.004,
+    "reason": "TP"
+   },
+   {
+    "obs_entry": "2021-02-08",
+    "sim": "2021-02-08",
+    "dE": 0,
+    "dX": 0,
+    "legs_obs": 2,
+    "legs_sim": 2,
+    "px_dev": 0.0,
+    "reason": "SL"
+   },
+   {
+    "obs_entry": "2021-04-13",
+    "sim": "2021-04-13",
+    "dE": 0,
+    "dX": 0,
+    "legs_obs": 1,
+    "legs_sim": 1,
+    "px_dev": 0.0,
+    "reason": "SL"
+   },
+   {
+    "obs_entry": "2021-10-06",
+    "sim": "2021-10-06",
+    "dE": 0,
+    "dX": 0,
+    "legs_obs": 3,
+    "legs_sim": 3,
+    "px_dev": 0.0,
+    "reason": "SL"
+   },
+   {
+    "obs_entry": "2023-01-18",
+    "sim": "2023-01-18",
+    "dE": 0,
+    "dX": 0,
+    "legs_obs": 8,
+    "legs_sim": 5,
+    "px_dev": -0.003,
+    "reason": "SL"
+   },
+   {
+    "obs_entry": "2024-02-12",
+    "sim": "2024-02-12",
+    "dE": 0,
+    "dX": 0,
+    "legs_obs": 5,
+    "legs_sim": 3,
+    "px_dev": 0.006,
+    "reason": "TP"
+   },
+   {
+    "obs_entry": "2025-01-20",
+    "sim": "2025-01-20",
+    "dE": 0,
+    "dX": 0,
+    "legs_obs": 1,
+    "legs_sim": 1,
+    "px_dev": -0.027,
+    "reason": "SL"
+   },
+   {
+    "obs_entry": "2025-04-25",
+    "sim": "2025-04-22",
+    "dE": -3,
+    "dX": 7,
+    "legs_obs": 7,
+    "legs_sim": 5,
+    "px_dev": -0.729,
+    "reason": "SL"
+   }
+  ],
+  "n_sim": 17
+ },
+ "la_ok": true,
+ "rep_ok": true
+}

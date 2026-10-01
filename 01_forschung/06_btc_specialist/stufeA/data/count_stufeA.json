@@ -1,0 +1,166 @@
+{
+ "bars": {
+  "total": 13950,
+  "warmup": 134,
+  "evaluated": 13816
+ },
+ "swings": {
+  "lows": 1422,
+  "highs": 1413
+ },
+ "context_bars": {
+  "total": 1842,
+  "P1": 948,
+  "P2": 894,
+  "k1_only": 4869,
+  "k1_and_k2": 2539
+ },
+ "k1_episodes": 169,
+ "candidates": {
+  "Y1": {
+   "total": 96,
+   "P1": 53,
+   "P2": 43
+  },
+  "Y2": {
+   "total": 14,
+   "P1": 8,
+   "P2": 6,
+   "pairs_all": 425,
+   "ctx_false": 377,
+   "dup": 249,
+   "triple": 9
+  },
+  "Y3": {
+   "total": 29,
+   "P1": 15,
+   "P2": 14
+  },
+  "fb_without_ctx": 306,
+  "y3_without_ctx": 61
+ },
+ "overlap": {
+  "Y1_and_Y3": 23,
+  "Y1_and_Y2": 0,
+  "Y2_and_Y3": 0,
+  "all3": 0,
+  "union": 116
+ },
+ "y1_levels": {
+  "nbar": 28,
+  "zone": 27,
+  "swing": 14,
+  "swing|nbar": 11,
+  "swing|zone": 9,
+  "nbar|zone": 5,
+  "swing|nbar|zone": 2
+ },
+ "signals": {
+  "Y1": {
+   "status": {
+    "no_trigger": 69,
+    "traded": 16,
+    "in_position": 6,
+    "stop_too_wide": 5
+   },
+   "traded": 16,
+   "P1": 9,
+   "P2": 7,
+   "stop_dist_atr": {
+    "median": 1.89,
+    "min": 1.31,
+    "max": 2.91,
+    "over3": 0
+   },
+   "confirm_rate": 0.167,
+   "open_at_cut": 0
+  },
+  "Y2": {
+   "status": {
+    "traded": 14
+   },
+   "traded": 14,
+   "P1": 8,
+   "P2": 6,
+   "stop_dist_atr": {
+    "median": 4.75,
+    "min": 3.11,
+    "max": 7.31,
+    "over3": 14
+   },
+   "confirm_rate": 1.0,
+   "open_at_cut": 0
+  },
+  "Y3": {
+   "status": {
+    "no_trigger": 19,
+    "traded": 6,
+    "stop_too_wide": 4
+   },
+   "traded": 6,
+   "P1": 3,
+   "P2": 3,
+   "stop_dist_atr": {
+    "median": 2.66,
+    "min": 2.31,
+    "max": 2.91,
+    "over3": 0
+   },
+   "confirm_rate": 0.207,
+   "open_at_cut": 0
+  }
+ },
+ "control_pool": {
+  "size": 1666,
+  "P1": 851,
+  "P2": 815
+ },
+ "matching": {
+  "Y1": {
+   "signals": 16,
+   "coverage": {
+    "0": 1,
+    "1": 4,
+    "3": 11
+   },
+   "mean_ctrl": 2.31,
+   "unique_controls": 37,
+   "controls_reused": 0,
+   "control_ta_confirm_rate": 0.243,
+   "median_pool_in_window": 11.0
+  },
+  "Y2": {
+   "signals": 14,
+   "coverage": {
+    "0": 1,
+    "1": 2,
+    "2": 3,
+    "3": 8
+   },
+   "mean_ctrl": 2.29,
+   "unique_controls": 30,
+   "controls_reused": 2,
+   "control_ta_confirm_rate": 0.233,
+   "median_pool_in_window": 9.0
+  },
+  "Y3": {
+   "signals": 6,
+   "coverage": {
+    "0": 2,
+    "1": 3,
+    "3": 1
+   },
+   "mean_ctrl": 1.0,
+   "unique_controls": 6,
+   "controls_reused": 0,
+   "control_ta_confirm_rate": 0.167,
+   "median_pool_in_window": 2.0
+  }
+ },
+ "sha256": {
+  "input": "2d394fd1cbc344d5e012e12b40bc5835fef0fbe72f0678c2abf417babd96a7e6",
+  "ylib": "81a74f2a38733f707dcde5ff054b7edf1d450b68e956096c029bb04bf8646f55",
+  "candidates_y1_y3": "c3bce1b984211014d9cdb4aa24c47c195b611f5285c6f56c829ea55f5b9d9f47",
+  "candidates_y2": "e6c2726a866d7b08df2f5e74c7b15a007ad718a05ce4e64f27257fa15f70e4b2"
+ }
+}
