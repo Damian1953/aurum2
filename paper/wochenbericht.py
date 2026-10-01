@@ -128,6 +128,13 @@ def main():
     n_tr = 0 if tr.empty else int((tr["scenario"] == "maker_plan").sum())
     L.append(f"- Bezahlte Kosten seit Start: {chf(tot)} USD über alle drei Strategien, {n_tr} abgeschlossene Trades.")
     L.append("")
+    # 5b Zusatz-Sleeves A/B (eigener Runner, nicht Teil von PAPER v1.0); Fehler duerfen den Bericht nie verhindern
+    try:
+        sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "sleeves"))
+        import sleeves_bericht
+        L += sleeves_bericht.section_lines(heute)
+    except Exception as e:
+        L += [f"## 5b. Zusatz-Sleeves A/B", f"- Abschnitt nicht verfügbar: {e}", ""]
     L.append("## 6. Was Damian tun muss")
     L.append("- Nichts, solange Abschnitt 1 keine Fehler zeigt. Bei Fehlern behebt der Agent und vermerkt es in ENTSCHEIDE.")
     L.append("")

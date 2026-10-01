@@ -131,3 +131,19 @@ def test_runner_dry_run_outputs_and_revision(tmp_path):
         fh.write(json.dumps(dict(sleeve="B", key="signal|2026-10-03|CASH")) + "\n")
     rc3, st3 = R.run(str(live), str(out), D(2026, 10, 3), now=now)
     assert rc3 == 6 and st3["revisions"] == [["B", "signal|2026-10-03|CASH"]]
+
+
+def test_bericht_section(tmp_path):
+    import sleeves_bericht as B
+    live = tmp_path / "live"
+    L = B.section_lines(D(2026, 10, 5), data_live=str(live), sleeves_out=str(tmp_path / "o"))
+    txt = "\n".join(L)
+    assert "nicht freigegeben" in txt and "keine Daten" in txt and "Kein Leistungsurteil" in txt
+    _write_live(live, [["2026-09-01", "1.5", "2026-09-02T04:15:00Z", "r", "1"]], _bars(D(2026, 10, 2), 2))
+    os.makedirs(live / "macro", exist_ok=True)
+    json.dump({"fred_macro": {"ok": False, "errors": ["Timeout"], "consecutive_failures": 3, "last_ok_utc": None},
+               "coinmetrics_mvrv": {"ok": True}}, open(live / "macro/status.json", "w"))
+    txt = "\n".join(B.section_lines(D(2026, 10, 5), data_live=str(live), sleeves_out=str(tmp_path / "o")))
+    assert "34 (veraltet)" in txt and "Quellenfehler fred_macro (3x" in txt
+    (live / "macro/status.json").write_text("{kaputt")
+    assert "## 5b" in B.section_lines(D(2026, 10, 5), data_live=str(live))[0]   # Fehler nie geworfen

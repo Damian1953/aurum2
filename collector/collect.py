@@ -653,7 +653,10 @@ def main():
             status["seed"] = {k: dict(new=v["new"], total=v["total"], conflicts=v["conflicts"]) for k, v in seed(store, args.seed_from).items()}
         except Exception as e:
             status["errors"].append(f"seed: {e}"); log.error("seed: %s", traceback.format_exc())
-    for name in (args.only or SOURCES):
+    names = list(args.only or SOURCES)
+    core = [n for n in names if n not in macro_sources.NONFATAL]
+    macro = [n for n in names if n in macro_sources.NONFATAL]
+    for name in core:
         t0 = time.time()
         try:
             res, errs = SOURCES[name](store, args)
@@ -664,6 +667,10 @@ def main():
             log.error("%s: %s", name, traceback.format_exc())
             status["sources"][name] = dict(ok=False, seconds=round(time.time() - t0, 1), errors=[str(e)])
             status["errors"].append(f"{name}: {e}")
+    if not core:  # reiner Makro-Lauf: Kern-Status und run_history unberuehrt (Nachhol-Logik bleibt unveraendert)
+        lk.close()
+        macro_sources.run_isolated(store, args, macro, SOURCES)
+        return 0
     fin = utcnow()
     status.update(finished_utc=iso(fin), finished_local=fin.astimezone().isoformat(timespec="seconds"),
                   seconds=round((fin - started).total_seconds(), 1), ok=not status["errors"], logfile=logfile)
@@ -676,7 +683,13 @@ def main():
                                  errors=status["errors"][:20])) + "\n")
     prov.write(dict(event="run_end", ok=status["ok"], errors=len(status["errors"])))
     log.info("Ende run_id=%s ok=%s Fehler=%d Dauer=%ss", run_id, status["ok"], len(status["errors"]), status["seconds"])
-    return 0 if status["ok"] else 1
+    rc = 0 if status["ok"] else 1
+    # Makro-Quellen (ab 1.2): NICHT fatal und isoliert. Laufen erst nach Freigabe des Collector-Locks (Paper-Runner wartet
+    # nicht darauf), beeinflussen weder Exit-Code noch last_run_status/run_history; Status in macro/status.json.
+    lk.close()
+    if macro:
+        macro_sources.run_isolated(store, args, macro, SOURCES)
+    return rc
 
 
 if __name__ == "__main__":

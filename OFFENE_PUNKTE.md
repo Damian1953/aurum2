@@ -123,4 +123,5 @@ Sie nennt `mlib.py` noch als v0.1 (`cfe1f7aa…`), die Datei ist v1.0 (`6b7e7ba8
 
 - Gebaut, nicht freigegeben: Collector 1.2 sammelt MVRV und FRED-Reihen täglich 06:15; Runner `sleeves/run_sleeves.py` gesperrt (enabled=false), nicht in cron.
 - Für den Freeze nötig: Review Claude zu v0.2, dann v1.0 der Vorregistrierungen, Freeze-Liste (`00_doku/sleeves_freeze_*_expected_shas.txt`) mit Engine, Runner, Tests, Prereg, Kostenmodell; `start_bar` setzen; cron-Eintrag 06:55 in `collector/ensure_scheduler.sh`.
-- Offen (nicht gebaut): Wochenbericht-Abschnitt für die Sleeves; Kennzahlen-Auswertung (Ledoit-Wolf) erst zur Langfrist-Auswertung.
+- Makro-Quellen nicht fatal und isoliert (Status `data_live/macro/status.json`); Wochenbericht-Abschnitt 5b vorhanden.
+- Offen (nicht gebaut): Kennzahlen-Auswertung (Ledoit-Wolf) erst zur Langfrist-Auswertung.

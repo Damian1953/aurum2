@@ -72,3 +72,50 @@ def test_src_fred_macro_with_stub(store, tmp_path, monkeypatch):
 
 def test_sources_registered():
     assert "coinmetrics_mvrv" in C.SOURCES and "fred_macro" in C.SOURCES and C.VERSION == "1.2"
+
+
+def _main(monkeypatch, tmp_path, sources, argv=("collect.py",)):
+    monkeypatch.setattr(C, "OUT", str(tmp_path))
+    monkeypatch.setattr(C, "SOURCES", sources)
+    monkeypatch.setattr(sys, "argv", list(argv))
+    return C.main()
+
+
+def test_macro_failure_not_fatal_and_after_lock(tmp_path, monkeypatch):
+    import fcntl
+    seen = {}
+    def macro_boom(store, args):
+        with open(os.path.join(str(tmp_path), ".collector.lock"), "w") as lk:   # Collector-Lock muss schon frei sein
+            fcntl.flock(lk, fcntl.LOCK_EX | fcntl.LOCK_NB); seen["lock_free"] = True
+        raise TimeoutError("FRED antwortet nicht")
+    src = {"core": lambda s, a: ({"ok": 1}, []), "fred_macro": macro_boom,
+           "coinmetrics_mvrv": lambda s, a: ({"btc_CapMVRVCur": {"last_obs": "2026-09-30"}}, [])}
+    assert _main(monkeypatch, tmp_path, src) == 0
+    st = json.load(open(tmp_path / "last_run_status.json"))
+    assert st["ok"] is True and st["errors"] == [] and "fred_macro" not in st["sources"]
+    assert json.loads(open(tmp_path / "run_history.jsonl").readline())["ok"] is True
+    ms = json.load(open(tmp_path / "macro/status.json"))
+    assert ms["fred_macro"]["ok"] is False and "FRED" in ms["fred_macro"]["errors"][0] and ms["fred_macro"]["consecutive_failures"] == 1
+    assert ms["coinmetrics_mvrv"]["ok"] is True and ms["coinmetrics_mvrv"]["last_obs"] == {"btc_CapMVRVCur": "2026-09-30"}
+    assert seen["lock_free"]
+    ok_ts = ms["coinmetrics_mvrv"]["last_ok_utc"]
+    src["coinmetrics_mvrv"] = lambda s, a: ({}, ["HTTP 503"])
+    assert _main(monkeypatch, tmp_path, src) == 0
+    ms = json.load(open(tmp_path / "macro/status.json"))
+    assert ms["fred_macro"]["consecutive_failures"] == 2 and ms["coinmetrics_mvrv"]["last_ok_utc"] == ok_ts
+
+
+def test_core_failure_semantics_unchanged(tmp_path, monkeypatch):
+    def boom(s, a):
+        raise RuntimeError("Kraken weg")
+    src = {"core": boom, "fred_macro": lambda s, a: ({}, [])}
+    assert _main(monkeypatch, tmp_path, src) == 1
+    assert json.load(open(tmp_path / "last_run_status.json"))["ok"] is False
+    assert json.load(open(tmp_path / "macro/status.json"))["fred_macro"]["ok"] is True
+
+
+def test_macro_only_run_leaves_core_status(tmp_path, monkeypatch):
+    src = {"core": lambda s, a: ({}, []), "fred_macro": lambda s, a: ({}, ["x"])}
+    assert _main(monkeypatch, tmp_path, src, ("collect.py", "--only", "fred_macro")) == 0
+    assert not (tmp_path / "run_history.jsonl").exists() and not (tmp_path / "last_run_status.json").exists()
+    assert json.load(open(tmp_path / "macro/status.json"))["fred_macro"]["ok"] is False

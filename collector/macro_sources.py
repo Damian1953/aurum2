@@ -10,7 +10,7 @@ Quellen
 Hinweis: FRED beantwortet Anfragen mit eigenem User-Agent nicht (Timeout, getestet 01.10.2026); fuer FRED wird der
 Standard-User-Agent von Python-urllib verwendet.
 """
-import csv, datetime as dt, fcntl, io, json, math, os, urllib.request
+import csv, datetime as dt, fcntl, io, json, math, os, time, traceback, urllib.request
 
 MACRO = "macro"
 HDR = ["obs_date", "value", "first_fetch_utc", "run_id", "initial_load"]
@@ -21,6 +21,7 @@ CM_DAYS, FRED_DAYS = 30, 200
 # Plausibilitaet (Einheiten wie FRED: WALCL/WTREGEN Mio. USD, RRPONTSYD Mrd. USD, DTB3 % p. a.)
 BOUNDS = {"CapMVRVCur": (0.1, 20.0), "WALCL": (1e6, 2e7), "WTREGEN": (0.0, 3e6), "RRPONTSYD": (0.0, 5000.0), "DTB3": (-1.0, 25.0)}
 FRED_SERIES = ["WALCL", "WTREGEN", "RRPONTSYD", "DTB3"]
+NONFATAL = ("coinmetrics_mvrv", "fred_macro")  # Fehler markieren den Collector-Lauf NICHT als fehlgeschlagen
 
 
 def _C():
@@ -161,7 +162,7 @@ def src_coinmetrics_mvrv(store, args):
     return {"btc_CapMVRVCur": r}, []
 
 
-def _fred_get(url, timeout=60):
+def _fred_get(url, timeout=30):
     req = urllib.request.Request(url)  # Standard-User-Agent (siehe Modul-Doku)
     with urllib.request.urlopen(req, timeout=timeout) as resp:
         return resp.status, resp.read()
@@ -192,3 +193,46 @@ def src_fred_macro(store, args, getter=None):
         except Exception as e:
             errs.append(f"{sid}: {e}"); C.log.error("fred_macro %s: %s", sid, e)
     return res, errs
+
+
+def run_isolated(store, args, names, sources):
+    """Fuehrt die Makro-Quellen aus; jeder Fehler wird geloggt und in macro/status.json vermerkt, nie weitergereicht.
+    Die Sleeves pruefen die Aktualitaet ihrer Daten selbst (fail-closed bei veralteten Daten)."""
+    C = _C(); path = os.path.join(C.OUT, MACRO, "status.json")
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    lk = open(os.path.join(C.OUT, ".macro.lock"), "w")
+    try:
+        fcntl.flock(lk, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except BlockingIOError:
+        C.log.warning("Makro-Quellen: anderer Lauf aktiv (Lock), uebersprungen (nicht fatal)"); lk.close(); return None
+    try:
+        prev = json.load(open(path)) if os.path.exists(path) else {}
+    except Exception:
+        prev = {}
+    for name in names:
+        t0 = time.time(); now = C.iso(C.utcnow())
+        try:
+            res, errs = sources[name](store, args)
+        except Exception as e:
+            C.log.error("%s (nicht fatal): %s", name, traceback.format_exc()); res, errs = {}, [str(e)]
+        for e in errs:
+            C.log.error("%s (nicht fatal): %s", name, e)
+        old = prev.get(name, {})
+        prev[name] = dict(ok=not errs, run_id=store.run_id, last_attempt_utc=now,
+                          last_ok_utc=now if not errs else old.get("last_ok_utc"), errors=errs[:10],
+                          seconds=round(time.time() - t0, 1),
+                          consecutive_failures=0 if not errs else int(old.get("consecutive_failures", 0)) + 1,
+                          last_obs={k: v.get("last_obs") for k, v in res.items() if isinstance(v, dict)})
+        try:
+            store.prov.write(dict(event="macro_status", source=name, ok=not errs, errors=errs[:5]))
+        except Exception:
+            pass
+    try:
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        with open(path + ".tmp", "w") as fh:
+            json.dump(prev, fh, indent=1); fh.flush(); os.fsync(fh.fileno())
+        os.replace(path + ".tmp", path)
+    except Exception as e:
+        C.log.error("macro/status.json nicht geschrieben (nicht fatal): %s", e)
+    lk.close()
+    return prev
