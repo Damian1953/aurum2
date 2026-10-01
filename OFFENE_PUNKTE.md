@@ -68,7 +68,8 @@ Sie nennt `mlib.py` noch als v0.1 (`cfe1f7aa…`), die Datei ist v1.0 (`6b7e7ba8
 
 ## OP-8 Offen nach Schritt 0 (neu, 01.10.2026)
 
-- **D2** Kapitalrahmen (Micro-Live in CHF, Totalverlust-Obergrenze in CHF) und **D3** Zeitbudget (Std./Woche, Review-Termin): Zahlen von Damian ausstehend.
+- **D2** Kapitalrahmen (Micro-Live in CHF, Totalverlust-Obergrenze in CHF): Zahlen von Damian ausstehend.
+- **D3** Zeitbudget — ERLEDIGT (01.10.2026): höchstens 1 Std./Woche, Review höchstens 4 Monate nach Start des Paper-Tradings (ca. Anfang Februar 2027). Siehe ENTSCHEIDE 01.10.2026 15:45.
 - **D5:** Status von Altsystem und Keys, Bestätigung durch Damian ausstehend.
 - **XS21 PiT v0.2 (ENTWURF):** Review durch Claude/Damian, insbesondere B7-Liste (55 «wahrscheinlich», 59 «unklar», PAXG/XAUT/USTC), Schwellen des Ausführbarkeits-Gates, Tie-Break U2, Behandlung fehlenden Fundings, Zeitblöcke. Erst danach v1.0 und ein Lauf.
   - **Stand 01.10.2026 (Nachmittag):** Review Claude eingearbeitet, `01_forschung/09_lane_c/xs21_point_in_time_prereg_v1.0.md` ist FREEZE-KANDIDAT (nicht eingefroren), B7-Liste v1.0 in `xs21_pit_v1.0/` (220 Ausschluesse, 0 unklar). Offen: Freigabe Damian; Kraken-Futures-Volumen werden seit 01.10.2026 erfasst (Collector v1.1), 30-Tage-Median ab 30.10.2026, Gate fruehestens 19.12.2026 entscheidbar; Lesart «erste 8 Rebalancings» bestaetigen (v1.0 §8.2); drei Regelergaenzungen in v1.0 §8.3 bestaetigen.
@@ -85,3 +86,10 @@ Sie nennt `mlib.py` noch als v0.1 (`cfe1f7aa…`), die Datei ist v1.0 (`6b7e7ba8
 
 - **Lauf erledigt** (01.10.2026, 14:35 Zürich): Netto-K1 der Primärzellen −8.47 R < 0. A7 greift: Lane A vollständig geschlossen. Bericht `01_forschung/11_delayed_trend/dt_pnl_v1.0/dt_pnl_v1.0_bericht.md`.
 - **Befund Kontrolldesign DT2:** Ersatzniveau-Kontrollen kommen fast nie zum Einstieg (`retest_failed`), deshalb ist ΔR für DT2 nicht messbar. Nur relevant bei einer allfälligen neuen Vorregistrierung mit Forward-Daten (A7).
+- **Vermerke Nachprüfung (ENTSCHEIDE 15:45):** `xs21_check.json` hat `gesamt_ok: false`, erklärt durch das fehlende U5a im Prüfskript und die K2-Delisting-Reibung (17/2 Ausstiege). Die Survivorship-Zerlegung je Block (A6) ist nach dem Lauf nachgetragen.
+- **Review Claude zum XS21-Lauf:** noch nicht abgelegt, weil der Text auf der Box nicht vorliegt. Ablageort, sobald geliefert: `01_forschung/09_lane_c/xs21_pit_v1.0/xs21_pit_v1.0_review_claude_v1.md`.
+
+## OP-11 Ideen-Scan v1 (neu, 01.10.2026)
+
+- `01_forschung/12_ideen_scan/ideen_scan_v1.md` (Kopie `/workspace/aurum2/ideen/ideen_scan_v1.md`): Shortlist neuer Ansätze, explorative Checks nur bis 2023, nicht vorregistriert.
+- Vorregistrierungs-ENTWURF Funding-Carry v0.1 (nicht eingefroren). Entscheid Damian nötig, ob er weiterverfolgt wird; Steuerfrage D4 (Funding-Erträge, Derivate) vor jedem Live-Einsatz klären.

@@ -700,3 +700,12 @@ A7: Summe r_net K1 der drei Primaerzellen = -8.47 R ueber 102 Trades (-0.083 R j
 Ausloeser: DT P&L v1.0, Netto-K1 der drei Primaerzellen zusammen -8.47 R < 0 (Eintrag oben). Gemaess A7 (woertlich): «Vor dem DT-P&L-Lauf festgeschrieben: Ist Netto-K1 in den drei Primaerzellen zusammen kleiner als null, wird Lane A (Bottom, Reversal, Rebound, DT) vollstaendig geschlossen. Es folgt keine weitere Variante, keine Umformulierung und kein neuer Timeframe auf BTC, XRP oder DOT. Eine Wiederaufnahme waere nur mit neuen Daten (Forward-Fenster) und einer neuen Vorregistrierung zulaessig, die diesen Entscheid ausdruecklich zitiert.»
 
 Lane A (Bottom, Reversal, Rebound, DT) ist damit vollstaendig geschlossen. Positive Einzelzellen (BTC S2xDT1, XRP S2xDT2, BTC S2xDT2) begruenden nach A7 keine Fortfuehrung. Kein Holdout-Lauf.
+
+## 2026-10-01 15:45 — D3 Zeitbudget — ENTSCHIEDEN
+
+Ersetzt den Eintrag «D3 Zeitbudget — OFFEN» (append-only, dieser Eintrag ist massgeblich). Entscheid Damian (uebermittelt 01.10.2026, 15:39 Zuerich, Korrektur 15:40): Damian setzt hoechstens 1 Stunde pro Woche ein. Der Review-Termin liegt hoechstens 4 Monate nach dem Start des Paper-Tradings (bei Start im Oktober 2026 also etwa Anfang Februar 2027). Kontext: Lane A geschlossen (A7), XS21 auf PiT falsifiziert, kein Sleeve; Paper-Plan W2, W6 und Turtle 55/20, Spot long, Kraken, Kosten K1. Folge fuer die Arbeitsweise: Vorschlaege an Damian muessen in dieses Budget passen (Entscheidvorlagen statt offener Fragen, keine laufende Betreuung).
+
+## 2026-10-01 15:45 — XS21 PiT v1.0: Vermerke zur Nachpruefung
+
+(1) Die eingefrorene Nachpruefung `tools/xs21/check_run_v1.py` endet mit `gesamt_ok: false` (`01_forschung/09_lane_c/xs21_pit_v1.0/run/xs21_check.json`). Ursachen, beide erklaert und kein Fehler im Lauf: (a) das Pruefskript wendet die Umsetzungsfestlegung U5a (Kerzen mit count = 0 gelten als nicht vorhanden) nicht an, daher 30 (U1) bzw. 8 (U2) gemeldete Auswahl-Abweichungen; mit U5a 0 Abweichungen; (b) die Kostendifferenz stammt aus der K2-Reibung bei 17 (U1) bzw. 2 (U2) Delisting-Ausstiegen. Erklaerung: `tools/xs21/check_run_v1_erklaerung.py`, `run/xs21_check_erklaerung.json`. Das Pruefskript bleibt unveraendert.
+(2) Abweichung A6 des Berichts: Die Survivorship-Zerlegung je Block (§5.3) fehlte im Lauf-Code und wurde nach dem Lauf deskriptiv aus den Trades nachgetragen (`tools/xs21/nachtrag_survivorship_bloecke_v1.py`, `run/xs21_nachtrag_survivorship_bloecke.json`). Gesamtsummen gleich wie im Lauf, kein Einfluss auf das Urteil.
