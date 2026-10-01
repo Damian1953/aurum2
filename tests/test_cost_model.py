@@ -46,3 +46,14 @@ def test_stage2_matches_frozen():
 def test_load_returns_copies():
     a = AC.load("spot_r"); a["K1"]["fee"] = 9.0
     assert AC.load("spot_r")["K1"]["fee"] == 0.0040
+
+
+def test_dtlib_bp_constants_derive_from_spot_r_k1():
+    """dtlib (eingefroren, nicht portabel umgeschrieben) haelt K1 als abgeleitete Basispunkte:
+    Stop-Roundtrip = 2*(fee+fric) + slip_in + slip_sl, Ziel-Roundtrip = 2*(fee+fric) + slip_in."""
+    k = AC.load("spot_r")["K1"]
+    tree = ast.parse(open(os.path.join(REPO, "01_forschung/11_delayed_trend/dtlib/dtlib.py"), encoding="utf-8").read())
+    kw = {k_.arg: k_.value.value for n in ast.walk(tree) if isinstance(n, ast.Call)
+          for k_ in n.keywords if k_.arg in ("k1_roundtrip_stop_bp", "k1_roundtrip_target_bp")}
+    assert round((2 * (k["fee"] + k["fric"]) + k["slip_in"] + k["slip_sl"]) * 1e4, 6) == kw["k1_roundtrip_stop_bp"] == 99.0
+    assert round((2 * (k["fee"] + k["fric"]) + k["slip_in"]) * 1e4, 6) == kw["k1_roundtrip_target_bp"] == 89.0
