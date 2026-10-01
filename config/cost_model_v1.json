@@ -1,0 +1,29 @@
+{
+  "_doc": "Zentrales Kostenmodell Aurum II, Version 1.0. EINZIGE Quelle fuer K0/K1/K2 in den portablen Modulversionen. Alle Werte sind Bruchteile je Seite (0.0040 = 0.40 Prozent). Die Werte sind wortgleich aus den eingefrorenen Dateien uebernommen (ylib.py, mlib.py, mtp_val.py, s2lib.py) und werden durch tests/test_cost_model.py gegen diese geprueft. Werte NICHT aendern ohne neuen Eintrag in 00_doku/ENTSCHEIDE.md und neue Version dieser Datei. Widerspruch zu 05_evidenz/README.md und ENTSCHEIDE.md siehe OFFENE_PUNKTE.md.",
+  "version": "1.0",
+  "sections": {
+    "spot_r": {
+      "_doc": "Spot-Ausfuehrung im R-Modell (Lane A, Rebound, MTP-Validation). fee je Seite, fric Spread/Reibung je Seite, slip_in Einstiegs-Slippage, slip_sl Stop-Slippage. Verwendet von ylib.COST, mlib.COST, mtp_val.COST.",
+      "used_by": ["01_forschung/06_btc_specialist/stufeA/ylib.py:COST", "01_forschung/10_rebound_micro/mlib/mlib.py:COST", "01_forschung/03_mtp_validation/mtp_val.py:COST"],
+      "values": {
+        "K0": {"fee": 0.0016, "fric": 0.0, "slip_in": 0.0, "slip_sl": 0.0},
+        "K1": {"fee": 0.0040, "fric": 0.0002, "slip_in": 0.0005, "slip_sl": 0.0010},
+        "K2": {"fee": 0.0080, "fric": 0.0006, "slip_in": 0.0015, "slip_sl": 0.0030}
+      }
+    },
+    "stage2_perp": {
+      "_doc": "Stufe 2 (Tagesdaten): fee/fric Perp je Seite, fund_pay Funding-Multiplikator, spot_fee/spot_fric fuer Spot-Beine (D-CC).",
+      "used_by": ["01_forschung/02_strategien/s2lib.py:COST"],
+      "values": {
+        "K0": {"fee": 0.0002, "fric": 0.0, "fund_pay": 1.0, "spot_fee": 0.0016, "spot_fric": 0.0},
+        "K1": {"fee": 0.0005, "fric": 0.0002, "fund_pay": 1.0, "spot_fee": 0.0040, "spot_fric": 0.0002},
+        "K2": {"fee": 0.0010, "fric": 0.0006, "fund_pay": 1.5, "spot_fee": 0.0080, "spot_fric": 0.0006}
+      }
+    },
+    "stage2_spot_ref": {
+      "_doc": "Spot-Referenz Familie A in Stufe 2 (Bericht, kein Kriterium): Kraken Spot Tier 1 Maker, kein Funding.",
+      "used_by": ["01_forschung/02_strategien/s2lib.py:SPOT_REF", "01_forschung/02_strategien/spot_ref.py:SPOT"],
+      "values": {"fee": 0.0040, "fric": 0.0002, "fund_pay": 0.0, "spot_fee": 0.0040, "spot_fric": 0.0002}
+    }
+  }
+}
