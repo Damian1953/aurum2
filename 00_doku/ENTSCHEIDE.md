@@ -636,3 +636,13 @@ Umsetzung: Agent (Grok, 01.10.2026) nach Auftrag Damian. Neue ENTSCHEIDE-SHA in 
 `01_forschung/09_lane_c/xs21_point_in_time_prereg_v1.0.md` setzt M1 bis M7 und die Zusatzpunkte aus dem Review Claude zu v0.2 (`xs21_point_in_time_v0.2_review_claude_v1.md`) sowie die Vorgaben Damian vom 01.10.2026 um (PAXG, XAUT, BTCDOM, DEFI, FOOTBALL, BLUEBIRD ausgeschlossen; USTC, FRAX, STABLE, STBL nach Pruefung zugelassen). B7-Liste v1.0 in `01_forschung/09_lane_c/xs21_pit_v1.0/` (220 Ausschluesse, 0 unklar). v0.1 und v0.2 bleiben unveraendert.
 
 Status: wartet auf Freigabe Damian. Kein Freeze, kein Lauf, keine Datenbeschaffung.
+
+## 2026-10-01 13:07 Europe/Zurich (11:07 UTC) — XS21 PiT v1.0 FREEZE
+
+Freigabe: Damian, 01.10.2026, 13:07 Zuerich. Freigegeben sind `01_forschung/09_lane_c/xs21_point_in_time_prereg_v1.0.md` einschliesslich der drei Regelergaenzungen in §8.3 (M4 30-Tage-Ersatzmedian, M5 Blockzuordnung nach Einstiegsdatum und B1 ab Laufbeginn, M6 gemeinsames Cash von U1 und U2) und des Gate-Fensters M3 nach §8.2 (die ersten 8 Raster-Stichtage mit vollstaendigem 30-Tage-Median, 31.10. bis 19.12.2026).
+
+Freeze-Dateien (SHA-256): Spezifikation v1.0 edb24cde8c391c60cd90fdad753f403a8835de7e4da275af0d5d3eed01e998af. B7-Liste v1.0: `xs21_pit_v1.0/xs21_exclusions_v1.0.csv` 7f68fe168c2de5a4…, Klassifikation 32e1a19da53270af…, Sensitivitaetsliste c0a8f32dfca2f47a…, Klassifikationscode `tools/xs21/exclusion_map_v1.0.py` 8a7f58cea160fcb8…, Builder `tools/xs21/build_exclusions_v1.py` eed6630a2b24e5d4…, Eingaben Snapshot bff906a0…, Spot-Liste 8dfa4293…, `binance_um_universe.csv` f5563c09…. Kostenmodell `config/cost_model_v1.json` c652caa5bb237914… (`stage2_perp` unveraendert). T-Bill `data/supplement/DTB3_3m_tbill_to_2026-09-14.csv` 8b287e3cc711b4c7…. Vollstaendige Liste: `00_doku/xs21_freeze_2026-10-01_expected_shas.txt`.
+
+Zum Zeitpunkt des Freeze: kein Lauf, keine Outcomes, keine XS21-Kurs-, Volumen- oder Funding-Daten beschafft. Reihenfolge nach §7: Datenbeschaffung, Laufbeginn nach M6 (Eintrag hier vor dem Lauf), Freeze des Lauf-Codes (Eintrag hier vor dem Lauf), ein einziger Lauf. Das Lauf-Log muss die SHA der Spezifikation enthalten (E3).
+
+Entscheid: eingefroren (Damian, 01.10.2026). Tag `xs21-pit-v1.0-freeze`.

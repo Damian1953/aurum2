@@ -2,7 +2,7 @@
 
 **Project Aurum II, `01_forschung/09_lane_c/xs21_point_in_time_prereg_v1.0.md`, 01.10.2026.**
 
-**Status: FREEZE-KANDIDAT, nicht eingefroren – wartet auf Freigabe Damian.** Es gibt keinen Lauf, es wurden keine Outcomes berechnet, und es sind noch keine Kurs-, Volumen- oder Funding-Daten für XS21 beschafft. Eingefroren ist dieses Dokument erst, wenn Damian es freigibt und seine SHA-256 in ENTSCHEIDE eingetragen ist. Bis dahin gilt es als Entwurf.
+**Status: EINGEFROREN (FROZEN) am 01.10.2026, 13:07 Europe/Zurich (11:07 UTC), Freigabe Damian.** Freeze-Eintrag in ENTSCHEIDE vom 01.10.2026, Prüfsummen in `00_doku/xs21_freeze_2026-10-01_expected_shas.txt`. Zum Zeitpunkt des Freeze gab es keinen Lauf, keine berechneten Outcomes, und es waren keine Kurs-, Volumen- oder Funding-Daten für XS21 beschafft. Änderungen nach dem Freeze nur als datierte Abweichung in ENTSCHEIDE.
 
 Grundlage:
 - v0.2 (`xs21_point_in_time_prereg_v0.2.md`, SHA 9907c0e198fa29ec…) und v0.1 (SHA 00a98886c8414f00…). Beide bleiben unverändert.
@@ -223,11 +223,11 @@ Reihenfolge: Freigabe und Freeze v1.0 einschliesslich B7-Liste v1.0, danach Date
 - **Prüfbedingungen im Code (Abbruch bei Verletzung):** U2 ⊆ U1 an jedem Stichtag (ein U2-Symbol unter 50 Mio. USD wäre ein Datenfehler). Kein Symbol der B7-Liste v1.0 in der Basismenge. SHA der eingefrorenen Spezifikation v1.0 und der B7-Liste im Lauf-Log (E3).
 - Moratorium F1: kein neuer Strang.
 
-## 8. Offen vor Freeze bzw. vor Lauf
+## 8. Entscheide beim Freeze und verbleibende Punkte
 
-1. **Freigabe Damian** dieses Dokuments und der B7-Liste v1.0. Danach SHA-Eintrag in ENTSCHEIDE.
-2. **Datengrundlage Gate (M3):** Die Erfassung der Kraken-Futures-Instrumente und -Ticker (Collector v1.1) hat am **01.10.2026** begonnen (erster Snapshot 10:58 UTC, 284 Perpetuals, alle `tradeable`). Der erste 30-Tage-Median ist mit dem 30. Tages-Snapshot am **30.10.2026** verfügbar. Zwischen 15.09. und 30.09.2026 gibt es keine Volumendaten, und sie lassen sich nicht nachholen. Die Raster-Stichtage 19.09. bis 24.10.2026 sind deshalb nicht nach M3 messbar. Zu entscheiden (Vorschlag): Als «erste 8 Rebalancings» gelten die ersten 8 Raster-Stichtage mit vollständigem 30-Tage-Median, also 31.10. bis 19.12.2026. Das Gate wäre dann frühestens am **19.12.2026** entscheidbar.
-3. **Regelergänzungen in v1.0, die über den Wortlaut des Review hinausgehen** (zu bestätigen):
+1. **Freigabe Damian** dieses Dokuments und der B7-Liste v1.0: erteilt am 01.10.2026, 13:07 Zürich.
+2. **Datengrundlage Gate (M3):** Die Erfassung der Kraken-Futures-Instrumente und -Ticker (Collector v1.1) hat am **01.10.2026** begonnen (erster Snapshot 10:58 UTC, 284 Perpetuals, alle `tradeable`). Der erste 30-Tage-Median ist mit dem 30. Tages-Snapshot am **30.10.2026** verfügbar. Zwischen 15.09. und 30.09.2026 gibt es keine Volumendaten, und sie lassen sich nicht nachholen. Die Raster-Stichtage 19.09. bis 24.10.2026 sind deshalb nicht nach M3 messbar. **Entschieden beim Freeze (Damian, 01.10.2026):** Als «erste 8 Rebalancings» gelten die ersten 8 Raster-Stichtage mit vollständigem 30-Tage-Median, also 31.10. bis 19.12.2026. Das Gate ist frühestens am **19.12.2026** entscheidbar.
+3. **Regelergänzungen in v1.0, die über den Wortlaut des Review hinausgehen** (beim Freeze bestätigt, Damian, 01.10.2026), verbindlicher Teil dieser Spezifikation:
    - M4: Fehlt zu einem Settlement für alle Universumssymbole das Funding, gilt der Median des absoluten Fundings des Universums über die vorangehenden 30 Tage.
    - M5: Zuordnung der Trades zu Blöcken nach Einstiegsdatum; Block B1 beginnt am Laufbeginn nach M6.
    - M6: Unter 20 Symbolen in U1 halten U1 und U2 gemeinsam Cash.

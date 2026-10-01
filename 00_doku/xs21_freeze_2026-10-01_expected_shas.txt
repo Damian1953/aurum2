@@ -1,0 +1,15 @@
+# XS21 PiT v1.0 FREEZE, 01.10.2026 13:07 Europe/Zurich (Freigabe Damian). Spezifikation, B7-Liste v1.0 mit Code und Eingaben, Kostenmodell, T-Bill.
+# Lauf-Code und Lauf-Eingaben (Klines, Funding) werden vor dem Lauf separat eingefroren (xs21_runcode_*_expected_shas.txt).
+edb24cde8c391c60cd90fdad753f403a8835de7e4da275af0d5d3eed01e998af  01_forschung/09_lane_c/xs21_point_in_time_prereg_v1.0.md
+3919ac12f49a5be65b05a5a9e0174697c02d3e534bfe8ca0a53489725d6f94da  01_forschung/09_lane_c/xs21_point_in_time_v0.2_review_claude_v1.md
+32e1a19da53270af82784cacb9f8dec08956840a93b4adf3c0aace18d255a7dc  01_forschung/09_lane_c/xs21_pit_v1.0/xs21_b7_klassifikation_v1.0.csv
+7f68fe168c2de5a4c5c37f467e7475fdcb36705bc54a7ec2b8403ffaac91377f  01_forschung/09_lane_c/xs21_pit_v1.0/xs21_exclusions_v1.0.csv
+c0a8f32dfca2f47a47df649e4d80da19b951b063825e0ddce5e45840afd0f550  01_forschung/09_lane_c/xs21_pit_v1.0/xs21_sensitivitaet_ohne_v1.0.csv
+bc5086598b63ff3863fe76c7f9ac5fb39ffd2f4025f63bbc86b573ad48e32eb1  01_forschung/09_lane_c/xs21_pit_v1.0/xs21_b7_v1.0.sha256
+8a7f58cea160fcb8701de02c3ffbb129735a052012839da5a6286ae7306f8be4  tools/xs21/exclusion_map_v1.0.py
+eed6630a2b24e5d4f706414dd252ac97b49781743010e9cf7d8a3c7d97d23520  tools/xs21/build_exclusions_v1.py
+bff906a0c34298a32c1d322f5d722077d85e60c8f8fd58e3bd9da9aec0148985  01_forschung/09_lane_c/xs21_pit_v0.2/binance_um_snapshot_2026-10-01.csv
+8dfa429324cb2bd2875ee7664d023a7194dd2dc487f8edef1bf2bc1d46d471a0  01_forschung/09_lane_c/xs21_pit_v0.2/binance_spot_symbols_2026-10-01.json
+f5563c0963dffba6b17cdf96ec8a7902e7b23dc15ac7998416caeb81bf57d312  02_daten/raw/binance_um_universe.csv
+c652caa5bb237914d0bdcd153813ca65a61f2da23626ea5d52a183ab69e89727  config/cost_model_v1.json
+8b287e3cc711b4c7d5629caed6f531c7564d4d7e8dbcf8f6bc49b069b7ca9d59  data/supplement/DTB3_3m_tbill_to_2026-09-14.csv
