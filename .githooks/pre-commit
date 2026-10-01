@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Lokale CI vor jedem Commit (ohne Stufe-2-Volllauf, ~1 min). Ueberspringen nur bewusst: git commit --no-verify
+set -euo pipefail
+cd "$(git rev-parse --show-toplevel)"
+exec make -s ci-fast

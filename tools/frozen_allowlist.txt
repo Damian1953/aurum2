@@ -1,0 +1,4 @@
+# Bekannte, begruendete Abweichungen der eingefrorenen Expected-SHA-Listen vom aktuellen Stand.
+# Format: <expected_shas-Datei>|<Pfad>|<Begruendung>   ("*" = alle Listen)
+*|00_doku/ENTSCHEIDE.md|Entscheidprotokoll wird fortgeschrieben (append-only), jede Liste haelt den Stand zum Zeitpunkt des Laufs fest.
+00_doku/rm_2026-09-18_expected_shas.txt|01_forschung/10_rebound_micro/mlib/mlib.py|Liste nennt mlib v0.1 (cfe1f7aa...), Datei ist dokumentiert v1.0 (6b7e7ba8..., ENTSCHEIDE 18.09.2026 REBOUND-MICRO v1.0 FREEZE).
