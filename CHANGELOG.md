@@ -4,6 +4,7 @@ Forschungsentscheide stehen weiterhin ausschliesslich in `00_doku/ENTSCHEIDE.md`
 
 ## 2026-10-01
 
+- DT P&L v1.0: Spezifikation, Lauf-Code, Pruefskript, Tests eingefroren (`00_doku/dt_pnl_freeze_2026-10-01_expected_shas.txt`, Tag `dt-pnl-v1.0-freeze`).
 - `original-2026-10-01` (Tag): verbatim Kopie von `/workspace/aurum2/projekt`, 455 Dateien, ohne `02_daten/raw` (412 MB) und `__pycache__`.
 - Daten-Layout: `data/` gitignored, `02_daten/raw` als Symlink, `make data`, siehe `DATA.md`. DTB3 als Ersatz neu von FRED geladen.
 - Gepinnte Umgebung: `requirements.txt`, `requirements.lock`, `.python-version` (3.13.5).

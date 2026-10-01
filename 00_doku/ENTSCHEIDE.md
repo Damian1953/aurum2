@@ -672,3 +672,17 @@ Urteile (Stufe-2-Regel, K1): U1 Top-3 L+S TEILWEISE (c3 verfehlt: B2 -0.085 % je
 Nachpruefung `tools/xs21/check_run_v1.py` (unveraendert): Bilanz und Brutto bitnah gleich; gemeldete Auswahl-Abweichungen (30/8) und Kostendifferenz vollstaendig erklaert durch U5a bzw. K2-Reibung bei 17/2 Delisting-Ausstiegen (`tools/xs21/check_run_v1_erklaerung.py`). Nachtrag: Survivorship-Zerlegung je Block (§5.3), deskriptiv aus den Trades (`tools/xs21/nachtrag_survivorship_bloecke_v1.py`), weil der Lauf-Code sie nur gesamt ausgab. Bericht `01_forschung/09_lane_c/xs21_pit_v1.0/xs21_pit_v1.0_bericht.md`. SHAs der Ausgaben: `00_doku/xs21_run_2026-10-01_expected_shas.txt` (u.a. Log f3fbd6bf…, Eval 66f3e97c…).
 
 Offen fuer Damian: Umgang mit dem Gate M3 und dem Forward-Fenster nach diesem Urteil (die Spezifikation sieht ohne Sleeve-Kandidat keinen Paper-Betrieb vor).
+
+## 2026-10-01 14:35 — DT P&L v1.0 FREEZE (vor jedem Outcome)
+
+Freigabe Damian 01.10.2026, 14:20 Zuerich: Delayed Trend nach A1–A8 freezen und genau einen P&L-Lauf ausfuehren, Governance wie XS21. Spezifikation `01_forschung/11_delayed_trend/dt_pnl_spec_v1.0.md` (SHA 56a13bf7d434356539e956457e3616ea93a7ded4ea25f4247fd31380bf41d47a), Lauf-Code `01_forschung/11_delayed_trend/dt_pnl_v1.0/` (dt_pnl.py, dt_pnl_run.py), unabhaengige Pruefung `tools/dt/check_dt_pnl_v1.py`, Tests `tests/test_dt_pnl.py` (8 synthetische Tests, gruen). Alle SHAs: `00_doku/dt_pnl_freeze_2026-10-01_expected_shas.txt` (Libraries rlib f1ffdbb8…, dtlib f2d6c390…, ylib portabel 45261575…, Kostenmodell c652caa5…, 3 Discovery-Spot-Dateien, Kandidaten, count-JSON, eingefrorene DT-Einstiege).
+
+Umsetzung: Primaer BTC S2xDT1, XRP S2xDT1, XRP S2xDT2; sekundaer BTC S2xDT2, DOT S2xDT1, DOT S2xDT2; Holm ueber 6. S1 nur deskriptiv, DT3 geschlossen. Exit Tages-ATR14-Chandelier 3x nur steigend, Zeitstopp t+360. Kontrollen: gematchte Kontexte (rlib.match_controls, Pool ylib.control_pool) mit Ersatzniveaus. Primaermetrik gepaartes Delta-R und Netto-K1 (Spot, C1/C2); Kraken-Venue-Modell nur berichtet, nicht entscheidend.
+
+Festlegungen vor dem Lauf: (1) A4-Chandelier vom hoechsten Schluss seit Einstieg (Forschungsplan §5), ohne Strukturbruch-Regel. (2) A7 operationalisiert als Summe r_net K1 (R) ueber alle Trades der drei Primaerzellen; ungewichtetes Mittel der Zellenmittel nur berichtet.
+
+A8 Evidenzvermerk (woertlich): «DT ist outcome-informed (Ebene C), laeuft auf denselben Discovery-Daten wie alle gescheiterten Vorgaenger, und die globale Trial-Zahl liegt bei rund 240. Ein positives Ergebnis gilt deshalb hoechstens als «mechanistically promising» in der Klasse Development. Ein Holdout-Lauf ist nur nach dem Economic Validation Gate zulaessig (Governance v1.1 §7), und dieser Vermerk wird im DT-Freeze woertlich uebernommen.»
+
+A7 Abbruchregel (woertlich): «Vor dem DT-P&L-Lauf festgeschrieben: Ist Netto-K1 in den drei Primaerzellen zusammen kleiner als null, wird Lane A (Bottom, Reversal, Rebound, DT) vollstaendig geschlossen. Es folgt keine weitere Variante, keine Umformulierung und kein neuer Timeframe auf BTC, XRP oder DOT. Eine Wiederaufnahme waere nur mit neuen Daten (Forward-Fenster) und einer neuen Vorregistrierung zulaessig, die diesen Entscheid ausdruecklich zitiert.»
+
+Nur Discovery-Daten (bis 2023-12-31); kein Holdout geoeffnet, auch nicht holdout_manifest. Kein DT-P&L-Ergebnis vor diesem Freeze gesehen.
