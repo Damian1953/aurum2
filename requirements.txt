@@ -1,0 +1,8 @@
+# Direkte Abhaengigkeiten (gepinnt). Vollstaendige transitive Liste: requirements.lock
+# Getestet mit Python 3.13.5 (siehe .python-version).
+numpy==2.5.3
+pandas==3.0.6
+scipy==1.18.1
+matplotlib==3.11.2
+certifi==2026.7.22
+pytest==9.1.1
