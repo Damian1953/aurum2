@@ -20,3 +20,10 @@ Forschungsentscheide stehen weiterhin ausschliesslich in `00_doku/ENTSCHEIDE.md`
 - E3: `00_doku/rm_2026-09-18_expected_shas.addendum_2026-10-01.txt`. verify-frozen wendet `*.addendum_*.txt` an.
 - C2: `config/cost_model_v1.json` v1.1 mit `venue_kraken`. Die eingefrorenen Abschnitte sind unverändert, dazu ein Test. `05_evidenz/README_v1.1_gebuehren.md` korrigiert die Gebührensätze.
 - B1–B8: `01_forschung/09_lane_c/xs21_point_in_time_prereg_v0.2.md` (ENTWURF) und B7-Ausschlussliste `xs21_pit_v0.2/` (ENTWURF v0.1, Prüfsummen, `tools/xs21/`). Kein Lauf.
+
+## 2026-10-01 (spaeter Nachmittag): Review XS21 v0.2 eingearbeitet
+
+- Review Claude: `01_forschung/09_lane_c/xs21_point_in_time_v0.2_review_claude_v1.md` (verbatim).
+- `xs21_point_in_time_prereg_v1.0.md` (FREEZE-KANDIDAT, nicht eingefroren) mit M1–M7. B7 v1.0: `tools/xs21/exclusion_map_v1.0.py`, `tools/xs21/build_exclusions_v1.py`, Ausgabe `xs21_pit_v1.0/` mit Pruefsummen. v0.1/v0.2 unveraendert.
+- ENTSCHEIDE: E3-Korrekturvermerk (SHA-Uebereinstimmung statt Zeitstempel-Reihenfolge) und Eintrag Freeze-Kandidat angehaengt, SHA in `00_doku/xs21v1_2026-10-01_expected_shas.txt`.
+- DTB3 bis 2026-09-14 (`data/supplement/DTB3_3m_tbill_to_2026-09-14.csv`, `make data`).

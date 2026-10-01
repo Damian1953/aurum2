@@ -1,0 +1,221 @@
+symbol,entscheid,typ,sicherheit,grund,quelle,pruefdatum,first_month,binance_spot_usdt,sensitivitaet_ohne
+AAOIUSDT,ausgeschlossen,AKTIE,wahrscheinlich,Applied Optoelectronics,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+AAPLUSDT,ausgeschlossen,AKTIE,sicher,Apple Inc.,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-04,nein,nein
+ACNUSDT,ausgeschlossen,AKTIE,sicher,Accenture,Binance TradFi-Listing 2026-09-29 (tokenpost.com/news/business/25184; coinrf Help Center),2026-10-01,nach 2026-08 (nur Snapshot),nein,nein
+ADBEUSDT,ausgeschlossen,AKTIE,sicher,Adobe Inc.,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+AGPUUSDT,ausgeschlossen,AKTIE,sicher,TradFi-Perp (Aktie),Binance TradFi-Listing 2026-09-18 (bbx.com/news-detail/3088049),2026-10-01,nach 2026-08 (nur Snapshot),nein,nein
+ALABUSDT,ausgeschlossen,AKTIE,wahrscheinlich,Astera Labs,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+AMATUSDT,ausgeschlossen,AKTIE,sicher,Applied Materials,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+AMCUSDT,ausgeschlossen,AKTIE,sicher,AMC Entertainment,Binance TradFi-Listing 2026-09-18 (bbx.com/news-detail/3088049),2026-10-01,nach 2026-08 (nur Snapshot),nein,nein
+AMDUSDT,ausgeschlossen,AKTIE,sicher,Advanced Micro Devices,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-05,nein,nein
+AMZNUSDT,ausgeschlossen,AKTIE,sicher,Amazon.com,Binance Academy: Equity-Perps Feb. 2026 MSTR/AMZN/CRCL/COIN/PLTR,2026-10-01,2026-02,nein,nein
+ANETUSDT,ausgeschlossen,AKTIE,sicher,Arista Networks,Binance TradFi-Listing 2026-09-18 (bbx.com/news-detail/3088049),2026-10-01,nach 2026-08 (nur Snapshot),nein,nein
+ANTHROPICUSDT,ausgeschlossen,PRE_IPO,wahrscheinlich,Anthropic,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+APLDUSDT,ausgeschlossen,AKTIE,sicher,Applied Digital,Binance TradFi-Listing 2026-09-18 (bbx.com/news-detail/3088049),2026-10-01,nach 2026-08 (nur Snapshot),nein,nein
+APPUSDT,ausgeschlossen,AKTIE,wahrscheinlich,AppLovin,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-07,nein,nein
+ARMUSDT,ausgeschlossen,AKTIE,sicher,Arm Holdings,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-05,nein,nein
+ASMLUSDT,ausgeschlossen,AKTIE,sicher,ASML Holding,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+ASTSUSDT,ausgeschlossen,AKTIE,sicher,AST SpaceMobile,Binance TradFi-Listing LLY/NVO/BBX/NOK/EWT/ASTS (bbx.com/news-detail/2911684),2026-10-01,2026-06,nein,nein
+AVGOUSDT,ausgeschlossen,AKTIE,sicher,Broadcom,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-04,nein,nein
+AXTIUSDT,ausgeschlossen,AKTIE,wahrscheinlich,AXT Inc,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+BABAUSDT,ausgeschlossen,AKTIE,sicher,Alibaba Group,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-04,nein,nein
+BBXUSDT,ausgeschlossen,AKTIE,sicher,TradFi-Perp,Binance TradFi-Listing LLY/NVO/BBX/NOK/EWT/ASTS (bbx.com/news-detail/2911684),2026-10-01,2026-06,nein,nein
+BEUSDT,ausgeschlossen,AKTIE,wahrscheinlich,Bloom Energy,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-05,nein,nein
+BITOUSDT,ausgeschlossen,ETF,sicher,ProShares Bitcoin Strategy ETF (Fondsanteil),"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-07,nein,nein
+BLUEBIRDUSDT,ausgeschlossen,INDEX,sicher,Index (Korb),"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2022-11,nein,nein
+BMNRUSDT,ausgeschlossen,AKTIE,sicher,BitMine Immersion Technologies (Aktie),"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+BNCUSDT,ausgeschlossen,AKTIE,sicher,CEA Industries,Binance TradFi-Listing 2026-07-09 (gate.com/news/detail/...22463575),2026-10-01,2026-07,nein,nein
+BOTUSDT,ausgeschlossen,AKTIE,sicher,RoboStrategy,Binance TradFi-Listing 2026-07-09 (gate.com/news/detail/...22463575),2026-10-01,2026-07,nein,nein
+BRKBUSDT,ausgeschlossen,AKTIE,sicher,Berkshire Hathaway B,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-05,nein,nein
+BSPUSDT,ausgeschlossen,AKTIE,sicher,Bending Spoons,Binance TradFi-Listing 2026-07-02 (bbx.com/news-detail/2964654),2026-10-01,2026-07,nein,nein
+BTCDOMUSDT,ausgeschlossen,INDEX,sicher,BTC-Dominanz-Index (Spread BTC gegen Altcoin-Korb),"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2021-06,nein,nein
+BWETUSDT,ausgeschlossen,ETF,sicher,Breakwave Tanker Shipping ETF,Binance TradFi-Listing 2026-09-29 (tokenpost.com/news/business/25184; coinrf Help Center),2026-10-01,nach 2026-08 (nur Snapshot),nein,nein
+BXUSDT,ausgeschlossen,AKTIE,wahrscheinlich,Blackstone,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+BYDUSDT,ausgeschlossen,AKTIE,wahrscheinlich,BYD Company,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,nach 2026-08 (nur Snapshot),nein,nein
+BZUSDT,ausgeschlossen,ROHSTOFF,wahrscheinlich,Brent-Rohoel,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-04,nein,nein
+CATUSDT,ausgeschlossen,AKTIE,sicher,Caterpillar,Binance TradFi-Listing 2026-07-02 (bbx.com/news-detail/2964654),2026-10-01,2026-07,nein,nein
+CBRSUSDT,ausgeschlossen,AKTIE,sicher,Cerebras Systems,Binance-Ankuendigung TradFi CBRSUSDT 2026-05-19 (Binance Square),2026-10-01,2026-05,nein,nein
+CIENUSDT,ausgeschlossen,AKTIE,sicher,Ciena,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+CLUSDT,ausgeschlossen,ROHSTOFF,sicher,WTI-Rohoel,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-04,nein,nein
+COHRUSDT,ausgeschlossen,AKTIE,sicher,Coherent,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-05,nein,nein
+COINUSDT,ausgeschlossen,AKTIE,sicher,Coinbase Global (Aktie),Binance Academy: Equity-Perps Feb. 2026 MSTR/AMZN/CRCL/COIN/PLTR,2026-10-01,2026-02,nein,nein
+COPPERUSDT,ausgeschlossen,ROHSTOFF,sicher,Kupfer,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-03,nein,nein
+COSTUSDT,ausgeschlossen,AKTIE,sicher,Costco,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+CRCLUSDT,ausgeschlossen,AKTIE,sicher,Circle Internet Group (Aktie),Binance Academy: Equity-Perps Feb. 2026 MSTR/AMZN/CRCL/COIN/PLTR,2026-10-01,2026-02,nein,nein
+CRDOUSDT,ausgeschlossen,AKTIE,sicher,Credo Technology,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+CRMUSDT,ausgeschlossen,AKTIE,sicher,Salesforce,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+CRMLUSDT,ausgeschlossen,AKTIE,sicher,Critical Metals,Binance TradFi-Listing 2026-09-29 (tokenpost.com/news/business/25184; coinrf Help Center),2026-10-01,nach 2026-08 (nur Snapshot),nein,nein
+CRWDUSDT,ausgeschlossen,AKTIE,sicher,CrowdStrike,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+CRWVUSDT,ausgeschlossen,AKTIE,sicher,CoreWeave,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-05,nein,nein
+CSCOUSDT,ausgeschlossen,AKTIE,sicher,Cisco,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-05,nein,nein
+CSOPSAMSUNG2LUSDT,ausgeschlossen,ETF,sicher,CSOP Samsung Electronics 2x,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-08,nein,nein
+CSOPSKHYNIX2LUSDT,ausgeschlossen,ETF,sicher,CSOP SK hynix 2x,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-08,nein,nein
+CVNAUSDT,ausgeschlossen,AKTIE,sicher,Carvana,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,nach 2026-08 (nur Snapshot),nein,nein
+CXMTUSDT,ausgeschlossen,AKTIE,sicher,CXMT Corporation,Binance TradFi-Listing 2026-08-17 (coin.t0ols.com/announcements/binance-2026-08-17-c0bc5c),2026-10-01,2026-08,nein,nein
+CYPHUSDT,ausgeschlossen,AKTIE,sicher,TradFi-Perp (Quelle nennt CYPUSDT),Binance TradFi-Listing 2026-09-18 (bbx.com/news-detail/3088049),2026-10-01,nach 2026-08 (nur Snapshot),nein,nein
+DDOGUSDT,ausgeschlossen,AKTIE,sicher,Datadog,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,nach 2026-08 (nur Snapshot),nein,nein
+DEFIUSDT,ausgeschlossen,INDEX,sicher,Binance-DeFi-Index (Korb),"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2020-08,nein,nein
+DELLUSDT,ausgeschlossen,AKTIE,sicher,Dell Technologies,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+DISUSDT,ausgeschlossen,AKTIE,sicher,Walt Disney,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-05,nein,nein
+DJTUSDT,ausgeschlossen,AKTIE,sicher,Trump Media & Technology Group,Binance TradFi-Listing 2026-08-25 (cryptonews.net/news/market/33345244),2026-10-01,2026-08,nein,nein
+DKNGUSDT,ausgeschlossen,AKTIE,sicher,DraftKings,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+DRAMUSDT,ausgeschlossen,ETF,wahrscheinlich,Roundhill Memory ETF,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-05,nein,nein
+EBAYUSDT,ausgeschlossen,AKTIE,sicher,eBay,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+EWJUSDT,ausgeschlossen,ETF,sicher,iShares MSCI Japan,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-03,nein,nein
+EWTUSDT,ausgeschlossen,ETF,sicher,iShares MSCI Taiwan,Binance TradFi-Listing LLY/NVO/BBX/NOK/EWT/ASTS (bbx.com/news-detail/2911684),2026-10-01,2026-06,nein,nein
+EWYUSDT,ausgeschlossen,ETF,sicher,iShares MSCI South Korea,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-03,nein,nein
+EWZUSDT,ausgeschlossen,ETF,sicher,iShares MSCI Brazil,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+FLEXUSDT,ausgeschlossen,AKTIE,sicher,Flex Ltd,Binance TradFi-Listing 2026-07-02 (bbx.com/news-detail/2964654),2026-10-01,2026-07,nein,nein
+FLNCUSDT,ausgeschlossen,AKTIE,sicher,Fluence Energy,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-05,nein,nein
+FOOTBALLUSDT,ausgeschlossen,INDEX,sicher,Fan-Token-Index (Korb),"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2022-09,nein,nein
+FWDIUSDT,ausgeschlossen,AKTIE,sicher,Forward Industries,Binance TradFi-Listing 2026-07-09 (gate.com/news/detail/...22463575),2026-10-01,2026-07,nein,nein
+GDXUSDT,ausgeschlossen,ETF,sicher,VanEck Gold Miners,Binance TradFi-Listing 2026-08-17 (coin.t0ols.com/announcements/binance-2026-08-17-c0bc5c),2026-10-01,2026-08,nein,nein
+GEVUSDT,ausgeschlossen,AKTIE,sicher,GE Vernova,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-07,nein,nein
+GIGADEVUSDT,ausgeschlossen,AKTIE,wahrscheinlich,GigaDevice Semiconductor,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-08,nein,nein
+GLWUSDT,ausgeschlossen,AKTIE,sicher,Corning,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+GMEUSDT,ausgeschlossen,AKTIE,sicher,GameStop,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+GOOGLUSDT,ausgeschlossen,AKTIE,sicher,Alphabet A,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-03,nein,nein
+GPROUSDT,ausgeschlossen,AKTIE,sicher,GoPro,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,nach 2026-08 (nur Snapshot),nein,nein
+GSUSDT,ausgeschlossen,AKTIE,sicher,Goldman Sachs,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-07,nein,nein
+GTLBUSDT,ausgeschlossen,AKTIE,sicher,GitLab,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,nach 2026-08 (nur Snapshot),nein,nein
+HANMIUSDT,ausgeschlossen,AKTIE,wahrscheinlich,Hanmi Semiconductor,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-08,nein,nein
+HDUSDT,ausgeschlossen,AKTIE,sicher,Home Depot,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-05,nein,nein
+HIMSUSDT,ausgeschlossen,AKTIE,sicher,Hims & Hers Health,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+HK0625USDT,ausgeschlossen,AKTIE,wahrscheinlich,HKEX-Code 0625,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,nach 2026-08 (nur Snapshot),nein,nein
+HK0700USDT,ausgeschlossen,AKTIE,sicher,Tencent Holdings (HKEX 0700),"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-07,nein,nein
+HK0992USDT,ausgeschlossen,AKTIE,sicher,Lenovo Group (HKEX 0992),"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,nach 2026-08 (nur Snapshot),nein,nein
+HK1810USDT,ausgeschlossen,AKTIE,sicher,Xiaomi (HKEX 1810),"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-07,nein,nein
+HOODUSDT,ausgeschlossen,AKTIE,sicher,Robinhood Markets,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-02,nein,nein
+HPEUSDT,ausgeschlossen,AKTIE,sicher,Hewlett Packard Enterprise,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+HUTUSDT,ausgeschlossen,AKTIE,sicher,Hut 8 (Aktie),Binance TradFi-Listing 2026-09-18 (bbx.com/news-detail/3088049),2026-10-01,nach 2026-08 (nur Snapshot),nein,nein
+HYUNDAIUSDT,ausgeschlossen,AKTIE,wahrscheinlich,Hyundai Motor,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+IBMUSDT,ausgeschlossen,AKTIE,sicher,IBM,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+INTCUSDT,ausgeschlossen,AKTIE,sicher,Intel,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-02,nein,nein
+INTWUSDT,ausgeschlossen,ETF,sicher,GraniteShares 2x Long Intel,Binance TradFi-Listing 2026-07-09 (gate.com/news/detail/...22463575),2026-10-01,2026-07,nein,nein
+IONQUSDT,ausgeschlossen,AKTIE,sicher,IonQ,Binance-Ankuendigung TradFi 2026-08-28 (treeofalpha.com/preview_article?id=1787902209365),2026-10-01,2026-08,nein,nein
+IRENUSDT,ausgeschlossen,AKTIE,sicher,IREN Ltd (Aktie),"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+IWMUSDT,ausgeschlossen,ETF,sicher,iShares Russell 2000,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+JPMUSDT,ausgeschlossen,AKTIE,sicher,JPMorgan Chase,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-05,nein,nein
+KLACUSDT,ausgeschlossen,AKTIE,sicher,KLA Corp,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+KOUSDT,ausgeschlossen,AKTIE,wahrscheinlich,Coca-Cola,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-08,nein,nein
+KODEX200USDT,ausgeschlossen,ETF,sicher,Samsung KODEX 200,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-08,nein,nein
+KORUUSDT,ausgeschlossen,ETF,wahrscheinlich,Direxion MSCI South Korea Bull 3x,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+KSTRUSDT,ausgeschlossen,ETF,sicher,Sci-Tech Innovation 50 ETF,Binance TradFi-Listing 2026-07-02 (bbx.com/news-detail/2964654),2026-10-01,2026-07,nein,nein
+KUAISHOUUSDT,ausgeschlossen,AKTIE,wahrscheinlich,Kuaishou Technology,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-08,nein,nein
+LGELECTRONICSUSDT,ausgeschlossen,AKTIE,wahrscheinlich,LG Electronics,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-08,nein,nein
+LITEUSDT,ausgeschlossen,AKTIE,sicher,Lumentum,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-05,nein,nein
+LLYUSDT,ausgeschlossen,AKTIE,sicher,Eli Lilly,Binance TradFi-Listing LLY/NVO/BBX/NOK/EWT/ASTS (bbx.com/news-detail/2911684),2026-10-01,2026-06,nein,nein
+LRCXUSDT,ausgeschlossen,AKTIE,sicher,Lam Research,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+LYTEUSDT,ausgeschlossen,ETF,sicher,Roundhill Photonics & Optics,Binance TradFi-Listing 2026-08-17 (coin.t0ols.com/announcements/binance-2026-08-17-c0bc5c),2026-10-01,2026-08,nein,nein
+MARAUSDT,ausgeschlossen,AKTIE,sicher,MARA Holdings (Aktie),Binance-Ankuendigung TradFi 2026-08-28 (treeofalpha.com/preview_article?id=1787902209365),2026-10-01,2026-08,nein,nein
+MDBUSDT,ausgeschlossen,AKTIE,sicher,MongoDB,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,nach 2026-08 (nur Snapshot),nein,nein
+MEITUANUSDT,ausgeschlossen,AKTIE,wahrscheinlich,Meituan,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-08,nein,nein
+METAUSDT,ausgeschlossen,AKTIE,sicher,Meta Platforms,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-03,nein,nein
+MINIMAXUSDT,ausgeschlossen,PRE_IPO,wahrscheinlich,MiniMax,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-07,nein,nein
+MOONSHOTUSDT,ausgeschlossen,PRE_IPO,sicher,Moonshot AI (Pre-IPO-Perp),Binance Pre-IPO-Perp MOONSHOTUSDT 2026-09-22 (theblockbeats.news/flash/368402),2026-10-01,nach 2026-08 (nur Snapshot),nein,nein
+MPUSDT,ausgeschlossen,AKTIE,sicher,MP Materials,Binance TradFi-Listing 2026-09-29 (tokenpost.com/news/business/25184; coinrf Help Center),2026-10-01,nach 2026-08 (nur Snapshot),nein,nein
+MRKUSDT,ausgeschlossen,AKTIE,sicher,Merck & Co,Binance-Ankuendigung TradFi 2026-08-28 (treeofalpha.com/preview_article?id=1787902209365),2026-10-01,2026-08,nein,nein
+MRNAUSDT,ausgeschlossen,AKTIE,sicher,Moderna,Binance TradFi-Listing 2026-08-25 (cryptonews.net/news/market/33345244),2026-10-01,2026-08,nein,nein
+MRVLUSDT,ausgeschlossen,AKTIE,sicher,Marvell Technology,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-05,nein,nein
+MSFTUSDT,ausgeschlossen,AKTIE,sicher,Microsoft,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-04,nein,nein
+MSTRUSDT,ausgeschlossen,AKTIE,sicher,Strategy Inc. (Aktie),Binance Academy: Equity-Perps Feb. 2026 MSTR/AMZN/CRCL/COIN/PLTR,2026-10-01,2026-02,nein,nein
+MUUSDT,ausgeschlossen,AKTIE,sicher,Micron Technology,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-04,nein,nein
+MUUUSDT,ausgeschlossen,ETF,wahrscheinlich,Direxion Daily MU Bull 2x,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-07,nein,nein
+MVLLUSDT,ausgeschlossen,ETF,wahrscheinlich,2x MRVL,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+NATGASUSDT,ausgeschlossen,ROHSTOFF,sicher,Erdgas,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-04,nein,nein
+NAVERUSDT,ausgeschlossen,AKTIE,wahrscheinlich,NAVER Corp,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-08,nein,nein
+NBISUSDT,ausgeschlossen,AKTIE,sicher,Nebius Group,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-05,nein,nein
+NETUSDT,ausgeschlossen,AKTIE,sicher,Cloudflare,Binance TradFi-Listing 2026-08-17 (coin.t0ols.com/announcements/binance-2026-08-17-c0bc5c),2026-10-01,2026-08,nein,nein
+NFLXUSDT,ausgeschlossen,AKTIE,sicher,Netflix,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+NKEUSDT,ausgeschlossen,AKTIE,sicher,Nike,Binance TradFi-Listing 2026-09-29 (tokenpost.com/news/business/25184; coinrf Help Center),2026-10-01,nach 2026-08 (nur Snapshot),nein,nein
+NOKUSDT,ausgeschlossen,AKTIE,sicher,Nokia,Binance TradFi-Listing LLY/NVO/BBX/NOK/EWT/ASTS (bbx.com/news-detail/2911684),2026-10-01,2026-06,nein,nein
+NOWUSDT,ausgeschlossen,AKTIE,sicher,ServiceNow,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+NVDAUSDT,ausgeschlossen,AKTIE,sicher,NVIDIA,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-03,nein,nein
+NVDLUSDT,ausgeschlossen,ETF,sicher,GraniteShares 2x Long NVDA,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,nach 2026-08 (nur Snapshot),nein,nein
+NVOUSDT,ausgeschlossen,AKTIE,sicher,Novo Nordisk,Binance TradFi-Listing LLY/NVO/BBX/NOK/EWT/ASTS (bbx.com/news-detail/2911684),2026-10-01,2026-06,nein,nein
+OKLOUSDT,ausgeschlossen,AKTIE,sicher,Oklo,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,nach 2026-08 (nur Snapshot),nein,nein
+ONDSUSDT,ausgeschlossen,AKTIE,wahrscheinlich,Ondas Holdings,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+OPENAIUSDT,ausgeschlossen,PRE_IPO,wahrscheinlich,OpenAI,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-05,nein,nein
+ORCLUSDT,ausgeschlossen,AKTIE,sicher,Oracle,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-05,nein,nein
+OURAUSDT,ausgeschlossen,PRE_IPO,wahrscheinlich,Oura Health,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,nach 2026-08 (nur Snapshot),nein,nein
+PANWUSDT,ausgeschlossen,AKTIE,sicher,Palo Alto Networks,Binance-Ankuendigung TradFi 2026-07-21 (treeofalpha.com/preview_article?id=1784619910945),2026-10-01,2026-07,nein,nein
+PATHUSDT,ausgeschlossen,AKTIE,sicher,UiPath,Binance TradFi-Listing 2026-09-18 (bbx.com/news-detail/3088049),2026-10-01,nach 2026-08 (nur Snapshot),nein,nein
+PAXGUSDT,ausgeschlossen,TOKENISIERTER_ROHSTOFF,sicher,"PAX Gold, oekonomisch Gold","Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2025-03,ja,nein
+PAYPUSDT,ausgeschlossen,AKTIE,sicher,PayPay Corporation,Binance-Ankuendigung Equity Perpetual PAYPUSDT 2026-03-23 (binance.info),2026-10-01,2026-03,nein,nein
+PDDUSDT,ausgeschlossen,AKTIE,sicher,PDD Holdings,Binance-Ankuendigung TradFi 2026-08-28 (treeofalpha.com/preview_article?id=1787902209365),2026-10-01,2026-08,nein,nein
+PENGUSDT,ausgeschlossen,AKTIE,sicher,Penguin Solutions,Binance-Ankuendigung TradFi 2026-07-21 (treeofalpha.com/preview_article?id=1784619910945),2026-10-01,2026-07,nein,nein
+PLTRUSDT,ausgeschlossen,AKTIE,sicher,Palantir Technologies,Binance Academy: Equity-Perps Feb. 2026 MSTR/AMZN/CRCL/COIN/PLTR,2026-10-01,2026-02,nein,nein
+POPMARTUSDT,ausgeschlossen,AKTIE,wahrscheinlich,Pop Mart International,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-07,nein,nein
+PYPLUSDT,ausgeschlossen,AKTIE,sicher,PayPal,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-07,nein,nein
+QCOMUSDT,ausgeschlossen,AKTIE,sicher,Qualcomm,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-05,nein,nein
+QNTXUSDT,ausgeschlossen,ETF,wahrscheinlich,2x Hebel-ETF,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-05,nein,nein
+QQQUSDT,ausgeschlossen,ETF,sicher,Invesco QQQ,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-04,nein,nein
+RAMUSDT,ausgeschlossen,ETF,sicher,Roundhill T-REX 2x Long DRAM,Binance TradFi-Listing 2026-08-25 (cryptonews.net/news/market/33345244),2026-10-01,2026-08,nein,nein
+RDDTUSDT,ausgeschlossen,AKTIE,sicher,Reddit,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-08,nein,nein
+RIVNUSDT,ausgeschlossen,AKTIE,sicher,Rivian,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+RKLBUSDT,ausgeschlossen,AKTIE,sicher,Rocket Lab,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-05,nein,nein
+RUMUSDT,ausgeschlossen,AKTIE,wahrscheinlich,Rumble,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,nach 2026-08 (nur Snapshot),nein,nein
+SAMSUNGUSDT,ausgeschlossen,AKTIE,sicher,Samsung Electronics,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+SAMSUNGEMUSDT,ausgeschlossen,AKTIE,wahrscheinlich,Samsung Electro-Mechanics,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-08,nein,nein
+SECZUSDT,ausgeschlossen,AKTIE,sicher,TradFi-Perp,Binance TradFi-Listing 2026-09-29 (tokenpost.com/news/business/25184; coinrf Help Center),2026-10-01,nach 2026-08 (nur Snapshot),nein,nein
+SHAZUSDT,ausgeschlossen,AKTIE,sicher,SharonAI Holdings,Binance-Ankuendigung TradFi 2026-07-21 (treeofalpha.com/preview_article?id=1784619910945),2026-10-01,2026-07,nein,nein
+SHOPUSDT,ausgeschlossen,AKTIE,sicher,Shopify,Binance TradFi-Listing 2026-08-17 (coin.t0ols.com/announcements/binance-2026-08-17-c0bc5c),2026-10-01,2026-08,nein,nein
+SKDDUSDT,ausgeschlossen,ETF,sicher,GraniteShares 2x Short SK hynix,Binance TradFi-Listing 2026-08-25 (cryptonews.net/news/market/33345244),2026-10-01,2026-08,nein,nein
+SKHYUSDT,ausgeschlossen,AKTIE,wahrscheinlich,SK hynix (zweite Notierung),"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-07,nein,nein
+SKHYNIXUSDT,ausgeschlossen,AKTIE,sicher,SK hynix,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+SKUUUSDT,ausgeschlossen,ETF,sicher,GraniteShares 2x Long SK hynix,Binance TradFi-Listing 2026-08-25 (cryptonews.net/news/market/33345244),2026-10-01,2026-08,nein,nein
+SLXUSDT,ausgeschlossen,ETF,wahrscheinlich,VanEck Steel,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+SMCIUSDT,ausgeschlossen,AKTIE,sicher,Super Micro Computer,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+SMHUSDT,ausgeschlossen,ETF,sicher,VanEck Semiconductor,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-07,nein,nein
+SNDKUSDT,ausgeschlossen,AKTIE,sicher,Sandisk,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-04,nein,nein
+SNOWUSDT,ausgeschlossen,AKTIE,sicher,Snowflake,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-07,nein,nein
+SNXXUSDT,ausgeschlossen,ETF,sicher,Tradr 2x Long SanDisk,Binance TradFi-Listing 2026-07-09 (gate.com/news/detail/...22463575),2026-10-01,2026-07,nein,nein
+SOFIUSDT,ausgeschlossen,AKTIE,sicher,SoFi Technologies,Binance-Ankuendigung TradFi 2026-07-21 (treeofalpha.com/preview_article?id=1784619910945),2026-10-01,2026-07,nein,nein
+SONYUSDT,ausgeschlossen,AKTIE,sicher,Sony Group,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+SOXLUSDT,ausgeschlossen,ETF,sicher,Direxion Semiconductor Bull 3x,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-05,nein,nein
+SOXSUSDT,ausgeschlossen,ETF,sicher,Direxion Semiconductor Bear 3x,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-07,nein,nein
+SPCXUSDT,ausgeschlossen,PRE_IPO,wahrscheinlich,SpaceX,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-05,nein,nein
+SPYUSDT,ausgeschlossen,ETF,sicher,SPDR S&P 500,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-04,nein,nein
+SQQQUSDT,ausgeschlossen,ETF,sicher,ProShares UltraPro Short QQQ,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+STRCUSDT,ausgeschlossen,AKTIE,sicher,Strategy Inc. Vorzugsaktie STRC,Binance TradFi-Listing 2026-07-02 (bbx.com/news-detail/2964654),2026-10-01,2026-07,nein,nein
+STXXUSDT,ausgeschlossen,AKTIE,sicher,Seagate Technology (STX),"Binance TradFi-Listing 2026-06-11, Seagate (coinlive.com/news-flash/1115443)",2026-10-01,2026-06,nein,nein
+TBTUSDT,ausgeschlossen,ETF,sicher,ProShares UltraShort 20+ Year Treasury,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-07,nein,nein
+TEAMUSDT,ausgeschlossen,AKTIE,sicher,Atlassian,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,nach 2026-08 (nur Snapshot),nein,nein
+TEMUSDT,ausgeschlossen,AKTIE,sicher,Tempus AI,Binance-Ankuendigung TradFi 2026-08-28 (treeofalpha.com/preview_article?id=1787902209365),2026-10-01,2026-08,nein,nein
+TENCENTUSDT,ausgeschlossen,AKTIE,sicher,Tencent Holdings,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-07,nein,nein
+TERUSDT,ausgeschlossen,AKTIE,sicher,Teradyne,Binance TradFi-Listing 2026-07-02 (bbx.com/news-detail/2964654),2026-10-01,2026-07,nein,nein
+TMFUSDT,ausgeschlossen,ETF,sicher,Direxion 20+ Yr Treasury Bull 3x,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-07,nein,nein
+TQQQUSDT,ausgeschlossen,ETF,sicher,ProShares UltraPro QQQ,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+TSLAUSDT,ausgeschlossen,AKTIE,sicher,Tesla,"Binance TradFi-Start 2026-01-05/07 XAU/XAG, TSLA 2026-01-28 (binance.info Ankuendigung)",2026-10-01,2026-01,nein,nein
+TSLLUSDT,ausgeschlossen,ETF,sicher,Direxion Daily TSLA Bull 2x,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,nach 2026-08 (nur Snapshot),nein,nein
+TSMUSDT,ausgeschlossen,AKTIE,sicher,Taiwan Semiconductor (ADR),"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-04,nein,nein
+TTWOUSDT,ausgeschlossen,AKTIE,sicher,Take-Two Interactive,Binance TradFi-Listing 2026-07-02 (bbx.com/news-detail/2964654),2026-10-01,2026-07,nein,nein
+TWSTUSDT,ausgeschlossen,AKTIE,wahrscheinlich,Twist Bioscience,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,nach 2026-08 (nur Snapshot),nein,nein
+TXNUSDT,ausgeschlossen,AKTIE,sicher,Texas Instruments,Binance TradFi-Listing 2026-07-02 (bbx.com/news-detail/2964654),2026-10-01,2026-07,nein,nein
+TZAUSDT,ausgeschlossen,ETF,sicher,Direxion Small Cap Bear 3x,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-07,nein,nein
+UBERUSDT,ausgeschlossen,AKTIE,sicher,Uber Technologies,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-05,nein,nein
+UNHUSDT,ausgeschlossen,AKTIE,sicher,UnitedHealth Group,Binance TradFi-Listing 2026-09-29 (tokenpost.com/news/business/25184; coinrf Help Center),2026-10-01,nach 2026-08 (nur Snapshot),nein,nein
+UNITREEUSDT,ausgeschlossen,PRE_IPO,wahrscheinlich,Unitree Robotics,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-08,nein,nein
+URNMUSDT,ausgeschlossen,ETF,sicher,Sprott Uranium Miners,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+USARUSDT,ausgeschlossen,AKTIE,wahrscheinlich,USA Rare Earth,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-05,nein,nein
+USDBRLUSDT,ausgeschlossen,DEVISEN,sicher,Devisenkurs USD/BRL,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,nach 2026-08 (nur Snapshot),nein,nein
+USDCUSDT,ausgeschlossen,STABLECOIN,sicher,"USD Coin, an USD gebunden","Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2023-03,ja,nein
+UVXYUSDT,ausgeschlossen,ETF,sicher,ProShares Ultra VIX Short-Term,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+VUSDT,ausgeschlossen,AKTIE,wahrscheinlich,Visa,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-05,nein,nein
+VRTUSDT,ausgeschlossen,AKTIE,wahrscheinlich,Vertiv,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-07,nein,nein
+VSTUSDT,ausgeschlossen,AKTIE,sicher,Vistra,Binance TradFi-Listing 2026-08-17 (coin.t0ols.com/announcements/binance-2026-08-17-c0bc5c),2026-10-01,2026-08,nein,nein
+WDCUSDT,ausgeschlossen,AKTIE,sicher,Western Digital,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-05,nein,nein
+WENUSDT,ausgeschlossen,AKTIE,sicher,Wendy's,Binance TradFi-Listing 2026-07-09 (gate.com/news/detail/...22463575),2026-10-01,2026-07,nein,nein
+WMTUSDT,ausgeschlossen,AKTIE,sicher,Walmart,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-05,nein,nein
+XAGUSDT,ausgeschlossen,ROHSTOFF,sicher,Silber,"Binance TradFi-Start 2026-01-05/07 XAU/XAG, TSLA 2026-01-28 (binance.info Ankuendigung)",2026-10-01,2026-01,nein,nein
+XAUUSDT,ausgeschlossen,ROHSTOFF,sicher,Gold,"Binance TradFi-Start 2026-01-05/07 XAU/XAG, TSLA 2026-01-28 (binance.info Ankuendigung)",2026-10-01,2025-12,nein,nein
+XAUTUSDT,ausgeschlossen,TOKENISIERTER_ROHSTOFF,sicher,"Tether Gold, oekonomisch Gold","Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-03,ja,nein
+XBIUSDT,ausgeschlossen,ETF,sicher,SPDR S&P Biotech,Binance TradFi-Listing 2026-07-09 (gate.com/news/detail/...22463575),2026-10-01,2026-07,nein,nein
+XLEUSDT,ausgeschlossen,ETF,sicher,Energy Select Sector SPDR,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+XOMUSDT,ausgeschlossen,AKTIE,sicher,Exxon Mobil,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,nach 2026-08 (nur Snapshot),nein,nein
+XPDUSDT,ausgeschlossen,ROHSTOFF,sicher,Palladium,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-01,nein,nein
+XPTUSDT,ausgeschlossen,ROHSTOFF,sicher,Platin,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-01,nein,nein
+ZHIPUUSDT,ausgeschlossen,PRE_IPO,wahrscheinlich,Zhipu AI,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-07,nein,nein
+ZHONGJIUSDT,ausgeschlossen,AKTIE,wahrscheinlich,Zhongji Innolight,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-08,nein,nein
+ZMUSDT,ausgeschlossen,AKTIE,sicher,Zoom Communications,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,2026-06,nein,nein
+ZSUSDT,ausgeschlossen,AKTIE,sicher,Zscaler,"Ticker-/Fondskenntnis (v0.1), Ankuendigung nicht einzeln abgerufen",2026-10-01,nach 2026-08 (nur Snapshot),nein,nein

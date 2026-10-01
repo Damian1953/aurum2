@@ -1,0 +1,7 @@
+# XS21 PiT v1.0 FREEZE-KANDIDAT, 01.10.2026 (nicht eingefroren). ENTSCHEIDE nach E3-Korrektur; v0.1/v0.2 und Review unveraendert.
+19f7d14765db78347f32030bb830a5a32f5492ab3a0250d9104748c9a121bb04  00_doku/ENTSCHEIDE.md
+00a98886c8414f00f77d7e2fe6c4996e2bc74fa86f0ef6ac94ca2b596c75199a  01_forschung/09_lane_c/xs21_point_in_time_prereg_v0.1.md
+9907c0e198fa29ec11573c91a985ed7d06406e61891a3b4dda358b7b3ea29e74  01_forschung/09_lane_c/xs21_point_in_time_prereg_v0.2.md
+3919ac12f49a5be65b05a5a9e0174697c02d3e534bfe8ca0a53489725d6f94da  01_forschung/09_lane_c/xs21_point_in_time_v0.2_review_claude_v1.md
+a9432f64b0b53f5d2e003da7be379bc29755291d5afa27964d09cc4106e8ace9  01_forschung/09_lane_c/xs21_pit_v0.2/xs21_exclusions_v0.1.csv
+2602817deceb181d8eeac998afdec99fd223011031e526179b2a34784659dbb9  01_forschung/09_lane_c/xs21_pit_v0.2/xs21_unklar_v0.1.csv

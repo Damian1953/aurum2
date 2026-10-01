@@ -22,4 +22,12 @@ if [ ! -f "$SUP" ]; then
   curl -fsS -m 60 "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DTB3" \
     | awk -F, 'NR==1 || ($1<="2026-07-15" && $2!="" && $2!=".")' > "$SUP.tmp" && mv "$SUP.tmp" "$SUP"
 fi
+# XS21 PiT v1.0: DTB3 bis 2026-09-14 (SHA in der Vorregistrierung v1.0 §7)
+SUP2="$REPO/data/supplement/DTB3_3m_tbill_to_2026-09-14.csv"
+if [ ! -f "$SUP2" ]; then
+  mkdir -p "$REPO/data/supplement"
+  echo "Lade DTB3 von FRED (oeffentlich) und schneide bei 2026-09-14 ab"
+  curl -fsS -m 60 "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DTB3" \
+    | awk -F, 'NR==1 || ($1<="2026-09-14" && $2!="" && $2!=".")' > "$SUP2.tmp" && mv "$SUP2.tmp" "$SUP2"
+fi
 echo "OK: data/raw ($(du -sh "$DST" | cut -f1)), 02_daten/raw -> ../data/raw, $(basename "$SUP")"

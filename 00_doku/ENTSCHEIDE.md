@@ -620,3 +620,19 @@ Ergaenzend: `00_doku/rm_2026-09-18_expected_shas.txt` nennt fuer `01_forschung/1
 - XS21 PiT v0.2: Pruefung des Entwurfs und der B7-Ausschlussliste vor dem Freeze (Claude/Damian), danach v1.0 und ein Lauf
 - A1 bis A8: DT-Freeze vor dem P&L-Lauf
 - Fehlende Original-Eingaben `kraken_funding/PF_{XBT,ETH,SOL}USD_funding.csv` und Original-DTB3
+
+## 2026-10-01 — KORREKTURVERMERK zum E3-Korrekturvermerk «REBOUND-MICRO v1.0 Lauf BTC VERSIEGELT» (Review Claude zu XS21 v0.2, §4.3)
+
+Der Satz «Massgeblich ist die Reihenfolge FREEZE vor Lauf.» im Korrekturvermerk vom 01.10.2026 wird durch folgenden Wortlaut ersetzt (der fruehere Vermerk bleibt unveraendert stehen):
+
+Die Reihenfolge der Zeitstempel ist nicht belegbar. Massgeblich ist die SHA-Uebereinstimmung der Spezifikation im Lauf-Log mit dem Freeze (SHA 001a38534d87b2f8b37fc658df3a8268438c864368e191bc514d261f67bae328, `10_rebound_micro/rebound_micro_spec_v1.0.md`).
+
+Befund dazu, offen vermerkt: Die Lauf-Logs `10_rebound_micro/run/BTC_run.log`, `XRP_run.log` und `DOT_run.log` sowie `BTC_eval.json` nennen die Spezifikation nur mit Dateinamen (`"spec": "rebound_micro_spec_v1.0.md"`), nicht mit SHA. Die SHA-Uebereinstimmung der Spezifikation ist damit **nicht belegt**. Belegt ist nur, dass die im Log genannten Code-SHAs mlib 6b7e7ba8… und simulate fef60859… mit den im FREEZE-Eintrag genannten v1.0-Dateien uebereinstimmen. Die aktuelle Datei `rebound_micro_spec_v1.0.md` hat die SHA aus dem FREEZE-Eintrag (001a3853…, geprueft 01.10.2026). Ab XS21 PiT v1.0 schreibt jeder Lauf die SHA der eingefrorenen Spezifikation ins Lauf-Log (Vorregistrierung XS21 v1.0 §7).
+
+Umsetzung: Agent (Grok, 01.10.2026) nach Auftrag Damian. Neue ENTSCHEIDE-SHA in `00_doku/xs21v1_2026-10-01_expected_shas.txt`.
+
+## 2026-10-01 — XS21 PiT v1.0 FREEZE-KANDIDAT (nicht eingefroren)
+
+`01_forschung/09_lane_c/xs21_point_in_time_prereg_v1.0.md` setzt M1 bis M7 und die Zusatzpunkte aus dem Review Claude zu v0.2 (`xs21_point_in_time_v0.2_review_claude_v1.md`) sowie die Vorgaben Damian vom 01.10.2026 um (PAXG, XAUT, BTCDOM, DEFI, FOOTBALL, BLUEBIRD ausgeschlossen; USTC, FRAX, STABLE, STBL nach Pruefung zugelassen). B7-Liste v1.0 in `01_forschung/09_lane_c/xs21_pit_v1.0/` (220 Ausschluesse, 0 unklar). v0.1 und v0.2 bleiben unveraendert.
+
+Status: wartet auf Freigabe Damian. Kein Freeze, kein Lauf, keine Datenbeschaffung.
