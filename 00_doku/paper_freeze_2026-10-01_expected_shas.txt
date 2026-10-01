@@ -1,0 +1,7 @@
+# PAPER v1.0 FREEZE 01.10.2026 (vor dem ersten Paper-Signal, Startbar 2026-10-02 UTC). Vom Runner fail-closed geprueft.
+626fd035f237713c510399381e27c8197ebfc646faafc92cd3dbb73a15664308  paper/PAPER_PREREG_v1.0.md
+3782d3d3b2e325c8550671f0cbc852c3988a0153291a00fa6d1b4e2372d475e3  paper/paper_engine.py
+80735b0554536e9d8a0dea0db4520960f3152ed50c2e637e8a71f9cf3e33ea24  paper/run_paper.py
+a6416ebd3119604c62911856f4ebcd7ee34e7fd11e81b69b775bd8ad9467ee23  tests/test_paper.py
+54590393170f6f2263663ba9ab1422a5bc3083b55fa913a38022e6e54d983792  01_forschung/02_strategien/s2lib.py
+c652caa5bb237914d0bdcd153813ca65a61f2da23626ea5d52a183ab69e89727  config/cost_model_v1.json

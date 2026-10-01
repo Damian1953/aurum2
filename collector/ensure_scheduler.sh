@@ -3,6 +3,8 @@
 #  1. cron-Daemon starten, falls er nicht laeuft (nach Box-Neustart noetig)
 #  2. crontab-Eintrag setzen, falls er fehlt
 #  3. Nachholen: wenn heute nach 06:15 (Zuerich) noch kein erfolgreicher Lauf war, sofort im Hintergrund starten
+#  4. Paper-Runner (PAPER_PREREG_v1.0, D1): cron 06:50 taeglich und Wochenbericht montags 07:10 sicherstellen;
+#     nach 06:50 nachholen, wenn der gestern abgeschlossene Tagesbar noch nicht verarbeitet ist (--if-needed)
 # Idempotent und still. Aufruf aus ~/.bashrc (jede neue Shell auf der Box) und manuell.
 REPO="$(cd "$(dirname "$0")/.." && pwd)"
 OUT="${AURUM_DATA_LIVE:-/workspace/aurum2/data_live}"
@@ -13,6 +15,14 @@ fi
 if ! crontab -l 2>/dev/null | grep -q "aurum2-collector"; then
   { crontab -l 2>/dev/null; echo "CRON_TZ=Europe/Zurich"; echo "$LINE"; } | crontab -
 fi
+PLINE="50 6 * * * $REPO/paper/run_paper.sh --if-needed  # aurum2-paper"
+BLINE="10 7 * * 1 $REPO/paper/run_wochenbericht.sh  # aurum2-paper-bericht"
+for L in "$PLINE" "$BLINE"; do
+  tag="${L##*# }"
+  if ! crontab -l 2>/dev/null | grep -q "# $tag\$"; then
+    { crontab -l 2>/dev/null | grep -q "^CRON_TZ=" || echo "CRON_TZ=Europe/Zurich"; crontab -l 2>/dev/null; echo "$L"; } | crontab -
+  fi
+done
 now_hm=$(TZ=Europe/Zurich date +%H%M); today=$(TZ=Europe/Zurich date +%F)
 mkdir -p "$OUT/logs"
 if [ "$now_hm" -ge 0615 ] && flock -n "$OUT/.collector.lock" true 2>/dev/null; then
@@ -32,5 +42,9 @@ PY
     echo "$(date -Iseconds) NACHHOLEN (letzter erfolgreicher Lauf: ${last_ok:-nie})" >> "$OUT/logs/cron.log"
     nohup "$REPO/collector/run_collector.sh" >/dev/null 2>&1 &
   fi
+fi
+# Paper-Runner nachholen (wartet selbst auf einen laufenden Collector; prueft selbst, ob noetig)
+if [ "$now_hm" -ge 0650 ] && [ -x "$REPO/paper/run_paper.sh" ]; then
+  nohup "$REPO/paper/run_paper.sh" --if-needed >/dev/null 2>&1 &
 fi
 exit 0

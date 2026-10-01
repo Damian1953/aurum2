@@ -717,3 +717,15 @@ Grundlage: Review Claude zu XS21 PiT v1.0 (`01_forschung/09_lane_c/xs21_pit_v1.0
 (2) XS21 wird nicht in den Papierhandel aufgenommen (Perps mit Short-Bein noetig, D4 offen, Gate B6 ohne Schwellen).
 (3) U2 darf hoechstens als reine Schattenrechnung mitlaufen: oeffentliche Binance-Daten, keine Orders, auf Trade-Basis gerechnet, ohne Entscheidgewicht vor 12 Monaten.
 (4) D1 (Ort des Runners): Vorschlag, der Paper-Runner laeuft auf der Agent-Box, ohne Keys und ohne Orders. NOCH NICHT von Damian bestaetigt; Bestaetigung ausstehend.
+
+## 2026-10-01 22:15 — D1 Ort des Paper-Runners — ENTSCHIEDEN
+
+Bestaetigung Damian 01.10.2026, 22:03 Zuerich (ueber den Haupt-Agenten): Der Paper-Runner laeuft auf der Agent-Box, ohne Keys und ohne Orders. Ersetzt den Vorschlag im Eintrag 15:55, Punkt (4). Damian hat den Agenten zudem als Chief Strategist eingesetzt (selbstaendige Fuehrung im Rahmen von Governance, D3 und den Entscheiden).
+
+## 2026-10-01 22:15 — Vorfall: Holdout-Zeilen in Suchausgabe
+
+Beim Suchen nach dem Begriff «07:35» im Repo (rg ohne Ausschluss von 02_daten/holdout) wurden 10 Zeilen aus `02_daten/holdout/validation/BTCUSDT_spot4h_validation.csv` (zufaellige 4h-Kerzen 2024-04 bis 2025-08, Treffer nur wegen der Ziffernfolge) in der Ausgabe angezeigt. Keine Auswertung, keine Kennzahl, keine Verwendung. Kein Einfluss auf PAPER_PREREG v1.0 (Paper nutzt Kraken-Live-Daten ab Startbar, Regeln aus Stufe 2 unveraendert). Massnahme: Suchen schliessen 02_daten/holdout und data/ kuenftig immer aus.
+
+## 2026-10-01 22:15 — PAPER v1.0 FREEZE (vor dem ersten Paper-Signal)
+
+Vorregistrierung `paper/PAPER_PREREG_v1.0.md` (SHA 626fd035f237713c510399381e27c8197ebfc646faafc92cd3dbb73a15664308), Engine `paper/paper_engine.py`, Tageslauf `paper/run_paper.py`, Tests `tests/test_paper.py` (22 gruen, u.a. Trade-fuer-Trade-Gleichheit W2/W6 mit dem eingefrorenen s2lib.run_trend auf Binance bis 2023 und Kraken-Live, Start flach, kein Look-ahead, Kosten, Luecken fail-closed, Revisionserkennung). Liste: `00_doku/paper_freeze_2026-10-01_expected_shas.txt`; der Runner prueft sie vor jedem Lauf fail-closed. Inhalt: W2, W6 (Stufe-2-Prereg §6/§10), Turtle 55/20 (Findings-Digest §2.1), Stufe-2-Universum 10 Coins, Spot long Kraken, Kosten venue_kraken maker_plan (= K1) primaer und taker_K2 als Sensitivitaet, 1'000 USD virtuell je Strategie und Coin, Start flach mit erstem Signalbar 2026-10-02 UTC, Review spaetestens 2027-02-02 (D3: Betrieb und Kosten, kein Leistungsurteil). Festlegungen F1 bis F6 in §2.4. XS21 nicht im Paper; U2-Schattenrechnung in v1.0 nicht umgesetzt (nicht guenstig). Kein Paper-Signal vor diesem Freeze.

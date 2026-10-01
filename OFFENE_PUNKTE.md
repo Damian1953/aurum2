@@ -97,5 +97,7 @@ Sie nennt `mlib.py` noch als v0.1 (`cfe1f7aa…`), die Datei ist v1.0 (`6b7e7ba8
 ## OP-12 Paper-Trading (neu, 01.10.2026)
 
 - Umfang festgelegt (ENTSCHEIDE 15:55): W2, W6, Turtle 55/20, Spot long Kraken, K1; Vorregistrierung vor dem Start Pflicht. XS21 nicht im Paper; U2 höchstens als Schattenrechnung.
-- **D1 offen, Bestätigung durch Damian nötig:** Vorschlag, der Runner läuft auf der Agent-Box, ohne Keys und ohne Orders.
+- **D1 — ERLEDIGT (Damian 01.10.2026, 22:03):** Der Runner läuft auf der Agent-Box, ohne Keys und ohne Orders.
+- **PAPER v1.0 eingefroren** (Tag `paper-v1.0-freeze`), Start mit Signalbar 2026-10-02 UTC; Runner `paper/`, cron 06:50 und Wochenbericht montags 07:10. Review spätestens 2027-02-02.
+- XS21-U2-Schattenrechnung: nicht umgesetzt (nicht günstig), optional später mit eigener Vorregistrierung.
 - Review höchstens 4 Monate nach dem Paper-Start (D3).
