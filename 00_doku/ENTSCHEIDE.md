@@ -404,3 +404,219 @@ Messung (keine Outcomes, keine Post-Entry-Groessen), `out/{BTC,XRP,DOT}_measure.
 - Steuerliche und rechtliche Einordnung in der Schweiz
 - Zeitbudget
 - Abwicklung des Altsystems Aurum
+
+
+# Schritt 0 — Entscheide vom 01.10.2026 (Entwurf v0.2 uebernommen)
+
+## 2026-10-01 — Schritt 0: Entwurf v0.2 formell uebernommen (Nutzerentscheid)
+
+Damian uebernimmt alle Empfehlungen aus «ENTSCHEIDE – Entwurf Schritt 0, Version 0.2» (Claude, 01.10.2026) inklusive der neuen Punkte B7 und B8. Quelle: `00_doku/entwuerfe/ENTSCHEIDE_Entwurf_Schritt0_v0.2.docx` (SHA 02fbeafbd23f7b10…), Vorversion v0.1 (c841cbc589ed832d…) liegt daneben. Jeder Punkt folgt als eigener Eintrag mit dem Wortlaut der Empfehlung (Umlaute nach Konvention dieser Datei umschrieben, Befunde siehe Entwurf). Offen bleiben D2 und D3 (Zahlen von Damian ausstehend). Reihenfolge nach Entscheid laut Entwurf: E2 Collector, E1 Hygiene, B1 bis B8 einfrieren und XS21 PiT v1.0 ein Lauf, A1 bis A8 einfrieren und DT-P&L ein Lauf mit anschliessender Anwendung von A7, Engine-MVP mit Abnahme gegen die eingefrorenen Stufe-2-Trades, Paper nur fuer Kandidaten mit bestandenem Gate.
+
+## 2026-10-01 — A1 Lesart von Gate E
+
+Empfehlung: 3 primaere Zellen (BTC S2×DT1, XRP S2×DT1, XRP S2×DT2) plus 3 sekundaere Grenzfaelle (BTC S2×DT2, DOT S2×DT1, DOT S2×DT2), Holm ueber alle 6.
+
+Entscheid: Empfehlung uebernommen (Damian, 01.10.2026).
+
+## 2026-10-01 — A2 S1 (Double Bottom), alle 6 Zellen unter 20 Einstiegen
+
+Empfehlung: deskriptiv mitfuehren, ohne Test und ohne Status.
+
+Entscheid: Empfehlung uebernommen (Damian, 01.10.2026).
+
+## 2026-10-01 — A3 DT3 (Gate A ueberall verfehlt)
+
+Empfehlung: abschliessen mit Vermerk «Spezifikation abgeschlossen, keine Fortfuehrung» (Governance v1.1 §9).
+
+Entscheid: Empfehlung uebernommen (Damian, 01.10.2026).
+
+## 2026-10-01 — A4 Exit
+
+Empfehlung: Tages-ATR14-Chandelier 3×, nur steigend, Zeitstopp t+360, wie im Vorbericht.
+
+Entscheid: Empfehlung uebernommen (Damian, 01.10.2026).
+
+## 2026-10-01 — A5 Kontrollgruppe
+
+Empfehlung: gematchte Kontexte ohne Struktur mit Ersatzniveaus, wie im Vorbericht.
+
+Entscheid: Empfehlung uebernommen (Damian, 01.10.2026).
+
+## 2026-10-01 — A6 Primaermetrik
+
+Empfehlung: gepaartes ΔR (Status nach Regel v2) und Netto-K1. Fortfuehrung nur bei Netto-K1 ≥ 0.
+
+Entscheid: Empfehlung uebernommen (Damian, 01.10.2026).
+
+## 2026-10-01 — A7 Harte Abbruchregel fuer Lane A (neu)
+
+Regel: Vor dem DT-P&L-Lauf festgeschrieben: Ist Netto-K1 in den drei Primaerzellen zusammen kleiner als null, wird Lane A (Bottom, Reversal, Rebound, DT) vollstaendig geschlossen. Es folgt keine weitere Variante, keine Umformulierung und kein neuer Timeframe auf BTC, XRP oder DOT. Eine Wiederaufnahme waere nur mit neuen Daten (Forward-Fenster) und einer neuen Vorregistrierung zulaessig, die diesen Entscheid ausdruecklich zitiert.
+
+Entscheid: Empfehlung uebernommen (Damian, 01.10.2026).
+
+## 2026-10-01 — A8 Evidenzwert eines positiven DT-Ergebnisses (neu)
+
+Regel: DT ist outcome-informed (Ebene C), laeuft auf denselben Discovery-Daten wie alle gescheiterten Vorgaenger, und die globale Trial-Zahl liegt bei rund 240. Ein positives Ergebnis gilt deshalb hoechstens als «mechanistically promising» in der Klasse Development. Ein Holdout-Lauf ist nur nach dem Economic Validation Gate zulaessig (Governance v1.1 §7), und dieser Vermerk wird im DT-Freeze woertlich uebernommen.
+
+Entscheid: Empfehlung uebernommen (Damian, 01.10.2026).
+
+## 2026-10-01 — B1 Umsatzschwelle 50 Mio. USD Vormonat
+
+Empfehlung: Schwelle als Definition des breiten Forschungsuniversums (U1) bestaetigen, die Begruendung aber streichen und durch «Mindestliquiditaet auf der Signalboerse» ersetzen. Die Ausfuehrbarkeit regelt B8.
+
+Entscheid: Empfehlung uebernommen (Damian, 01.10.2026).
+
+Umsetzung: XS21 PiT Vorregistrierung v0.2 (ENTWURF, nicht eingefroren) `01_forschung/09_lane_c/xs21_point_in_time_prereg_v0.2.md`, gilt fuer B1 bis B8.
+
+## 2026-10-01 — B2 Dezil-Variante (oberstes und unterstes Dezil)
+
+Empfehlung: als vorregistrierten Vergleich behalten, nicht als Auswahl. Top-3 bleibt primaer.
+
+Entscheid: Empfehlung uebernommen (Damian, 01.10.2026).
+
+## 2026-10-01 — B3 Delisting-Glattstellung
+
+Empfehlung: zur letzten Tageskerze mit K2-Slippage bestaetigen.
+
+Entscheid: Empfehlung uebernommen (Damian, 01.10.2026).
+
+## 2026-10-01 — B4 Short-Bein
+
+Empfehlung: Long+Short primaer wie Stufe 2 (H-C3: Absicherung, kein Ertrag), Long-only als vorregistrierter Vergleich.
+
+Entscheid: Empfehlung uebernommen (Damian, 01.10.2026).
+
+## 2026-10-01 — B5 Holdout-Status von XS21 (neu, Klaerung)
+
+Empfehlung: Fuer die XS21-Regel und fuer D-CC gilt der Zeitraum ab 2024 als verbraucht. Der PiT-Lauf rechnet 2020-02 bis 2026-09-14 in einem einzigen Lauf mit der Etikette «Discovery/Robustheit mit Vorbelastung», der Teil ab 2024 wird separat ausgewiesen. §2 und §4 der PiT-Vorregistrierung werden entsprechend korrigiert. Die einzige saubere Out-of-Sample-Evidenz fuer XS21 und D-CC ist ein Forward-Fenster ab 15.09.2026, beginnend mit dem Collector (E2). Das Etikett Holdout validation ist fuer beide ausgeschlossen. Die Stufe-2-Urteile bleiben unveraendert.
+
+Entscheid: Empfehlung uebernommen (Damian, 01.10.2026).
+
+## 2026-10-01 — B6 Ausfuehrbarkeit (neu)
+
+Empfehlung: Die Forschungsfrage (existiert der Effekt ohne Survivorship?) wird auf U1 beantwortet. Ueber einen Sleeve entscheidet nur das ausfuehrbare Universum U2 (B8). Vor jedem Paper-Betrieb gilt zusaetzlich ein Ausfuehrbarkeits-Gate auf der gewaehlten Boerse.
+
+Entscheid: Empfehlung uebernommen (Damian, 01.10.2026).
+
+## 2026-10-01 — B7 Nicht-Krypto-Perps ausschliessen (neu)
+
+Empfehlung: Vor dem Freeze eine Ausschlussregel festschreiben: Nur Symbole, deren Basiswert ein Krypto-Asset ist. Umsetzung ueber eine eingefrorene Ausschlussliste mit Pruefsumme, erstellt nach Basiswert und nicht nach Ergebnis, jeder Ausschluss mit Grund. Stablecoin-Paare werden ebenfalls ausgeschlossen.
+
+Entscheid: Empfehlung uebernommen (Damian, 01.10.2026).
+
+Umsetzung: Ausschlussliste ENTWURF v0.1 `01_forschung/09_lane_c/xs21_pit_v0.2/xs21_exclusions_v0.1.csv` mit Pruefsummen, vor dem Freeze durch Claude/Damian zu pruefen (unklare Symbole separat gelistet).
+
+## 2026-10-01 — B8 Zweites, ausfuehrbares Universum U2 (neu)
+
+Empfehlung: Zusaetzlich zu U1 wird vor dem Freeze ein point-in-time Liquiditaetsuniversum U2 vorregistriert: am Stichtag die 20 Krypto-Symbole mit dem hoechsten Binance-Quote-Volumen des Vormonats, nach B7 gefiltert. Die Rangbildung ist point-in-time und daher frei von Survivorship. Gleiche Regeln wie Stufe 2, Holm ueber U1 und U2. Als Sleeve-Kandidat zaehlt nur U2. Besteht U1, aber nicht U2, ist der Effekt real, aber fuer ein Privatkonto nicht handelbar.
+
+Entscheid: Empfehlung uebernommen (Damian, 01.10.2026).
+
+## 2026-10-01 — C1 Spot oder Perps
+
+Empfehlung: Spot fuer die Long-Seite. Perps nur dort, wo ein Short-Bein (XS21) oder ein Carry-Bein (D-CC) es verlangt. Der bisherige Eintrag «Perps statt Spot» wird damit praezisiert, nicht gestrichen.
+
+Entscheid: Empfehlung uebernommen (Damian, 01.10.2026).
+
+## 2026-10-01 — C2 Ein Kostenmodell
+
+Empfehlung: ein zentrales costs.yaml mit Spot- und Perp-Modell (K0/K1/K2) als einzige Quelle. Die abweichenden Saetze in 05_evidenz/README.md werden mit Vermerk korrigiert. Zusaetzlich ein venue-spezifisches Kraken-Modell: Kraken-Spot-Taker 0.80 % je Seite (ENTSCHEIDE Tier 1) liegt doppelt so hoch wie K1-Spot mit 0.40 %. Spot-Long auf Kraken wird deshalb mit Maker-Ausfuehrung geplant, Taker-Ausfuehrung wird mindestens unter K2 gerechnet. Eingefrorene Laeufe bleiben unveraendert und referenzieren ihre damaligen Werte.
+
+Entscheid: Empfehlung uebernommen (Damian, 01.10.2026).
+
+Umsetzung (01.10.2026): `config/cost_model_v1.json` Version 1.1 mit neuem Abschnitt `venue_kraken` (Spot Maker 0.40 / Taker 0.80, Futures Maker 0.02 / Taker 0.05 Prozent je Seite, Tier 1). Die Abschnitte `spot_r`, `stage2_perp` und `stage2_spot_ref` (K0/K1/K2 der eingefrorenen Laeufe) bleiben wertgleich und sind per Test an die eingefrorenen Dateien gebunden. JSON statt YAML, weil die Datei bereits die einzige Quelle ist. Korrektur der Saetze in `05_evidenz/README.md` als neue Datei `05_evidenz/README_v1.1_gebuehren.md`, das Original bleibt unveraendert.
+
+## 2026-10-01 — C3 Boerse
+
+Empfehlung: Kraken fuer Spot-Long bestaetigen. Kraken Futures als Arbeitsannahme fuer das Short-Bein und D-CC auf den zehn Stufe-2-Coins beziehungsweise U2, vorbehaltlich D4. Eine zweite Boerse nur, falls U2 auf Kraken das Ausfuehrbarkeits-Gate nicht besteht. Keine Boerse wird gewaehlt, deren Zulaessigkeit fuer dich nicht manuell geprueft ist.
+
+Entscheid: Empfehlung uebernommen (Damian, 01.10.2026).
+
+## 2026-10-01 — D1 Betriebsort
+
+Empfehlung: kleiner, selbst kontrollierter Cloud-Server oder eigener Rechner im Dauerbetrieb fuer Collector und Paper. Nicht der Mac und keine fremde Agent-Umgebung. Keys liegen nie in einer Agent- oder Chat-Sandbox.
+
+Entscheid: Empfehlung uebernommen (Damian, 01.10.2026).
+
+Vermerk (Damian, 01.10.2026): Uebergangsausnahme. Der Collector fuer oeffentliche Daten darf auf der Agent-Box laufen, bis Damian einen eigenen Server hat. Auf der Box liegen nie Keys.
+
+## 2026-10-01 — D2 Kapitalrahmen und akzeptabler Totalverlust — OFFEN
+
+Empfehlung: vor jeder Live-Phase als feste Zahl festlegen (Micro-Live-Betrag und Obergrenze Gesamtverlust, nach der das Projekt ohne Diskussion stoppt).
+
+Entscheid: offen. Zahlen von Damian ausstehend, nicht entschieden.
+
+## 2026-10-01 — D3 Zeitbudget — OFFEN
+
+Empfehlung: Stunden pro Woche festlegen und eine Zeitbox fuer Schritt 3 von rund 2 Wochen. Ohne bestandenes Ergebnis nach der Zeitbox folgt ein Review-Termin statt neuer Hypothesen.
+
+Entscheid: offen. Zahlen von Damian ausstehend, nicht entschieden.
+
+## 2026-10-01 — D4 Steuern und Recht Schweiz
+
+Empfehlung: vor Live klaeren (Qualifikation als private Vermoegensverwaltung oder gewerbsmaessiger Handel, Zulaessigkeit von Perps fuer Schweizer Privatkunden bei der gewaehlten Boerse, Vertragspartnerin und Aufsicht bei Kraken Futures (vermutlich Bermuda-Gesellschaft), allfaellige FIDLEG-Fragen bei grenzueberschreitender Erbringung, Hebel und Margin je Entity). Fuer Forschung und Paper nicht blockierend.
+
+Entscheid: Empfehlung uebernommen (Damian, 01.10.2026).
+
+## 2026-10-01 — D5 Abwicklung Altsystem
+
+Empfehlung: Altsystem stilllegen, Keys widerrufen, Restbestaende dokumentieren. Turtle 55/20 nur als Referenz behalten, die Zahlen sind in Aurum II nicht nachgerechnet.
+
+Entscheid: Empfehlung uebernommen (Damian, 01.10.2026).
+
+Vermerk: Als Empfehlung uebernommen. Der Status von Altsystem und Keys (stillgelegt, widerrufen, Restbestaende) ist noch nicht bestaetigt, Bestaetigung durch Damian ausstehend.
+
+## 2026-10-01 — E1 Git und Reproduzierbarkeit
+
+Empfehlung: privates Git-Repo, Originale als eingefrorener Tag v0, gepinntes requirements.txt, Pfade ueber AURUM_ROOT in neuen Dateiversionen mit SHA-Vermerk. CI mit den 34 Tests und den vier Repro-Checks aus Review v1. Fehlende Stufe-2-Eingaben (DTB3_3m_tbill.csv, kraken_funding/PF_{XBT,ETH,SOL}USD_funding.csv) ablegen.
+
+Entscheid: Empfehlung uebernommen (Damian, 01.10.2026).
+
+Stand 01.10.2026: Repo mit Tag `original-2026-10-01`, gepinnte Abhaengigkeiten, AURUM_ROOT, `make ci` (34 Tests, vier Reproduktionen bitgleich) umgesetzt. DTB3 als FRED-Neuabruf abgelegt (SHA weicht vom Original ab, Stufe 2 trotzdem bitgleich). `kraken_funding/PF_{XBT,ETH,SOL}USD_funding.csv` fehlen weiterhin (Original noetig).
+
+## 2026-10-01 — E2 Collector sofort
+
+Empfehlung: taeglicher Collector auf oeffentlichen Endpunkten ohne Keys (Kraken-Futures-Funding aller PF-Symbole, Kraken OHLC 4h/1d, Binance-UM-Listing), validierend und atomar nach 02_daten/README.md, mit Heartbeat.
+
+Begruendung: Kraken liefert Funding nur fuer ein rollendes Jahr, jeder Tag ohne Collector ist verloren.
+
+Entscheid: Empfehlung uebernommen (Damian, 01.10.2026).
+
+Stand 01.10.2026: Collector laeuft taeglich 06:15 Europe/Zurich auf der Agent-Box (Ausnahme D1), Status in `last_run_status.json` als Heartbeat. Binance nur ueber data.binance.vision (fapi geoblockt).
+
+## 2026-10-01 — E3 Korrektur im Log
+
+Empfehlung: Korrekturvermerk als neuer Eintrag, der alte bleibt stehen. Die veraltete mlib.py-SHA in rm_2026-09-18_expected_shas.txt wird mit Verweis auf v1.0 ergaenzt.
+
+Entscheid: Empfehlung uebernommen (Damian, 01.10.2026).
+
+Umsetzung: Korrekturvermerk als eigener Eintrag weiter unten, Ergaenzung zu `rm_2026-09-18_expected_shas.txt` als neue Datei `00_doku/rm_2026-09-18_expected_shas.addendum_2026-10-01.txt`.
+
+## 2026-10-01 — E4 Arbeitsteilung
+
+Empfehlung: Claude (Project) fuer Methodik, Vorregistrierungen, ENTSCHEIDE-Texte, Berichte und Review gegen die Governance. Coding-Agents fuer Repo, CI, Collector, Engine, Paper-Runner und unabhaengige Nachrechnung jedes Laufs. Kein Produktionscode in der Chat-Sandbox. Uebergabe ueber Git, ENTSCHEIDE bleibt die einzige Quelle.
+
+Entscheid: Empfehlung uebernommen (Damian, 01.10.2026).
+
+## 2026-10-01 — F1 Keine neuen Hypothesen bis XS21 PiT und DT entschieden sind
+
+Regel: Keine neuen Lane-A-, Rebound-, Visual-AI-, Options- oder Halving-Straenge. D-CC wird nur als Forward-Datensammlung ab 15.09.2026 beobachtet, kein Sleeve. Falls D-CC spaeter wieder aufgenommen wird, gelten Spot und Perp auf derselben Boerse sowie ein Kapital- und Margin-Modell als Pflicht in der Vorregistrierung. ETH/SOL bleiben unberuehrt und damit als unabhaengige Maerkte erhalten.
+
+Entscheid: Empfehlung uebernommen (Damian, 01.10.2026).
+
+## 2026-10-01 — KORREKTURVERMERK zu «2026-09-18 14:35 UTC — REBOUND-MICRO v1.0 Lauf BTC VERSIEGELT» (E3)
+
+Der Eintrag «REBOUND-MICRO v1.0 Lauf BTC VERSIEGELT» traegt 14:35 UTC und liegt damit zeitlich vor dem Eintrag «REBOUND-MICRO v1.0 FREEZE» mit 14:40 UTC. In der Datei steht der FREEZE-Eintrag vor dem Lauf-Eintrag, der Lauf-Eintrag nennt als Eingaben mlib 6b7e7ba8… und simulate fef60859…, also die eingefrorenen v1.0-Dateien. Mindestens einer der beiden Zeitstempel ist falsch. Welcher, laesst sich aus den vorliegenden Dateien nicht mehr belegen (die Lauf-Logs tragen keine Uhrzeit, die Dateizeiten stammen aus der Kopie). Massgeblich ist die Reihenfolge FREEZE vor Lauf. Beide alten Eintraege bleiben unveraendert stehen.
+
+Ergaenzend: `00_doku/rm_2026-09-18_expected_shas.txt` nennt fuer `01_forschung/10_rebound_micro/mlib/mlib.py` noch die SHA von v0.1 (cfe1f7aa…). Gueltig ist v1.0 mit SHA 6b7e7ba888e17cac80705097dd36be93a3ee6204b6ea00bd6be6f0b042bfe938 (FREEZE 18.09.2026). Die Liste bleibt unveraendert, die Ergaenzung steht in `00_doku/rm_2026-09-18_expected_shas.addendum_2026-10-01.txt`.
+
+## 2026-10-01 — Offen (Stand nach Schritt 0, ersetzt die Liste «Offen» oben nicht, sondern schreibt sie fort)
+
+- D2 Kapitalrahmen: Micro-Live-Betrag und Totalverlust-Obergrenze in CHF (Damian)
+- D3 Zeitbudget: Stunden pro Woche und Review-Termin (Damian)
+- D5 Bestaetigung Status Altsystem und Keys (Damian)
+- D4 Steuern und Recht Schweiz vor Live (nicht blockierend fuer Forschung und Paper)
+- D1 eigener Server (bis dahin Collector auf der Agent-Box)
+- XS21 PiT v0.2: Pruefung des Entwurfs und der B7-Ausschlussliste vor dem Freeze (Claude/Damian), danach v1.0 und ein Lauf
+- A1 bis A8: DT-Freeze vor dem P&L-Lauf
+- Fehlende Original-Eingaben `kraken_funding/PF_{XBT,ETH,SOL}USD_funding.csv` und Original-DTB3

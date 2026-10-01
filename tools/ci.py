@@ -15,6 +15,7 @@ TAG = "original-2026-10-01"
 PY = sys.executable
 ROOT = os.path.abspath(os.environ.get("AURUM_ROOT") or os.path.join(REPO, "build", "root"))
 EXPECTED_TESTS = 34
+APPEND_ONLY = {"00_doku/ENTSCHEIDE.md"}  # fortgeschriebene Logs, nur Anhaengen erlaubt
 
 
 def sha(p):
@@ -49,7 +50,14 @@ def verify_frozen():
     changed = [l for l in r.stdout.splitlines() if l and l[0] in "MDRT"]
     tagged = set(subprocess.run(["git", "-C", REPO, "ls-tree", "-r", "--name-only", TAG], capture_output=True, text=True, check=True).stdout.split())
     bad = [l for l in changed if l.split("\t")[-1] in tagged or l[0] in "DR"]
-    print(f"[frozen] Originaldateien seit {TAG} veraendert/geloescht: {len(bad)} (von {len(tagged)})")
+    appended = []
+    for l in list(bad):  # append-only Logs: Tag-Inhalt muss Byte-Praefix des aktuellen Inhalts sein
+        f = l.split("\t")[-1]
+        if l[0] == "M" and f in APPEND_ONLY:
+            old = subprocess.run(["git", "-C", REPO, "show", f"{TAG}:{f}"], capture_output=True, check=True).stdout
+            if open(os.path.join(REPO, f), "rb").read().startswith(old):
+                bad.remove(l); appended.append(f)
+    print(f"[frozen] Originaldateien seit {TAG} veraendert/geloescht: {len(bad)} (von {len(tagged)}); nur angehaengt (append-only): {appended}")
     for l in bad:
         print("   ", l)
     fails += len(bad)
@@ -61,10 +69,17 @@ def verify_frozen():
                    if "/build" not in d and "/.git" not in d and "/data" not in d for f in fs if f.endswith("expected_shas.txt"))
     for lf in lists:
         ok = dev = 0
+        entries = {}
         for line in open(os.path.join(REPO, lf), encoding="utf-8"):
-            if not line.strip():
-                continue
-            h, p = line.split(None, 1); p = p.strip()
+            if line.strip() and not line.startswith("#"):
+                h, p = line.split(None, 1); entries[p.strip()] = h
+        base = lf[:-len(".txt")]
+        adds = sorted(f for f in os.listdir(os.path.join(REPO, os.path.dirname(lf))) if f.startswith(os.path.basename(base) + ".addendum_") and f.endswith(".txt"))
+        for a in adds:  # Ergaenzungen ersetzen gleichnamige Eintraege, die Originalliste bleibt unveraendert
+            for line in open(os.path.join(REPO, os.path.dirname(lf), a), encoding="utf-8"):
+                if line.strip() and not line.startswith("#"):
+                    h, p = line.split(None, 1); entries[p.strip()] = h
+        for p, h in entries.items():
             fp = os.path.join(REPO, p)
             if os.path.exists(fp) and sha(fp) == h:
                 ok += 1
@@ -72,7 +87,7 @@ def verify_frozen():
                 dev += 1
             else:
                 print(f"    FEHLER {lf}: {p}"); fails += 1
-        print(f"[frozen] {lf}: {ok} OK, {dev} begruendete Abweichung(en)")
+        print(f"[frozen] {lf}: {ok} OK, {dev} begruendete Abweichung(en)" + (f", Ergaenzung(en): {adds}" if adds else ""))
     m = json.load(open(os.path.join(REPO, "02_daten/holdout/holdout_manifest_v1.1.json")))
     n = 0
     for k, v in m["files"].items():

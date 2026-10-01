@@ -1,0 +1,4 @@
+# Ergaenzung zu rm_2026-09-18_expected_shas.txt (E3, ENTSCHEIDE 2026-10-01). Die Originalliste bleibt unveraendert.
+# Die Originalliste nennt fuer mlib.py die SHA von v0.1 (cfe1f7aa...). Gueltig ist mlib v1.0 (FREEZE 18.09.2026, ENTSCHEIDE
+# «2026-09-18 14:40 UTC — REBOUND-MICRO v1.0 FREEZE»: mlib/mlib.py v1.0 6b7e7ba888e17cac…). Zeilen hier ersetzen die gleichnamigen Eintraege.
+6b7e7ba888e17cac80705097dd36be93a3ee6204b6ea00bd6be6f0b042bfe938  01_forschung/10_rebound_micro/mlib/mlib.py

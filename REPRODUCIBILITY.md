@@ -35,9 +35,7 @@ Achtung: Die eingefrorenen Libraries `rlib.py` und `dtlib.py` setzen `/home/clau
 
 ## Wie die `*_expected_shas.txt` zu den neuen Dateien stehen
 
-1. **Originale** (Skripte, Libraries, Vorregistrierungen, Ergebnisse): Die Listen gelten unverändert und werden von `make verify-frozen` vollständig geprüft. Bekannte Abweichungen stehen mit Begründung in `tools/frozen_allowlist.txt`:
-   - `ENTSCHEIDE.md` wird fortgeschrieben.
-   - `rm_2026-09-18_expected_shas.txt` nennt noch mlib v0.1.
+1. **Originale** (Skripte, Libraries, Vorregistrierungen, Ergebnisse): Die Listen gelten unverändert und werden von `make verify-frozen` vollständig geprüft. Bekannte Abweichungen stehen mit Begründung in `tools/frozen_allowlist.txt`. `ENTSCHEIDE.md` wird fortgeschrieben, darf aber nur angehängt werden: Der Stand im Tag muss ein Byte-Präfix des aktuellen Inhalts sein. Korrekturen einer Liste stehen in einer Ergänzungsdatei `<liste>.addendum_<datum>.txt`, deren Zeilen die gleichnamigen Einträge ersetzen. Beispiel: `rm_2026-09-18_expected_shas.addendum_2026-10-01.txt` nennt mlib v1.0.
 2. **Skript-SHAs in den Ausgaben** (z.B. `script_sha256` in `*_measure.json` oder `eval_*.json`): Die portablen Skripte schreiben über `sha_self` die SHA der **Originaldatei**, nicht ihre eigene. Das bleibt aussagekräftig, weil
    - `make portable-check` belegt, dass sich die laufende Datei vom Original nur durch die dokumentierten Regeln unterscheidet,
    - die Laufzeit-Asserts auf Eingabe-SHAs (rlib, ylib, dtlib, Kandidatendateien, Holdout-Discovery, Daten) unverändert greifen und
