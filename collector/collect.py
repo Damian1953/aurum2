@@ -6,6 +6,9 @@ Quellen
   kraken_ohlc             api.kraken.com /0/public/OHLC 1h/4h/1d (je 720 Bars), 10 Projekt-Coins, nur abgeschlossene Bars
   binance_funding         data.binance.vision Monats-ZIPs fundingRate (mit CHECKSUM); fapi.binance.com ist von hier geoblockt (451)
   binance_universe        data.binance.vision S3-Listing futures/um/daily/klines + HEAD auf die 1d-Kline von gestern/vorgestern
+  kraken_futures_tickers  futures.kraken.com v3 instruments + tickers (ab 1.1): Tages-Snapshot je Perpetual (tradeable, 24h-Volumen USD,
+                          Open Interest, Last, Zeitstempel) fuer das XS21-Ausfuehrbarkeits-Gate (M3); Instrumentenliste als Snapshot
+  kraken_spot_tickers     api.kraken.com /0/public/Ticker (ab 1.1): 24h-Volumen und Last der 10 Projekt-Coins
 
 Schreibpfad (02_daten/README.md): Validierung je Batch (kritisch -> ganzer Batch in _quarantine, nichts geschrieben),
 append-only mit Dedup ueber den Zeitstempel, Konflikte (gleicher Schluessel, andere Werte) werden protokolliert und NICHT
@@ -14,9 +17,9 @@ Status in last_run_status.json, Exit-Code 1 bei jedem Quellenfehler, 2 bei Lock-
 """
 import argparse, concurrent.futures as cf, csv, datetime as dt, fcntl, hashlib, io, json, logging, math, os, re, socket, ssl, sys, time, traceback, urllib.error, urllib.parse, urllib.request, uuid, zipfile
 
-VERSION = "1.0"
+VERSION = "1.1"
 OUT = os.path.abspath(os.environ.get("AURUM_DATA_LIVE", "/workspace/aurum2/data_live"))
-UA = "aurum2-collector/1.0 (public market data, research)"
+UA = "aurum2-collector/1.1 (public market data, research)"
 TIMEOUT = 30
 
 KRAKEN_FUT = ["PF_ADAUSD", "PF_AVAXUSD", "PF_BNBUSD", "PF_DOTUSD", "PF_ETHUSD", "PF_LINKUSD", "PF_LTCUSD", "PF_SOLUSD",
@@ -440,8 +443,146 @@ def src_binance_universe(store, args):
     return res, errs
 
 
+# ------------------------------------------------------------------ Kraken Futures Instrumente + Ticker (ab 1.1, XS21-Gate M3)
+KFT_HDR = ["t", "tradeable", "suspended", "vol24h_usd", "vol24h_base", "open_interest", "last", "last_time", "mark_price", "opening_date"]
+KST_HDR = ["t", "last", "vol24h_base", "vwap24h", "vol24h_usd", "trades24h"]
+_EXPIRY = re.compile(r"_\d{6}$")
+
+
+def _num(x):
+    return "" if x is None else repr(float(x))
+
+
+def _flag(x):
+    return "" if x is None else ("1" if x else "0")
+
+
+def validate_ticker(nonneg, pos, opt_pos=(), flags=()):
+    def v(rows):
+        crit = []; _time_checks(rows, crit)
+        for i, r in enumerate(rows):
+            try:
+                for j in nonneg:
+                    x = float(r[j])
+                    if not math.isfinite(x) or x < 0:
+                        crit.append(f"Zeile {i}: Spalte {j} negativ/nicht endlich {r}")
+                for j in pos:
+                    x = float(r[j])
+                    if not math.isfinite(x) or x <= 0:
+                        crit.append(f"Zeile {i}: Spalte {j} nicht positiv {r}")
+                for j in opt_pos:  # leer erlaubt (z.B. nie gehandelt)
+                    if r[j] != "" and not (math.isfinite(float(r[j])) and float(r[j]) > 0):
+                        crit.append(f"Zeile {i}: Spalte {j} nicht positiv {r}")
+                for j in flags:
+                    if r[j] not in ("0", "1", ""):
+                        crit.append(f"Zeile {i}: Flag {r[j]!r}")
+            except (ValueError, IndexError):
+                crit.append(f"Zeile {i}: fehlender/ungueltiger Wert {r}")
+        return crit
+    return v
+
+
+validate_kft = validate_ticker(nonneg=[3, 4, 5], pos=[], opt_pos=[6, 8], flags=[1, 2])
+validate_kst = validate_ticker(nonneg=[2, 4, 5], pos=[1, 3])
+
+
+def _write_snapshot(store, sub, snap_date, header, rows):
+    """Tages-Snapshot nie ueberschreiben (abweichender Inhalt -> Datei mit run_id). Rueckgabe relativer Pfad, sha256."""
+    d = os.path.join(OUT, sub); os.makedirs(d, exist_ok=True)
+    path = os.path.join(d, f"snapshot_{snap_date}.csv")
+    buf = io.StringIO(); w = csv.writer(buf, lineterminator="\n"); w.writerow(header); w.writerows(rows)
+    data = buf.getvalue().encode()
+    if os.path.exists(path):
+        if open(path, "rb").read() == data:
+            return os.path.relpath(path, OUT), sha256b(data)
+        path = path.replace(".csv", f"_{store.run_id}.csv")
+    tmp = path + ".tmp"
+    with open(tmp, "wb") as fh:
+        fh.write(data); fh.flush(); os.fsync(fh.fileno())
+    os.replace(tmp, path)
+    return os.path.relpath(path, OUT), sha256b(data)
+
+
+def _first_seen(sub, syms, snap_date):
+    """append-only Register: Symbol, erster Snapshot. Rueckgabe (neu, verschwunden)."""
+    rel = f"{sub}/first_seen.csv"; p = os.path.join(OUT, rel)
+    _, have = Store.read(p)
+    new = [s for s in syms if s not in have]
+    if new:
+        allr = list(have.values()) + [[s, snap_date] for s in new]; allr.sort(key=lambda r: r[0])
+        buf = io.StringIO(); w = csv.writer(buf, lineterminator="\n"); w.writerow(["symbol", "first_seen_snapshot"]); w.writerows(allr)
+        with open(p + ".tmp", "wb") as fh:
+            fh.write(buf.getvalue().encode()); fh.flush(); os.fsync(fh.fileno())
+        os.replace(p + ".tmp", p)
+    return (new if have else []), [s for s in have if s not in set(syms)]
+
+
+def src_kraken_futures_tickers(store, args):
+    res, errs = {}, []
+    ui = "https://futures.kraken.com/derivatives/api/v3/instruments"
+    ut = "https://futures.kraken.com/derivatives/api/v3/tickers"
+    sti, bi = http(ui); di = json.loads(bi)
+    stt, bt = http(ut); dt_ = json.loads(bt)
+    for name, d in (("instruments", di), ("tickers", dt_)):
+        if d.get("result") != "success":
+            raise ValueError(f"{name}: result={d.get('result')} {str(d)[:200]}")
+    inst = {x["symbol"]: x for x in di.get("instruments", [])
+            if x.get("symbol", "")[:3] in ("PF_", "PI_") and not _EXPIRY.search(x["symbol"])}
+    tick = {x["symbol"]: x for x in dt_.get("tickers", []) if x.get("tag") == "perpetual"}
+    if len(inst) < 50 or len(tick) < 50:
+        raise ValueError(f"unplausibel wenige Perpetuals: instruments {len(inst)}, tickers {len(tick)}")
+    t_snap = iso(parse_iso(dt_["serverTime"]).replace(microsecond=0))
+    snap_date = t_snap[:10]
+    irows = [[s, x.get("type", ""), _flag(x.get("tradeable")), x.get("base", ""), x.get("quote", ""), x.get("openingDate", "")]
+             for s, x in sorted(inst.items())]
+    ifile, isha = _write_snapshot(store, "kraken_futures_instruments", f"{snap_date}", ["symbol", "type", "tradeable", "base", "quote", "opening_date"], irows)
+    new, gone = _first_seen("kraken_futures_instruments", sorted(inst), snap_date)
+    store.prov.write(dict(event="snapshot", source="kraken_futures_instruments", url=ui, http=sti, sha256=sha256b(bi), file=ifile,
+                          file_sha256=isha, instruments=len(inst), server_time=di.get("serverTime"), new_in_listing=new, vanished_from_listing=gone))
+    res["_instruments"] = dict(file=ifile, perpetuals=len(inst), tradeable=sum(1 for r in irows if r[2] == "1"), new_in_listing=new, vanished=gone)
+    meta = dict(url=ut, http=stt, sha256=sha256b(bt), server_time=dt_.get("serverTime"), instruments_sha256=sha256b(bi))
+    n_ok = 0
+    for s in sorted(set(inst) | set(tick)):
+        x, i = tick.get(s), inst.get(s, {})
+        try:
+            if x is None:  # Instrument ohne Ticker: nur Flag, keine Werte -> kein Zeileneintrag, Warnung
+                log.warning("kraken_futures_tickers %s: Instrument ohne Ticker", s); res[s] = dict(note="ohne Ticker"); continue
+            row = [t_snap, _flag(i.get("tradeable")), _flag(x.get("suspended")), _num(x.get("volumeQuote")), _num(x.get("vol24h")),
+                   _num(x.get("openInterest")), _num(x.get("last")), x.get("lastTime") or "", _num(x.get("markPrice")), i.get("openingDate", "")]
+            r = store.append(f"kraken_futures_tickers/{s}.csv", KFT_HDR, [row], validate_kft, "kraken_futures_tickers", meta)
+            res[s] = dict(new=r["new"], total=r["total"]); n_ok += 1
+        except Exception as e:
+            errs.append(f"{s}: {e}"); log.error("kraken_futures_tickers %s: %s", s, e)
+    res["_summary"] = dict(t=t_snap, symbols_written=n_ok, ge_2m_usd=sum(1 for x in tick.values() if (x.get("volumeQuote") or 0) >= 2e6))
+    return res, errs
+
+
+def src_kraken_spot_tickers(store, args):
+    res, errs = {}, []
+    for name, pair in KRAKEN_PAIRS.items():
+        url = f"https://api.kraken.com/0/public/Ticker?pair={pair}"
+        try:
+            t = iso(utcnow().replace(microsecond=0))
+            st, body = http(url); d = json.loads(body)
+            if d.get("error"):
+                raise ValueError(f"API-Fehler {d['error']}")
+            vals = list(d["result"].values())
+            if len(vals) != 1:
+                raise ValueError(f"unerwartete Antwort {list(d['result'])}")
+            v = vals[0]; vol, vwap = float(v["v"][1]), float(v["p"][1])
+            row = [t, _num(v["c"][0]), _num(vol), _num(vwap), _num(vol * vwap), str(int(v["t"][1]))]
+            r = store.append(f"kraken_spot_tickers/{name}.csv", KST_HDR, [row], validate_kst, "kraken_spot_tickers",
+                             dict(url=url, http=st, sha256=sha256b(body), kraken_key=list(d["result"])[0]))
+            res[name] = dict(new=r["new"], total=r["total"], vol24h_usd=round(vol * vwap))
+        except Exception as e:
+            errs.append(f"{name}: {e}"); log.error("kraken_spot_tickers %s: %s", name, e)
+        time.sleep(1.1)
+    return res, errs
+
+
 SOURCES = {"kraken_futures_funding": src_kraken_funding, "kraken_ohlc": src_kraken_ohlc,
-           "binance_funding": src_binance_funding, "binance_universe": src_binance_universe}
+           "binance_funding": src_binance_funding, "binance_universe": src_binance_universe,
+           "kraken_futures_tickers": src_kraken_futures_tickers, "kraken_spot_tickers": src_kraken_spot_tickers}
 
 
 # ------------------------------------------------------------------ Seed aus 02_daten/raw (einmalig)

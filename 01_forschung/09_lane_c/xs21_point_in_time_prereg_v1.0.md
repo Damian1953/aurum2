@@ -203,7 +203,7 @@ Gilt vor jedem Paper-Betrieb eines U2-Sleeves. Börse nach C3: Kraken Futures, v
 - **Nicht handelbares Symbol im Betrieb:** Die Position bleibt in Cash. Es wird nicht auf den nächsten Rang ausgewichen.
 - **Positionsgrösse:** höchstens 0.1 Prozent des 24h-Volumens je Symbol.
 - Eine zweite Börse kommt nur in Frage, falls U2 auf Kraken das Gate nicht besteht.
-- **Voraussetzung (offen, §8):** Der Collector v1.0 erfasst derzeit für Kraken Futures nur Funding und keine Instrumentenliste und kein 24h-Volumen. Ohne Erweiterung ist das Gate nicht messbar.
+- **Datengrundlage:** Collector ab v1.1 (seit 01.10.2026): täglicher Snapshot der Kraken-Futures-Instrumente und -Ticker je Perpetual (`tradeable`, 24h-Volumen USD = `volumeQuote`, Open Interest, Last, Zeitstempel) in `data_live/kraken_futures_tickers/`. Für den 30-Tage-Median zählt je UTC-Tag der erste Snapshot. Zeitliche Grenze siehe §8.2.
 
 ## 6. Kosten
 
@@ -226,7 +226,7 @@ Reihenfolge: Freigabe und Freeze v1.0 einschliesslich B7-Liste v1.0, danach Date
 ## 8. Offen vor Freeze bzw. vor Lauf
 
 1. **Freigabe Damian** dieses Dokuments und der B7-Liste v1.0. Danach SHA-Eintrag in ENTSCHEIDE.
-2. **Collector-Erweiterung vor dem Gate (M3):** Kraken-Futures-Instrumentenliste und 24h-Volumen täglich erfassen. Die Daten ab 15.09.2026 fehlen bereits, der erste 30-Tage-Median ist frühestens 30 Tage nach Beginn der Erfassung verfügbar.
+2. **Datengrundlage Gate (M3):** Die Erfassung der Kraken-Futures-Instrumente und -Ticker (Collector v1.1) hat am **01.10.2026** begonnen (erster Snapshot 10:58 UTC, 284 Perpetuals, alle `tradeable`). Der erste 30-Tage-Median ist mit dem 30. Tages-Snapshot am **30.10.2026** verfügbar. Zwischen 15.09. und 30.09.2026 gibt es keine Volumendaten, und sie lassen sich nicht nachholen. Die Raster-Stichtage 19.09. bis 24.10.2026 sind deshalb nicht nach M3 messbar. Zu entscheiden (Vorschlag): Als «erste 8 Rebalancings» gelten die ersten 8 Raster-Stichtage mit vollständigem 30-Tage-Median, also 31.10. bis 19.12.2026. Das Gate wäre dann frühestens am **19.12.2026** entscheidbar.
 3. **Regelergänzungen in v1.0, die über den Wortlaut des Review hinausgehen** (zu bestätigen):
    - M4: Fehlt zu einem Settlement für alle Universumssymbole das Funding, gilt der Median des absoluten Fundings des Universums über die vorangehenden 30 Tage.
    - M5: Zuordnung der Trades zu Blöcken nach Einstiegsdatum; Block B1 beginnt am Laufbeginn nach M6.

@@ -8,6 +8,9 @@ Nur öffentliche Endpunkte, keine Keys, kein Trading. Code `collector/collect.py
 | Kraken Spot OHLC, 10 Coins, 1h/4h/1d | `api.kraken.com/0/public/OHLC` (je 720 Bars), **nur abgeschlossene Bars** | `kraken_ohlc/<COIN>USD_<tf>.csv` | `t,open,high,low,close,volume,trades` (t = Bar-Beginn UTC) |
 | Binance USDM Funding, 10 Projekt-Symbole | `data.binance.vision` Monats-ZIPs `fundingRate`, CHECKSUM geprüft | `binance_funding/<SYM>_funding.csv` | `t,rate,interval_hours,calc_time_ms` |
 | Binance USDM Universum | S3-Listing `data/futures/um/daily/klines/` + HEAD auf die 1d-Kline von gestern/vorgestern | `binance_universe/snapshot_<datum>.csv`, `first_seen.csv` | `symbol,active_proxy,last_daily_kline` |
+| Kraken Futures Instrumente (ab v1.1) | `futures.kraken.com/derivatives/api/v3/instruments`, nur Perpetuals `PF_*`/`PI_*` | `kraken_futures_instruments/snapshot_<datum>.csv`, `first_seen.csv` | `symbol,type,tradeable,base,quote,opening_date` |
+| Kraken Futures Ticker (ab v1.1, XS21-Gate M3) | `.../api/v3/tickers`, `tag=perpetual`, ein Snapshot je Lauf (Schluessel = `serverTime`) | `kraken_futures_tickers/<symbol>.csv` | `t,tradeable,suspended,vol24h_usd,vol24h_base,open_interest,last,last_time,mark_price,opening_date` (`vol24h_usd` = `volumeQuote`, rollende 24h; fuer Tagesmediane den ersten Snapshot je UTC-Tag nehmen) |
+| Kraken Spot Ticker (ab v1.1) | `api.kraken.com/0/public/Ticker`, 10 Projekt-Coins | `kraken_spot_tickers/<coin>.csv` | `t,last,vol24h_base,vwap24h,vol24h_usd,trades24h` (`vol24h_usd` = 24h-Volumen × 24h-VWAP, rollend) |
 
 `fapi.binance.com` ist von der Box geoblockt (HTTP 451). Nach Vorgabe gibt es keinen Umweg. Deshalb kommt Binance Funding mit bis zu einem Monat Verzug, und das Universum ist nur eine Näherung (siehe `OFFENE_PUNKTE.md` OP-6).
 

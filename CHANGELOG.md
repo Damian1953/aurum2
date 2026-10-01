@@ -27,3 +27,7 @@ Forschungsentscheide stehen weiterhin ausschliesslich in `00_doku/ENTSCHEIDE.md`
 - `xs21_point_in_time_prereg_v1.0.md` (FREEZE-KANDIDAT, nicht eingefroren) mit M1–M7. B7 v1.0: `tools/xs21/exclusion_map_v1.0.py`, `tools/xs21/build_exclusions_v1.py`, Ausgabe `xs21_pit_v1.0/` mit Pruefsummen. v0.1/v0.2 unveraendert.
 - ENTSCHEIDE: E3-Korrekturvermerk (SHA-Uebereinstimmung statt Zeitstempel-Reihenfolge) und Eintrag Freeze-Kandidat angehaengt, SHA in `00_doku/xs21v1_2026-10-01_expected_shas.txt`.
 - DTB3 bis 2026-09-14 (`data/supplement/DTB3_3m_tbill_to_2026-09-14.csv`, `make data`).
+
+## 2026-10-01 (Abend): Collector v1.1
+
+- Neue Quellen `kraken_futures_tickers` (Instrumente + Ticker je Perpetual, fuer XS21-Gate M3) und `kraken_spot_tickers` (24h-Volumen der 10 Projekt-Coins). Gleicher Schreibpfad (Validierung, Quarantaene, append-only, Dedup, Provenance, Status). 4 neue Offline-Tests. Erste Erfassung 01.10.2026.
