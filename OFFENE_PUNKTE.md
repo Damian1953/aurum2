@@ -112,7 +112,9 @@ Sie nennt `mlib.py` noch als v0.1 (`cfe1f7aa…`), die Datei ist v1.0 (`6b7e7ba8
 - **Konflikt mit ENTSCHEIDE** 2026-09-15 («Funding ist Kostenposition») und F1 («D-CC nur Forward-Datensammlung»): formelle Wiederaufnahme durch Damian nötig (Frage 15).
 - Collector v1.2 (stündlich Mark und Index PF_XBTUSD/PF_ETHUSD) wäre für einen Paper-Betrieb nötig; nicht umgesetzt.
 
-## OP-12 Ideen-Scan v2 (neu, 01.10.2026)
+## OP-12 Ideen-Scan v2 (neu, 01.10.2026) — ENTSCHIEDEN (Chief Strategist 22:40, Veto Damian vorbehalten)
+
+- **Erledigt durch Entscheid 01.10.2026, 22:40** (ENTSCHEIDE): (a) beide Entwürfe weiter, (b) nur Forward-Paper; 2024–2026 kein Testfenster, nur deskriptiver Anhang. Entwürfe v0.2 (`makro_liq_prereg_v0.2.md`, `mvrv_prereg_v0.2.md`), Review-Auftrag an Claude `/workspace/aurum2/fuer_claude/an_claude_scan_v2.md`. Nächste Schritte: Review Claude, dann Bau Runner und Collector-Erweiterung (CoinMetrics, FRED), dann Freeze. Ursprüngliche Punkte:
 
 - Bericht `01_forschung/14_ideen_scan_v2/ideen_scan_v2.md`. Zwei Entwürfe zur Review durch Claude: `makro_liq_prereg_entwurf_v0.1.md` (Fragen §7) und `mvrv_prereg_entwurf_v0.1.md` (Fragen §7). Nicht eingefroren, kein Lauf.
 - Entscheid Damian nötig: (a) einen, beide oder keinen Entwurf weiterverfolgen; (b) ob 2024–2026 trotz Kontextwissen als Testfenster gilt oder nur Forward-Paper.

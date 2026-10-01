@@ -46,3 +46,4 @@ Forschungsentscheide stehen weiterhin ausschliesslich in `00_doku/ENTSCHEIDE.md`
 
 - Carry: `01_forschung/13_carry/carry_prereg_v0.9.md` VERWORFEN (Damian 22:16), nicht eingefroren, nicht gelaufen; ENTSCHEIDE 22:16.
 - Ideen-Scan v2: `01_forschung/14_ideen_scan_v2/` (Bericht, explorative Resultate < 2024, Rohdaten-Pruefsummen, Entwuerfe MAKRO_LIQ v0.1 und MVRV v0.1, nicht eingefroren); Skript `tools/ideen/explorativ_scan_v2.py`; ENTSCHEIDE 22:35 (10 informelle Trials, global ca. 270).
+- Entscheid 22:40: MAKRO_LIQ und MVRV nur Forward-Paper; Entwuerfe v0.2 (nicht eingefroren), Review-Auftrag `fuer_claude/an_claude_scan_v2.md`; OP-12 entschieden.
