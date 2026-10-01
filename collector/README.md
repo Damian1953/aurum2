@@ -35,3 +35,5 @@ Einmalig mit Historie aus dem Projekt vorbefüllt (`--seed-from data/raw`, Prove
 - `ensure_scheduler.sh` wird aus `~/.bashrc` aufgerufen. Nach einem Neustart der Box läuft cron also erst wieder, wenn irgendeine Shell geöffnet wird (z.B. durch einen Agenten). Der verpasste Lauf wird dann nachgeholt, die Daten selbst gehen nicht verloren, weil die Quellen 30 bis 720 Bars bzw. ein Jahr zurückreichen.
 
 Manuell: `make collect` oder `collector/run_collector.sh`. Status: `cat /workspace/aurum2/data_live/last_run_status.json`.
+
+- Seit 01.10.2026 setzt `ensure_scheduler.sh` zusätzlich die Paper-Einträge `aurum2-paper` (06:50, `paper/run_paper.sh --if-needed`) und `aurum2-paper-bericht` (montags 07:10) und holt einen verpassten Paper-Lauf nach 06:50 nach (siehe `paper/README.md`).

@@ -76,6 +76,8 @@ def main():
             continue
         p = pf[s]["maker_plan"]; q = pf[s].get("taker_K2", p)
         L.append(f"| {NAMEN[s]} | {chf(p['equity_usd'])} ({chf(q['equity_usd'])}) | {pct(p['equity_usd'] / p['start_usd'] - 1)} | {p['max_dd'] * 100:.1f} % |")
+    if not any(s in pf for s in ["W2", "W6", "T55_20", "BH"]):
+        L.append("| noch keine Bewertung (vor dem ersten Tag nach dem Startbar) | – | – | – |")
     start_usd = E.SLEEVE_USD * len(E.COINS)
     r = dtb3(out)
     start = pd.Timestamp(st["start_bar"], tz="UTC")
