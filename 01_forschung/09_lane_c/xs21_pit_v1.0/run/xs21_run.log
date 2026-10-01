@@ -1,0 +1,35 @@
+{
+ "spec": "xs21_point_in_time_prereg_v1.0.md",
+ "spec_sha256": "edb24cde8c391c60cd90fdad753f403a8835de7e4da275af0d5d3eed01e998af",
+ "inputs": {
+  "spec": "edb24cde8c391c60cd90fdad753f403a8835de7e4da275af0d5d3eed01e998af",
+  "b7": "7f68fe168c2de5a4c5c37f467e7475fdcb36705bc54a7ec2b8403ffaac91377f",
+  "sens": "c0a8f32dfca2f47a47df649e4d80da19b951b063825e0ddce5e45840afd0f550",
+  "universe_csv": "f5563c0963dffba6b17cdf96ec8a7902e7b23dc15ac7998416caeb81bf57d312",
+  "snapshot": "bff906a0c34298a32c1d322f5d722077d85e60c8f8fd58e3bd9da9aec0148985",
+  "tbill": "8b287e3cc711b4c7d5629caed6f531c7564d4d7e8dbcf8f6bc49b069b7ca9d59",
+  "cost_model": "c652caa5bb237914d0bdcd153813ca65a61f2da23626ea5d52a183ab69e89727",
+  "provenance": "539cf6313bb8632d492bee721a25d2ab4f76da78ba10889efb10633e260f859a",
+  "lib": "deca0c29d5afae3fb76959a10ef80e87380e37d8d1137e32beff15413531bd38",
+  "run": "483702877631cda9b1cf92258c852e769479d0dcd5867eedef97554ded16cfee",
+  "s2lib": "54590393170f6f2263663ba9ab1422a5bc3083b55fa913a38022e6e54d983792"
+ },
+ "laufbeginn": "2020-04-04",
+ "n_symbols": 673,
+ "gap_days_bridged": 247,
+ "n_relistings": 12,
+ "n_life_ends": 169,
+ "n_delisted_symbols": 157,
+ "started_utc": "2026-10-01T11:39:37.656930+00:00",
+ "finished_utc": "2026-10-01T11:43:45.127365+00:00",
+ "checks": {
+  "U2_subset_U1": "OK an allen Stichtagen mit |U1| >= 20",
+  "U1_LS_weights": "Summe |w| <= 1, Aenderungen nur an T+1 oder nach Delisting",
+  "U2_LS_weights": "Summe |w| <= 1, Aenderungen nur an T+1 oder nach Delisting"
+ },
+ "holm": {
+  "U1_LS": 0.042,
+  "U2_LS": 0.042
+ },
+ "nboot": 2000
+}

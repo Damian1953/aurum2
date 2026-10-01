@@ -1,0 +1,19 @@
+{
+ "U1_LS": {
+  "auswahl_abw_ohne_U5a": 30,
+  "auswahl_abw_mit_U5a": 0,
+  "n_delisting_ausstiege": 17,
+  "kostendiff_lauf_minus_unabh": 0.0011333333333194417,
+  "erwartet_delisting": 0.0011333333333333332,
+  "kosten_erklaert": true
+ },
+ "U2_LS": {
+  "auswahl_abw_ohne_U5a": 8,
+  "auswahl_abw_mit_U5a": 0,
+  "n_delisting_ausstiege": 2,
+  "kostendiff_lauf_minus_unabh": 0.00013333333332046782,
+  "erwartet_delisting": 0.0001333333333333333,
+  "kosten_erklaert": true
+ },
+ "alles_erklaert": true
+}

@@ -1,0 +1,53 @@
+{
+ "spec_sha_im_log": true,
+ "U2_teilmenge_U1": true,
+ "U1_LS_auswahl_abweichungen": 30,
+ "U1_LS_bilanz_maxabw": 3.3306690738754696e-16,
+ "U1_LS_brutto_maxabw": 2.220446049250313e-16,
+ "U1_LS_brutto_summe": [
+  3.391281132690488,
+  3.3912811326904864
+ ],
+ "U1_LS_kosten_summe_unabh_vs_lauf": [
+  0.2935333333333333,
+  0.29466666666665275
+ ],
+ "U2_LS_auswahl_abweichungen": 8,
+ "U2_LS_bilanz_maxabw": 2.2898349882893854e-16,
+ "U2_LS_brutto_maxabw": 1.1102230246251565e-16,
+ "U2_LS_brutto_summe": [
+  3.6098582897288676,
+  3.6098582897288627
+ ],
+ "U2_LS_kosten_summe_unabh_vs_lauf": [
+  0.22446666666666665,
+  0.22459999999998712
+ ],
+ "U1_LS_funding_gefuellt": {
+  "L": {
+   "n_exp": 32097,
+   "n_fill": 221,
+   "share": 0.00688537869582827
+  },
+  "S": {
+   "n_exp": 29604,
+   "n_fill": 282,
+   "share": 0.009525739764896636
+  },
+  "n_fallback": 13
+ },
+ "U2_LS_funding_gefuellt": {
+  "L": {
+   "n_exp": 22632,
+   "n_fill": 130,
+   "share": 0.005744079179922234
+  },
+  "S": {
+   "n_exp": 27870,
+   "n_fill": 62,
+   "share": 0.0022246142805884463
+  },
+  "n_fallback": 76
+ },
+ "gesamt_ok": false
+}

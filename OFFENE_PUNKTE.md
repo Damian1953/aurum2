@@ -73,3 +73,10 @@ Sie nennt `mlib.py` noch als v0.1 (`cfe1f7aa…`), die Datei ist v1.0 (`6b7e7ba8
 - **XS21 PiT v0.2 (ENTWURF):** Review durch Claude/Damian, insbesondere B7-Liste (55 «wahrscheinlich», 59 «unklar», PAXG/XAUT/USTC), Schwellen des Ausführbarkeits-Gates, Tie-Break U2, Behandlung fehlenden Fundings, Zeitblöcke. Erst danach v1.0 und ein Lauf.
   - **Stand 01.10.2026 (Nachmittag):** Review Claude eingearbeitet, `01_forschung/09_lane_c/xs21_point_in_time_prereg_v1.0.md` ist FREEZE-KANDIDAT (nicht eingefroren), B7-Liste v1.0 in `xs21_pit_v1.0/` (220 Ausschluesse, 0 unklar). Offen: Freigabe Damian; Kraken-Futures-Volumen werden seit 01.10.2026 erfasst (Collector v1.1), 30-Tage-Median ab 30.10.2026, Gate fruehestens 19.12.2026 entscheidbar; Lesart «erste 8 Rebalancings» bestaetigen (v1.0 §8.2); drei Regelergaenzungen in v1.0 §8.3 bestaetigen.
 - **ENTSCHEIDE-Schreibweise:** Die neuen Einträge folgen der Konvention der Datei (Umlaute umschrieben, z.B. «Empfehlung uebernommen»).
+
+## OP-9 XS21 PiT v1.0 nach dem Lauf (neu, 01.10.2026)
+
+- **Lauf erledigt** (01.10.2026, 13:39–13:43 Zürich): U1 und U2 je TEILWEISE (c6 MaxDD, U1 zusätzlich c3/B2). Nach §5.3: H-C2 auf PiT falsifiziert, kein Sleeve. Bericht `01_forschung/09_lane_c/xs21_pit_v1.0/xs21_pit_v1.0_bericht.md`.
+- **Entscheid Damian offen:** Gate M3 (31.10.–19.12.2026) und Forward-Fenster ab 15.09.2026 weiterführen oder einstellen? Ohne Sleeve-Kandidat sieht die Spezifikation keinen Paper-Betrieb vor. Der Collector v1.1 läuft unverändert weiter, bis entschieden ist.
+- **Vorbehalt Konvention U9 (Stufe 2):** Tagesrenditen mit konstantem Gewicht (implizite tägliche Rückführung ohne Kosten) gegenüber Buy-and-Hold-Trades. Bei extremen Coins weicht das stark ab (U1 2026: Tagesbeiträge +2.27, Trades −0.14). Gilt auch für die Stufe-2-Ergebnisse. Prüfen, ob künftige Spezifikationen das ändern sollen (nur neu vorregistriert).
+- **Lauf-Code-Lücke:** Die Survivorship-Zerlegung je Block (§5.3) fehlte im Lauf-Code und ist deskriptiv nachgetragen.

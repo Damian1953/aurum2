@@ -31,3 +31,8 @@ Forschungsentscheide stehen weiterhin ausschliesslich in `00_doku/ENTSCHEIDE.md`
 ## 2026-10-01 (Abend): Collector v1.1
 
 - Neue Quellen `kraken_futures_tickers` (Instrumente + Ticker je Perpetual, fuer XS21-Gate M3) und `kraken_spot_tickers` (24h-Volumen der 10 Projekt-Coins). Gleicher Schreibpfad (Validierung, Quarantaene, append-only, Dedup, Provenance, Status). 4 neue Offline-Tests. Erste Erfassung 01.10.2026.
+
+## 2026-10-01 (Abend): XS21 PiT v1.0 Freeze, Daten, Lauf
+
+- Freeze v1.0 (Tag `xs21-pit-v1.0-freeze`), Datenbeschaffung `tools/xs21/fetch_data_v1.py` (data.binance.vision, Provenienz und Prüfsummen in `xs21_pit_v1.0/daten/`), Lauf-Code `xs21_pit_v1.0/xs21_pit.py`, `xs21_pit_run.py`, Tests `tests/test_xs21_pit.py` (Tag `xs21-pit-v1.0-runcode`).
+- Einziger Lauf: Ausgaben in `xs21_pit_v1.0/run/`, SHAs in `00_doku/xs21_run_2026-10-01_expected_shas.txt`. Nachprüfung und Nachträge: `tools/xs21/check_run_v1.py`, `check_run_v1_erklaerung.py`, `nachtrag_survivorship_bloecke_v1.py`. Bericht `xs21_pit_v1.0/xs21_pit_v1.0_bericht.md`.
