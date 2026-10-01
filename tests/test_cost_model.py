@@ -57,3 +57,14 @@ def test_dtlib_bp_constants_derive_from_spot_r_k1():
           for k_ in n.keywords if k_.arg in ("k1_roundtrip_stop_bp", "k1_roundtrip_target_bp")}
     assert round((2 * (k["fee"] + k["fric"]) + k["slip_in"] + k["slip_sl"]) * 1e4, 6) == kw["k1_roundtrip_stop_bp"] == 99.0
     assert round((2 * (k["fee"] + k["fric"]) + k["slip_in"]) * 1e4, 6) == kw["k1_roundtrip_target_bp"] == 89.0
+
+
+def test_venue_kraken_consistent_with_entscheide_and_frozen_sections():
+    v = AC.load("venue_kraken"); s = AC.load("spot_r"); p = AC.load("stage2_perp")
+    assert v["fees"]["spot"] == {"maker": 0.0040, "taker": 0.0080}          # ENTSCHEIDE 15.09.2026, Tier 1
+    assert v["fees"]["futures"] == {"maker": 0.0002, "taker": 0.0005}
+    mp = v["spot_long_scenarios"]["maker_plan"]
+    tk = v["spot_long_scenarios"]["taker_K2"]
+    assert mp == s["K1"] and tk == s["K2"]                                    # Maker-Plan = K1, Taker mindestens unter K2
+    assert tk["fee"] == v["fees"]["spot"]["taker"] and mp["fee"] == v["fees"]["spot"]["maker"]
+    assert v["fees"]["futures"]["taker"] == p["K1"]["fee"]

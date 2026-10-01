@@ -1,29 +1,132 @@
 {
-  "_doc": "Zentrales Kostenmodell Aurum II, Version 1.0. EINZIGE Quelle fuer K0/K1/K2 in den portablen Modulversionen. Alle Werte sind Bruchteile je Seite (0.0040 = 0.40 Prozent). Die Werte sind wortgleich aus den eingefrorenen Dateien uebernommen (ylib.py, mlib.py, mtp_val.py, s2lib.py) und werden durch tests/test_cost_model.py gegen diese geprueft. Werte NICHT aendern ohne neuen Eintrag in 00_doku/ENTSCHEIDE.md und neue Version dieser Datei. Widerspruch zu 05_evidenz/README.md und ENTSCHEIDE.md siehe OFFENE_PUNKTE.md.",
-  "version": "1.0",
+  "_doc": "Zentrales Kostenmodell Aurum II, Version 1.1 (1.0 + venue_kraken, 01.10.2026, ENTSCHEIDE C2). EINZIGE Quelle fuer K0/K1/K2 in den portablen Modulversionen. Alle Werte sind Bruchteile je Seite (0.0040 = 0.40 Prozent). Die Werte sind wortgleich aus den eingefrorenen Dateien uebernommen (ylib.py, mlib.py, mtp_val.py, s2lib.py) und werden durch tests/test_cost_model.py gegen diese geprueft. Werte NICHT aendern ohne neuen Eintrag in 00_doku/ENTSCHEIDE.md und neue Version dieser Datei. Widerspruch zu 05_evidenz/README.md und ENTSCHEIDE.md siehe OFFENE_PUNKTE.md.",
+  "version": "1.1",
   "sections": {
     "spot_r": {
       "_doc": "Spot-Ausfuehrung im R-Modell (Lane A, Rebound, MTP-Validation). fee je Seite, fric Spread/Reibung je Seite, slip_in Einstiegs-Slippage, slip_sl Stop-Slippage. Verwendet von ylib.COST, mlib.COST, mtp_val.COST.",
-      "used_by": ["01_forschung/06_btc_specialist/stufeA/ylib.py:COST", "01_forschung/10_rebound_micro/mlib/mlib.py:COST", "01_forschung/03_mtp_validation/mtp_val.py:COST"],
+      "used_by": [
+        "01_forschung/06_btc_specialist/stufeA/ylib.py:COST",
+        "01_forschung/10_rebound_micro/mlib/mlib.py:COST",
+        "01_forschung/03_mtp_validation/mtp_val.py:COST"
+      ],
       "values": {
-        "K0": {"fee": 0.0016, "fric": 0.0, "slip_in": 0.0, "slip_sl": 0.0},
-        "K1": {"fee": 0.0040, "fric": 0.0002, "slip_in": 0.0005, "slip_sl": 0.0010},
-        "K2": {"fee": 0.0080, "fric": 0.0006, "slip_in": 0.0015, "slip_sl": 0.0030}
+        "K0": {
+          "fee": 0.0016,
+          "fric": 0.0,
+          "slip_in": 0.0,
+          "slip_sl": 0.0
+        },
+        "K1": {
+          "fee": 0.004,
+          "fric": 0.0002,
+          "slip_in": 0.0005,
+          "slip_sl": 0.001
+        },
+        "K2": {
+          "fee": 0.008,
+          "fric": 0.0006,
+          "slip_in": 0.0015,
+          "slip_sl": 0.003
+        }
       }
     },
     "stage2_perp": {
       "_doc": "Stufe 2 (Tagesdaten): fee/fric Perp je Seite, fund_pay Funding-Multiplikator, spot_fee/spot_fric fuer Spot-Beine (D-CC).",
-      "used_by": ["01_forschung/02_strategien/s2lib.py:COST"],
+      "used_by": [
+        "01_forschung/02_strategien/s2lib.py:COST"
+      ],
       "values": {
-        "K0": {"fee": 0.0002, "fric": 0.0, "fund_pay": 1.0, "spot_fee": 0.0016, "spot_fric": 0.0},
-        "K1": {"fee": 0.0005, "fric": 0.0002, "fund_pay": 1.0, "spot_fee": 0.0040, "spot_fric": 0.0002},
-        "K2": {"fee": 0.0010, "fric": 0.0006, "fund_pay": 1.5, "spot_fee": 0.0080, "spot_fric": 0.0006}
+        "K0": {
+          "fee": 0.0002,
+          "fric": 0.0,
+          "fund_pay": 1.0,
+          "spot_fee": 0.0016,
+          "spot_fric": 0.0
+        },
+        "K1": {
+          "fee": 0.0005,
+          "fric": 0.0002,
+          "fund_pay": 1.0,
+          "spot_fee": 0.004,
+          "spot_fric": 0.0002
+        },
+        "K2": {
+          "fee": 0.001,
+          "fric": 0.0006,
+          "fund_pay": 1.5,
+          "spot_fee": 0.008,
+          "spot_fric": 0.0006
+        }
       }
     },
     "stage2_spot_ref": {
       "_doc": "Spot-Referenz Familie A in Stufe 2 (Bericht, kein Kriterium): Kraken Spot Tier 1 Maker, kein Funding.",
-      "used_by": ["01_forschung/02_strategien/s2lib.py:SPOT_REF", "01_forschung/02_strategien/spot_ref.py:SPOT"],
-      "values": {"fee": 0.0040, "fric": 0.0002, "fund_pay": 0.0, "spot_fee": 0.0040, "spot_fric": 0.0002}
+      "used_by": [
+        "01_forschung/02_strategien/s2lib.py:SPOT_REF",
+        "01_forschung/02_strategien/spot_ref.py:SPOT"
+      ],
+      "values": {
+        "fee": 0.004,
+        "fric": 0.0002,
+        "fund_pay": 0.0,
+        "spot_fee": 0.004,
+        "spot_fric": 0.0002
+      }
+    },
+    "venue_kraken": {
+      "_doc": "Venue-spezifisches Kraken-Modell (ENTSCHEIDE C2, 01.10.2026). Tarife Tier 1 (0 USD 30-Tage-Volumen) laut ENTSCHEIDE 15.09.2026 (Kraken Fee Schedule, abgerufen 15.09.2026), Bruchteile je Seite. Gilt fuer NEUE Vorregistrierungen. Eingefrorene Laeufe verwenden weiter spot_r / stage2_perp / stage2_spot_ref. Regel: Spot-Long auf Kraken wird mit Maker-Ausfuehrung geplant (Szenario maker_plan), Taker-Ausfuehrung wird mindestens unter K2 gerechnet (Szenario taker_K2). Reibung und Slippage wie spot_r K1 bzw. K2.",
+      "source": "00_doku/ENTSCHEIDE.md 2026-09-15 (Tarife) und 2026-10-01 C1/C2 (Regel)",
+      "tier": "Tier 1",
+      "scenario_notes": {
+        "maker_plan": "primaer: Maker auf beiden Seiten (= spot_r K1)",
+        "taker_K2": "Pflicht-Sensitivitaet: Taker auf beiden Seiten mit K2-Reibung (= spot_r K2)",
+        "maker_entry_taker_stop": "ENTWURF zur Pruefung durch Claude: Stop-Ausstiege sind Market-Orders und zahlen Taker. Nicht beschlossen, nur Bericht.",
+        "futures.taker": "= stage2_perp K1 fee"
+      },
+      "values": {
+        "fees": {
+          "spot": {
+            "maker": 0.004,
+            "taker": 0.008
+          },
+          "futures": {
+            "maker": 0.0002,
+            "taker": 0.0005
+          }
+        },
+        "spot_long_scenarios": {
+          "maker_plan": {
+            "fee": 0.004,
+            "fric": 0.0002,
+            "slip_in": 0.0005,
+            "slip_sl": 0.001
+          },
+          "taker_K2": {
+            "fee": 0.008,
+            "fric": 0.0006,
+            "slip_in": 0.0015,
+            "slip_sl": 0.003
+          },
+          "maker_entry_taker_stop": {
+            "fee_entry": 0.004,
+            "fee_exit_target": 0.004,
+            "fee_exit_stop": 0.008,
+            "fric": 0.0002,
+            "slip_in": 0.0005,
+            "slip_sl": 0.001
+          }
+        },
+        "futures_scenarios": {
+          "maker": {
+            "fee": 0.0002,
+            "fric": 0.0002
+          },
+          "taker": {
+            "fee": 0.0005,
+            "fric": 0.0002
+          }
+        }
+      }
     }
   }
 }

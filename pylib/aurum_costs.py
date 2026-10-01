@@ -35,9 +35,10 @@ def _check(v, section):
     def num(x, where):
         if not isinstance(x, float) or not (0.0 <= x < 2.0):
             raise ValueError(f"Kostenwert {where}={x!r} in {section} ungueltig (float 0..2 erwartet)")
-    for k, d in v.items():
-        if isinstance(d, dict):
-            for kk, x in d.items():
-                num(x, f"{k}.{kk}")
-        else:
-            num(d, k)
+    def walk(d, where):
+        for k, x in d.items():
+            if isinstance(x, dict):
+                walk(x, f"{where}{k}.")
+            else:
+                num(x, f"{where}{k}")
+    walk(v, "")
