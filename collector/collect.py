@@ -9,6 +9,8 @@ Quellen
   kraken_futures_tickers  futures.kraken.com v3 instruments + tickers (ab 1.1): Tages-Snapshot je Perpetual (tradeable, 24h-Volumen USD,
                           Open Interest, Last, Zeitstempel) fuer das XS21-Ausfuehrbarkeits-Gate (M3); Instrumentenliste als Snapshot
   kraken_spot_tickers     api.kraken.com /0/public/Ticker (ab 1.1): 24h-Volumen und Last der 10 Projekt-Coins
+  coinmetrics_mvrv        CoinMetrics Community BTC CapMVRVCur 1d (ab 1.2, Sleeve B), First-Release, siehe macro_sources.py
+  fred_macro              FRED fredgraph.csv WALCL, WTREGEN, RRPONTSYD, DTB3 (ab 1.2, Sleeve A), First-Release, ohne Key
 
 Schreibpfad (02_daten/README.md): Validierung je Batch (kritisch -> ganzer Batch in _quarantine, nichts geschrieben),
 append-only mit Dedup ueber den Zeitstempel, Konflikte (gleicher Schluessel, andere Werte) werden protokolliert und NICHT
@@ -17,9 +19,12 @@ Status in last_run_status.json, Exit-Code 1 bei jedem Quellenfehler, 2 bei Lock-
 """
 import argparse, concurrent.futures as cf, csv, datetime as dt, fcntl, hashlib, io, json, logging, math, os, re, socket, ssl, sys, time, traceback, urllib.error, urllib.parse, urllib.request, uuid, zipfile
 
-VERSION = "1.1"
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import macro_sources  # noqa: E402  (ab 1.2)
+
+VERSION = "1.2"
 OUT = os.path.abspath(os.environ.get("AURUM_DATA_LIVE", "/workspace/aurum2/data_live"))
-UA = "aurum2-collector/1.1 (public market data, research)"
+UA = "aurum2-collector/1.2 (public market data, research)"
 TIMEOUT = 30
 
 KRAKEN_FUT = ["PF_ADAUSD", "PF_AVAXUSD", "PF_BNBUSD", "PF_DOTUSD", "PF_ETHUSD", "PF_LINKUSD", "PF_LTCUSD", "PF_SOLUSD",
@@ -582,7 +587,9 @@ def src_kraken_spot_tickers(store, args):
 
 SOURCES = {"kraken_futures_funding": src_kraken_funding, "kraken_ohlc": src_kraken_ohlc,
            "binance_funding": src_binance_funding, "binance_universe": src_binance_universe,
-           "kraken_futures_tickers": src_kraken_futures_tickers, "kraken_spot_tickers": src_kraken_spot_tickers}
+           "kraken_futures_tickers": src_kraken_futures_tickers, "kraken_spot_tickers": src_kraken_spot_tickers,
+           "coinmetrics_mvrv": lambda store, args: macro_sources.src_coinmetrics_mvrv(store, args),
+           "fred_macro": lambda store, args: macro_sources.src_fred_macro(store, args)}
 
 
 # ------------------------------------------------------------------ Seed aus 02_daten/raw (einmalig)

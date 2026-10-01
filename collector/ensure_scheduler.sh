@@ -43,6 +43,9 @@ PY
     nohup "$REPO/collector/run_collector.sh" >/dev/null 2>&1 &
   fi
 fi
+# Sleeves A/B (MAKRO_LIQ/MVRV v0.2): Runner sleeves/run_sleeves.sh ist BEWUSST NICHT in cron (vor Freeze).
+# Die Daten dafuer (coinmetrics_mvrv, fred_macro) sammelt der Collector ab 1.2 im 06:15-Lauf mit.
+# Nach dem Freeze hier einen Eintrag "55 6 * * * $REPO/sleeves/run_sleeves.sh  # aurum2-sleeves" ergaenzen.
 # Paper-Runner nachholen (wartet selbst auf einen laufenden Collector; prueft selbst, ob noetig)
 if [ "$now_hm" -ge 0650 ] && [ -x "$REPO/paper/run_paper.sh" ]; then
   nohup "$REPO/paper/run_paper.sh" --if-needed >/dev/null 2>&1 &

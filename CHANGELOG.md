@@ -47,3 +47,8 @@ Forschungsentscheide stehen weiterhin ausschliesslich in `00_doku/ENTSCHEIDE.md`
 - Carry: `01_forschung/13_carry/carry_prereg_v0.9.md` VERWORFEN (Damian 22:16), nicht eingefroren, nicht gelaufen; ENTSCHEIDE 22:16.
 - Ideen-Scan v2: `01_forschung/14_ideen_scan_v2/` (Bericht, explorative Resultate < 2024, Rohdaten-Pruefsummen, Entwuerfe MAKRO_LIQ v0.1 und MVRV v0.1, nicht eingefroren); Skript `tools/ideen/explorativ_scan_v2.py`; ENTSCHEIDE 22:35 (10 informelle Trials, global ca. 270).
 - Entscheid 22:40: MAKRO_LIQ und MVRV nur Forward-Paper; Entwuerfe v0.2 (nicht eingefroren), Review-Auftrag `fuer_claude/an_claude_scan_v2.md`; OP-12 entschieden.
+
+## 2026-10-01 (Nacht): Collector 1.2 und Sleeve-Infrastruktur A/B (nicht freigegeben)
+
+- Collector 1.2: `collector/macro_sources.py` (CoinMetrics `CapMVRVCur`, FRED `WALCL`/`WTREGEN`/`RRPONTSYD`/`DTB3` ueber fredgraph.csv ohne Key), First-Release-Dateien unter `data_live/macro/`; erster Abruf 01.10.2026 22:47.
+- `sleeves/` (Engine, Runner, Wrapper, Config enabled=false), nicht in cron; Tests `tests/test_collector_macro.py` (5), `tests/test_sleeves.py` (8). `paper/` unveraendert.

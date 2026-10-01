@@ -118,3 +118,9 @@ Sie nennt `mlib.py` noch als v0.1 (`cfe1f7aa…`), die Datei ist v1.0 (`6b7e7ba8
 
 - Bericht `01_forschung/14_ideen_scan_v2/ideen_scan_v2.md`. Zwei Entwürfe zur Review durch Claude: `makro_liq_prereg_entwurf_v0.1.md` (Fragen §7) und `mvrv_prereg_entwurf_v0.1.md` (Fragen §7). Nicht eingefroren, kein Lauf.
 - Entscheid Damian nötig: (a) einen, beide oder keinen Entwurf weiterverfolgen; (b) ob 2024–2026 trotz Kontextwissen als Testfenster gilt oder nur Forward-Paper.
+
+## OP-13 Sleeves A/B Infrastruktur (neu, 01.10.2026)
+
+- Gebaut, nicht freigegeben: Collector 1.2 sammelt MVRV und FRED-Reihen täglich 06:15; Runner `sleeves/run_sleeves.py` gesperrt (enabled=false), nicht in cron.
+- Für den Freeze nötig: Review Claude zu v0.2, dann v1.0 der Vorregistrierungen, Freeze-Liste (`00_doku/sleeves_freeze_*_expected_shas.txt`) mit Engine, Runner, Tests, Prereg, Kostenmodell; `start_bar` setzen; cron-Eintrag 06:55 in `collector/ensure_scheduler.sh`.
+- Offen (nicht gebaut): Wochenbericht-Abschnitt für die Sleeves; Kennzahlen-Auswertung (Ledoit-Wolf) erst zur Langfrist-Auswertung.
