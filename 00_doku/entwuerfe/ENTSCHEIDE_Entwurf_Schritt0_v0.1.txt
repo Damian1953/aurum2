@@ -1,0 +1,102 @@
+ENTSCHEIDE – Entwurf Schritt 0, Version 0.1
+Project Aurum II, 01.10.2026. Status: Entwurf zur Entscheidung durch Damian, noch nicht in 00_doku/ENTSCHEIDE.md übernommen. Grundlage: Review v1 (Grok, 01.10.2026) mit unabhängiger Reproduktion (34/34 Tests, Stufe 2, XRP v1.0, YAMATO Stufe B und DT-Messung bitgleich), DT-Vorbericht Geometry Gate v1 §7, XS21 Point-in-Time-Vorregistrierung v0.1 §6, Governance v1.1, Stufe-2-Hypothesen v2. Jeder Punkt hat eine Empfehlung und ein leeres Feld für den Entscheid. Nach Ausfüllen wird jeder Punkt als eigener datierter Eintrag in ENTSCHEIDE übernommen und die Datei neu mit SHA vermerkt.
+A. Lane A und Delayed Trend (DT)
+A1. Lesart von Gate E.
+Empfehlung: 3 primäre Zellen (BTC S2×DT1, XRP S2×DT1, XRP S2×DT2) plus 3 sekundäre Grenzfälle (BTC S2×DT2, DOT S2×DT1, DOT S2×DT2), Holm über alle 6.
+Entscheid: 
+A2. S1 (Double Bottom), alle 6 Zellen unter 20 Einstiegen.
+Empfehlung: deskriptiv mitführen, ohne Test und ohne Status.
+Entscheid: 
+A3. DT3 (Gate A überall verfehlt).
+Empfehlung: abschliessen mit Vermerk «Spezifikation abgeschlossen, keine Fortführung» (Governance v1.1 §9).
+Entscheid: 
+A4. Exit.
+Empfehlung: Tages-ATR14-Chandelier 3×, nur steigend, Zeitstopp t+360, wie im Vorbericht.
+Entscheid: 
+A5. Kontrollgruppe.
+Empfehlung: gematchte Kontexte ohne Struktur mit Ersatzniveaus, wie im Vorbericht.
+Entscheid: 
+A6. Primärmetrik.
+Empfehlung: gepaartes ΔR (Status nach Regel v2) und Netto-K1. Fortführung nur bei Netto-K1 ≥ 0.
+Entscheid: 
+A7. Harte Abbruchregel für Lane A (neu).
+Vor dem DT-P&L-Lauf festgeschrieben: Ist Netto-K1 in den drei Primärzellen zusammen kleiner als null, wird Lane A (Bottom, Reversal, Rebound, DT) vollständig geschlossen. Es folgt keine weitere Variante, keine Umformulierung und kein neuer Timeframe auf BTC, XRP oder DOT. Eine Wiederaufnahme wäre nur mit neuen Daten (Forward-Fenster) und einer neuen Vorregistrierung zulässig, die diesen Entscheid ausdrücklich zitiert.
+Entscheid: 
+A8. Evidenzwert eines positiven DT-Ergebnisses (neu).
+DT ist outcome-informed (Ebene C), läuft auf denselben Discovery-Daten wie alle gescheiterten Vorgänger, und die globale Trial-Zahl liegt bei rund 240. Ein positives Ergebnis gilt deshalb höchstens als «mechanistically promising» in der Klasse Development. Ein Holdout-Lauf ist nur nach dem Economic Validation Gate zulässig (Governance v1.1 §7), und dieser Vermerk wird im DT-Freeze wörtlich übernommen.
+Entscheid: 
+B. XS21 Point-in-Time
+B1. Umsatzschwelle 50 Mio. USD Vormonat.
+Empfehlung: bestätigen, nicht variieren.
+Entscheid: 
+B2. Dezil-Variante (oberstes und unterstes Dezil).
+Empfehlung: als vorregistrierten Vergleich behalten, nicht als Auswahl. Top-3 bleibt primär.
+Entscheid: 
+B3. Delisting-Glattstellung.
+Empfehlung: zur letzten Tageskerze mit K2-Slippage bestätigen.
+Entscheid: 
+B4. Short-Bein.
+Empfehlung: Long+Short primär wie Stufe 2 (H-C3: Absicherung, kein Ertrag), Long-only als vorregistrierter Vergleich.
+Entscheid: 
+B5. Holdout-Status von XS21 (neu, Klärung).
+Befund: Stufe 2 und die MTP-Validierung haben Tageskerzen bis 2026 verwendet (RTC-Framework v0.1, «Ehrliche Einschränkung des Holdouts»). Für XS21 auf dem Zehn-Coin-Universum ist der Zeitraum ab 2024 damit verbraucht. Für das Point-in-Time-Universum ist er rechnerisch unberührt, als Marktverlauf aber bekannt.
+Empfehlung: Der PiT-Lauf rechnet nur Discovery 2020-02 bis 2023-12 als einzigen Lauf. Ein Lauf ab 2024 erfolgt erst nach bestandenem Discovery-Lauf und Economic Gate, mit dem Vermerk «ungenutzt, nicht unbekannt». Als einzige saubere Evidenz gilt danach ein Forward-Fenster ab Freeze-Datum.
+Entscheid: 
+B6. Ausführbarkeit (neu).
+Befund: Das PiT-Universum stammt von Binance UM (bis rund 300 Symbole je Stichtag). Das Short-Bein braucht Perps auf genau diesen Symbolen. Ob die vorgesehene Börse diese Breite mit ausreichender Liquidität anbietet und für einen Schweizer Kunden zugänglich ist, ist nicht geprüft.
+Empfehlung: Die Forschungsfrage (existiert der Effekt ohne Survivorship?) bleibt venue-unabhängig auf Binance-Daten. Vor jedem Paper-Betrieb folgt ein eigenes Ausführbarkeits-Gate: Anteil der historischen Top-3/Bottom-3-Positionen, die auf der gewählten Börse handelbar gewesen wären, und Ertrag nur auf diesem Teil.
+Entscheid: 
+C. Instrument, Kosten und Börse
+C1. Spot oder Perps.
+Befund: ENTSCHEIDE nennt «Perps statt Spot», die Roadmap «Kraken Spot Long», und Lane A wurde mit Spot-K1 gerechnet. H-A7 (Stufe-2-Hypothesen v2) zeigt, dass Long-only auf Perps 3 bis 6 Prozentpunkte CAGR pro Jahr an Funding kostet.
+Empfehlung: Spot für die Long-Seite. Perps nur dort, wo ein Short-Bein (XS21) oder ein Carry-Bein (D-CC) es verlangt. Der bisherige Eintrag «Perps statt Spot» wird damit präzisiert, nicht gestrichen.
+Entscheid: 
+C2. Ein Kostenmodell.
+Befund: Kostenkonstanten liegen dupliziert in ylib.py, s2lib.py und mtp_val.py (Werte konsistent). 05_evidenz/README.md nennt Spot-Taker 0.26/0.40/0.55 %, ENTSCHEIDE Tier 1 0.40 % Maker / 0.80 % Taker.
+Empfehlung: ein zentrales costs.yaml mit Spot- und Perp-Modell (K0/K1/K2) als einzige Quelle. Die abweichenden Sätze in 05_evidenz/README.md werden mit Vermerk korrigiert. Eingefrorene Läufe bleiben unverändert und referenzieren ihre damaligen Werte.
+Entscheid: 
+C3. Börse.
+Empfehlung: Kraken für Spot-Long vorläufig bestätigen. Die Perp-Börse bleibt offen bis zum Ausführbarkeits-Gate B6 und der Klärung D4.
+Entscheid: 
+D. Projekt-Entscheide
+D1. Betriebsort.
+Empfehlung: kleiner, selbst kontrollierter Cloud-Server oder eigener Rechner im Dauerbetrieb für Collector und Paper. Nicht der Mac und keine fremde Agent-Umgebung. Keys liegen nie in einer Agent- oder Chat-Sandbox.
+Entscheid: 
+D2. Kapitalrahmen und akzeptabler Totalverlust.
+Empfehlung: vor jeder Live-Phase als feste Zahl festlegen (Micro-Live-Betrag und Obergrenze Gesamtverlust, nach der das Projekt ohne Diskussion stoppt).
+Entscheid: Micro-Live __________ CHF, Totalverlust-Obergrenze __________ CHF
+D3. Zeitbudget.
+Empfehlung: Stunden pro Woche festlegen und eine Zeitbox für Schritt 3 von rund 2 Wochen. Ohne bestandenes Ergebnis nach der Zeitbox folgt ein Review-Termin statt neuer Hypothesen.
+Entscheid: __________ Std./Woche, Review am __________
+D4. Steuern und Recht Schweiz.
+Empfehlung: vor Live klären (Qualifikation als private Vermögensverwaltung oder gewerbsmässiger Handel, Zulässigkeit von Perps für Schweizer Privatkunden bei der gewählten Börse). Für Forschung und Paper nicht blockierend.
+Entscheid: 
+D5. Abwicklung Altsystem.
+Empfehlung: Altsystem stilllegen, Keys widerrufen, Restbestände dokumentieren. Turtle 55/20 nur als Referenz behalten, die Zahlen sind in Aurum II nicht nachgerechnet.
+Entscheid: 
+E. Hygiene und Datensammlung
+E1. Git und Reproduzierbarkeit.
+Empfehlung: privates Git-Repo, Originale als eingefrorener Tag v0, gepinntes requirements.txt, Pfade über AURUM_ROOT in neuen Dateiversionen mit SHA-Vermerk. CI mit den 34 Tests und den vier Repro-Checks aus Review v1. Fehlende Stufe-2-Eingaben (DTB3_3m_tbill.csv, kraken_funding/PF_{XBT,ETH,SOL}USD_funding.csv) ablegen.
+Entscheid: 
+E2. Collector sofort.
+Empfehlung: täglicher Collector auf öffentlichen Endpunkten ohne Keys (Kraken-Futures-Funding aller PF-Symbole, Kraken OHLC 4h/1d, Binance-UM-Listing), validierend und atomar nach 02_daten/README.md, mit Heartbeat.
+Begründung: Kraken liefert Funding nur für ein rollendes Jahr, jeder Tag ohne Collector ist verloren.
+Entscheid: 
+E3. Korrektur im Log.
+Befund: «REBOUND-MICRO v1.0 Lauf BTC VERSIEGELT» trägt 14:35 UTC, der FREEZE-Eintrag 14:40 UTC.
+Empfehlung: Korrekturvermerk als neuer Eintrag, der alte bleibt stehen. Die veraltete mlib.py-SHA in rm_2026-09-18_expected_shas.txt wird mit Verweis auf v1.0 ergänzt.
+Entscheid: 
+E4. Arbeitsteilung.
+Empfehlung: Claude (Project) für Methodik, Vorregistrierungen, ENTSCHEIDE-Texte, Berichte und Review gegen die Governance. Coding-Agents für Repo, CI, Collector, Engine, Paper-Runner und unabhängige Nachrechnung jedes Laufs. Kein Produktionscode in der Chat-Sandbox. Übergabe über Git, ENTSCHEIDE bleibt die einzige Quelle.
+Entscheid: 
+F. Moratorium
+F1. Keine neuen Hypothesen bis XS21 PiT und DT entschieden sind.
+Keine neuen Lane-A-, Rebound-, Visual-AI-, Options- oder Halving-Stränge. D-CC wird nur als Forward-Datensammlung beobachtet, kein Sleeve. ETH/SOL bleiben unberührt und damit als unabhängige Märkte erhalten.
+Entscheid: 
+Reihenfolge nach Entscheid
+E2 Collector starten (unabhängig von allen anderen Punkten).
+E1 Hygiene.
+B1 bis B6 einfrieren, XS21 PiT v1.0, ein Lauf.
+A1 bis A8 einfrieren, DT-P&L, ein Lauf, danach A7 anwenden.
+Engine-MVP klein halten, Abnahme gegen eingefrorene Stufe-2-Trades.
+Paper nur für Kandidaten mit bestandenem Gate, sonst W2/W6 Spot-Long und gegebenenfalls XS21 ausdrücklich als Forward-Validation von Hypothesen.
