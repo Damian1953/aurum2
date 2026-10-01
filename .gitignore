@@ -1,0 +1,9 @@
+# Daten (nicht versioniert, siehe DATA.md)
+/data/
+/02_daten/raw
+# Build- und Laufartefakte
+/build/
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
