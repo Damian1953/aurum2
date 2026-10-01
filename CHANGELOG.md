@@ -41,3 +41,8 @@ Forschungsentscheide stehen weiterhin ausschliesslich in `00_doku/ENTSCHEIDE.md`
 
 - Freeze v1.0 (Tag `xs21-pit-v1.0-freeze`), Datenbeschaffung `tools/xs21/fetch_data_v1.py` (data.binance.vision, Provenienz und Prüfsummen in `xs21_pit_v1.0/daten/`), Lauf-Code `xs21_pit_v1.0/xs21_pit.py`, `xs21_pit_run.py`, Tests `tests/test_xs21_pit.py` (Tag `xs21-pit-v1.0-runcode`).
 - Einziger Lauf: Ausgaben in `xs21_pit_v1.0/run/`, SHAs in `00_doku/xs21_run_2026-10-01_expected_shas.txt`. Nachprüfung und Nachträge: `tools/xs21/check_run_v1.py`, `check_run_v1_erklaerung.py`, `nachtrag_survivorship_bloecke_v1.py`. Bericht `xs21_pit_v1.0/xs21_pit_v1.0_bericht.md`.
+
+## 2026-10-01 (Nacht): Carry verworfen, Ideen-Scan v2
+
+- Carry: `01_forschung/13_carry/carry_prereg_v0.9.md` VERWORFEN (Damian 22:16), nicht eingefroren, nicht gelaufen; ENTSCHEIDE 22:16.
+- Ideen-Scan v2: `01_forschung/14_ideen_scan_v2/` (Bericht, explorative Resultate < 2024, Rohdaten-Pruefsummen, Entwuerfe MAKRO_LIQ v0.1 und MVRV v0.1, nicht eingefroren); Skript `tools/ideen/explorativ_scan_v2.py`; ENTSCHEIDE 22:35 (10 informelle Trials, global ca. 270).

@@ -1,0 +1,370 @@
+{
+ "hinweis": "EXPLORATIV, nicht vorregistriert, t < 2024-01-01, Kosten K1 Spot 0.47 % je Seite, Cash zu DTB3",
+ "ref_btc_buyhold": {
+  "von": "2017-08-17",
+  "bis": "2023-12-31",
+  "cagr_pct": 43.1,
+  "sharpe_ex": 0.84,
+  "maxdd_pct": -83.2
+ },
+ "ref_btc_sma200": {
+  "von": "2017-08-17",
+  "bis": "2023-12-31",
+  "cagr_pct": 24.2,
+  "sharpe_ex": 0.67,
+  "maxdd_pct": -66.5,
+  "wechsel": 37,
+  "zeit_im_markt": 0.44
+ },
+ "t1_mvrv_band_1_35": {
+  "von": "2017-08-17",
+  "bis": "2023-12-31",
+  "cagr_pct": 51.6,
+  "sharpe_ex": 1.06,
+  "maxdd_pct": -63.3,
+  "wechsel": 3,
+  "zeit_im_markt": 0.58,
+  "haelften": {
+   "bis2020": {
+    "von": "2017-08-17",
+    "bis": "2020-12-31",
+    "cagr_pct": 69.8,
+    "sharpe_ex": 1.19,
+    "maxdd_pct": -63.3,
+    "wechsel": 1,
+    "zeit_im_markt": 0.63
+   },
+   "ab2021": {
+    "von": "2021-01-01",
+    "bis": "2023-12-31",
+    "cagr_pct": 33.4,
+    "sharpe_ex": 0.91,
+    "maxdd_pct": -35.4,
+    "wechsel": 2,
+    "zeit_im_markt": 0.52
+   }
+  },
+  "korr_mit_sma200": 0.55,
+  "cm_2014_2023": {
+   "von": "2014-01-01",
+   "bis": "2023-12-31",
+   "cagr_pct": 62.2,
+   "sharpe_ex": 1.18,
+   "maxdd_pct": -61.4,
+   "wechsel": 5,
+   "zeit_im_markt": 0.64
+  },
+  "cm_2014_2023_buyhold": {
+   "von": "2014-01-01",
+   "bis": "2023-12-31",
+   "cagr_pct": 49.5,
+   "sharpe_ex": 0.91,
+   "maxdd_pct": -83.8
+  }
+ },
+ "t2_sma200_mit_mvrv_bremse_3": {
+  "von": "2017-08-17",
+  "bis": "2023-12-31",
+  "cagr_pct": 13.6,
+  "sharpe_ex": 0.47,
+  "maxdd_pct": -63.8,
+  "wechsel": 41,
+  "zeit_im_markt": 0.4,
+  "haelften": {
+   "bis2020": {
+    "von": "2017-08-17",
+    "bis": "2020-12-31",
+    "cagr_pct": 31.4,
+    "sharpe_ex": 0.83,
+    "maxdd_pct": -53.8,
+    "wechsel": 14,
+    "zeit_im_markt": 0.39
+   },
+   "ab2021": {
+    "von": "2021-01-01",
+    "bis": "2023-12-31",
+    "cagr_pct": -3.6,
+    "sharpe_ex": 0.03,
+    "maxdd_pct": -63.8,
+    "wechsel": 27,
+    "zeit_im_markt": 0.42
+   }
+  },
+  "korr_mit_sma200": 0.91
+ },
+ "t3_exchange_bestand_sinkt_30d": {
+  "von": "2017-08-17",
+  "bis": "2023-12-31",
+  "cagr_pct": 3.3,
+  "sharpe_ex": 0.25,
+  "maxdd_pct": -61.2,
+  "wechsel": 145,
+  "zeit_im_markt": 0.39,
+  "haelften": {
+   "bis2020": {
+    "von": "2017-08-17",
+    "bis": "2020-12-31",
+    "cagr_pct": 21.5,
+    "sharpe_ex": 0.66,
+    "maxdd_pct": -61.2,
+    "wechsel": 65,
+    "zeit_im_markt": 0.33
+   },
+   "ab2021": {
+    "von": "2021-01-01",
+    "bis": "2023-12-31",
+    "cagr_pct": -14.0,
+    "sharpe_ex": -0.25,
+    "maxdd_pct": -58.7,
+    "wechsel": 80,
+    "zeit_im_markt": 0.46
+   }
+  },
+  "korr_mit_sma200": 0.34,
+  "vorbehalt": "Adress-Labels von CoinMetrics werden rueckwirkend revidiert, Look-ahead moeglich"
+ },
+ "t4_stablecoin_wachstum_30d": {
+  "von": "2017-08-17",
+  "bis": "2023-12-31",
+  "cagr_pct": 25.6,
+  "sharpe_ex": 0.66,
+  "maxdd_pct": -66.1,
+  "wechsel": 41,
+  "zeit_im_markt": 0.61,
+  "haelften": {
+   "bis2020": {
+    "von": "2017-08-17",
+    "bis": "2020-12-31",
+    "cagr_pct": 37.7,
+    "sharpe_ex": 0.81,
+    "maxdd_pct": -66.1,
+    "wechsel": 13,
+    "zeit_im_markt": 0.68
+   },
+   "ab2021": {
+    "von": "2021-01-01",
+    "bis": "2023-12-31",
+    "cagr_pct": 13.2,
+    "sharpe_ex": 0.45,
+    "maxdd_pct": -55.8,
+    "wechsel": 28,
+    "zeit_im_markt": 0.54
+   }
+  },
+  "korr_mit_sma200": 0.63
+ },
+ "t5_fear_greed_kontraer_25_75": {
+  "von": "2017-08-17",
+  "bis": "2023-12-31",
+  "cagr_pct": -4.4,
+  "sharpe_ex": 0.19,
+  "maxdd_pct": -78.4,
+  "wechsel": 9,
+  "zeit_im_markt": 0.74,
+  "haelften": {
+   "bis2020": {
+    "von": "2017-08-17",
+    "bis": "2020-12-31",
+    "cagr_pct": -6.6,
+    "sharpe_ex": 0.19,
+    "maxdd_pct": -73.0,
+    "wechsel": 4,
+    "zeit_im_markt": 0.68
+   },
+   "ab2021": {
+    "von": "2021-01-01",
+    "bis": "2023-12-31",
+    "cagr_pct": -1.9,
+    "sharpe_ex": 0.19,
+    "maxdd_pct": -72.7,
+    "wechsel": 5,
+    "zeit_im_markt": 0.79
+   }
+  },
+  "korr_mit_sma200": 0.32,
+  "fwd30_median_pct_je_zustand": {
+   "extreme_fear": 1.7,
+   "fear": -1.1,
+   "neutral": 5.2,
+   "greed": 0.2,
+   "extreme_greed": 17.0
+  }
+ },
+ "t6_dollar_schwach_dxy_sma100": {
+  "von": "2017-08-17",
+  "bis": "2023-12-31",
+  "cagr_pct": 41.9,
+  "sharpe_ex": 0.92,
+  "maxdd_pct": -61.3,
+  "wechsel": 52,
+  "zeit_im_markt": 0.46,
+  "haelften": {
+   "bis2020": {
+    "von": "2017-08-17",
+    "bis": "2020-12-31",
+    "cagr_pct": 57.0,
+    "sharpe_ex": 1.07,
+    "maxdd_pct": -61.3,
+    "wechsel": 24,
+    "zeit_im_markt": 0.5
+   },
+   "ab2021": {
+    "von": "2021-01-01",
+    "bis": "2023-12-31",
+    "cagr_pct": 26.6,
+    "sharpe_ex": 0.71,
+    "maxdd_pct": -52.4,
+    "wechsel": 28,
+    "zeit_im_markt": 0.4
+   }
+  },
+  "korr_mit_sma200": 0.55
+ },
+ "t7_netto_liquiditaet_13w": {
+  "von": "2017-08-17",
+  "bis": "2023-12-31",
+  "cagr_pct": 48.6,
+  "sharpe_ex": 0.98,
+  "maxdd_pct": -63.1,
+  "wechsel": 32,
+  "zeit_im_markt": 0.47,
+  "haelften": {
+   "bis2020": {
+    "von": "2017-08-17",
+    "bis": "2020-12-31",
+    "cagr_pct": 74.8,
+    "sharpe_ex": 1.25,
+    "maxdd_pct": -63.1,
+    "wechsel": 18,
+    "zeit_im_markt": 0.43
+   },
+   "ab2021": {
+    "von": "2021-01-01",
+    "bis": "2023-12-31",
+    "cagr_pct": 23.8,
+    "sharpe_ex": 0.63,
+    "maxdd_pct": -53.3,
+    "wechsel": 14,
+    "zeit_im_markt": 0.51
+   }
+  },
+  "korr_mit_sma200": 0.53
+ },
+ "t8_ethbtc_rotation_sma50": {
+  "von": "2017-08-17",
+  "bis": "2023-12-31",
+  "cagr_pct": 39.2,
+  "sharpe_ex": 0.8,
+  "maxdd_pct": -81.7,
+  "wechsel": 136,
+  "zeit_im_markt": 0.98,
+  "haelften": {
+   "bis2020": {
+    "von": "2017-08-17",
+    "bis": "2020-12-31",
+    "cagr_pct": 83.8,
+    "sharpe_ex": 1.13,
+    "maxdd_pct": -81.7,
+    "wechsel": 47,
+    "zeit_im_markt": 0.96
+   },
+   "ab2021": {
+    "von": "2021-01-01",
+    "bis": "2023-12-31",
+    "cagr_pct": 1.8,
+    "sharpe_ex": 0.38,
+    "maxdd_pct": -81.7,
+    "wechsel": 89,
+    "zeit_im_markt": 1.0
+   }
+  },
+  "korr_mit_sma200": 0.53,
+  "vergleich_5050_taeglich_rebalanciert": {
+   "von": "2017-08-17",
+   "bis": "2023-12-31",
+   "cagr_pct": 46.0,
+   "sharpe_ex": 0.86,
+   "maxdd_pct": -87.9
+  }
+ },
+ "t9_dual_momentum_90d_woechentlich": {
+  "von": "2017-08-17",
+  "bis": "2023-12-31",
+  "cagr_pct": 24.3,
+  "sharpe_ex": 0.65,
+  "maxdd_pct": -80.4,
+  "wechsel": 48,
+  "zeit_im_markt": 0.59,
+  "haelften": {
+   "bis2020": {
+    "von": "2017-08-17",
+    "bis": "2020-12-31",
+    "cagr_pct": 41.9,
+    "sharpe_ex": 0.84,
+    "maxdd_pct": -76.9,
+    "wechsel": 25,
+    "zeit_im_markt": 0.57
+   },
+   "ab2021": {
+    "von": "2021-01-01",
+    "bis": "2023-12-31",
+    "cagr_pct": 7.0,
+    "sharpe_ex": 0.4,
+    "maxdd_pct": -80.4,
+    "wechsel": 23,
+    "zeit_im_markt": 0.61
+   }
+  },
+  "korr_mit_sma200": 0.59
+ },
+ "t10_inverse_vol_btc_eth_monatlich": {
+  "von": "2017-08-17",
+  "bis": "2023-12-31",
+  "cagr_pct": 43.4,
+  "sharpe_ex": 0.84,
+  "maxdd_pct": -86.5,
+  "wechsel": 74,
+  "zeit_im_markt": 0.97,
+  "haelften": {
+   "bis2020": {
+    "von": "2017-08-17",
+    "bis": "2020-12-31",
+    "cagr_pct": 54.9,
+    "sharpe_ex": 0.94,
+    "maxdd_pct": -86.5,
+    "wechsel": 38,
+    "zeit_im_markt": 0.94
+   },
+   "ab2021": {
+    "von": "2021-01-01",
+    "bis": "2023-12-31",
+    "cagr_pct": 31.6,
+    "sharpe_ex": 0.71,
+    "maxdd_pct": -76.4,
+    "wechsel": 35,
+    "zeit_im_markt": 1.0
+   }
+  },
+  "korr_mit_sma200": 0.56,
+  "vergleich_5050_monatlich": {
+   "von": "2017-08-17",
+   "bis": "2023-12-31",
+   "cagr_pct": 41.7,
+   "sharpe_ex": 0.82,
+   "maxdd_pct": -87.9
+  }
+ },
+ "trials": [
+  "t1_mvrv_band_1_35",
+  "t2_sma200_mit_mvrv_bremse_3",
+  "t3_exchange_bestand_sinkt_30d",
+  "t4_stablecoin_wachstum_30d",
+  "t5_fear_greed_kontraer_25_75",
+  "t6_dollar_schwach_dxy_sma100",
+  "t7_netto_liquiditaet_13w",
+  "t8_ethbtc_rotation_sma50",
+  "t9_dual_momentum_90d_woechentlich",
+  "t10_inverse_vol_btc_eth_monatlich"
+ ],
+ "anzahl_informelle_trials": 10
+}
