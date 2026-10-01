@@ -1,0 +1,72 @@
+{
+ "laufbeginn": "2020-04-04",
+ "rule": "M6: erster Stichtag mit |U1| >= 20, nur Listing und quote_volume",
+ "n_symbols": 673,
+ "first_stichtag": "2020-02-01",
+ "inputs": {
+  "spec": "edb24cde8c391c60cd90fdad753f403a8835de7e4da275af0d5d3eed01e998af",
+  "b7": "7f68fe168c2de5a4c5c37f467e7475fdcb36705bc54a7ec2b8403ffaac91377f",
+  "sens": "c0a8f32dfca2f47a47df649e4d80da19b951b063825e0ddce5e45840afd0f550",
+  "universe_csv": "f5563c0963dffba6b17cdf96ec8a7902e7b23dc15ac7998416caeb81bf57d312",
+  "snapshot": "bff906a0c34298a32c1d322f5d722077d85e60c8f8fd58e3bd9da9aec0148985",
+  "tbill": "8b287e3cc711b4c7d5629caed6f531c7564d4d7e8dbcf8f6bc49b069b7ca9d59",
+  "cost_model": "c652caa5bb237914d0bdcd153813ca65a61f2da23626ea5d52a183ab69e89727",
+  "provenance": "539cf6313bb8632d492bee721a25d2ab4f76da78ba10889efb10633e260f859a",
+  "lib": "deca0c29d5afae3fb76959a10ef80e87380e37d8d1137e32beff15413531bd38",
+  "run": "483702877631cda9b1cf92258c852e769479d0dcd5867eedef97554ded16cfee",
+  "s2lib": "54590393170f6f2263663ba9ab1422a5bc3083b55fa913a38022e6e54d983792"
+ },
+ "first_10": [
+  {
+   "T": "2020-02-01",
+   "n_U1": 3,
+   "n_basis": 3
+  },
+  {
+   "T": "2020-02-08",
+   "n_U1": 3,
+   "n_basis": 3
+  },
+  {
+   "T": "2020-02-15",
+   "n_U1": 3,
+   "n_basis": 3
+  },
+  {
+   "T": "2020-02-22",
+   "n_U1": 3,
+   "n_basis": 3
+  },
+  {
+   "T": "2020-02-29",
+   "n_U1": 3,
+   "n_basis": 3
+  },
+  {
+   "T": "2020-03-07",
+   "n_U1": 11,
+   "n_basis": 11
+  },
+  {
+   "T": "2020-03-14",
+   "n_U1": 11,
+   "n_basis": 11
+  },
+  {
+   "T": "2020-03-21",
+   "n_U1": 11,
+   "n_basis": 11
+  },
+  {
+   "T": "2020-03-28",
+   "n_U1": 11,
+   "n_basis": 11
+  },
+  {
+   "T": "2020-04-04",
+   "n_U1": 21,
+   "n_basis": 24
+  }
+ ],
+ "computed_at": "2026-10-01T11:37:07.582656+00:00"
+}

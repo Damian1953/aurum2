@@ -646,3 +646,15 @@ Freeze-Dateien (SHA-256): Spezifikation v1.0 edb24cde8c391c60cd90fdad753f403a883
 Zum Zeitpunkt des Freeze: kein Lauf, keine Outcomes, keine XS21-Kurs-, Volumen- oder Funding-Daten beschafft. Reihenfolge nach §7: Datenbeschaffung, Laufbeginn nach M6 (Eintrag hier vor dem Lauf), Freeze des Lauf-Codes (Eintrag hier vor dem Lauf), ein einziger Lauf. Das Lauf-Log muss die SHA der Spezifikation enthalten (E3).
 
 Entscheid: eingefroren (Damian, 01.10.2026). Tag `xs21-pit-v1.0-freeze`.
+
+## 2026-10-01 13:37 Europe/Zurich — XS21 PiT v1.0 Datenbeschaffung, Laufbeginn (M6) und Lauf-Code FREEZE (vor dem Lauf)
+
+Datenbeschaffung nach §7, nur data.binance.vision (fapi geoblockt, nicht verwendet): 673 Symbole (USDT-Perps nach B7 v1.0), 20'547 Monats- und 9'660 Tages-Klines 1d, 19'956 Funding-Monatsdateien, alle mit CHECKSUM geprueft. Fehlend im Archiv: 1'264 Funding-Monate, davon 1'226 nach dem Handelsende (SETTLING) und 38 Symbol-Monate mit Handel (BNX 2022-04 bis 2023-01, ICP 2021-05 bis 2022-06, TLM 2021-07 bis 2022-06, JUP 2024-01, QTUM 2020-02); diese werden nach M4 gefuellt, falls gehalten. Provenienz  (0614ef23…), ZIP-Pruefsummen  (0dc79a6e…).
+
+Befund vor dem Lauf: Das Archiv fuehrt delistete Symbole mit flachen Kerzen ohne Trades weiter (54'122 Kerzen). Umsetzungsfestlegung U5a: Kerzen mit count = 0 gelten als nicht vorhanden. Alle Umsetzungsfestlegungen in . Keine Regel der Spezifikation wird geaendert.
+
+Laufbeginn nach M6, nur aus Listing und quote_volume bestimmt: **2020-04-04** (erster Stichtag mit |U1| >= 20, U1 = 21; vorher 3 bzw. 11 Symbole). Block B1 beginnt damit am 2020-04-04.
+
+Lauf-Code FREEZE:  deca0c29…,  48370287…, Umsetzungsfestlegungen e81504aa…, Pruefskript  c1f16e6d…, Tests  3a521de7… (8 synthetische Tests, u.a. Lookahead, Delisting, M4, M6, ganzer Lauf-Pfad),  54590393… (Stufe 2, unveraendert). Vollstaendige Liste . Danach genau ein Lauf; das Lauf-Log enthaelt die SHA der Spezifikation (E3).
+
+Umsetzung: Agent (Grok), Auftrag Damian vom 01.10.2026. Tag `xs21-pit-v1.0-runcode`.
