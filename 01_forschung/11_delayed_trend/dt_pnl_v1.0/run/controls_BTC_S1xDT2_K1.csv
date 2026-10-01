@@ -1,0 +1,4 @@
+sig_t,ctrl_t,l_ref,P,end_bar,inv_bar,status
+2798,2834,3652.66,4312.99,2848,2848,retest_failed
+5553,5022,6515.0,7750.0,5202,-1,retest_failed
+5553,5970,6762.0,10035.96,6150,-1,retest_failed

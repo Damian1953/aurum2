@@ -80,3 +80,8 @@ Sie nennt `mlib.py` noch als v0.1 (`cfe1f7aa…`), die Datei ist v1.0 (`6b7e7ba8
 - **Entscheid Damian offen:** Gate M3 (31.10.–19.12.2026) und Forward-Fenster ab 15.09.2026 weiterführen oder einstellen? Ohne Sleeve-Kandidat sieht die Spezifikation keinen Paper-Betrieb vor. Der Collector v1.1 läuft unverändert weiter, bis entschieden ist.
 - **Vorbehalt Konvention U9 (Stufe 2):** Tagesrenditen mit konstantem Gewicht (implizite tägliche Rückführung ohne Kosten) gegenüber Buy-and-Hold-Trades. Bei extremen Coins weicht das stark ab (U1 2026: Tagesbeiträge +2.27, Trades −0.14). Gilt auch für die Stufe-2-Ergebnisse. Prüfen, ob künftige Spezifikationen das ändern sollen (nur neu vorregistriert).
 - **Lauf-Code-Lücke:** Die Survivorship-Zerlegung je Block (§5.3) fehlte im Lauf-Code und ist deskriptiv nachgetragen.
+
+## OP-10 DT P&L v1.0 nach dem Lauf (neu, 01.10.2026)
+
+- **Lauf erledigt** (01.10.2026, 14:35 Zürich): Netto-K1 der Primärzellen −8.47 R < 0. A7 greift: Lane A vollständig geschlossen. Bericht `01_forschung/11_delayed_trend/dt_pnl_v1.0/dt_pnl_v1.0_bericht.md`.
+- **Befund Kontrolldesign DT2:** Ersatzniveau-Kontrollen kommen fast nie zum Einstieg (`retest_failed`), deshalb ist ΔR für DT2 nicht messbar. Nur relevant bei einer allfälligen neuen Vorregistrierung mit Forward-Daten (A7).

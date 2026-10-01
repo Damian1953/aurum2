@@ -1,0 +1,98 @@
+{
+ "spec": "dt_pnl_spec_v1.0.md",
+ "spec_sha256": "56a13bf7d434356539e956457e3616ea93a7ded4ea25f4247fd31380bf41d47a",
+ "started_utc": "2026-10-01T12:35:14.465531+00:00",
+ "seed": 20260918,
+ "nb": 2000,
+ "inputs": {
+  "rlib": "f1ffdbb81cad3115b7a975a435185b463c9d752bd86ee9f7b47ece3c4819b13c",
+  "dtlib": "f2d6c3906aff57d37b85d8dc7226e1188cd38bf50679412c5ade80f3ae8a9dc2",
+  "ylib_portable": "452615759c29014bd1599faec413b2d12bd0958be11f88f4a131351f77ed52e1",
+  "lib": "21752a1f42737a42c55fcb32cde38a17fb08771787bcbfca521504ff846f6a04",
+  "run": "d52f8803c4f5973a5240a2bfaca349047e776751c8de4f5b73627e50246af331",
+  "cost_model": "c652caa5bb237914d0bdcd153813ca65a61f2da23626ea5d52a183ab69e89727"
+ },
+ "costs": {
+  "K0": {
+   "fee_in": 0.0016,
+   "fee_out": 0.0016,
+   "fee_out_cut": 0.0016,
+   "fric": 0.0,
+   "slip_in": 0.0,
+   "slip_sl": 0.0
+  },
+  "K1": {
+   "fee_in": 0.004,
+   "fee_out": 0.004,
+   "fee_out_cut": 0.004,
+   "fric": 0.0002,
+   "slip_in": 0.0005,
+   "slip_sl": 0.001
+  },
+  "K2": {
+   "fee_in": 0.008,
+   "fee_out": 0.008,
+   "fee_out_cut": 0.008,
+   "fric": 0.0006,
+   "slip_in": 0.0015,
+   "slip_sl": 0.003
+  },
+  "kraken_maker_plan": {
+   "fee_in": 0.004,
+   "fee_out": 0.004,
+   "fee_out_cut": 0.004,
+   "fric": 0.0002,
+   "slip_in": 0.0005,
+   "slip_sl": 0.001
+  },
+  "kraken_taker_K2": {
+   "fee_in": 0.008,
+   "fee_out": 0.008,
+   "fee_out_cut": 0.008,
+   "fric": 0.0006,
+   "slip_in": 0.0015,
+   "slip_sl": 0.003
+  },
+  "kraken_maker_entry_taker_stop": {
+   "fee_in": 0.004,
+   "fee_out": 0.008,
+   "fee_out_cut": 0.004,
+   "fric": 0.0002,
+   "slip_in": 0.0005,
+   "slip_sl": 0.001
+  }
+ },
+ "checks": {
+  "entries_recomputed_equal_frozen": true,
+  "last_bar_le_2023_12_31_20UTC": true,
+  "cost_scenarios_same_positions": true
+ },
+ "coins": {
+  "BTC": {
+   "spot": "2d394fd1cbc344d5e012e12b40bc5835fef0fbe72f0678c2abf417babd96a7e6",
+   "entries_frozen": "0067ac94c9c42e726ca43dfe8e01336e662f4b84c2beff6dde21e2af425c7519",
+   "bars": 13950,
+   "last_bar": "2023-12-31 20:00:00+00:00",
+   "pool": 1666,
+   "mode": "cfg_btc_stufeA"
+  },
+  "XRP": {
+   "spot": "6fda0931ded268ac1af750a75aef7f08ed5c345d1b0e61ae2f26d282a7fbf453",
+   "entries_frozen": "bdbac380b134cbe82acaf3872714d1c75ac70829cf73c5c8568f05a5c281f874",
+   "bars": 12397,
+   "last_bar": "2023-12-31 20:00:00+00:00",
+   "pool": 2006,
+   "mode": "cfg_alt"
+  },
+  "DOT": {
+   "spot": "426b5ae7e4d4e57b47eb190ae65cc9bafc0c511a53ad7536703ecdf2b53b98ac",
+   "entries_frozen": "361606e8832eadfb06da345fa76f3e571f09a8db14152b9a8aa42482f530eace",
+   "bars": 7381,
+   "last_bar": "2023-12-31 20:00:00+00:00",
+   "pool": 1219,
+   "mode": "cfg_alt"
+  }
+ },
+ "finished_utc": "2026-10-01T12:35:17.841867+00:00",
+ "status": "fertig"
+}

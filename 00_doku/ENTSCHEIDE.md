@@ -686,3 +686,17 @@ A8 Evidenzvermerk (woertlich): «DT ist outcome-informed (Ebene C), laeuft auf d
 A7 Abbruchregel (woertlich): «Vor dem DT-P&L-Lauf festgeschrieben: Ist Netto-K1 in den drei Primaerzellen zusammen kleiner als null, wird Lane A (Bottom, Reversal, Rebound, DT) vollstaendig geschlossen. Es folgt keine weitere Variante, keine Umformulierung und kein neuer Timeframe auf BTC, XRP oder DOT. Eine Wiederaufnahme waere nur mit neuen Daten (Forward-Fenster) und einer neuen Vorregistrierung zulaessig, die diesen Entscheid ausdruecklich zitiert.»
 
 Nur Discovery-Daten (bis 2023-12-31); kein Holdout geoeffnet, auch nicht holdout_manifest. Kein DT-P&L-Ergebnis vor diesem Freeze gesehen.
+
+## 2026-10-01 14:40 — DT P&L v1.0 Lauf (einziger Lauf) und Urteile
+
+Einziger Lauf 01.10.2026 14:35:14–14:35:17 Zuerich, Freeze-Commit 2a94bf9 (Tag `dt-pnl-v1.0-freeze`), Spec-SHA 56a13bf7... im Log. Keine Abweichung von der Spezifikation, kein Neustart. Unabhaengige Pruefung `tools/dt/check_dt_pnl_v1.py`: gesamt_ok (Einstiege gleich Messung, Entscheidungskerzen vor Einstieg, Eine-Position-Regel, Exits und Kosten aller 6 Szenarien neu gerechnet bis 1e-14, 0 Matching- und 0 Ersatzniveau-Verletzungen, Holm und A7-Summe neu, Stoerungstest ab 2022-07-01: 0 von 190 Trades veraendert).
+
+Urteile (K1 Spot, Holm ueber 6): BTC S2xDT1 n=30, dR 0.663 (26 Paare), K1 +0.148 R, Holm-p 0.345, kein Signal (status_v2 roh formal_supported, nach §9 und A8 nicht als Signal gewertet). XRP S2xDT1 n=35, dR -0.501 (26 Paare), K1 -1.023 R, Holm-p 0.835, no_evidence. XRP S2xDT2 n=37, K1 +0.619 R, 1 Paar, kein Test (insufficient sample). Sekundaer: BTC S2xDT2 n=40, K1 +0.409, 0 Paare; DOT S2xDT1 n=23, dR 0.265, K1 -0.147, Holm-p 0.398; DOT S2xDT2 n=33, K1 -0.173, 1 Paar. Keine Zelle mit Signal.
+
+A7: Summe r_net K1 der drei Primaerzellen = -8.47 R ueber 102 Trades (-0.083 R je Trade; ungewichtetes Zellenmittel -0.085) < 0. Die Abbruchregel greift. Ausgaben-SHAs: `00_doku/dt_pnl_run_2026-10-01_expected_shas.txt` (Eval e1216bb8..., Log 3c09fa7e..., Pruefung 27ef4e56...). Bericht `01_forschung/11_delayed_trend/dt_pnl_v1.0/dt_pnl_v1.0_bericht.md`.
+
+## 2026-10-01 14:40 — Lane A vollstaendig geschlossen (A7, mechanisch)
+
+Ausloeser: DT P&L v1.0, Netto-K1 der drei Primaerzellen zusammen -8.47 R < 0 (Eintrag oben). Gemaess A7 (woertlich): «Vor dem DT-P&L-Lauf festgeschrieben: Ist Netto-K1 in den drei Primaerzellen zusammen kleiner als null, wird Lane A (Bottom, Reversal, Rebound, DT) vollstaendig geschlossen. Es folgt keine weitere Variante, keine Umformulierung und kein neuer Timeframe auf BTC, XRP oder DOT. Eine Wiederaufnahme waere nur mit neuen Daten (Forward-Fenster) und einer neuen Vorregistrierung zulaessig, die diesen Entscheid ausdruecklich zitiert.»
+
+Lane A (Bottom, Reversal, Rebound, DT) ist damit vollstaendig geschlossen. Positive Einzelzellen (BTC S2xDT1, XRP S2xDT2, BTC S2xDT2) begruenden nach A7 keine Fortfuehrung. Kein Holdout-Lauf.
