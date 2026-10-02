@@ -47,11 +47,12 @@ def test_heartbeat_one_line_per_runner_and_alarms(tmp_path):
     assert H.check(NOW, [("G", str(tmp_path / "g.jsonl"), None)])[0]["alarm"]
 
 
-def test_heartbeat_registry_covers_all_forward_lines_and_no_cron():
+def test_heartbeat_registry_covers_all_forward_lines_and_cron():
     names = [n for n, _, _ in H.runners()]
     assert names == ["Collector", "PAPER v1.0", "Sleeves A/B", "VOLTARGET"]
-    sched = open(os.path.join(REPO, "collector", "ensure_scheduler.sh")).read()
-    assert "heartbeat" not in sched and "voltarget" not in sched.lower()
+    sched = open(os.path.join(REPO, "collector", "ensure_scheduler.sh")).read()   # seit Freeze 2026-10-02 in cron
+    assert "forward/heartbeat.py" in sched and "# aurum2-heartbeat" in sched
+    assert "# aurum2-sleeves" in sched and "# aurum2-voltarget" in sched
 
 
 def test_heartbeat_main_exit_code(tmp_path, monkeypatch):

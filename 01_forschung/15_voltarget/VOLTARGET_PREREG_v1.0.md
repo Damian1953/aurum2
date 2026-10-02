@@ -1,8 +1,8 @@
 # VOLTARGET_PREREG v1.0 – Volatilitäts-Targeting als Risiko-Overlay auf W2, W6 und Turtle 55/20 (Forward-Paper)
 
-> **Kandidat, nicht eingefroren.**
+> **v1.0 EINGEFROREN am 2026-10-02 (Freigabe Damian 11:45 Zürich), Tag `voltarget-v1.0-freeze`.**
 
-**Status: KANDIDAT v1.0. Nicht eingefroren, nicht gestartet, kein Lauf.** Kein Tag, keine Freeze-Liste, kein Scheduler-Eintrag. Der Runner ist gesperrt (`voltarget/voltarget_config.json` enabled=false, Exit 3).
+**Status: v1.0 EINGEFROREN 2026-10-02.** Freeze-Liste `00_doku/voltarget_freeze_2026-10-02_expected_shas.txt`, Tag `voltarget-v1.0-freeze`, ENTSCHEIDE 2026-10-02. Startbar 2026-10-03 (erster voller Tagesbar nach dem Freeze; Basis wie PAPER v1.0 ab 2026-10-02), Runner `voltarget/run_voltarget.sh` täglich 07:00 Zürich (cron `aurum2-voltarget`). Der folgende Text ist unverändert der freigegebene Kandidat.
 **Stand:** 2026-10-02 (Zürich, UTC+2). Branch `voltarget-v0`. Ersetzt `VOLTARGET_PREREG_v0.2.md` (bleibt wie v0.1 unverändert als Historie liegen).
 **Grundlage v1.0:** Review Claude zu v0.2, zusammengefasst in `review_claude_voltarget_v1.md` (Änderungen siehe §0b). Die Entscheide der Projektleitung zu v0.2 (§0a) gelten weiter.
 **Freeze erst nach:** Freigabe des Kandidaten, kein Veto Damian, datierter ENTSCHEIDE-Eintrag, Freeze-Liste mit SHA-256 (§11). **Startvoraussetzung:** gemeinsamer einseitiger Wochenbericht und gemeinsamer Heartbeat aller Forward-Linien (Branch `sleeves-v1`, §4).

@@ -106,13 +106,27 @@ def _write_live(tmp, mvrv_rows, bars):
 
 def test_runner_disabled_and_freeze_check(tmp_path, monkeypatch):
     monkeypatch.setattr(sys, "argv", ["run_sleeves.py"])
-    assert json.load(open(R.CFG))["enabled"] is False
-    assert R.main() == 3                                                    # vor Freeze gesperrt
+    off = tmp_path / "cfg_off.json"; json.dump(dict(json.load(open(R.CFG)), enabled=False), open(off, "w"))
+    monkeypatch.setattr(R, "CFG", str(off))
+    assert R.main() == 3                                                    # ohne Freigabe gesperrt
+    fri = tmp_path / "cfg_mo.json"; json.dump(dict(json.load(open(off)), enabled=True, start_bar="2026-10-12"), open(fri, "w"))
+    monkeypatch.setattr(R, "CFG", str(fri))
+    assert R.main() == 3                                                    # Startbar kein Freitag
     lst = tmp_path / "fl.txt"; lst.write_text("0" * 64 + "  sleeves/sleeve_engine.py\n")
     monkeypatch.setattr(R.E, "REPO", REPO)
     assert R.check_freeze(str(lst)) == ["sleeves/sleeve_engine.py"]
     monkeypatch.setattr(sys, "argv", ["run_sleeves.py", "--dry-run", "--start", "2026-10-02", "--out", R.OUT])
     assert R.main() == 3                                                    # dry-run nie ins Produktionsverzeichnis
+
+
+def test_config_frozen_v1_0():
+    """Freeze 2026-10-02 (sleeves-ab-v1.0-freeze): freigegeben, Startbar Freitag 2026-10-09 nach dem Freeze, Freeze-Liste vorhanden."""
+    cfg = json.load(open(R.CFG))
+    assert cfg["enabled"] is True and cfg["start_bar"] == "2026-10-09" and R.start_ok(D(2026, 10, 9))
+    assert cfg["freeze_list"] == "00_doku/sleeves_freeze_2026-10-02_expected_shas.txt"
+    assert os.path.exists(os.path.join(REPO, cfg["freeze_list"]))
+    sched = open(os.path.join(REPO, "collector", "ensure_scheduler.sh")).read()
+    assert "sleeves/run_sleeves.sh  # aurum2-sleeves" in sched
 
 
 def test_runner_dry_run_outputs_and_revision(tmp_path):
@@ -134,12 +148,16 @@ def test_runner_dry_run_outputs_and_revision(tmp_path):
     assert rc3 == 6 and st3["revisions"] == [["B", "signal|2026-10-03|CASH"]]
 
 
-def test_bericht_section(tmp_path):
+def test_bericht_section(tmp_path, monkeypatch):
     import sleeves_bericht as B
     live = tmp_path / "live"
     L = B.section_lines(D(2026, 10, 5), data_live=str(live), sleeves_out=str(tmp_path / "o"))
     txt = "\n".join(L)
-    assert "nicht freigegeben" in txt and "keine Daten" in txt and "Kein Leistungsurteil" in txt
+    assert "freigegeben, Startbar 2026-10-09" in txt and "keine Daten" in txt and "Kein Leistungsurteil" in txt   # Freeze 2026-10-02
+    with monkeypatch.context() as m:
+        off = dict(B._cfg(), enabled=False, start_bar=None)
+        m.setattr(B, "_cfg", lambda: off)
+        assert "nicht freigegeben" in "\n".join(B.section_lines(D(2026, 10, 5), data_live=str(live), sleeves_out=str(tmp_path / "o")))
     _write_live(live, [["2026-09-01", "1.5", "2026-09-02T04:15:00Z", "r", "1"]], _bars(D(2026, 10, 2), 2))
     os.makedirs(live / "macro", exist_ok=True)
     json.dump({"fred_macro": {"ok": False, "errors": ["Timeout"], "consecutive_failures": 3, "last_ok_utc": None},
@@ -325,7 +343,7 @@ def test_m3_weekly_report_fixed_layout_without_data(tmp_path, monkeypatch):
     L = WB.build(str(tmp_path / "leer"), D(2026, 10, 12))
     assert _heads(L) == list(WB.LAYOUT) and len(L) <= WB.MAX_ZEILEN
     txt = "\n".join(L)
-    assert "Wochenbericht" in txt and "nicht lesbar" in txt and "nicht freigegeben" in txt
+    assert "Wochenbericht" in txt and "nicht lesbar" in txt and "freigegeben, Startbar 2026-10-09" in txt
     assert "**ALARM** Collector" in txt and "**ALARM** PAPER v1.0" in txt and "Heartbeat-Alarm" in txt   # keine Laeufe
     assert "VOLTARGET" in txt and "| T55_20 |" in txt
     assert "identisch mit Buy and Hold" in txt and "zulässiges Ergebnis" in txt and "ß" not in txt

@@ -1,7 +1,10 @@
 {
-  "_doc": "Sleeves A (MAKRO_LIQ) und B (MVRV), Forward-Paper. KANDIDAT v1.0 (Review Claude umgesetzt), NICHT eingefroren, NICHT freigegeben. start_bar muss ein Freitag sein. Erst nach Freeze (Review Claude, kein Veto Damian) enabled=true, start_bar und freeze_list setzen und cron-Eintrag aktivieren (collector/ensure_scheduler.sh).",
-  "enabled": false,
-  "start_bar": null,
-  "freeze_list": null,
-  "prereg": {"A": "01_forschung/14_ideen_scan_v2/makro_liq_prereg_v1.0.md", "B": "01_forschung/14_ideen_scan_v2/mvrv_prereg_v1.0.md"}
+  "_doc": "Sleeves A (MAKRO_LIQ v1.0) und Leitplanke B (MVRV v1.0), Forward-Paper. EINGEFROREN 2026-10-02 (Freigabe Damian 11:39 Zuerich), Tag sleeves-ab-v1.0-freeze. Gemeinsamer Startbar Fr 2026-10-09 (erster Signalfreitag mit WDTGAL-Erstabruf; Collector 1.3 ab 2026-10-03). cron 06:55 (aurum2-sleeves, collector/ensure_scheduler.sh). Aenderungen nur mit neuer Version und ENTSCHEIDE-Eintrag.",
+  "enabled": true,
+  "start_bar": "2026-10-09",
+  "freeze_list": "00_doku/sleeves_freeze_2026-10-02_expected_shas.txt",
+  "prereg": {
+    "A": "01_forschung/14_ideen_scan_v2/makro_liq_prereg_v1.0.md",
+    "B": "01_forschung/14_ideen_scan_v2/mvrv_prereg_v1.0.md"
+  }
 }

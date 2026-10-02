@@ -1,0 +1,13 @@
+# SLEEVES A/B v1.0 FREEZE 2026-10-02 (MAKRO_LIQ v1.0 = A, MVRV-Leitplanke v1.0 = B; gemeinsame Infrastruktur). Freigabe Damian 2026-10-02 11:39 Zuerich. Tag sleeves-ab-v1.0-freeze. Startbar Fr 2026-10-09. Vom Runner fail-closed geprueft (Exit 4).
+adcff6ffd5414a71715e243afd84a098be7960d91a9a2426955a5e973c5eca0e  01_forschung/14_ideen_scan_v2/makro_liq_prereg_v1.0.md
+d067c3af18b47ea084c2ff46010649bfdff72b1d49a710f81a4028d7118b8c1c  01_forschung/14_ideen_scan_v2/mvrv_prereg_v1.0.md
+53d791dbd595f8dee1b290bc55bb75a3cd7f3108849aead317bffa575f3a3b5f  sleeves/sleeve_engine.py
+7f5045291c53f91c03bfffb890b85802feafb80dd92571e871fb757ed8c76afa  sleeves/auswertung.py
+1916b5c66a91d7758a5afeaee349ed849b50990763fa0443debbb4aef141968d  sleeves/run_sleeves.py
+533a4543056079a2c886f3c98e24939e2693b612fee03bc6655d0e1f399207b5  sleeves/run_sleeves.sh
+1fef9792e0ec95d5c3266120041cb01d6fec400bd4ad2a3dce44624cfe0a5725  sleeves/sleeves_bericht.py
+cb019309b8e31ffbd3614eefaa7e22d8b0a2123be045c113b80b21400cfb09bb  sleeves/sleeves_config.json
+fd82b37b0e5345d4ecbed62242e4ad5f1c36a23149a38e4df2a0bd4276506969  collector/macro_sources.py
+28c2a523223882409fabe623a57fddb3d8f80eb6d39677069be4e5f8624c4745  tests/test_sleeves.py
+fef86d9b414d851fa6d409cb5db2a92e8f6699df240e2254f1b0781a327a52b0  tests/test_collector_macro.py
+c652caa5bb237914d0bdcd153813ca65a61f2da23626ea5d52a183ab69e89727  config/cost_model_v1.json

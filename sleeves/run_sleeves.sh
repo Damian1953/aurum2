@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Cron-Wrapper Sleeves A/B. NOCH NICHT IN CRON (erst nach Freeze, siehe collector/ensure_scheduler.sh). Keine Keys, keine Orders.
+# Cron-Wrapper Sleeves A/B (eingefroren 2026-10-02, Tag sleeves-ab-v1.0-freeze). cron 06:55 Zuerich (aurum2-sleeves, collector/ensure_scheduler.sh). Keine Keys, keine Orders.
 set -u
 REPO="$(cd "$(dirname "$0")/.." && pwd)"
 export AURUM_DATA_LIVE="${AURUM_DATA_LIVE:-/workspace/aurum2/data_live}"

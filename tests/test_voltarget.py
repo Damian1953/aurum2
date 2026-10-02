@@ -292,9 +292,9 @@ def test_constant_control_scales_down():
 
 # ------------------------------------------------------------------ Sperre, Datenschutz, kein Scheduler
 def test_runtime_guard_refuses_while_disabled(monkeypatch, tmp_path):
-    cfg = R.load_cfg()
-    assert cfg["enabled"] is False and cfg["start_bar"] is None and cfg["freeze_list"] is None
+    cfg = dict(R.load_cfg(), enabled=False, start_bar=None, freeze_list=None)
     assert R.params_ok(cfg)
+    monkeypatch.setattr(R, "load_cfg", lambda path=None: cfg)          # Datei-Konfiguration ist seit dem Freeze freigegeben
     monkeypatch.setattr(sys, "argv", ["run_voltarget.py"])
     assert R.main() == 3
     with pytest.raises(R.Disabled):
@@ -305,8 +305,9 @@ def test_runtime_guard_refuses_while_disabled(monkeypatch, tmp_path):
     bad = dict(cfg, params=dict(cfg["params"], band=0.05))
     assert not R.params_ok(bad)
     assert not R.params_ok(dict(cfg, gates=dict(cfg["gates"], g2_sharpe_tol=0.0)))
-    r = subprocess.run([sys.executable, os.path.join(REPO, "voltarget", "run_voltarget.py")], capture_output=True, text=True)
-    assert r.returncode == 3 and "nicht freigegeben" in r.stdout
+    with pytest.raises(R.Disabled) as e:
+        R.require_enabled(cfg)
+    assert "nicht freigegeben" in str(e.value)
 
 
 def test_guard_path_blocks_holdout_and_validation():
@@ -318,13 +319,15 @@ def test_guard_path_blocks_holdout_and_validation():
     assert V.guard_path("/workspace/aurum2/data_live/kraken_ohlc/BTCUSD_1d.csv")
 
 
-def test_no_scheduler_entry_and_no_wrapper():
+def test_frozen_config_scheduler_entry_and_wrapper():
+    """Freeze 2026-10-02 (voltarget-v1.0-freeze): freigegeben, Startbar nach dem Freeze, cron 07:00 nach PAPER 06:50."""
+    cfg = R.load_cfg()
+    assert cfg["enabled"] is True and cfg["start_bar"] == "2026-10-03" and R.params_ok(cfg)
+    assert cfg["freeze_list"] == "00_doku/voltarget_freeze_2026-10-02_expected_shas.txt"
+    assert os.path.exists(os.path.join(REPO, cfg["freeze_list"]))
     sched = open(os.path.join(REPO, "collector", "ensure_scheduler.sh")).read()
-    assert "voltarget" not in sched.lower()
-    assert not [f for f in os.listdir(os.path.join(REPO, "voltarget")) if f.endswith(".sh")]
-    cr = subprocess.run(["crontab", "-l"], capture_output=True, text=True) if os.path.exists("/usr/bin/crontab") else None
-    if cr is not None and cr.returncode == 0:
-        assert "voltarget" not in cr.stdout.lower()
+    assert '"0 7 * * * $REPO/voltarget/run_voltarget.sh  # aurum2-voltarget"' in sched
+    assert [f for f in os.listdir(os.path.join(REPO, "voltarget")) if f.endswith(".sh")] == ["run_voltarget.sh"]
 
 
 def test_runner_on_synthetic_live_dir(tmp_path):

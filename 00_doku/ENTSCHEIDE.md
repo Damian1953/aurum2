@@ -761,3 +761,30 @@ Auftrag Chief Strategist: Ein Ausfall von FRED oder CoinMetrics darf weder den C
 ## 2026-10-02 10:59 — GitHub-Repo Damian1953/aurum2: Holdout-Dateien enthalten (Entscheid Eigentuemer)
 
 Entscheid Damian 02.10.2026, 10:59 Zuerich (Option a, uebermittelt ueber den Haupt-Agenten): Das private GitHub-Repo https://github.com/Damian1953/aurum2 enthaelt die volle Git-History inklusive `02_daten/holdout/` (15 Validation-CSV und Manifeste v1/v1.1, rund 42.5 MB). Die History wird nicht umgeschrieben, Freeze-SHAs und Tags bleiben gueltig. Regeln: (1) Wer Zugriff auf das Repo erhaelt, darf die Holdout- und Validation-Dateien nicht oeffnen, lesen oder durchsuchen. (2) Fuer Dritte wird ein separater Export ohne `02_daten/holdout` erstellt (mit angepasster Verify-Logik), nie Zugriff auf dieses Repo. Vor dem Push geprueft: gitleaks 8.21.2 ueber alle Commits ohne Fund, keine Datei > 50 MB, kein .venv, data_live oder Kraken-Zip in der History. Token nur per GIT_ASKPASS aus der Umgebung, Remote-URL ohne Credentials.
+
+## 2026-10-02 12:40 — Freeze und Start MAKRO_LIQ v1.0 (A), MVRV-Leitplanke v1.0 (B), VOLTARGET v1.0
+
+Freigaben Damian (uebermittelt ueber den Haupt-Agenten): 02.10.2026 11:39 Zuerich Freeze und Start MAKRO_LIQ v1.0 (A) und MVRV-Kernbestand-Leitplanke v1.0 (B) nach Umsetzung von Claude M1-M5; 02.10.2026 11:45 Zuerich Freeze und Start VOLTARGET v1.0 nach Umsetzung von Claude M1-M4.
+
+Sanity-Review vor dem Freeze (Projektleitung): Checklisten `01_forschung/14_ideen_scan_v2/review_claude_scan_v2_v1.md` (SHA e913b09c6e4c6fc1...) und `01_forschung/15_voltarget/review_claude_voltarget_v1.md` (SHA 754c2c1cabc1cc30...) vollstaendig in den Vorregistrierungen v1.0 und im Code umgesetzt (A/B: M1 WDTGAL inkl. t7-Abweichung, M2 drei Tests, M3 gemeinsamer Wochenbericht, M4 Redundanzregel, M5 A allein auf 5 %, Cash DTB3 = Abw. F3, Start gueltiger Zustand = Abw. F5, B-Pflichtsaetze, Calmar/Ulcer nur Bericht, Regimephasen > 13 Wochen, B als Leitplanke ohne Test, §8 «nicht First-Release»; VOLTARGET: M1 Erwartung, M2 G1/G3, M3 KR3 erster Review 0.33 %, M4 symmetrische Sync-Buchung, s-Verteilung, gemeinsamer Wochenbericht und Heartbeat). Kein Punkt fehlt.
+
+Antraege des Projektleiters (nach Governance-Hinweis Claude als Antraege gefuehrt, wirksam erst durch die Freigaben Damian 11:39 bzw. 11:45):
+(P1) MAKRO_LIQ: Auslegung M5 = zweiseitiger Ledoit-Wolf-Bootstrap-p-Wert der Sharpe-Differenz A - B1, Empfehlung nur bei erfuellten Gates und p <= 0.05; Auslegung M4 = Pearson der taeglichen Positionen 0/1, Sharpe-Vergleich mit Cash 0 % wie PAPER F3, nicht bestimmbare Korrelation wird gemeldet; Stale-Regel (>= 8 Wochen) fuer WALCL, WDTGAL und RRPONTSYD.
+(P2) MAKRO_LIQ §7.4: Auch bei erfuellten Gates und p <= 0.05 nur Empfehlung; Micro-Live immer nur mit ausdruecklicher Freigabe Damian, nie automatisch.
+(P3) VOLTARGET: G2-Toleranz 0.05; Schwellen G1 0.90 und KR3 1 % p. a. als gesetzt; Zustandsuebernahme beim Start mit aktuellem s; Kostenkonvention wie PAPER F3; Warmup (< 60 Renditen s = 1, danach expandierend).
+(P4) VOLTARGET Praezisierung vor dem Freeze: Ziel ohne Basis-Ereignis = w_B(t) · s (driftendes Basisgewicht mal s), Band gegen w_B(t) · s, keine Drift-Umschichtung; mit s = 1 ist VT exakt B; C = E · c bei Basis-Ereignissen, danach Drift.
+
+Freezes (Spec-SHA256 der Vorregistrierungen):
+- MAKRO_LIQ v1.0 `01_forschung/14_ideen_scan_v2/makro_liq_prereg_v1.0.md` adcff6ffd5414a71715e243afd84a098be7960d91a9a2426955a5e973c5eca0e
+- MVRV v1.0 `01_forschung/14_ideen_scan_v2/mvrv_prereg_v1.0.md` d067c3af18b47ea084c2ff46010649bfdff72b1d49a710f81a4028d7118b8c1c
+- VOLTARGET v1.0 `01_forschung/15_voltarget/VOLTARGET_PREREG_v1.0.md` 129662347b82009ef8e8284367f98c5299af71f4d369242526eebcd54d4b9a22
+Freeze-Listen: `00_doku/sleeves_freeze_2026-10-02_expected_shas.txt` (SHA 83b614f7bb81c307..., 12 Dateien: 2 Preregs, Engine, Auswertung, Runner, Wrapper, Bericht A/B, Konfiguration, Collector-Makroquellen, 2 Testdateien, Kostenmodell) und `00_doku/voltarget_freeze_2026-10-02_expected_shas.txt` (SHA 54c5145516a9aa62..., 11 Dateien: Prereg, Engine, Gates, Adapter, Runner, Wrapper, Konfiguration, Tests, Kostenmodell, paper_engine.py und s2lib.py identisch mit paper-v1.0-freeze). Beide vom Runner fail-closed geprueft (Exit 4) und in `make verify-frozen`. Nicht eingefroren (Bericht/Betrieb): `paper/wochenbericht.py`, `forward/*`, `collector/ensure_scheduler.sh`, `tests/test_forward.py`.
+Tags: `sleeves-ab-v1.0-freeze` (A und B gemeinsam, da ein Runner, eine Konfiguration, ein Startbar und eine Freeze-Liste) und `voltarget-v1.0-freeze` (eigene Infrastruktur).
+Vor dem Freeze nur Status-Kopfzeilen der drei Preregs (KANDIDAT -> EINGEFROREN), Konfigurationen (enabled, start_bar, freeze_list) und die Sperrtests (vorher «enabled=false, kein cron» erwartet) auf den Freigabezustand nachgefuehrt; Regeln, Parameter und Gates unveraendert. Neuer Wrapper `voltarget/run_voltarget.sh`. PAPER v1.0 und seine Freeze-Liste unveraendert.
+
+Start (jeweils strikt nach dem Freeze, As-of gemaess Prereg):
+- A und B: gemeinsamer Startbar Freitag 2026-10-09 (MAKRO_LIQ §4 «erster Signalfreitag nach dem Freeze», MVRV §4 «gemeinsam mit MAKRO_LIQ»). WDTGAL wird erst ab Collector 1.3 am 2026-10-03 06:15 erfasst; erster Freitag mit sichtbarem WDTGAL-Erstabruf (H.4.1 vom 2026-10-08, Abruf 2026-10-09 06:15) ist der 2026-10-09. B rechnet danach taeglich. Fill fruehestens Sa 2026-10-10.
+- VOLTARGET: Startbar 2026-10-03 (erster voller Tagesbar nach dem Freeze); Basis wie PAPER v1.0 ab START_BAR 2026-10-02.
+Betrieb: cron 06:55 `aurum2-sleeves`, 07:00 `aurum2-voltarget`, 07:30 `aurum2-heartbeat` (gemeinsamer Heartbeat, nur Log `/workspace/aurum2/forward_heartbeat.log`), nach PAPER 06:50; alle ueber `collector/ensure_scheduler.sh` mit Nachholen. Keine Keys, keine Orders.
+
+Moratorium (Rat Claude): Bis zum ersten Betriebs-Review am 2027-02-02 wird keine weitere Forward-Linie eroeffnet.

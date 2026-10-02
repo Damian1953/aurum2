@@ -1,8 +1,8 @@
 # MVRV_PREREG v1.0 — MVRV-Leitplanke für den BTC-Kernbestand, BTC Spot Kraken (Forward-Paper)
 
-> **Kandidat, nicht eingefroren.**
+> **v1.0 EINGEFROREN am 2026-10-02 (Freigabe Damian 11:39 Zürich), Tag `sleeves-ab-v1.0-freeze`.**
 
-**Status: KANDIDAT v1.0, NICHT EINGEFROREN, nicht gelaufen.** Kein Tag, kein Spec-SHA im Run-Log, Runner gesperrt (`sleeves/sleeves_config.json` enabled=false, Exit 3), kein cron-Eintrag.
+**Status: v1.0 EINGEFROREN 2026-10-02.** Freeze-Liste `00_doku/sleeves_freeze_2026-10-02_expected_shas.txt` (gemeinsam mit MAKRO_LIQ v1.0), Tag `sleeves-ab-v1.0-freeze`, ENTSCHEIDE 2026-10-02. Startbar Freitag 2026-10-09 (gemeinsam mit MAKRO_LIQ), danach täglich; Runner `sleeves/run_sleeves.sh` täglich 06:55 Zürich (cron `aurum2-sleeves`). Der folgende Text ist unverändert der freigegebene Kandidat.
 **Stand:** 2026-10-02 (Zürich, UTC+2). Grundlage: v0.2 (bleibt unverändert liegen) und Review Claude, zusammengefasst in `review_claude_scan_v2_v1.md`. **Vetorecht Damian vorbehalten.**
 **Freeze erst nach:** Freigabe des Kandidaten durch Projektleitung und Claude, kein Veto Damian, eigene Freeze-Liste (gemeinsam mit MAKRO_LIQ), ENTSCHEIDE-Eintrag. Voraussetzung für den Start: gemeinsamer einseitiger Wochenbericht und gemeinsamer Heartbeat aller Forward-Linien (`forward/heartbeat.py`).
 

@@ -1,0 +1,12 @@
+# VOLTARGET v1.0 FREEZE 2026-10-02. Freigabe Damian 2026-10-02 11:45 Zuerich. Tag voltarget-v1.0-freeze. Startbar 2026-10-03 (Basis wie PAPER v1.0 ab 2026-10-02). Vom Runner fail-closed geprueft (Exit 4).
+129662347b82009ef8e8284367f98c5299af71f4d369242526eebcd54d4b9a22  01_forschung/15_voltarget/VOLTARGET_PREREG_v1.0.md
+c2386a51988b26e0723859a15e4cf48968f56c695095e639ad4bd2349e211502  voltarget/voltarget_engine.py
+a5a88c71a7c7d62b9c59b6b61530b42e91d1330dc9aaefd3ed2e5fa821ee8c5a  voltarget/gates.py
+d7ab4adabf71749fd0fb3bdac591235962f105bf1b16187db14bd62fc27e59cb  voltarget/base_adapter.py
+a651f4554b2d6bfe298c7190b60bd08a00250c216e9ae0bb59dd29c1c44ccee2  voltarget/run_voltarget.py
+5c6370d0127fa8f9c2e7b30d1abb77070a32a8af1f8635267d5d391652474aaf  voltarget/run_voltarget.sh
+33fc21af2c9b89c33bce7cdc4a3eaf199ddc62efbe6887934299fcd937c2403a  voltarget/voltarget_config.json
+27bdc6ae5e2364b7a90272945d6dde49602d42f561395f3379a367ee00605b4c  tests/test_voltarget.py
+c652caa5bb237914d0bdcd153813ca65a61f2da23626ea5d52a183ab69e89727  config/cost_model_v1.json
+3782d3d3b2e325c8550671f0cbc852c3988a0153291a00fa6d1b4e2372d475e3  paper/paper_engine.py
+54590393170f6f2263663ba9ab1422a5bc3083b55fa913a38022e6e54d983792  01_forschung/02_strategien/s2lib.py
