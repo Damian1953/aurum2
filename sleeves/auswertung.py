@@ -8,6 +8,7 @@ Nur Funktionen, kein Lauf. Wird erst zum Auswertungszeitpunkt (MAKRO_LIQ §7) ve
     Vergleich mit gleicher Cash-Konvention wie PAPER F3 (A-Konto cash0, maker_plan, gleiches Fenster).
   - Calmar und Ulcer-Index sowie Regimephasen > 13 Wochen: nur Bericht, keine Gates.
   - B (MVRV) ist eine Kernbestand-Leitplanke: keine Gates, kein Erfolgsanspruch, kein Trial.
+  - Auch EMPFEHLUNG_MICRO_LIVE ist NUR eine Empfehlung: Micro-Live erfordert immer die ausdrueckliche Freigabe Damians.
 """
 import math
 
@@ -72,3 +73,21 @@ def b_identisch_bh(equity):
     Menge BTC wie B1 (gleicher Einstiegstag, gleiche Kosten) und ist mit Buy&Hold identisch."""
     pos = [r["position"] for r in equity[1:]]
     return bool(pos) and all(p == 1 for p in pos)
+
+
+HINWEIS_FREIGABE = ("Nur Empfehlung: Micro-Live erfordert immer die ausdrückliche Freigabe durch Damian; "
+                    "ohne diese Freigabe kein Micro-Live-Betrieb.")
+URTEIL_TEXT = {
+    "NOCH_NICHT_FAELLIG": "Noch nicht fällig (weniger als 3 Jahre oder weniger als 10 Wechsel, Frist nicht erreicht).",
+    "NICHT_PRUEFBAR": "Nicht prüfbar (weniger als 10 Wechsel bis zur Frist): Linie geschlossen.",
+    "VERWORFEN": "Verworfen (mindestens ein Gate verfehlt): Linie geschlossen, keine Varianten.",
+    "NICHT_SIGNIFIKANT": "Gates erfüllt, aber p > 0.05 (zweiseitig, Ledoit-Wolf, A allein): nicht widerlegt, keine Empfehlung.",
+    "REDUNDANT": "Gates erfüllt, aber redundant zu W2-BTC (Korrelation > 0.7, Sharpe nicht höher): keine Micro-Live-Empfehlung.",
+    "EMPFEHLUNG_MICRO_LIVE": "Gates erfüllt, p ≤ 0.05 (zweiseitig, Ledoit-Wolf, A allein), nicht redundant: Empfehlung an Damian für Micro-Live. "
+                             + HINWEIS_FREIGABE,
+}
+
+
+def urteil_text(urteil):
+    """Ausgabetext zum Urteil verdict_a (fuer Bericht und Auswertung)."""
+    return URTEIL_TEXT[urteil]

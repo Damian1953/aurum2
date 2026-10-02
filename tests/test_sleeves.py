@@ -297,6 +297,10 @@ def test_auswertung_gates_redundancy_verdict():
     assert v(korr=0.8, sharpe_w2=1.2) == "REDUNDANT"
     assert v(gates=dict(g, G3=False)) == "VERWORFEN"
     assert v(n_wechsel=9) == "NOCH_NICHT_FAELLIG" and v(n_wechsel=9, frist_erreicht=True) == "NICHT_PRUEFBAR"
+    # Entscheid Projektleitung: auch bei Erfolg nur Empfehlung, Micro-Live nur mit ausdruecklicher Freigabe Damian
+    t = A.urteil_text(v())
+    assert "Empfehlung" in t and "ausdrückliche Freigabe durch Damian" in t
+    assert set(A.URTEIL_TEXT) == {"NOCH_NICHT_FAELLIG", "NICHT_PRUEFBAR", "VERWORFEN", "NICHT_SIGNIFIKANT", "REDUNDANT", "EMPFEHLUNG_MICRO_LIVE"}
 
 
 # ------------------------------------------------------------------ M3: gemeinsamer einseitiger Wochenbericht

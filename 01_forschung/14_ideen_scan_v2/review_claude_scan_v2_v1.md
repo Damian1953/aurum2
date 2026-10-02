@@ -29,7 +29,7 @@
 2. Cash zu DTB3 als Standard gegenüber PAPER v1.0 F3 (Cash 0 % nur noch Sensitivität).
 3. Start in gültigem Zustand gegenüber PAPER v1.0 F5 (Einstieg mit Kosten gebucht).
 
-## 4. Auslegungen der Umsetzung (zur Bestätigung durch die Projektleitung)
+## 4. Auslegungen der Umsetzung (M4 und M5 von der Projektleitung am 2026-10-02 bestätigt; Micro-Live immer nur mit ausdrücklicher Freigabe Damian)
 
 - M5: «allein auf 5 %» umgesetzt als zweiseitiger p-Wert des Ledoit-Wolf-(2008)-Bootstraps der Sharpe-Differenz A − B1; eine Micro-Live-Empfehlung setzt erfüllte Gates **und** p ≤ 0.05 voraus (sonst «nicht signifikant», keine Empfehlung).
 - M4: Sharpe-Vergleich A gegen W2-BTC mit gleicher Cash-Konvention wie PAPER F3 (A-Konto Cash 0 %, maker_plan, gleiches Fenster); Expositions-Korrelation = Pearson der täglichen Positionen 0/1. Ist die Korrelation nicht bestimmbar (eine Reihe konstant), greift die Regel nicht, wird aber gemeldet.

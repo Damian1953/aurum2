@@ -87,6 +87,7 @@ H-LIQ: Ein BTC-Spot-Sleeve, der nur investiert ist, wenn die Fed-Netto-Liquidit�
 ### 7.4 Ergebnis
 - **Kill:** Ein Gate verfehlt → «verworfen», Linie geschlossen, keine Varianten (andere Fenster, DXY, Realzinsen) nachschieben. Unter 10 Wechseln bis 2031-10-01 → «nicht prüfbar», Linie geschlossen.
 - **Empfehlung:** nur wenn alle Gates erfüllt, p ≤ 0.05 und nicht redundant: Empfehlung an Damian für Micro-Live; Entscheid D2 bei Damian.
+- **Nur Empfehlung (Entscheid Projektleitung 2026-10-02):** Auch wenn alle Gates erfüllt sind und p ≤ 0.05 (zweiseitig, Ledoit-Wolf, A allein) gilt, ist das Ergebnis **nur eine Empfehlung**. Micro-Live erfordert **immer die ausdrückliche Freigabe durch Damian**; ohne diese Freigabe gibt es keinen Micro-Live-Betrieb, auch keinen automatischen.
 - Umsetzung: `sleeves/auswertung.py` (`gates_a`, `redundant_a`, `verdict_a`), Tests in `tests/test_sleeves.py`.
 
 ## 8. Deskriptiver Anhang 2024–2026 (ohne Entscheidungsgewicht)
