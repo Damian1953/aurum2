@@ -1,5 +1,5 @@
-"""Gemeinsamer einseitiger Wochenbericht PAPER v1.0, Sleeve A und Leitplanke B (Deutsch, Schweizer Schreibweise,
-feste Gestaltung LAYOUT, Review Claude M3).
+"""Gemeinsamer einseitiger Wochenbericht aller Forward-Linien: PAPER v1.0, Sleeve A, Leitplanke B, VOLTARGET, mit
+Heartbeat (forward/heartbeat.py). Deutsch, Schweizer Schreibweise, feste Gestaltung LAYOUT (Review Claude M3).
 Liest nur Ausgaben des Runners. Risikoloser Satz: FRED DTB3 (oeffentlich, ohne Key), Cache im state-Ordner.
 Aufruf: python paper/wochenbericht.py [--datum JJJJ-MM-TT]
 """
@@ -44,16 +44,22 @@ def pct(x):
 # Feste Gestaltung des gemeinsamen einseitigen Wochenberichts (Review Claude M3): immer genau diese Abschnitte in dieser
 # Reihenfolge; fehlt etwas, steht «–» oder ein Hinweis. Ein Fehler in einem Abschnitt verhindert den Bericht nie.
 LAYOUT = (
-    "## 1. Betrieb",
+    "## 1. Betrieb und Heartbeat (alle Forward-Linien)",
     "## 2. PAPER v1.0: Stand (maker_plan = K1; in Klammern taker_K2)",
     "## 3. PAPER v1.0: diese Woche, offene Positionen und Orders",
     "## 4. Sleeve A MAKRO_LIQ (Fed-Netto-Liquidität)",
     "## 5. Leitplanke B MVRV (kein Test)",
-    "## 6. Datenquellen und Kosten",
-    "## 7. Was Damian tun muss",
+    "## 6. VOLTARGET-Overlay (W2, W6, T55_20)",
+    "## 7. Datenquellen und Kosten",
+    "## 8. Was Damian tun muss",
 )
-MAX_ZEILEN = 60      # eine Seite
-MAX_ORDERZEILEN = 8
+MAX_ZEILEN = 72      # eine Seite (Markdown, inkl. Leerzeilen)
+MAX_ORDERZEILEN = 6
+
+
+def _forward(mod):
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "forward"))
+    return __import__(mod)
 
 
 def _sleeves():
@@ -80,7 +86,10 @@ def sec_betrieb(ctx):
          f"Fehler: {'keine' if not err7 else '; '.join(sorted(set(err7))[:3])}."]
     if st.get("warnings"):
         L.append(f"- Hinweise PAPER: {'; '.join(st['warnings'][:2])}.")
-    L += _sleeves().status_lines(heute)
+    hb = _forward("heartbeat").check()
+    L += [r["text"] for r in hb]
+    if any(r["alarm"] for r in hb):
+        L.append("- **Heartbeat-Alarm:** mindestens ein erwarteter Lauf fehlt oder ist fehlgeschlagen (Abschnitt 8).")
     return L
 
 
@@ -140,6 +149,10 @@ def sec_b(ctx):
     return _sleeves().section_b(ctx["heute"])
 
 
+def sec_voltarget(ctx):
+    return _forward("voltarget_bericht").section(ctx["heute"])
+
+
 def sec_daten(ctx):
     st, tr = ctx["st"], ctx["tr"]
     tot = sum(v["scenarios"]["maker_plan"]["costs_usd"] for coins in st.get("strategies", {}).values() for v in coins.values())
@@ -148,22 +161,22 @@ def sec_daten(ctx):
 
 
 def sec_damian(ctx):
-    return ["- Nichts, solange Abschnitt 1 keine Fehler zeigt. Bei Fehlern behebt der Agent und vermerkt es in ENTSCHEIDE.",
+    return ["- Nichts, solange Abschnitt 1 keinen Alarm und keine Fehler zeigt. Bei Fehlern behebt der Agent und vermerkt es in ENTSCHEIDE.",
             "- _Hinweis: In 4 Monaten fallen nur wenige Trades an. Der Review prüft vor allem Betrieb und Kosten, nicht die Strategiegüte._"]
 
 
-SECTIONS = (sec_betrieb, sec_stand, sec_woche, sec_a, sec_b, sec_daten, sec_damian)
+SECTIONS = (sec_betrieb, sec_stand, sec_woche, sec_a, sec_b, sec_voltarget, sec_daten, sec_damian)
 
 
 def build(out, heute):
-    """Gemeinsamer einseitiger Wochenbericht PAPER v1.0, Sleeve A und Leitplanke B (feste Gestaltung LAYOUT)."""
+    """Gemeinsamer einseitiger Wochenbericht PAPER v1.0, Sleeve A, Leitplanke B und VOLTARGET (feste Gestaltung LAYOUT)."""
     try:
         st, hist, eq, tr = _read(out)
     except Exception as e:
         st, hist, eq, tr = {"start_bar": str(heute), "coins": {}}, [], pd.DataFrame(), pd.DataFrame()
         st["warnings"] = [f"PAPER-Ausgaben nicht lesbar: {e}"]
     ctx = dict(st=st, hist=hist, eq=eq, tr=tr, heute=heute, out=out)
-    L = [f"# Wochenbericht Aurum II {heute.isoformat()}: PAPER v1.0, Sleeve A, Leitplanke B", "",
+    L = [f"# Wochenbericht Aurum II {heute.isoformat()}: PAPER v1.0, Sleeve A, Leitplanke B, VOLTARGET", "",
          f"PAPER_PREREG_v1.0 (SHA {str(st.get('prereg_sha256'))[:12]}…), Startbar {st.get('start_bar')}, Review spätestens "
          f"{REVIEW_DATUM.isoformat()} (noch {(REVIEW_DATUM - heute).days} Tage). Keine Keys, keine Orders: alle Zahlen hypothetisch."]
     for head, fn in zip(LAYOUT, SECTIONS):

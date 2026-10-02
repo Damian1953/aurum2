@@ -7,6 +7,7 @@ Forschungsentscheide stehen weiterhin ausschliesslich in `00_doku/ENTSCHEIDE.md`
 - Review Claude zu Sleeve A/B umgesetzt (`01_forschung/14_ideen_scan_v2/review_claude_scan_v2_v1.md`), Kandidaten `makro_liq_prereg_v1.0.md` und `mvrv_prereg_v1.0.md` (v0.2 unveraendert).
 - Collector 1.3: TGA `WDTGAL` (Mittwochsstand) statt `WTREGEN`. Engine: NL mit WDTGAL, Stale-Regel fuer alle drei Reihen, Cash DTB3 primaer (0 % Sensitivitaet), B2, Calmar/Ulcer, Regimephasen; `sleeves/auswertung.py` (Gates A, Redundanz W2-BTC, Test allein auf 5 %, B als Leitplanke); Runner verlangt Freitag als Startbar.
 - Gemeinsamer einseitiger Wochenbericht PAPER v1.0, A, B mit fester Gestaltung (`paper/wochenbericht.py`, nicht in einer Freeze-Liste). Tests inkl. M2-Szenarien.
+- Nachtrag: gemeinsamer Heartbeat aller Forward-Linien (`forward/heartbeat.py`, eine Zeile je Runner, Alarm bei fehlendem Lauf, kein cron) und VOLTARGET-Abschnitt im Wochenbericht (`forward/voltarget_bericht.py`, liest nur die VOLTARGET-Zustandsdatei). Tests `tests/test_forward.py`.
 
 ## 2026-10-01
 

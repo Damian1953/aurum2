@@ -4,7 +4,7 @@
 
 **Status: KANDIDAT v1.0, NICHT EINGEFROREN, nicht gelaufen.** Kein Tag, kein Spec-SHA im Run-Log, Runner gesperrt (`sleeves/sleeves_config.json` enabled=false, Exit 3), kein cron-Eintrag.
 **Stand:** 2026-10-02 (Zürich, UTC+2). Grundlage: v0.2 (bleibt unverändert liegen) und Review Claude, zusammengefasst in `review_claude_scan_v2_v1.md`. **Vetorecht Damian vorbehalten.**
-**Freeze erst nach:** Freigabe des Kandidaten durch Projektleitung und Claude, kein Veto Damian, eigene Freeze-Liste, ENTSCHEIDE-Eintrag. Voraussetzung: Collector 1.3 (WDTGAL) liefert First-Release-Werte.
+**Freeze erst nach:** Freigabe des Kandidaten durch Projektleitung und Claude, kein Veto Damian, eigene Freeze-Liste, ENTSCHEIDE-Eintrag. Voraussetzungen für den Start: Collector 1.3 (WDTGAL) liefert First-Release-Werte; gemeinsamer einseitiger Wochenbericht und gemeinsamer Heartbeat aller Forward-Linien (`forward/heartbeat.py`) gebaut und getestet.
 
 ## 0. Änderungen gegenüber v0.2
 - **M1:** TGA als Mittwochsstand `WDTGAL` statt Wochendurchschnitt `WTREGEN` (passt zum Mittwochsstand `WALCL`). Collector 1.3 lädt `WDTGAL`.
@@ -62,7 +62,7 @@ H-LIQ: Ein BTC-Spot-Sleeve, der nur investiert ist, wenn die Fed-Netto-Liquidit�
 - Berichtet: DXY-Sensitivität (DTWEXBGS < SMA100) **rein deskriptiv**, keine zweite Hypothese.
 - Metriken: Sharpe ex (täglich, annualisiert), CAGR, MaxDD, Anzahl Wechsel, Zeit im Markt, Kosten kumuliert.
 - **Nur Bericht, keine Gates:** Calmar-Ratio, Ulcer-Index, **Anzahl Regimephasen länger als 13 Wochen** (Phase = ununterbrochene Folge gleicher Position, länger als 91 Tage).
-- **Wochenbericht (M3):** gemeinsamer einseitiger Bericht mit PAPER v1.0 und Leitplanke B (`paper/wochenbericht.py`), feste Gestaltung: 1 Betrieb, 2 PAPER Stand, 3 PAPER Woche/Orders, 4 Sleeve A, 5 Leitplanke B, 6 Datenquellen und Kosten, 7 Was Damian tun muss. Höchstens 60 Zeilen; fehlende Werte erscheinen als «–». Kein Leistungsurteil.
+- **Wochenbericht (M3):** gemeinsamer einseitiger Bericht mit PAPER v1.0, Leitplanke B und VOLTARGET (`paper/wochenbericht.py`), feste Gestaltung: 1 Betrieb, 2 PAPER Stand, 3 PAPER Woche/Orders, 4 Sleeve A, 5 Leitplanke B, 6 VOLTARGET, 7 Datenquellen und Kosten, 8 Was Damian tun muss. Abschnitt 1 enthält den gemeinsamen Heartbeat (eine Statuszeile je Runner, Alarm bei fehlendem Lauf). Höchstens 72 Zeilen; fehlende Werte erscheinen als «–». Kein Leistungsurteil.
 
 ## 6. Review-Termine (Betrieb, kein Leistungsurteil)
 - **2027-02-02** (gleichzeitig mit dem PAPER-v1.0-Review): nur Betrieb. Prüfen: Collector-Abrufe vollständig, First-Release-Protokoll, As-of-Prüfung ohne Fehler, Signale reproduzierbar aus dem Schnappschuss-Archiv, Kosten korrekt gebucht, Feiertagsfälle. Kein Urteil über Rendite oder Drawdown.

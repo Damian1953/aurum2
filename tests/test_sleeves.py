@@ -310,19 +310,26 @@ def _heads(L):
     return [l for l in L if l.startswith("## ")]
 
 
+def _isolate(monkeypatch, tmp_path):
+    for k in ("AURUM_PAPER_OUT", "AURUM_VOLTARGET_OUT"):
+        monkeypatch.setenv(k, str(tmp_path / k.lower()))
+
+
 def test_m3_weekly_report_fixed_layout_without_data(tmp_path, monkeypatch):
-    WB = _wb(); monkeypatch.setattr(WB, "dtb3", lambda out: None)
+    WB = _wb(); monkeypatch.setattr(WB, "dtb3", lambda out: None); _isolate(monkeypatch, tmp_path)
     monkeypatch.setenv("AURUM_DATA_LIVE", str(tmp_path / "live")); monkeypatch.setenv("AURUM_SLEEVES_OUT", str(tmp_path / "so"))
     L = WB.build(str(tmp_path / "leer"), D(2026, 10, 12))
     assert _heads(L) == list(WB.LAYOUT) and len(L) <= WB.MAX_ZEILEN
     txt = "\n".join(L)
     assert "Wochenbericht" in txt and "nicht lesbar" in txt and "nicht freigegeben" in txt
+    assert "**ALARM** Collector" in txt and "**ALARM** PAPER v1.0" in txt and "Heartbeat-Alarm" in txt   # keine Laeufe
+    assert "VOLTARGET" in txt and "| T55_20 |" in txt
     assert "identisch mit Buy and Hold" in txt and "zulässiges Ergebnis" in txt and "ß" not in txt
 
 
 def test_m3_weekly_report_with_sleeve_state(tmp_path, monkeypatch):
     WB = _wb(); import sleeves_bericht as SB
-    monkeypatch.setattr(WB, "dtb3", lambda out: None)
+    monkeypatch.setattr(WB, "dtb3", lambda out: None); _isolate(monkeypatch, tmp_path)
     live, so = tmp_path / "live", tmp_path / "so"
     _write_live(live, [["2026-10-10", "2.10", "2026-10-11T04:15:00Z", "r", "0"]], _bars(D(2026, 10, 2), 2))
     os.makedirs(so / "state")
@@ -344,4 +351,4 @@ def test_m3_weekly_report_with_sleeve_state(tmp_path, monkeypatch):
     assert _heads(L) == list(WB.LAYOUT) and len(L) <= WB.MAX_ZEILEN
     assert "| A | OK | INVESTIERT | 1'012 (1'006) | 1'020 | 1 | 0 von 1 |" in txt
     assert "| B | OK | INVESTIERT | 2.10 (2026-10-10) | +1.40 | ja |" in txt
-    assert "… und 2 weitere" in txt and "Läufe der letzten 7 Tage 1, davon erfolgreich 1" in txt
+    assert "… und 4 weitere" in txt and "Läufe der letzten 7 Tage 1, davon erfolgreich 1" in txt

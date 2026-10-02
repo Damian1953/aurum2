@@ -4,7 +4,7 @@
 
 **Status: KANDIDAT v1.0, NICHT EINGEFROREN, nicht gelaufen.** Kein Tag, kein Spec-SHA im Run-Log, Runner gesperrt (`sleeves/sleeves_config.json` enabled=false, Exit 3), kein cron-Eintrag.
 **Stand:** 2026-10-02 (Zürich, UTC+2). Grundlage: v0.2 (bleibt unverändert liegen) und Review Claude, zusammengefasst in `review_claude_scan_v2_v1.md`. **Vetorecht Damian vorbehalten.**
-**Freeze erst nach:** Freigabe des Kandidaten durch Projektleitung und Claude, kein Veto Damian, eigene Freeze-Liste (gemeinsam mit MAKRO_LIQ), ENTSCHEIDE-Eintrag.
+**Freeze erst nach:** Freigabe des Kandidaten durch Projektleitung und Claude, kein Veto Damian, eigene Freeze-Liste (gemeinsam mit MAKRO_LIQ), ENTSCHEIDE-Eintrag. Voraussetzung für den Start: gemeinsamer einseitiger Wochenbericht und gemeinsamer Heartbeat aller Forward-Linien (`forward/heartbeat.py`).
 
 ## 0. Änderungen gegenüber v0.2
 - **B ist keine Hypothese mehr, sondern eine Leitplanke für den Kernbestand.** Regel, Schwellen 1.0/3.5 und Datenquelle werden eingefroren und bleiben unverändert. **Keine Gates, kein Erfolgsanspruch, kein Trial, nicht in der Testfamilie** (keine Holm-Korrektur mit MAKRO_LIQ).
@@ -48,7 +48,7 @@ B ist eine **Leitplanke für den BTC-Kernbestand**: Bei extremer Überbewertung 
 - Kennzahlen nur berichtet: CAGR, MaxDD, Sharpe ex, Calmar, Ulcer-Index, Zeit im Markt, Zustand, aktueller MVRV-Wert und Abstand zu 3.5.
 - **Pflichtsatz im Bericht:** «Solange MVRV seit Start nie über 3.5 lag, ist B identisch mit Buy and Hold (gleiche Menge BTC, gleicher Einstieg, gleiche Kosten).» Der Bericht zeigt zusätzlich, ob das aktuell zutrifft.
 - **Pflichtsatz im Bericht:** «Erreicht MVRV 3.5 nicht mehr, löst die Regel nie aus; das ist ein zulässiges Ergebnis.»
-- Gemeinsamer einseitiger Wochenbericht mit PAPER v1.0 und Sleeve A (`paper/wochenbericht.py`, feste Gestaltung, Abschnitt «Leitplanke B MVRV (kein Test)»).
+- Gemeinsamer einseitiger Wochenbericht mit PAPER v1.0, Sleeve A und VOLTARGET (`paper/wochenbericht.py`, feste Gestaltung, Abschnitt «Leitplanke B MVRV (kein Test)», Heartbeat in Abschnitt 1).
 
 ## 6. Review-Termine (Betrieb)
 - **2027-02-02** (mit dem PAPER-v1.0-Review): nur Betrieb (Abrufe vollständig, First-Release-Protokoll, As-of-Prüfung fehlerfrei, Zustand reproduzierbar, Kosten).
