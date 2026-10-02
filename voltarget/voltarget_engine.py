@@ -1,4 +1,4 @@
-"""Aurum II Vol-Target-Overlay v0.2 (ENTWURF, VOLTARGET_PREREG v0.2). Keine Keys, keine Orders, keine Boersenverbindung.
+"""Aurum II Vol-Target-Overlay, KANDIDAT v1.0 (VOLTARGET_PREREG_v1.0, nicht eingefroren). Keine Keys, keine Orders, keine Boersenverbindung.
 
 Reines Risiko-Overlay auf die unveraenderten Paper-Sleeves W2, W6 und T55_20 (PAPER_PREREG v1.0):
   - skaliert nur die Positionsgroesse der Basis, erzeugt nie ein eigenes Signal
@@ -14,6 +14,9 @@ Reines Risiko-Overlay auf die unveraenderten Paper-Sleeves W2, W6 und T55_20 (PA
     Basis-Ereignisse (Einstieg, Add-on, Ausstieg) werden immer ausgefuehrt;
   - fail-closed: fehlt eine gueltige Vol-Schaetzung, wird nie Exposure erhoeht (Status STOPPED);
     Basis-Ausstiege werden auch dann ausgefuehrt.
+  - Vergleich (v1.0, Review Claude M4): VT, Basis B (s = 1) und Kontrolle C (s = c) laufen durch dieselbe Engine mit
+    SYMMETRISCHER Sync-Buchung am Startbar: B uebernimmt eine laufende Basisposition mit Gewicht E, C mit E * c, VT mit
+    E * s, alle mit denselben Kosten (Grund "sync"). Sync-Kosten werden getrennt ausgewiesen (costs_by_reason).
 Der Kern (dieses Modul) ist reines Python ohne Datenzugriff; Laden und Basis-Ableitung in base_adapter.py.
 """
 import json, math, os
@@ -236,3 +239,42 @@ def simulate(days, cost, start_idx, next_E=0.0, next_event=None, capital=CAPITAL
             pending = (tgt, reason)
     return dict(equity=equity, trades=trades, status=status, stop=stop,
                 pending=None if pending is None else dict(w_target=pending[0], reason=pending[1]))
+
+
+# ------------------------------------------------------------------ Vergleich VT / B / C (v1.0, Prereg §3.7, §6)
+def run_compare(days, cost, start_idx, next_E=0.0, next_event=None, c=None, capital=CAPITAL):
+    """VT (Vol-Skalierung, Band), B (s = 1, ohne Vol-Anpassungen) und optional C (s = c konstant, ohne Vol-Anpassungen).
+    Alle drei mit derselben Engine und derselben Sync-Buchung am Startbar (Gewicht E * s, E * 1 bzw. E * c, gleiche
+    Kosten). Rueckgabe dict(vt=..., b=..., c=... oder None)."""
+    inf = float("inf")
+    vt = simulate(days, cost, start_idx, next_E, next_event, capital=capital)
+    b = simulate(days, cost, start_idx, next_E, next_event, capital=capital, band=inf, scale_override=1.0)
+    cc = None if c is None else simulate(days, cost, start_idx, next_E, next_event, capital=capital, band=inf, scale_override=c)
+    return dict(vt=vt, b=b, c=cc)
+
+
+def costs_by_reason(trades):
+    """Kosten in USD je Trade-Grund (sync, entry, add, exit, exit_stop, vol)."""
+    out = {}
+    for t in trades:
+        out[t["reason"]] = out.get(t["reason"], 0.0) + t["fee"]
+    return out
+
+
+def sync_costs(trades):
+    """Kosten der Zustandsuebernahme (Grund "sync"), getrennt ausgewiesen (Prereg §6)."""
+    return costs_by_reason(trades).get("sync", 0.0)
+
+
+def scale_distribution(equity):
+    """Verteilung von s je Coin (nur Bericht): Tage, Tage mit s < 1, Coin-Tage mit offener Basis und s < 1,
+    Minimum und Mittel von s, Klassen [<0.5, 0.5-0.8, 0.8-1, =1]."""
+    xs = [(e["scale"], e["E"]) for e in equity if e.get("scale") is not None]
+    lt = [s for s, _ in xs if s < 1.0 - EPS]
+    return dict(tage=len(xs), tage_s_lt_1=len(lt),
+                tage_offen=sum(1 for _, E in xs if E > EPS),
+                tage_offen_s_lt_1=sum(1 for s, E in xs if E > EPS and s < 1.0 - EPS),
+                s_min=min((s for s, _ in xs), default=None),
+                s_mittel=(sum(s for s, _ in xs) / len(xs)) if xs else None,
+                klassen={"<0.5": sum(1 for s in lt if s < 0.5), "0.5-0.8": sum(1 for s in lt if 0.5 <= s < 0.8),
+                         "0.8-1": sum(1 for s in lt if s >= 0.8), "=1": len(xs) - len(lt)})

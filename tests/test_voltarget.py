@@ -1,4 +1,4 @@
-"""Offline-Tests Vol-Target-Overlay v0.2 (Entwurf): Skalierungsmathematik, Deckel 1.0, No-Trade-Band, keine
+"""Offline-Tests Vol-Target-Overlay v1.0-Kandidat: Skalierungsmathematik, Deckel 1.0, No-Trade-Band, keine
 Signalerzeugung, fehlende Daten (fail-closed), Kosten, Gleichheit mit der Basis bei neutraler Skalierung, Laufzeitsperre.
 Nur synthetische Daten; keine Collector-, Holdout- oder Validation-Dateien."""
 import csv, datetime as dt, math, os, random, subprocess, sys
@@ -347,7 +347,7 @@ def test_runner_on_synthetic_live_dir(tmp_path):
 
 # ------------------------------------------------------------------ Gates und Kosten-Kill (§7, §8)
 def test_gate_constants_declared():
-    assert G.GATES == dict(g1_maxdd_ratio=0.90, g2_sharpe_tol=0.05, kr3_cost_limit=0.01)
+    assert G.GATES == dict(g1_maxdd_ratio=0.90, g2_sharpe_tol=0.05, kr3_cost_limit=0.01, kr3_first_review_min=0.0033)
     assert R.load_cfg()["gates"] == G.GATES
 
 
@@ -393,3 +393,95 @@ def test_verdict_and_control_factor_and_kr3():
     assert G.control_factor([0.5, 0.6, 0.0], [1.0, 1.0, 0.0]) == pytest.approx(0.55)
     assert G.kr3_cost_kill(10.1, 1000.0, 365) and not G.kr3_cost_kill(10.0, 1000.0, 365)
     assert G.kr3_cost_kill(5.1, 1000.0, 182.5) and not G.kr3_cost_kill(4.9, 1000.0, 182.5)
+
+
+# ------------------------------------------------------------------ v1.0 (Review Claude)
+def test_m3_kr3_first_review_needs_non_annualised_above_033pct():
+    # 120 Tage bis zum ersten Review: 2.0 USD auf 1000 USD = 0.20 % (annualisiert 0.61 %) -> kein Kill
+    assert not G.kr3_cost_kill(2.0, 1000.0, 120) and not G.kr3_cost_kill(2.0, 1000.0, 120, first_review=True)
+    # 3.0 USD in 60 Tagen: annualisiert 1.83 % > 1 %, aber nicht annualisiert 0.30 % <= 0.33 % -> am ersten Review kein Kill
+    assert G.kr3_cost_kill(3.0, 1000.0, 60) and not G.kr3_cost_kill(3.0, 1000.0, 60, first_review=True)
+    # 3.4 USD in 60 Tagen: 0.34 % > 0.33 % und annualisiert 2.07 % > 1 % -> Kill
+    assert G.kr3_cost_kill(3.4, 1000.0, 60, first_review=True)
+    # Grenze 0.33 % exklusiv; ab dem zweiten Review gilt nur die Jahresgrenze
+    assert not G.kr3_cost_kill(3.3, 1000.0, 60, first_review=True) and G.kr3_cost_kill(3.3, 1000.0, 60)
+    # hohe Quote, aber annualisiert unter 1 % (langes Fenster) -> nie Kill
+    assert not G.kr3_cost_kill(5.0, 1000.0, 730, first_review=True)
+
+
+def _sync_days(n=50, E0=1.0, seed=4):
+    """Basis haelt am Startbar bereits eine Position (Einstieg vor dem Start), danach Ausstieg; < 60 Renditen -> s = 1."""
+    days = mkdays(n, E=[0.0] * 5 + [E0] * 35 + [0.0] * (n - 40), events={5: "entry", 40: "exit"}, seed=seed, sigma=0.02)
+    return days, 10                                                   # Start mitten in der Basisposition
+
+
+def test_m4_symmetric_sync_for_b_and_c():
+    days, i0 = _sync_days()
+    for scen, cost in V.cost_scenarios().items():
+        cmp_ = V.run_compare(days, cost, i0, c=0.6)
+        for key, w in (("b", 1.0), ("c", 0.6)):
+            t = cmp_[key]["trades"][0]
+            assert t["reason"] == "sync" and t["date"] == str(days[i0 + 1]["date"]) and t["w_target"] == pytest.approx(w)
+            assert t["value"] == pytest.approx(w * 1000.0) and t["fee"] == pytest.approx(w * 1000.0 * cost["c_in"])
+        assert V.sync_costs(cmp_["b"]["trades"]) == pytest.approx(1000.0 * cost["c_in"])
+        assert V.sync_costs(cmp_["c"]["trades"]) == pytest.approx(600.0 * cost["c_in"])
+        by = V.costs_by_reason(cmp_["vt"]["trades"])
+        assert set(by) <= {"sync", "exit", "vol"} and by["sync"] == pytest.approx(V.sync_costs(cmp_["vt"]["trades"]))
+
+
+@pytest.mark.parametrize("E0", [1.0, 0.75])
+def test_m4_identity_vt_b_c_with_s_equal_one_including_sync(E0):
+    days, i0 = _sync_days(E0=E0)
+    cmp_ = V.run_compare(days, COST, i0, c=1.0)
+    assert all(e["scale"] == 1.0 and e["vol_mode"] == "warmup" for e in cmp_["vt"]["equity"])   # s = 1 (unter 60 Renditen)
+    for k in ("b", "c"):
+        assert [round(e["equity"], 9) for e in cmp_[k]["equity"]] == [round(e["equity"], 9) for e in cmp_["vt"]["equity"]]
+        assert [(t["date"], t["reason"], round(t["value"], 9), round(t["fee"], 9)) for t in cmp_[k]["trades"]] == \
+               [(t["date"], t["reason"], round(t["value"], 9), round(t["fee"], 9)) for t in cmp_["vt"]["trades"]]
+    assert cmp_["vt"]["trades"][0]["reason"] == "sync" and cmp_["vt"]["trades"][-1]["reason"] == "exit"
+    # zusaetzlich mit voller Historie und erzwungenem s = 1 (scale_for gepatcht)
+    long_days = mkdays(450, E=[0.0] * 380 + [E0] * 60 + [0.0] * 10, events={380: "entry", 440: "exit"}, seed=8, sigma=0.01)
+    orig = V.scale_for
+    try:
+        V.scale_for = lambda rets, **kw: (1.0, "full", None, None)
+        c2 = V.run_compare(long_days, COST, 400, c=1.0)
+    finally:
+        V.scale_for = orig
+    assert [round(e["equity"], 9) for e in c2["vt"]["equity"]] == [round(e["equity"], 9) for e in c2["b"]["equity"]] == \
+           [round(e["equity"], 9) for e in c2["c"]["equity"]]
+    assert c2["vt"]["trades"][0]["reason"] == "sync"
+
+
+def test_scale_distribution_per_coin():
+    eq = [dict(scale=s, E=E) for s, E in [(1.0, 0.0), (0.9, 1.0), (0.4, 1.0), (0.7, 0.0), (1.0, 1.0), (None, 1.0)]]
+    d = V.scale_distribution(eq)
+    assert (d["tage"], d["tage_s_lt_1"], d["tage_offen"], d["tage_offen_s_lt_1"]) == (5, 3, 3, 2)
+    assert d["s_min"] == 0.4 and d["klassen"] == {"<0.5": 1, "0.5-0.8": 1, "0.8-1": 1, "=1": 2}
+
+
+def test_runner_state_interface_for_shared_report(tmp_path):
+    live = tmp_path / "live"; (live / "kraken_ohlc").mkdir(parents=True)
+    d = synth(900, 3); d.index = pd.date_range("2024-03-01", periods=900, freq="D", tz="UTC")
+    for coin in BA.COINS:
+        with open(live / "kraken_ohlc" / f"{coin}USD_1d.csv", "w", newline="") as fh:
+            w = csv.writer(fh); w.writerow(["t", "open", "high", "low", "close", "volume", "trades"])
+            for t, row in d.iterrows():
+                w.writerow([t.strftime("%Y-%m-%dT%H:%M:%SZ"), row.open, row.high, row.low, row.close, 1, 1])
+    cfg = dict(R.load_cfg(), enabled=True, start_bar="2026-01-01", freeze_list="unbenutzt.txt")
+    rc, st = R.run(cfg, str(live), str(tmp_path / "out"), now=pd.Timestamp("2026-08-20", tz="UTC"))
+    assert rc == 0 and set(st["summary"]) == set(BA.STRATS) and set(st["s_verteilung"]) == set(BA.COINS)
+    for v in st["summary"].values():
+        assert {"status", "coins_ok", "coins_total", "tage_offen", "tage_offen_s_lt_1", "sync_kosten_usd", "sync_kosten_b_usd",
+                "kosten_nach_grund"} <= set(v) and v["coins_ok"] == v["coins_total"] == 10
+        assert v["tage_offen_s_lt_1"] <= v["tage_offen"]
+    for v in st["s_verteilung"].values():
+        assert {"tage", "tage_s_lt_1", "s_min"} <= set(v) and v["tage_s_lt_1"] <= v["tage"]
+    rows = list(csv.DictReader(open(tmp_path / "out/ledger/equity_daily.csv")))
+    assert "eq_base_sync" in rows[0] and "eq_base" in rows[0]
+    tp = tmp_path / "out/ledger/trades.csv"
+    if tp.exists():
+        assert {r["run"] for r in csv.DictReader(open(tp))} <= {"VT", "B"}
+    hist = [l for l in open(tmp_path / "out/logs/run_history.jsonl")]
+    import json as _j
+    h = _j.loads(hist[-1]); assert "run_utc" in h and h["rc"] == 0          # Heartbeat-Schnittstelle (run_utc, rc)
+    dt.datetime.fromisoformat(h["run_utc"])

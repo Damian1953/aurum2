@@ -1,9 +1,9 @@
 {
-  "_doc": "Vol-Target-Overlay (VOLTARGET_PREREG v0.2). ENTWURF: NICHT freigegeben, NICHT eingefroren, NICHT in cron. Erst nach Review Claude, ohne Veto Damian und mit ENTSCHEIDE-Eintrag: enabled=true, start_bar und freeze_list setzen. Ein Scheduler-Eintrag ist in v0.2 bewusst nicht vorgesehen. Die Parameter muessen mit voltarget_engine.PARAMS und gates.GATES uebereinstimmen, sonst verweigert der Runner den Lauf.",
+  "_doc": "Vol-Target-Overlay (VOLTARGET_PREREG v1.0, KANDIDAT). NICHT freigegeben, NICHT eingefroren, NICHT in cron. Erst nach Review Claude, ohne Veto Damian und mit ENTSCHEIDE-Eintrag: enabled=true, start_bar und freeze_list setzen. Ein Scheduler-Eintrag ist bewusst nicht vorgesehen (Heartbeat und gemeinsamer Wochenbericht auf Branch sleeves-v1 sind Startvoraussetzung). Die Parameter muessen mit voltarget_engine.PARAMS und gates.GATES uebereinstimmen, sonst verweigert der Runner den Lauf.",
   "enabled": false,
   "start_bar": null,
   "freeze_list": null,
-  "prereg": "01_forschung/15_voltarget/VOLTARGET_PREREG_v0.2.md",
+  "prereg": "01_forschung/15_voltarget/VOLTARGET_PREREG_v1.0.md",
   "params": {
     "half_life": 20,
     "window": 365,
@@ -16,6 +16,7 @@
   "gates": {
     "g1_maxdd_ratio": 0.9,
     "g2_sharpe_tol": 0.05,
-    "kr3_cost_limit": 0.01
+    "kr3_cost_limit": 0.01,
+    "kr3_first_review_min": 0.0033
   }
 }

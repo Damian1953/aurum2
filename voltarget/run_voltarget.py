@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Tageslauf Vol-Target-Overlay (VOLTARGET_PREREG v0.2, ENTWURF). GESPERRT, solange voltarget_config.json enabled=false.
+"""Tageslauf Vol-Target-Overlay (VOLTARGET_PREREG v1.0, KANDIDAT, nicht eingefroren). GESPERRT, solange voltarget_config.json enabled=false.
 
 Fail-closed:
   - ohne Freigabe (enabled=false, start_bar oder freeze_list fehlt) kein Lauf: Exit 3. Es gibt keinen Dry-Run-Bypass.
@@ -10,6 +10,11 @@ Fail-closed:
 Kein Scheduler-Eintrag (bewusst). Keine Keys, keine Orders, keine Boersenverbindung: nur lokale Collector-Dateien.
 Ausgaben (Standard /workspace/aurum2/paper_voltarget/): state/state_latest.json, ledger/equity_daily.csv,
 ledger/trades.csv, logs/run_history.jsonl.
+state_latest.json enthaelt fuer den gemeinsamen Wochenbericht (Branch sleeves-v1, forward/voltarget_bericht.py):
+  summary[strat] = dict(status, coins_ok, coins_total, tage_offen, tage_offen_s_lt_1, sync_kosten_usd, sync_kosten_b_usd,
+                        kosten_nach_grund)    (maker_plan, VT)
+  s_verteilung[coin] = voltarget_engine.scale_distribution (Tage seit Start, Tage mit s < 1, s_min, Klassen)
+Basis B fuer die Gates = Basis mit symmetrischer Sync-Buchung (Spalte eq_base_sync); eq_base = Paper-Ledger-Nachrechnung (R3).
 """
 import csv, datetime as dt, hashlib, json, os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -84,35 +89,59 @@ def run(cfg, data, out, now=None):
     for sub in ("state", "ledger", "logs"):
         os.makedirs(os.path.join(out, sub), exist_ok=True)
     eq_rows, tr_rows, res, rc = [], [], {}, 0
+    summ = {s: dict(status="OK", coins_ok=0, coins_total=len(BA.COINS), tage_offen=0, tage_offen_s_lt_1=0,
+                    sync_kosten_usd=0.0, sync_kosten_b_usd=0.0, kosten_nach_grund={}) for s in BA.STRATS}
+    sverteil = {}
     for coin in BA.COINS:
         f = os.path.join(data, "kraken_ohlc", f"{coin}USD_1d.csv")
         if not os.path.exists(f):
-            res[coin] = dict(status="STOPPED", reason="Datei fehlt"); rc = max(rc, 7); continue
+            res[coin] = dict(status="STOPPED", reason="Datei fehlt"); rc = max(rc, 7)
+            for s_ in BA.STRATS:
+                summ[s_]["status"] = "STOPPED"
+            continue
         d = BA.load_bars(f, now_ts)
         for strat in BA.STRATS:
             days, nE, nEv = BA.base_days(d, strat)
             i0 = BA.start_index(days, start)
             dec = BA.P.decide(d, strat)
+            coin_ok = True
             for scen, cost in costs.items():
                 try:
-                    r = V.simulate(days, cost, i0, nE, nEv)
+                    cmp_ = V.run_compare(days, cost, i0, nE, nEv)
                 except V.InvariantError as e:
-                    res[f"{strat}_{coin}_{scen}"] = dict(status="INVARIANT", error=str(e)); rc = max(rc, 5); continue
-                acc = BA.P.account(d, dec, cost)["equity"]     # unveraenderte Basis wie Paper-Ledger (ab PAPER START_BAR)
+                    res[f"{strat}_{coin}_{scen}"] = dict(status="INVARIANT", error=str(e)); rc = max(rc, 5); coin_ok = False; continue
+                r, rb = cmp_["vt"], cmp_["b"]
+                acc = BA.P.account(d, dec, cost)["equity"]     # unveraenderte Basis wie Paper-Ledger (ab PAPER START_BAR), R3
+                eqb = {row["date"]: row["equity"] for row in rb["equity"]}
                 for row in r["equity"]:
                     t = pd.Timestamp(row["date"], tz="UTC")
                     eq_rows.append(dict(date=row["date"], strat=strat, coin=coin, scenario=scen, eq_overlay=round(row["equity"], 6),
+                                        eq_base_sync=round(eqb.get(row["date"], float("nan")), 6),
                                         eq_base=round(float(acc.get(t, float("nan"))), 6), weight=round(row["weight"], 6),
                                         E_base=row["E"], scale=None if row["scale"] is None else round(row["scale"], 6),
                                         status=row["status"]))
                 for t in r["trades"]:
-                    tr_rows.append(dict(strat=strat, coin=coin, scenario=scen, **t))
-                res[f"{strat}_{coin}_{scen}"] = dict(status=r["status"], stop=r["stop"], pending=r["pending"])
+                    tr_rows.append(dict(strat=strat, coin=coin, scenario=scen, run="VT", **t))
+                for t in rb["trades"]:
+                    tr_rows.append(dict(strat=strat, coin=coin, scenario=scen, run="B", **t))
+                res[f"{strat}_{coin}_{scen}"] = dict(status=r["status"], stop=r["stop"], pending=r["pending"],
+                                                     sync_kosten_usd=V.sync_costs(r["trades"]), sync_kosten_b_usd=V.sync_costs(rb["trades"]),
+                                                     kosten_nach_grund=V.costs_by_reason(r["trades"]))
                 if r["status"] == "STOPPED":
-                    rc = max(rc, 7)
+                    rc = max(rc, 7); coin_ok = False; summ[strat]["status"] = "STOPPED"
+                if scen == "maker_plan":
+                    dist = V.scale_distribution(r["equity"]); sm = summ[strat]
+                    sm["tage_offen"] += dist["tage_offen"]; sm["tage_offen_s_lt_1"] += dist["tage_offen_s_lt_1"]
+                    sm["sync_kosten_usd"] += V.sync_costs(r["trades"]); sm["sync_kosten_b_usd"] += V.sync_costs(rb["trades"])
+                    for k, v in V.costs_by_reason(r["trades"]).items():
+                        sm["kosten_nach_grund"][k] = sm["kosten_nach_grund"].get(k, 0.0) + v
+                    if coin not in sverteil:                    # s haengt nur vom Coin ab (nicht von der Strategie)
+                        sverteil[coin] = {k: v for k, v in dist.items() if k not in ("tage_offen", "tage_offen_s_lt_1")}
+            summ[strat]["coins_ok"] += int(coin_ok)
     write_csv(os.path.join(out, "ledger", "equity_daily.csv"), eq_rows)
     write_csv(os.path.join(out, "ledger", "trades.csv"), tr_rows)
-    st = dict(run_utc=str(now_ts), start_bar=str(start), params=V.PARAMS, results=res, rc=rc)
+    st = dict(run_utc=now_ts.isoformat(), start_bar=str(start), params=V.PARAMS, results=res, summary=summ,
+              s_verteilung=sverteil, rc=rc)
     tmp = os.path.join(out, "state", "state_latest.json.tmp")
     json.dump(st, open(tmp, "w"), indent=1, default=str); os.replace(tmp, os.path.join(out, "state", "state_latest.json"))
     with open(os.path.join(out, "logs", "run_history.jsonl"), "a") as fh:

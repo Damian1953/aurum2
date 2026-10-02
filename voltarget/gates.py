@@ -1,4 +1,4 @@
-"""Gates und Kill-Regel KR3 des Vol-Target-Overlays (VOLTARGET_PREREG v0.2 §6-§8). Reine Funktionen auf
+"""Gates und Kill-Regel KR3 des Vol-Target-Overlays (VOLTARGET_PREREG v1.0-Kandidat §6-§8). Reine Funktionen auf
 taeglichen Equity-Reihen (Listen gleicher Laenge, gleiche Tage). Kein Datenzugriff; wird erst bei der
 Leistungsauswertung bzw. am Betriebs-Review verwendet. Schwellen sind GESETZT, nicht hergeleitet (Prereg §7.1, §8.2)."""
 import math
@@ -7,7 +7,9 @@ ANN = 365
 G1_MAXDD_RATIO = 0.90    # G1: |MaxDD_VT| <= 0.90 * |MaxDD_B|            (gesetzt, nicht hergeleitet)
 G2_SHARPE_TOL = 0.05     # G2: Sharpe_VT >= Sharpe_B - 0.05                (v0.2, Entscheid Projektleitung)
 KR3_COST_LIMIT = 0.01    # KR3: Kosten reiner Vol-Anpassungen <= 1.0 % p. a. (gesetzt, nicht hergeleitet)
-GATES = dict(g1_maxdd_ratio=G1_MAXDD_RATIO, g2_sharpe_tol=G2_SHARPE_TOL, kr3_cost_limit=KR3_COST_LIMIT)
+KR3_FIRST_REVIEW_MIN = 0.0033  # KR3 am ersten Review nur, wenn auch die NICHT annualisierten Kosten > 0.33 % (v1.0, M3)
+GATES = dict(g1_maxdd_ratio=G1_MAXDD_RATIO, g2_sharpe_tol=G2_SHARPE_TOL, kr3_cost_limit=KR3_COST_LIMIT,
+             kr3_first_review_min=KR3_FIRST_REVIEW_MIN)
 EPS = 1e-12
 
 
@@ -72,8 +74,15 @@ def verdict(k1, k2, testable=True):
     return "bestanden"
 
 
-def kr3_cost_kill(vol_cost_usd, mean_capital_usd, days, limit=KR3_COST_LIMIT):
-    """True = Kosten-Kill: annualisierte Kosten der reinen Vol-Anpassungen (Grund "vol") > limit * mittleres Kapital."""
+def kr3_cost_kill(vol_cost_usd, mean_capital_usd, days, limit=KR3_COST_LIMIT, first_review=False,
+                  first_min=KR3_FIRST_REVIEW_MIN):
+    """True = Kosten-Kill: annualisierte Kosten der reinen Vol-Anpassungen (Grund "vol") > limit * mittleres Kapital.
+    Am ERSTEN Betriebs-Review (kurzes Fenster, Annualisierung blaest wenige Trades auf) zusaetzlich nur, wenn auch die
+    nicht annualisierten Kosten > first_min (0.33 %) des mittleren Kapitals liegen (v1.0, Review Claude M3)."""
     if days <= 0 or mean_capital_usd <= 0:
         raise ValueError("ungueltige Basis fuer KR3")
-    return vol_cost_usd * (ANN / days) / mean_capital_usd > limit + EPS
+    quote = vol_cost_usd / mean_capital_usd
+    kill = quote * (ANN / days) > limit + EPS
+    if first_review:
+        kill = kill and quote > first_min + EPS
+    return kill
