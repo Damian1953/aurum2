@@ -57,21 +57,21 @@ def test_parsers():
 
 def test_src_fred_macro_with_stub(store, tmp_path, monkeypatch):
     monkeypatch.setattr(C, "utcnow", lambda: dt.datetime(2026, 10, 2, 4, 15, tzinfo=dt.timezone.utc))
-    data = {"WALCL": "6743031", "WTREGEN": "850000", "RRPONTSYD": "11.5", "DTB3": "3.9"}
+    data = {"WALCL": "6743031", "WDTGAL": "850000", "RRPONTSYD": "11.5", "DTB3": "3.9"}
     def getter(url):
         sid = url.split("id=")[1].split("&")[0]
         if sid == "DTB3":
             raise TimeoutError("kein Netz")
         return 200, f"observation_date,{sid}\n2026-09-30,{data[sid]}\n".encode()
     res, errs = M.src_fred_macro(store, None, getter=getter)
-    assert set(res) == {"WALCL", "WTREGEN", "RRPONTSYD"} and len(errs) == 1 and "DTB3" in errs[0]
+    assert set(res) == {"WALCL", "WDTGAL", "RRPONTSYD"} and len(errs) == 1 and "DTB3" in errs[0]
     r = rows(tmp_path / "macro/fred/WALCL.csv")[0]
     assert r["first_fetch_utc"] == "2026-10-02T04:15:00Z" and r["run_id"] == "run1"
     assert any(p.name == "run1.csv" for p in (tmp_path / "macro/_raw/fred_WALCL").iterdir())
 
 
 def test_sources_registered():
-    assert "coinmetrics_mvrv" in C.SOURCES and "fred_macro" in C.SOURCES and C.VERSION == "1.2"
+    assert "coinmetrics_mvrv" in C.SOURCES and "fred_macro" in C.SOURCES and C.VERSION == "1.3"
 
 
 def _main(monkeypatch, tmp_path, sources, argv=("collect.py",)):
@@ -119,3 +119,10 @@ def test_macro_only_run_leaves_core_status(tmp_path, monkeypatch):
     assert _main(monkeypatch, tmp_path, src, ("collect.py", "--only", "fred_macro")) == 0
     assert not (tmp_path / "run_history.jsonl").exists() and not (tmp_path / "last_run_status.json").exists()
     assert json.load(open(tmp_path / "macro/status.json"))["fred_macro"]["ok"] is False
+
+
+def test_m1_tga_series_is_wdtgal():
+    # M1 Review Claude: TGA als Mittwochsstand WDTGAL (wie WALCL), nicht mehr Wochendurchschnitt WTREGEN
+    assert M.FRED_SERIES == ["WALCL", "WDTGAL", "RRPONTSYD", "DTB3"] and "WTREGEN" not in M.BOUNDS
+    obs, _ = M.parse_fredgraph("WDTGAL", b"observation_date,WDTGAL\n2026-09-23,947317\n2026-09-30,984046\n")
+    assert obs[-1] == ("2026-09-30", "984046") and not M.validate_obs("WDTGAL", obs, TODAY)

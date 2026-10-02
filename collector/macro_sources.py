@@ -6,7 +6,8 @@ Nur oeffentliche Daten ohne Key. Massgebend ist je Beobachtung der Wert beim ERS
   - jede Rohantwort wird mit SHA256 unter macro/_raw/<quelle>/ abgelegt (nie ueberschrieben)
 Quellen
   coinmetrics_mvrv  community-api.coinmetrics.io v4 asset-metrics btc CapMVRVCur 1d, letzte 30 Tage
-  fred_macro        fred.stlouisfed.org/graph/fredgraph.csv (ohne Key) WALCL, WTREGEN, RRPONTSYD, DTB3, letzte 200 Tage
+  fred_macro        fred.stlouisfed.org/graph/fredgraph.csv (ohne Key) WALCL, WDTGAL, RRPONTSYD, DTB3, letzte 200 Tage
+                    (TGA ab Review Claude M1 als Mittwochsstand WDTGAL statt Wochendurchschnitt WTREGEN)
 Hinweis: FRED beantwortet Anfragen mit eigenem User-Agent nicht (Timeout, getestet 01.10.2026); fuer FRED wird der
 Standard-User-Agent von Python-urllib verwendet.
 """
@@ -18,9 +19,9 @@ CM_URL = ("https://community-api.coinmetrics.io/v4/timeseries/asset-metrics?asse
           "&frequency=1d&page_size=1000&start_time={start}")
 FRED_URL = "https://fred.stlouisfed.org/graph/fredgraph.csv?id={sid}&cosd={start}"
 CM_DAYS, FRED_DAYS = 30, 200
-# Plausibilitaet (Einheiten wie FRED: WALCL/WTREGEN Mio. USD, RRPONTSYD Mrd. USD, DTB3 % p. a.)
-BOUNDS = {"CapMVRVCur": (0.1, 20.0), "WALCL": (1e6, 2e7), "WTREGEN": (0.0, 3e6), "RRPONTSYD": (0.0, 5000.0), "DTB3": (-1.0, 25.0)}
-FRED_SERIES = ["WALCL", "WTREGEN", "RRPONTSYD", "DTB3"]
+# Plausibilitaet (Einheiten wie FRED: WALCL/WDTGAL Mio. USD, RRPONTSYD Mrd. USD, DTB3 % p. a.)
+BOUNDS = {"CapMVRVCur": (0.1, 20.0), "WALCL": (1e6, 2e7), "WDTGAL": (0.0, 3e6), "RRPONTSYD": (0.0, 5000.0), "DTB3": (-1.0, 25.0)}
+FRED_SERIES = ["WALCL", "WDTGAL", "RRPONTSYD", "DTB3"]
 NONFATAL = ("coinmetrics_mvrv", "fred_macro")  # Fehler markieren den Collector-Lauf NICHT als fehlgeschlagen
 
 

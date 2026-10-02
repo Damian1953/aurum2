@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-"""Tageslauf Sleeves A/B (Forward-Paper). Fail-closed:
+"""Tageslauf Sleeve A und Leitplanke B (Forward-Paper, v1.0-Kandidat, NICHT eingefroren). Fail-closed:
   - ohne Freigabe (sleeves_config.json enabled=false) kein Lauf (Exit 3), ausser --dry-run in ein separates Verzeichnis
+  - start_bar muss ein Freitag sein (Start in gueltigem Zustand), sonst Exit 3
   - Freeze-Liste: SHA jeder gelisteten Datei muss stimmen, sonst Exit 4
   - Look-ahead -> Exit 5, Revision frueher protokollierter Ereignisse -> Exit 6, gestoppter Sleeve -> Exit 7
 Ausgaben (Standard /workspace/aurum2/paper_sleeves/): state/state_latest.json, ledger/equity_daily_{A,B}.csv,
@@ -9,6 +10,7 @@ ledger/events_{A,B}.csv, ledger/journal.jsonl (append-only), logs/run_history.js
 import argparse, csv, datetime as dt, hashlib, json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import sleeve_engine as E
+import auswertung as A
 
 DATA = os.environ.get("AURUM_DATA_LIVE", "/workspace/aurum2/data_live")
 OUT = os.environ.get("AURUM_SLEEVES_OUT", "/workspace/aurum2/paper_sleeves")
@@ -41,13 +43,18 @@ def write_csv(path, rows):
     os.replace(tmp, path)
 
 
+def start_ok(start):
+    """Start in gueltigem Zustand: der Startbar muss ein Freitag sein (Signaltag von A), sonst kein Lauf."""
+    return start is not None and start.weekday() == 4
+
+
 def run(data, out, start, now=None):
     now = now or dt.datetime.now(E.UTC)
     for sub in ("state", "ledger", "logs"):
         os.makedirs(os.path.join(out, sub), exist_ok=True)
     fr = lambda *p: E.load_first_release(os.path.join(data, "macro", *p))
     mvrv = fr("coinmetrics", "btc_CapMVRVCur.csv")
-    walcl, tga, rrp, dtb3 = (fr("fred", f"{s}.csv") for s in ("WALCL", "WTREGEN", "RRPONTSYD", "DTB3"))
+    walcl, tga, rrp, dtb3 = (fr("fred", f"{s}.csv") for s in (*E.FRED_A, "DTB3"))
     bars = [b for b in E.load_bars(os.path.join(data, "kraken_ohlc", "BTCUSD_1d.csv")) if E.cutoff(b[0]) <= now]
     costs = E.cost_scenarios()
     sleeves = {"A": lambda d, s: E.signal_a(walcl, tga, rrp, d, s), "B": lambda d, s: E.signal_b(mvrv, d, s)}
@@ -72,7 +79,14 @@ def run(data, out, start, now=None):
                     fh.write(json.dumps(dict(sleeve=name, logged_utc=now.isoformat(timespec="seconds"), **e), default=str) + "\n")
         last = r["equity"][-1] if r["equity"] else {}
         res[name] = dict(status=r["status"], stop=r["stop"], state=r["state"], pending_fill=r["pending"], last_bar=last.get("bar"),
-                         n_events=len(r["events"]), equity_last={k: v for k, v in last.items() if k.startswith(("eq_", "bh_"))})
+                         n_events=len(r["events"]), equity_last={k: v for k, v in last.items() if k.startswith(("eq_", "bh_", "b2_"))},
+                         n_wechsel=sum(1 for e in r["events"] if e["type"] == "fill"),
+                         kennzahlen={c: E.metrics(r["equity"], c) for c in (f"eq_maker_plan_{E.PRIMARY_CASH}", "bh_maker_plan")}
+                         if r["equity"] else {})
+        if name == "A":
+            res[name]["regimephasen"] = E.regime_phases(r["equity"]) if r["equity"] else None
+        if name == "B":
+            res[name]["identisch_bh"] = A.b_identisch_bh(r["equity"])
         if r["status"] == "STOPPED":
             rc = max(rc, 7)
     missing = sorted(old - seen)
@@ -81,7 +95,7 @@ def run(data, out, start, now=None):
     st = dict(run_utc=now.isoformat(timespec="seconds"), start_bar=str(start), sleeves=res, revisions=[list(m) for m in missing],
               inputs={k: (sha(p) if os.path.exists(p) else None) for k, p in {
                   "mvrv": os.path.join(data, "macro/coinmetrics/btc_CapMVRVCur.csv"),
-                  **{s: os.path.join(data, f"macro/fred/{s}.csv") for s in ("WALCL", "WTREGEN", "RRPONTSYD", "DTB3")},
+                  **{s: os.path.join(data, f"macro/fred/{s}.csv") for s in (*E.FRED_A, "DTB3")},
                   "btc_1d": os.path.join(data, "kraken_ohlc/BTCUSD_1d.csv")}.items()}, rc=rc)
     tmp = os.path.join(out, "state", "state_latest.json.tmp")
     json.dump(st, open(tmp, "w"), indent=1, default=str); os.replace(tmp, os.path.join(out, "state", "state_latest.json"))
@@ -104,6 +118,8 @@ def main():
         print(json.dumps(st, indent=1, default=str)); return rc
     if not cfg.get("enabled") or not cfg.get("start_bar") or not cfg.get("freeze_list"):
         print("Sleeves A/B nicht freigegeben (vor Freeze): kein Lauf."); return 3
+    if not start_ok(dt.date.fromisoformat(cfg["start_bar"])):
+        print("start_bar muss ein Freitag sein (Signaltag Sleeve A): kein Lauf."); return 3
     bad = check_freeze(cfg["freeze_list"])
     if bad:
         print(f"Freeze-Pruefung fehlgeschlagen: {bad}"); return 4
