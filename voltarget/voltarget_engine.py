@@ -10,7 +10,9 @@ Reines Risiko-Overlay auf die unveraenderten Paper-Sleeves W2, W6 und T55_20 (PA
   - sigma_lang: gleichgewichtetes RMS derselben 365 Renditen (rollendes Einjahresfenster);
   - Warmup (v0.2): unter 60 verfuegbaren Renditen s = 1; ab 60 Renditen beide Schaetzer ueber die verfuegbare
     Historie (expandierend) bis 365 erreicht sind; echte Luecken/ungueltige Kurse im Fenster -> STOPPED;
-  - kein Hebel (MAX_LEV = 1.0), No-Trade-Band 0.10 (absolute Gewichtsabweichung) fuer reine Vol-Anpassungen;
+  - Ziel ohne Basis-Ereignis = driftendes Gewicht der Basis B mal s (w_B(t) * s; Praezisierung vor dem Freeze v1.0),
+    Kursdrift allein loest keine Umschichtung aus, mit s = 1 ist VT exakt B;
+  - kein Hebel (MAX_LEV = 1.0), No-Trade-Band 0.10 (|w_VT - w_B * s|) fuer reine Vol-Anpassungen;
     Basis-Ereignisse (Einstieg, Add-on, Ausstieg) werden immer ausgefuehrt;
   - fail-closed: fehlt eine gueltige Vol-Schaetzung, wird nie Exposure erhoeht (Status STOPPED);
     Basis-Ausstiege werden auch dann ausgefuehrt.
@@ -141,10 +143,13 @@ def target_weight(E, s, max_lev=MAX_LEV):
     return min(max_lev, E * s, E)
 
 
-def rebalance_target(w_now, E_next, s, event, flat, band=BAND):
+def rebalance_target(w_now, E_next, s, event, flat, band=BAND, w_base=None):
     """Zielgewicht fuer die naechste Eroeffnung oder None (kein Trade).
     w_now: aktuelles Overlay-Gewicht (Schluss t); E_next: Basis-Exposure fuer t+1; s: Skalierung aus Schluss t;
-    event: Basis-Fill zur Eroeffnung t+1 (None/entry/add/exit/exit_stop); flat: Overlay haelt nichts."""
+    event: Basis-Fill zur Eroeffnung t+1 (None/entry/add/exit/exit_stop); flat: Overlay haelt nichts.
+    w_base: aktuelles (durch Kursdrift veraendertes) Gewicht der Basis B zum Schluss t. Praezisierung vor dem Freeze
+    (v1.0): Ohne Basis-Ereignis ist das Ziel w_B(t) * s, nicht E * s; das Band vergleicht das VT-Gewicht mit w_B(t) * s.
+    Kursdrift allein loest damit keine Vol-Anpassung aus (s = 1 -> VT = B). Ohne w_base (nur Einzeltests): E * s."""
     if event not in EVENTS:
         raise ValueError(f"unbekanntes Ereignis {event}")
     if E_next <= EPS:
@@ -154,9 +159,32 @@ def rebalance_target(w_now, E_next, s, event, flat, band=BAND):
         return None                                  # fail-closed, Aufrufer setzt STOPPED
     if event in ("entry", "add") or flat:            # Basis-Ereignis oder Synchronisation (Start, Zustandsuebernahme)
         return tgt
+    if w_base is not None:                           # gleiche Position wie B, skaliert: w_B(t) * s
+        tgt = min(MAX_LEV, max(0.0, w_base) * s)
     if abs(tgt - w_now) > band:
         return tgt
     return None
+
+
+def _execute(cash, qty, o, w_tgt, reason, cost):
+    """Fill zur Eroeffnung nach Konvention PAPER F3. Rueckgabe (cash, qty, trade oder None)."""
+    eq_open = cash + qty * o
+    cur = qty * o
+    if w_tgt <= EPS and qty > 0:
+        val = cur; rate = cost["c_out_stop"] if reason == "exit_stop" else cost["c_out"]
+        fee = val * rate
+        return cash + val - fee, 0.0, dict(side="sell", reason=reason, price=o, value=val, fee=fee, w_target=0.0)
+    tgt_val = w_tgt * eq_open
+    if tgt_val > cur + EPS * max(1.0, eq_open):
+        buy = tgt_val - cur
+        if cur + buy > MAX_LEV * eq_open + 1e-9:
+            raise InvariantError("Kauf ueber MAX_LEV")
+        fee = buy * cost["c_in"]
+        return cash - buy - fee, qty + buy / o, dict(side="buy", reason=reason, price=o, value=buy, fee=fee, w_target=w_tgt)
+    if tgt_val < cur - EPS * max(1.0, eq_open):
+        sell = cur - tgt_val; fee = sell * cost["c_out"]
+        return cash + sell - fee, qty - sell / o, dict(side="sell", reason=reason, price=o, value=sell, fee=fee, w_target=w_tgt)
+    return cash, qty, None
 
 
 def simulate(days, cost, start_idx, next_E=0.0, next_event=None, capital=CAPITAL, band=BAND, scale_override=None):
@@ -167,11 +195,14 @@ def simulate(days, cost, start_idx, next_E=0.0, next_event=None, capital=CAPITAL
     E = nominelle Basis-Exposure waehrend des Tages (nach Fills zur Eroeffnung), event = Basis-Fill zur Eroeffnung.
     next_E/next_event: Basis-Zustand fuer den Tag nach dem letzten Bar (offene Order der Basis).
     scale_override: konstantes s (Kontrollrechnung C, Prereg §6) statt Vol-Schaetzung.
+    Intern laeuft die Basis B (s = 1, keine Vol-Anpassungen, gleiche Sync-Buchung) als Schattenkonto mit; ihr
+    driftendes Gewicht w_B(t) bestimmt das Ziel ohne Basis-Ereignis (w_B(t) * s, Praezisierung vor dem Freeze v1.0).
     Rueckgabe dict(equity, trades, status, stop, pending)."""
     closes = [d["close"] for d in days]
     dates = [d["date"] for d in days]
     rets = log_returns(closes, dates)
     cash, qty = float(capital), 0.0
+    cash_b, qty_b, pending_b = float(capital), 0.0, None      # Schattenkonto Basis B (s = 1)
     status, stop, pending = "OK", None, None
     equity, trades = [], []
     for i in range(start_idx, len(days)):
@@ -186,36 +217,27 @@ def simulate(days, cost, start_idx, next_E=0.0, next_event=None, capital=CAPITAL
             pending = None
             break
         # ---- Ausfuehrung zur Eroeffnung (Entscheid vom Schluss des Vortags)
+        if pending_b is not None:
+            cash_b, qty_b, _ = _execute(cash_b, qty_b, o, pending_b[0], pending_b[1], cost)
+            pending_b = None
         if pending is not None:
             w_tgt, reason = pending
-            eq_open = cash + qty * o
-            cur = qty * o
-            if w_tgt <= EPS and qty > 0:
-                val = cur; rate = cost["c_out_stop"] if reason == "exit_stop" else cost["c_out"]
-                fee = val * rate; cash += val - fee; qty = 0.0
-                trades.append(dict(date=str(dates[i]), side="sell", reason=reason, price=o, value=val, fee=fee, w_target=0.0))
-            else:
-                tgt_val = w_tgt * eq_open
-                if tgt_val > cur + EPS * max(1.0, eq_open):
-                    buy = tgt_val - cur
-                    if cur + buy > MAX_LEV * eq_open + 1e-9:
-                        raise InvariantError("Kauf ueber MAX_LEV")
-                    fee = buy * cost["c_in"]; cash -= buy + fee; qty += buy / o
-                    trades.append(dict(date=str(dates[i]), side="buy", reason=reason, price=o, value=buy, fee=fee, w_target=w_tgt))
-                elif tgt_val < cur - EPS * max(1.0, eq_open):
-                    sell = cur - tgt_val; fee = sell * cost["c_out"]; cash += sell - fee; qty -= sell / o
-                    trades.append(dict(date=str(dates[i]), side="sell", reason=reason, price=o, value=sell, fee=fee, w_target=w_tgt))
+            cash, qty, tr = _execute(cash, qty, o, w_tgt, reason, cost)
+            if tr is not None:
+                trades.append(dict(date=str(dates[i]), **tr))
             pending = None
         if E <= EPS and qty > 0:
             raise InvariantError(f"{dates[i]}: Overlay-Position bei flacher Basis (Signalerzeugung)")
         # ---- Bewertung zum Schluss
         eq = cash + qty * c
         w = qty * c / eq if eq > 0 else 0.0
+        eq_b = cash_b + qty_b * c
+        w_b = qty_b * c / eq_b if eq_b > 0 else 0.0
         if scale_override is None:
             s, mode, ss, sl = scale_for(rets[1: i + 1])           # rets[0] ist der Platzhalter des ersten Bars
         else:
             ss = sl = None; s = float(scale_override); mode = "override"
-        equity.append(dict(date=str(dates[i]), equity=eq, cash=cash, weight=w, E=E, scale=s, vol_mode=mode,
+        equity.append(dict(date=str(dates[i]), equity=eq, cash=cash, weight=w, weight_base=w_b, E=E, scale=s, vol_mode=mode,
                            sig_short=ss, sig_long=sl, status=status))
         # ---- Entscheid fuer die Eroeffnung t+1
         if i + 1 < len(days):
@@ -223,6 +245,9 @@ def simulate(days, cost, start_idx, next_E=0.0, next_event=None, capital=CAPITAL
         else:
             E_n, ev_n = next_E, next_event
         flat = qty <= 0
+        tb = rebalance_target(w_b, E_n, 1.0, ev_n, qty_b <= 0, float("inf"))      # Basis B: nur Ereignisse und Sync
+        if tb is not None:
+            pending_b = (tb, ev_n if ev_n else "sync")
         if status == "STOPPED":
             if E_n <= EPS and not flat:
                 pending = (0.0, ev_n or "exit")      # Ausstiege der Basis immer
@@ -231,10 +256,10 @@ def simulate(days, cost, start_idx, next_E=0.0, next_event=None, capital=CAPITAL
             status, stop = "STOPPED", dict(date=str(dates[i]), reason="keine gueltige Vol-Schaetzung (Luecke/ungueltiger Kurs im Fenster oder Varianz 0, fail-closed)")
             equity[-1]["status"] = status
             continue
-        tgt = rebalance_target(w, E_n, s, ev_n, flat, band)
+        tgt = rebalance_target(w, E_n, s, ev_n, flat, band, w_base=w_b)
         if tgt is not None:
-            if tgt > E_n + EPS or tgt > MAX_LEV + EPS or tgt < 0:
-                raise InvariantError(f"Ziel {tgt} ueber Basis-Exposure {E_n}")
+            if tgt > max(E_n, w_b) + EPS or tgt > MAX_LEV + EPS or tgt < 0:
+                raise InvariantError(f"Ziel {tgt} ueber Basis-Exposure {E_n} bzw. Basis-Gewicht {w_b}")
             reason = ev_n if ev_n else ("sync" if flat else "vol")
             pending = (tgt, reason)
     return dict(equity=equity, trades=trades, status=status, stop=stop,

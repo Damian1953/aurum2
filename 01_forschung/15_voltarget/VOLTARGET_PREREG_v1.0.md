@@ -43,6 +43,7 @@ Weitere Änderungen: neues Modul `voltarget/gates.py` (Sharpe, MaxDD, Kontrollfa
 | bestätigt | §7.1, §3.7, §6 | G2-Toleranz 0.05; Cash 0 % und Sharpe ohne Zinsabzug | unverändert |
 | Bericht | §6 | Verteilung von s je Coin (Coin-Tage mit s < 1) | §6; `scale_distribution`; Zustand `s_verteilung`, `summary` |
 | Betrieb | §4 | gemeinsamer Wochenbericht inkl. VOLTARGET und gemeinsamer Heartbeat als Startvoraussetzung | §4, §11; Branch `sleeves-v1` |
+| **Präzisierung vor dem Freeze** (Entscheid Projektleitung 2026-10-02) | §3.4, §3.5, §6 | Kursdrift löst keine Vol-Anpassung aus: Ziel ohne Basis-Ereignis = aktuelles, driftendes Gewicht der Basis B mal s (w_B(t) · s), nicht E · s; das Band vergleicht das VT-Gewicht mit w_B(t) · s. Mit s ≡ 1 ist VT exakt B. Keine inhaltliche Änderung gegenüber dem Review Claude (VT als skalierte Version von B auf denselben Positionen) | §3.4, §3.5, §6; Engine (`rebalance_target(..., w_base)`, Schattenkonto B in `simulate`); Tests für W2, W6 (E = 0.5, 0.75) und T55_20 |
 
 ## 0. Festgelegte Werte auf einen Blick
 
@@ -54,7 +55,7 @@ Weitere Änderungen: neues Modul `voltarget/gates.py` (Sharpe, MaxDD, Kontrollfa
 | Warmup | unter **60** verfügbaren Renditen s = 1; ab 60 beide Schätzer expandierend über die verfügbare Historie bis 365 | §3.3 |
 | Annualisierung | √365 (Krypto handelt 7 Tage) | §3.3 |
 | Maximaler Hebel | **1.0**: s ≤ 1, Overlay-Gewicht ≤ Basis-Exposure ≤ 1.0 | §3.4 |
-| No-Trade-Band | reine Vol-Anpassung nur bei \|w* − w\| > **0.10** (Anteil Sleeve-Equity); Basis-Ereignisse immer | §3.5 |
+| No-Trade-Band | reine Vol-Anpassung nur bei \|w_B(t) · s − w\| > **0.10** (Anteil Sleeve-Equity, w_B = driftendes Gewicht der Basis); Basis-Ereignisse immer | §3.5 |
 | Start | Übernahme bestehender Basispositionen, skaliert mit dem aktuellen s; B und C buchen dieselbe Übernahme symmetrisch (E bzw. E·c, gleiche Kosten) | §3.7, §6 |
 | Kostenkonvention | wie PAPER F3: Nominal = Gewicht × Equity vor dem Trade, Kosten zusätzlich | §3.4 |
 | Kosten | K1 = `maker_plan` primär (0.47 % je Seite, Stopp-Ausstieg 0.52 %), K2 = `taker_K2` Sensitivität (1.01 % bzw. 1.16 %) | §5 |
@@ -120,13 +121,14 @@ Kraken-Tageskerzen (USD, UTC-Tag), nur abgeschlossene Bars, gleiche Quelle und L
 
 ### 3.4 Zielgewicht und maximaler Hebel
 - E_{c,t+1}: nominelle Basis-Exposure für Tag t+1 aus den unveränderten Paper-Regeln (bekannt am Schluss t, weil die Basisorder dann feststeht).
-- Zielgewicht w*_{c,t+1} = E_{c,t+1} · s_{c,t}, mit 0 ≤ w* ≤ E ≤ 1.0. Gewicht = Wert der Coin-Position / Equity des Overlay-Sleeves.
+- Zielgewicht bei Basis-Ereignissen (Einstieg, Add-on) und bei der Sync-Buchung: w*_{c,t+1} = E_{c,t+1} · s_{c,t}, mit 0 ≤ w* ≤ E ≤ 1.0. Gewicht = Wert der Coin-Position / Equity des Overlay-Sleeves.
+- **Präzisierung vor dem Freeze (Entscheid Projektleitung 2026-10-02):** Ohne Basis-Ereignis ist das Ziel das **aktuelle, durch Kursdrift veränderte Gewicht der Basis B** zum Schluss t mal s: w*_{c,t+1} = w_B,c(t) · s_{c,t} (gedeckelt bei 1.0). B ist die unveränderte Basis mit s = 1 und derselben Sync-Buchung (§6), in der Engine als Schattenkonto mitgeführt. Damit ist VT eine skalierte Version von B auf denselben Positionen; reine Kursdrift löst keine Umschichtung aus, und mit s ≡ 1 ist VT exakt B (auch bei W6 mit E = 0.50 oder 0.75). Das ist keine inhaltliche Änderung gegenüber dem Review Claude, sondern die Präzisierung der dort beschriebenen Regel. Hinweis: Bei konstantem s < 1 kann das VT-Gewicht bei starker Drift trotzdem um mehr als 0.10 von w_B · s abweichen (die nicht investierte Cash-Quote von VT ist grösser als jene von B); dann wird auf w_B · s zurückgeführt. Das ist gewollt (Gewichtsziel), wird als Grund «vol» gebucht und zählt für KR3.
 - **Maximaler Hebel 1.0:** s ist bei 1 gedeckelt, das Overlay erhöht die Exposure nie über die Basis. Anders als bei Harvey et al., die in ruhigen Phasen hebeln, wird hier nur reduziert. Damit fehlt die Hälfte des dort untersuchten Mechanismus [unsicher: ob ein Sharpe-Effekt ohne Hebelseite überhaupt erwartet werden kann].
 - **Buchhaltungskonvention wie PAPER F3/`paper_engine.account` (entschieden 2026-10-02, Vergleichbarkeit):** Das Nominal eines Kaufs ist Zielgewicht × Equity vor dem Trade (höchstens die Equity); die Kosten werden zusätzlich vom Cash abgezogen. Nach einem vollen Einstieg ist das Cash also um genau die Kosten negativ, und das Gewicht liegt rechnerisch um höchstens den Kostenanteil über 1.0 (höchstens 1 / (1 − c_in)), genau wie in der Basis. Ein Test belegt, dass das Overlay mit s ≡ 1 die Equity von `paper_engine.account` für W2 und T55_20 exakt reproduziert.
 
 ### 3.5 Umschichtung und No-Trade-Band
 - **Basis-Ereignisse werden immer ausgeführt:** Einstieg und Add-on mit w* = E · s, Ausstieg vollständig auf 0 (auch im Status STOPPED).
-- **Reine Vol-Anpassungen** (Basis unverändert in Position) nur, wenn |w*_{t+1} − w_t| > 0.10, sonst kein Trade. w_t ist das Gewicht zum Schluss t (nach Kursdrift). Ausführung zur Eröffnung t+1, nach oben höchstens bis E · s.
+- **Reine Vol-Anpassungen** (Basis unverändert in Position) nur, wenn |w_B(t) · s_t − w_t| > 0.10, sonst kein Trade. w_t ist das VT-Gewicht und w_B(t) das Gewicht der Basis B, beide zum Schluss t nach Kursdrift (Präzisierung vor dem Freeze, §3.4). Ausführung zur Eröffnung t+1 auf w_B(t) · s_t.
 - **Begründung:** Harvey et al. rechnen mit 1 Basispunkt Kosten je Seite für Aktien und täglicher Anpassung; ihr Umschlag liegt bei Aktien zwischen rund fünf Roundtrips pro Jahr (reaktivste Schätzung) und weniger als einem (trägste). K1 kostet hier 47 Basispunkte je Seite, also rund das 47-Fache. Ein Band begrenzt die Zahl kleiner Umschichtungen; jede reine Vol-Anpassung bewegt mindestens 10 % der Sleeve-Equity und kostet unter K1 mindestens 0.047 % der Equity. Der Wert 0.10 stammt aus Scan v1 (§2) und wird nicht optimiert. [unsicher: tatsächliche Umschlaghäufigkeit auf Krypto; wird forward gemessen und durch den Kosten-Kill KR3 in §8.2 begrenzt.]
 
 ### 3.6 Fehlende Daten (fail-closed)
@@ -161,7 +163,8 @@ Kraken-Tageskerzen (USD, UTC-Tag), nur abgeschlossene Bars, gleiche Quelle und L
 
 - **Basis (B, v1.0):** die unveränderten Paper-Regeln mit **s = 1**, gerechnet mit derselben Engine ab dem Overlay-Startbar, mit symmetrischer Sync-Buchung (Gewicht E, gleiche Kosten, §3.7) und ohne Vol-Anpassungen (Spalte `eq_base_sync`). Diese Reihe ist die Vergleichsbasis der Gates. Die Paper-Ledger-Nachrechnung mit `paper_engine.account` (Spalte `eq_base`) bleibt Betriebsprüfung R3 (Trades nach dem Start müssen übereinstimmen).
 - **Overlay (VT):** nach §3.
-- **Kontrolle (C), exposure-gleich:** Basis mit konstantem Faktor c statt s, Umschichtung nur bei Basis-Ereignissen, Sync-Buchung am Startbar mit Gewicht E · c und denselben Kosten (§3.7). c = mittleres Overlay-Gewicht / mittlere Basis-Exposure über alle Coin-Tage mit offener Basisposition im Auswertungsfenster (ex post, nicht handelbar, analog zur Normierung k bei Harvey et al.). Berechnet mit derselben Engine (`simulate(..., scale_override=c, band=inf)`). Zweck: Ein kleinerer Drawdown allein durch weniger mittlere Exposure gilt nicht als Effekt der Vol-Steuerung.
+- **Kontrolle (C), exposure-gleich:** Basis mit konstantem Faktor c statt s, Umschichtung nur bei Basis-Ereignissen, Sync-Buchung am Startbar mit Gewicht E · c und denselben Kosten (§3.7).
+  - **Konsistenz mit der Präzisierung (§3.4):** C kauft bei jedem Basis-Ereignis E · c und lässt die Position danach mit dem Kurs driften (kein Band, keine Umschichtung). Zwischen zwei Ereignissen hält C damit dieselbe Coin-Menge, die Position driftet wie die von B; das Gewicht von C folgt w_B · c nur näherungsweise (die Cash-Quote von C ist grösser). C ist daher «B-Position mal c zum Zeitpunkt der Basis-Ereignisse», ohne Drift-Umschichtung; mit c = 1 ist C exakt B (Test). c = mittleres Overlay-Gewicht / mittlere Basis-Exposure über alle Coin-Tage mit offener Basisposition im Auswertungsfenster (ex post, nicht handelbar, analog zur Normierung k bei Harvey et al.). Berechnet mit derselben Engine (`simulate(..., scale_override=c, band=inf)`). Zweck: Ein kleinerer Drawdown allein durch weniger mittlere Exposure gilt nicht als Effekt der Vol-Steuerung.
 - **Ebene:** je Strategie das Portfolio der zehn Coin-Sleeves (Summe der Equities, 10'000 USD). Je Coin nur deskriptiv.
 - **Metriken:**
   - Sharpe: tägliche einfache Renditen der Portfolio-Equity, Mittelwert / Standardabweichung · √365, ohne Abzug eines Zinses (Cash 0 % wie PAPER F3); daneben Überschuss über DTB3 berichtet.
@@ -237,8 +240,8 @@ Nur eine Empfehlung an Damian (z. B. Overlay als Sizing-Regel für eine allfäll
 
 Die Fragen aus v0.2 §12 sind durch das Review Claude beantwortet (G2-Toleranz bestätigt; Schwellen 0.90 und 1 % p. a. bleiben gesetzt und werden durch M2 und M3 eingeordnet; Zustandsübernahme bleibt, mit symmetrischer Sync-Buchung nach M4). Offen für die Projektleitung:
 
-1. **Drift-Umschichtung bei W6:** Mit s = 1 und E = 0.50 oder 0.75 kann die Kursdrift das Gewicht um mehr als das Band 0.10 vom Ziel E entfernen; die Regel §3.5 löst dann eine «reine Vol-Anpassung» aus, obwohl s unverändert 1 ist. VT weicht dadurch bei W6 auch ohne Vol-Signal von B ab (Kosten unter Grund «vol», zählen für KR3). Zu entscheiden vor dem Freeze: belassen und ausweisen, oder Vol-Anpassungen nur zulassen, wenn s < 1 ist bzw. sich das Ziel E · s selbst verändert hat.
-2. **Heartbeat und Wochenbericht** liegen auf Branch `sleeves-v1`; Startvoraussetzung ist dessen Zusammenführung (§11).
+1. ~~Drift-Umschichtung bei W6~~: **erledigt** durch die Präzisierung vor dem Freeze (§3.4, §3.5, Entscheid Projektleitung 2026-10-02).
+2. **Heartbeat und Wochenbericht** liegen auf Branch `sleeves-v1`; Startvoraussetzung ist dessen Zusammenführung in den Hauptstand (§11).
 
 ## 13. Quellen
 - Harvey, C. R., E. Hoyle, R. Korgaonkar, S. Rattray, M. Sargaison, O. Van Hemert (2018): «The Impact of Volatility Targeting». *Journal of Portfolio Management* 45(1), 14–33. DOI 10.3905/jpm.2018.45.1.014. Volltext: https://people.duke.edu/~charvey/Research/Published_Papers/P135_The_impact_of.pdf; SSRN 3175538: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3175538 (abgerufen 2026-10-02). Verwendete Aussagen: Ziel 10 % p. a. mit Ex-post-Konstante k; EWMA der Tagesrenditen mit Mittelwert 0; Halbwertszeiten bis 90 Tage, Standard in den Abbildungen 20 Tage; 270 Handelstage Vorlauf; Schätzung 24 Stunden vor der skalierten Rendite (Renditen bis t−2); Kosten 1 Basispunkt für Aktien; Umschlag rund fünfmal bis unter einmal pro Jahr (Aktien); Sharpe-Verbesserung nur bei Risikoanlagen über den Leverage-Effekt; geringere Wahrscheinlichkeit von Extremrenditen über alle Anlageklassen; tieferer maximaler Drawdown bei US-Aktien sowie beim Balanced- und Risk-Parity-Portfolio. Exakte Tabellenwerte (Exhibits 5, 8, 11, 13, 16) sind in der abgerufenen Textfassung nicht lesbar und werden deshalb nicht zitiert.

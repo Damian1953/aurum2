@@ -23,3 +23,7 @@
 - Der gemeinsame einseitige Wochenbericht aus dem Sleeves-Auftrag (M3) muss auch VOLTARGET abdecken.
 - Gemeinsamer Heartbeat über alle Forward-Linien: eine Statuszeile je Runner und Alarm, wenn ein Lauf fehlt.
 - Beides ist Voraussetzung für den Start. Umsetzung auf Branch `sleeves-v1` (`forward/heartbeat.py`, `forward/voltarget_bericht.py`, `paper/wochenbericht.py`), ohne cron. VOLTARGET liefert nur seine Zustandsdatei nach der dort dokumentierten Schnittstelle; die beiden Branches berühren keine gemeinsame Datei.
+
+## 5. Präzisierung vor dem Freeze (Entscheid Projektleitung 2026-10-02)
+- Kursdrift löst keine Vol-Anpassung aus: Ziel ohne Basis-Ereignis = w_B(t) · s (driftendes Gewicht der Basis B mal s), Band vergleicht mit w_B(t) · s; mit s ≡ 1 ist VT exakt B (Tests W2, W6 mit E = 0.5/0.75, T55_20). Keine inhaltliche Änderung gegenüber dem Review (VT als skalierte Version von B auf denselben Positionen). C bleibt «E · c bei Basis-Ereignissen, danach Drift ohne Umschichtung»; mit c = 1 exakt B.
+- M4 von der Projektleitung bestätigt.

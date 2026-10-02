@@ -485,3 +485,61 @@ def test_runner_state_interface_for_shared_report(tmp_path):
     import json as _j
     h = _j.loads(hist[-1]); assert "run_utc" in h and h["rc"] == 0          # Heartbeat-Schnittstelle (run_utc, rc)
     dt.datetime.fromisoformat(h["run_utc"])
+
+
+# ------------------------------------------------------------------ Praezisierung vor dem Freeze: Ziel w_B(t) * s
+def _force_s(value):
+    orig = V.scale_for
+    V.scale_for = lambda rets, **kw: (value, "full", None, None)
+    return orig
+
+
+@pytest.mark.parametrize("E0", [0.5, 0.75, 1.0])
+def test_drift_does_not_trigger_vol_adjustment_w6(E0):
+    # starker Kursanstieg (rund +225 %) bei W6-Exposure 0.5/0.75: altes Ziel E*s haette wegen Drift > Band umgeschichtet
+    n = 460
+    rets = [0.0] * 400 + [0.02] * 59 + [0.0]
+    events = {380: "entry"} if E0 == 0.5 else ({380: "entry", 390: "add"} if E0 == 0.75 else {380: "entry"})
+    E = [0.0] * 380 + ([0.5] * 10 + [E0] * 70 if E0 == 0.75 else [E0] * 80)
+    days = mkdays(n, E=E, ret=rets, events=events)
+    orig = _force_s(1.0)
+    try:
+        cmp_ = V.run_compare(days, COST, 370, c=1.0)
+    finally:
+        V.scale_for = orig
+    vt = cmp_["vt"]
+    assert not [t for t in vt["trades"] if t["reason"] == "vol"]                       # keine Drift-Umschichtung
+    assert max(e["weight"] for e in vt["equity"]) > E0 + 0.10 or E0 == 1.0               # Drift war groesser als das Band
+    for k in ("b", "c"):
+        assert [round(e["equity"], 9) for e in cmp_[k]["equity"]] == [round(e["equity"], 9) for e in vt["equity"]]
+        assert [(t["date"], t["reason"], round(t["value"], 9)) for t in cmp_[k]["trades"]] == \
+               [(t["date"], t["reason"], round(t["value"], 9)) for t in vt["trades"]]
+    assert all(abs(e["weight"] - e["weight_base"]) < 1e-12 for e in vt["equity"])        # VT = B
+
+
+@pytest.mark.parametrize("strat", ["W2", "W6", "T55_20"])
+@pytest.mark.parametrize("seed", [1, 2, 3])
+def test_identity_s1_all_strategies_via_adapter(strat, seed):
+    d = synth(900, seed); st = pd.Timestamp("2025-02-01", tz="UTC")
+    days, nE, nEv = BA.base_days(d, strat, paper_start=pd.Timestamp("2024-08-01", tz="UTC"))
+    i0 = BA.start_index(days, st.date())
+    orig = _force_s(1.0)
+    try:
+        for cost in V.cost_scenarios().values():
+            cmp_ = V.run_compare(days, cost, i0, nE, nEv, c=1.0)
+            eqs = [[round(e["equity"], 9) for e in cmp_[k]["equity"]] for k in ("vt", "b", "c")]
+            assert eqs[0] == eqs[1] == eqs[2]
+            assert [t["reason"] for t in cmp_["vt"]["trades"]] == [t["reason"] for t in cmp_["b"]["trades"]]
+            assert "vol" not in {t["reason"] for t in cmp_["vt"]["trades"]}
+    finally:
+        V.scale_for = orig
+
+
+def test_band_compares_with_scaled_base_weight():
+    # w_B = 0.6 (Drift), s = 0.8 -> Ziel 0.48; VT-Gewicht 0.55: |0.48 - 0.55| = 0.07 <= Band -> kein Trade
+    assert V.rebalance_target(0.55, 0.5, 0.8, None, flat=False, w_base=0.6) is None
+    assert V.rebalance_target(0.62, 0.5, 0.8, None, flat=False, w_base=0.6) == pytest.approx(0.48)   # 0.14 > Band
+    # alte Regel (E * s = 0.40) haette bei 0.55 umgeschichtet
+    assert V.rebalance_target(0.55, 0.5, 0.8, None, flat=False) == pytest.approx(0.40)
+    # Basis-Ereignisse weiterhin mit E * s
+    assert V.rebalance_target(0.55, 0.75, 0.8, "add", flat=False, w_base=0.6) == pytest.approx(0.60)
