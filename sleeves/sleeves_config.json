@@ -1,7 +1,7 @@
 {
-  "_doc": "Sleeves A (MAKRO_LIQ) und B (MVRV), Forward-Paper. ENTWURF v0.2: NICHT freigegeben. Erst nach Freeze (Review Claude, kein Veto Damian) enabled=true, start_bar und freeze_list setzen und cron-Eintrag aktivieren (collector/ensure_scheduler.sh).",
+  "_doc": "Sleeves A (MAKRO_LIQ) und B (MVRV), Forward-Paper. KANDIDAT v1.0 (Review Claude umgesetzt), NICHT eingefroren, NICHT freigegeben. start_bar muss ein Freitag sein. Erst nach Freeze (Review Claude, kein Veto Damian) enabled=true, start_bar und freeze_list setzen und cron-Eintrag aktivieren (collector/ensure_scheduler.sh).",
   "enabled": false,
   "start_bar": null,
   "freeze_list": null,
-  "prereg": {"A": "01_forschung/14_ideen_scan_v2/makro_liq_prereg_v0.2.md", "B": "01_forschung/14_ideen_scan_v2/mvrv_prereg_v0.2.md"}
+  "prereg": {"A": "01_forschung/14_ideen_scan_v2/makro_liq_prereg_v1.0.md", "B": "01_forschung/14_ideen_scan_v2/mvrv_prereg_v1.0.md"}
 }
