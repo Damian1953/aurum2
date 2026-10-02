@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Tageslauf Vol-Target-Overlay (VOLTARGET_PREREG v0.1, ENTWURF). GESPERRT, solange voltarget_config.json enabled=false.
+"""Tageslauf Vol-Target-Overlay (VOLTARGET_PREREG v0.2, ENTWURF). GESPERRT, solange voltarget_config.json enabled=false.
 
 Fail-closed:
   - ohne Freigabe (enabled=false, start_bar oder freeze_list fehlt) kein Lauf: Exit 3. Es gibt keinen Dry-Run-Bypass.
-  - Parameter der Konfiguration != voltarget_engine.PARAMS: Exit 4
+  - Parameter/Gates der Konfiguration != voltarget_engine.PARAMS bzw. gates.GATES: Exit 4
   - Freeze-Liste: SHA jeder gelisteten Datei muss stimmen, sonst Exit 4
   - Invariantenverletzung (Position bei flacher Basis, Ziel ueber Basis-Exposure): Exit 5
   - gestoppter Coin (Luecke, keine Vol-Schaetzung): Exit 7
@@ -15,6 +15,7 @@ import csv, datetime as dt, hashlib, json, os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import voltarget_engine as V      # noqa: E402
+import gates as G                 # noqa: E402
 
 DATA = os.environ.get("AURUM_DATA_LIVE", "/workspace/aurum2/data_live")
 OUT = os.environ.get("AURUM_VOLTARGET_OUT", "/workspace/aurum2/paper_voltarget")
@@ -32,12 +33,13 @@ def load_cfg(path=CFG):
 def require_enabled(cfg):
     """Laufzeitsperre: wirft Disabled, solange das Overlay nicht freigegeben ist."""
     if cfg.get("enabled") is not True or not cfg.get("start_bar") or not cfg.get("freeze_list"):
-        raise Disabled("Vol-Target-Overlay nicht freigegeben (VOLTARGET_PREREG v0.1 ist ein Entwurf): kein Lauf.")
+        raise Disabled("Vol-Target-Overlay nicht freigegeben (VOLTARGET_PREREG v0.2 ist ein Entwurf): kein Lauf.")
 
 
 def params_ok(cfg):
-    p = cfg.get("params") or {}
-    return all(k in p and float(p[k]) == float(v) for k, v in V.PARAMS.items())
+    p, g = cfg.get("params") or {}, cfg.get("gates") or {}
+    return (all(k in p and float(p[k]) == float(v) for k, v in V.PARAMS.items())
+            and all(k in g and float(g[k]) == float(v) for k, v in G.GATES.items()))
 
 
 def sha(p):

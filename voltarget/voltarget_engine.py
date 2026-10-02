@@ -1,4 +1,4 @@
-"""Aurum II Vol-Target-Overlay v0.1 (ENTWURF, VOLTARGET_PREREG v0.1). Keine Keys, keine Orders, keine Boersenverbindung.
+"""Aurum II Vol-Target-Overlay v0.2 (ENTWURF, VOLTARGET_PREREG v0.2). Keine Keys, keine Orders, keine Boersenverbindung.
 
 Reines Risiko-Overlay auf die unveraenderten Paper-Sleeves W2, W6 und T55_20 (PAPER_PREREG v1.0):
   - skaliert nur die Positionsgroesse der Basis, erzeugt nie ein eigenes Signal
@@ -8,6 +8,8 @@ Reines Risiko-Overlay auf die unveraenderten Paper-Sleeves W2, W6 und T55_20 (PA
   - sigma_kurz: EWMA der quadrierten Log-Renditen (Mittelwert 0), Halbwertszeit 20 Tage
     (Harvey et al. 2018, Standard-Halbwertszeit), Fenster 365 Renditen;
   - sigma_lang: gleichgewichtetes RMS derselben 365 Renditen (rollendes Einjahresfenster);
+  - Warmup (v0.2): unter 60 verfuegbaren Renditen s = 1; ab 60 Renditen beide Schaetzer ueber die verfuegbare
+    Historie (expandierend) bis 365 erreicht sind; echte Luecken/ungueltige Kurse im Fenster -> STOPPED;
   - kein Hebel (MAX_LEV = 1.0), No-Trade-Band 0.10 (absolute Gewichtsabweichung) fuer reine Vol-Anpassungen;
     Basis-Ereignisse (Einstieg, Add-on, Ausstieg) werden immer ausgefuehrt;
   - fail-closed: fehlt eine gueltige Vol-Schaetzung, wird nie Exposure erhoeht (Status STOPPED);
@@ -19,14 +21,16 @@ import json, math, os
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 COST_PATH = os.path.join(REPO, "config", "cost_model_v1.json")
 
-# Vorregistrierte Konstanten (VOLTARGET_PREREG v0.1 §3). Nicht optimiert, nicht aendern ohne neue Version.
+# Vorregistrierte Konstanten (VOLTARGET_PREREG v0.2 §3). Nicht optimiert, nicht aendern ohne neue Version.
 HALF_LIFE = 20          # Tage, EWMA-Halbwertszeit sigma_kurz
 WINDOW = 365            # Anzahl Tagesrenditen fuer sigma_kurz und sigma_lang
 ANN = 365               # Annualisierung (Krypto handelt 7 Tage)
 BAND = 0.10             # No-Trade-Band, absolute Abweichung des Gewichts (Anteil Sleeve-Equity)
 MAX_LEV = 1.0           # nur reduzieren, nie hebeln
+MIN_RETURNS = 60        # Warmup: darunter s = 1, ab hier expandierende Schaetzung bis WINDOW
 CAPITAL = 1000.0        # virtuell je Strategie und Coin (wie PAPER F3)
-PARAMS = dict(half_life=HALF_LIFE, window=WINDOW, ann=ANN, band=BAND, max_lev=MAX_LEV, capital=CAPITAL)
+PARAMS = dict(half_life=HALF_LIFE, window=WINDOW, ann=ANN, band=BAND, max_lev=MAX_LEV, capital=CAPITAL,
+              min_returns=MIN_RETURNS)
 EPS = 1e-12
 EVENTS = (None, "entry", "add", "exit", "exit_stop")
 
@@ -74,24 +78,44 @@ def log_returns(closes, dates=None):
     return out
 
 
-def vol_estimates(rets, half_life=HALF_LIFE, window=WINDOW, ann=ANN):
-    """(sigma_kurz, sigma_lang) annualisiert aus den letzten `window` Renditen (letzte = juengste, bis Schluss t).
-    None, None bei zu kurzer Historie, fehlender Rendite oder Varianz <= 0."""
-    if len(rets) < window:
-        return None, None
-    r = rets[-window:]
+def vol_state(rets, half_life=HALF_LIFE, window=WINDOW, ann=ANN, min_n=MIN_RETURNS):
+    """(sigma_kurz, sigma_lang, modus) annualisiert aus den letzten min(len, window) Renditen (letzte = juengste,
+    bis Schluss t). rets enthaelt nur echte Renditen (kein Platzhalter fuer den ersten Bar).
+    modus: "full" (window Renditen), "expanding" (min_n <= n < window, verfuegbare Historie),
+           "warmup" (n < min_n, Skalierung s = 1), "invalid" (fehlende Rendite = Luecke/ungueltiger Kurs im Fenster
+           oder Varianz <= 0; fail-closed)."""
+    r = list(rets[-window:])
     if any(x is None or not math.isfinite(x) for x in r):
-        return None, None
+        return None, None, "invalid"
+    n = len(r)
+    if n < min_n:
+        return None, None, "warmup"
     lam = 0.5 ** (1.0 / half_life)
     num = den = 0.0
     for i, x in enumerate(reversed(r)):           # i = 0 juengste Rendite
         w = lam ** i
         num += w * x * x; den += w
     var_s = num / den
-    var_l = sum(x * x for x in r) / window
+    var_l = sum(x * x for x in r) / n
     if not (var_s > 0 and var_l > 0):
-        return None, None
-    return math.sqrt(var_s * ann), math.sqrt(var_l * ann)
+        return None, None, "invalid"
+    return math.sqrt(var_s * ann), math.sqrt(var_l * ann), ("full" if n >= window else "expanding")
+
+
+def vol_estimates(rets, half_life=HALF_LIFE, window=WINDOW, ann=ANN, min_n=MIN_RETURNS):
+    """(sigma_kurz, sigma_lang) oder (None, None) bei Warmup bzw. ungueltigem Fenster."""
+    ss, sl, _ = vol_state(rets, half_life, window, ann, min_n)
+    return ss, sl
+
+
+def scale_for(rets, **kw):
+    """(s, modus, sigma_kurz, sigma_lang): s = 1 im Warmup, None bei ungueltigem Fenster (fail-closed)."""
+    ss, sl, mode = vol_state(rets, **kw)
+    if mode == "warmup":
+        return 1.0, mode, None, None
+    if mode == "invalid":
+        return None, mode, None, None
+    return scale_factor(ss, sl), mode, ss, sl
 
 
 def scale_factor(sig_s, sig_l, max_lev=MAX_LEV):
@@ -133,7 +157,10 @@ def rebalance_target(w_now, E_next, s, event, flat, band=BAND):
 
 
 def simulate(days, cost, start_idx, next_E=0.0, next_event=None, capital=CAPITAL, band=BAND, scale_override=None):
-    """Overlay je Coin. days: Liste dict(date, open, close, E, event) chronologisch inkl. Warmup vor start_idx;
+    """Overlay je Coin. Zustandsuebernahme (§3.7): haelt die Basis am Start (oder spaeter, solange das Overlay flach
+    ist) eine Position, wird sie zur naechsten Eroeffnung mit dem aktuellen s skaliert uebernommen (Grund "sync").
+    Kostenkonvention wie PAPER F3: Kauf-Nominal = Zielgewicht x Equity vor dem Trade, Kosten zusaetzlich aus dem Cash.
+    days: Liste dict(date, open, close, E, event) chronologisch inkl. Warmup vor start_idx;
     E = nominelle Basis-Exposure waehrend des Tages (nach Fills zur Eroeffnung), event = Basis-Fill zur Eroeffnung.
     next_E/next_event: Basis-Zustand fuer den Tag nach dem letzten Bar (offene Order der Basis).
     scale_override: konstantes s (Kontrollrechnung C, Prereg §6) statt Vol-Schaetzung.
@@ -182,11 +209,11 @@ def simulate(days, cost, start_idx, next_E=0.0, next_event=None, capital=CAPITAL
         eq = cash + qty * c
         w = qty * c / eq if eq > 0 else 0.0
         if scale_override is None:
-            ss, sl = vol_estimates(rets[: i + 1])
-            s = scale_factor(ss, sl)
+            s, mode, ss, sl = scale_for(rets[1: i + 1])           # rets[0] ist der Platzhalter des ersten Bars
         else:
-            ss = sl = None; s = float(scale_override)
-        equity.append(dict(date=str(dates[i]), equity=eq, weight=w, E=E, scale=s, sig_short=ss, sig_long=sl, status=status))
+            ss = sl = None; s = float(scale_override); mode = "override"
+        equity.append(dict(date=str(dates[i]), equity=eq, cash=cash, weight=w, E=E, scale=s, vol_mode=mode,
+                           sig_short=ss, sig_long=sl, status=status))
         # ---- Entscheid fuer die Eroeffnung t+1
         if i + 1 < len(days):
             E_n, ev_n = days[i + 1]["E"], days[i + 1]["event"]
@@ -198,7 +225,7 @@ def simulate(days, cost, start_idx, next_E=0.0, next_event=None, capital=CAPITAL
                 pending = (0.0, ev_n or "exit")      # Ausstiege der Basis immer
             continue
         if E_n > EPS and s is None:
-            status, stop = "STOPPED", dict(date=str(dates[i]), reason="keine gueltige Vol-Schaetzung (fail-closed)")
+            status, stop = "STOPPED", dict(date=str(dates[i]), reason="keine gueltige Vol-Schaetzung (Luecke/ungueltiger Kurs im Fenster oder Varianz 0, fail-closed)")
             equity[-1]["status"] = status
             continue
         tgt = rebalance_target(w, E_n, s, ev_n, flat, band)
