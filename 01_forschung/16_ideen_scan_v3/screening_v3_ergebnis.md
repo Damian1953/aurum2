@@ -1,6 +1,6 @@
 # Ideen-Scan v3: Screening S1–S3 (Ergebnis)
 
-**Stand:** 2026-10-03 08:45 (Zürich, UTC+2). Spezifikation vor dem Rechnen committet (`ideen_scan_v3_plan.md` §4, Commit b1ac555). Skript `tools/ideen/screening_scan_v3.py`, Resultat `screening_v3.json`. Daten nur < 2024 (Binance Spot 1d, 7 Altcoins ohne ETH/SOL; CoinMetrics Community aus Scan v2). Kein Holdout. **3 informelle Trials, globaler Zähler rund 273**, Restbudget Scan v3: 11.
+**Stand:** 2026-10-03 08:45 (Zürich, UTC+2). Spezifikation vor dem Rechnen committet (`ideen_scan_v3_plan.md` §4, Commit 63e7736, vor dem Rebase b1ac555, Inhalt identisch). Skript `tools/ideen/screening_scan_v3.py`, Resultat `screening_v3.json`. Daten nur < 2024 (Binance Spot 1d, 7 Altcoins ohne ETH/SOL; CoinMetrics Community aus Scan v2). Kein Holdout. **3 informelle Trials, globaler Zähler rund 273**, Restbudget Scan v3: 11.
 
 | Test | Ergebnis | Kill-Kriterium | Urteil |
 |---|---|---|---|

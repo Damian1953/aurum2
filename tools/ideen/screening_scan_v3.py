@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Ideen-Scan v3, Screening S1-S3 (Spezifikation: 01_forschung/16_ideen_scan_v3/ideen_scan_v3_plan.md §4, vor dem Rechnen
-committet in b1ac555). Nur Daten < 2024-01-01. Kein Holdout. Ausgabe: 01_forschung/16_ideen_scan_v3/screening_v3.json"""
+committet in 63e7736, vor dem Rebase b1ac555). Nur Daten < 2024-01-01. Kein Holdout. Ausgabe: 01_forschung/16_ideen_scan_v3/screening_v3.json"""
 import json, math, os
 import numpy as np, pandas as pd
 
