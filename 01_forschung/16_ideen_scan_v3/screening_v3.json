@@ -1,0 +1,93 @@
+{
+ "hinweis": "Screening Scan v3, informell, Daten < 2024, K1-Roundtrip 0.94 %",
+ "trials": 3,
+ "S1_btc_schock_alt_folgetag": {
+  "n_signale": 79,
+  "brutto_mittel_pct": 0.345,
+  "netto_mittel_pct": -0.595,
+  "t_brutto": 0.68,
+  "unbedingt_mittel_pct": 0.273,
+  "median_brutto_pct": 0.57,
+  "haelften": {
+   "bis2020": {
+    "n": 38,
+    "brutto_mittel_pct": 0.475,
+    "t": 0.63
+   },
+   "ab2021": {
+    "n": 41,
+    "brutto_mittel_pct": 0.225,
+    "t": 0.33
+   }
+  },
+  "je_coin": {
+   "ADA": {
+    "n": 71,
+    "brutto_mittel_pct": 0.255
+   },
+   "AVAX": {
+    "n": 48,
+    "brutto_mittel_pct": 0.232
+   },
+   "BNB": {
+    "n": 79,
+    "brutto_mittel_pct": 0.278
+   },
+   "DOT": {
+    "n": 48,
+    "brutto_mittel_pct": 0.411
+   },
+   "LINK": {
+    "n": 65,
+    "brutto_mittel_pct": 1.137
+   },
+   "LTC": {
+    "n": 73,
+    "brutto_mittel_pct": 0.097
+   },
+   "XRP": {
+    "n": 71,
+    "brutto_mittel_pct": 0.044
+   }
+  }
+ },
+ "S2_regression_leadlag": {
+  "gesamt": {
+   "n": 2245,
+   "b": -0.0741,
+   "t_b": -1.21,
+   "c": -0.0202,
+   "t_c": -0.37
+  },
+  "bis2020": {
+   "n": 1151,
+   "b": -0.1322,
+   "t_b": -1.61,
+   "c": 0.0227,
+   "t_c": 0.29
+  },
+  "ab2021": {
+   "n": 1094,
+   "b": 0.031,
+   "t_b": 0.34,
+   "c": -0.0933,
+   "t_c": -1.27
+  }
+ },
+ "S3_halving_deskriptiv": {
+  "tage_fenster": 1080,
+  "tage_rest": 2571,
+  "log_rendite_tag_fenster_pct": 0.468,
+  "log_rendite_tag_rest_pct": -0.04,
+  "annualisiert_fenster_pct": 451.8,
+  "annualisiert_rest_pct": -13.6,
+  "t_differenz_welch": 3.63,
+  "anteil_mvrv_investiert_fenster": 0.53,
+  "anteil_mvrv_investiert_rest": 0.788,
+  "je_halving": {
+   "2016-07-09": 3.061,
+   "2020-05-11": 1.993
+  },
+  "vorbehalt": "N = 2 Zyklen, autokorrelierte Tagesrenditen; t-Wert nicht interpretierbar"
+ }
+}

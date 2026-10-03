@@ -60,3 +60,7 @@ Forschungsentscheide stehen weiterhin ausschliesslich in `00_doku/ENTSCHEIDE.md`
 - Collector 1.2: `collector/macro_sources.py` (CoinMetrics `CapMVRVCur`, FRED `WALCL`/`WTREGEN`/`RRPONTSYD`/`DTB3` ueber fredgraph.csv ohne Key), First-Release-Dateien unter `data_live/macro/`; erster Abruf 01.10.2026 22:47.
 - `sleeves/` (Engine, Runner, Wrapper, Config enabled=false), nicht in cron; Tests `tests/test_collector_macro.py` (5), `tests/test_sleeves.py` (8). `paper/` unveraendert.
 - Collector 1.2 nachgebessert: Makro-Quellen (coinmetrics_mvrv, fred_macro) nicht fatal und isoliert, laufen nach Freigabe des Collector-Locks (Paper-Runner wartet nicht), eigener Lock `.macro.lock`, Status `data_live/macro/status.json`; Exit-Code, last_run_status und run_history nur aus den Kernquellen (Kraken/Binance, Semantik unveraendert); reiner Makro-Lauf schreibt keinen Kern-Status. Wochenbericht: Abschnitt 5b Sleeves A/B (`sleeves/sleeves_bericht.py`, Fehler nie fatal; `paper/wochenbericht.py` ist nicht in der paper-v1.0-Freeze-Liste). Tests +4.
+
+## 2026-10-03: Ideen-Scan v3 (Plan, Screening S1-S3)
+
+- `01_forschung/16_ideen_scan_v3/` Plan, Screening-Ergebnis, `tools/ideen/screening_scan_v3.py`; 3 informelle Trials (global ca. 273); F2 Lead-Lag geschlossen, F1 Halving nicht pruefbar.
